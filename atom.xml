@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Andy Wang's Blog</title>
+  <link href="http://yorzi.github.com/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2011-08-12T19:22:15+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name>Andy Wang</name>
+    
+      <email>wangyaodi@gmail.com</email>
+    
+  </author>
+
+  
+  <entry>
+    <title>Riding on Rails3 with a full stack of gems</title>
+    <link href="http://yorzi.github.com/blog/2011/08/12/riding-on-rails3-with-a-full-stack-of-gems/"/>
+    <updated>2011-08-12T19:02:00+08:00</updated>
+    <id>http://yorzi.github.com/blog/2011/08/12/riding-on-rails3-with-a-full-stack-of-gems</id>
+    <content type="html">&lt;p&gt;It's been close to a year since Rails3 came out. Luckily, I've worked on several Rails3 projects after it's released, so I'd like to share a stack of gems that I used in my previous projects. I guess they will give people a bit help while developing a new Rails3 app.&lt;/p&gt;
+
+&lt;p&gt;I don't want to explain too much on these gems separately, well, most of the gems have good documents on their project wiki(every great gem should be well documented, right?). Instead, I just add regarding links to their repos so that you'd better take a further look while you really use it. In order to introduce the lists of gems clearly, I simply categorized them based on a rough structure.&lt;/p&gt;
+
+&lt;p&gt;Ok, here we start:&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Authentication&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;OmniAuth (&lt;a href=&quot;https://github.com/intridea/omniauth&quot;&gt;https://github.com/intridea/omniauth&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Devise (&lt;a href=&quot;https://github.com/plataformatec/devise&quot;&gt;https://github.com/plataformatec/devise&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;The above two are really amazing gems to speed up your authentication. Yes, I love both of them in different cases: ideally OmniAuth is better for applications which want to support multi-provider external authentication, so I've just added OmniAuth into RefactorMyCode Rails3 branch to take its auth benefits; Devise is totally powerful enough for classic authentication case. However, if you have too much your own business logic inside your login/registration/auth flow, you definitely need to make your own authentication.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Access Control&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;CanCan (&lt;a href=&quot;https://github.com/ryanb/cancan&quot;&gt;https://github.com/ryanb/cancan&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;declarative_authorization (&lt;a href=&quot;https://github.com/stffn/declarative_authorization&quot;&gt;https://github.com/stffn/declarative_authorization&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/ryanb&quot;&gt;Ryan&lt;/a&gt; is a star in Rails world, so his CanCan is really popular, which aims to do neat but powerful authorization. However, the declarative_autharization is also an option, actually, Ryan mentioned CanCan was inspired by declarative_autharization.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Views/Page and Admin Scaffold&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;compass (&lt;a href=&quot;https://github.com/chriseppstein/compass&quot;&gt;https://github.com/chriseppstein/compass&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;haml (&lt;a href=&quot;https://github.com/nex3/haml&quot;&gt;https://github.com/nex3/haml&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;sanitize (&lt;a href=&quot;https://github.com/rgrove/sanitize&quot;&gt;https://github.com/rgrove/sanitize&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;rails_admin (&lt;a href=&quot;https://github.com/sferik/rails_admin&quot;&gt;https://github.com/sferik/rails_admin&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;web-app-theme (&lt;a href=&quot;https://github.com/andreferraro/web-app-theme&quot;&gt;https://github.com/andreferraro/web-app-theme&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;From a front-end perspective, I suggest you might need to try above gems to speed up and simplify your UI designing. For example on the admin section, it'd be great if you can apply your CRUD quickly to pages, that's what rails_admin does. Surely, these gems won't end all your UI problems, but it really helps when you doing prototype or being lack of some real designers.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Quick SNS&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;acts-as-taggable-on (&lt;a href=&quot;https://github.com/mbleigh/acts-as-taggable-on&quot;&gt;https://github.com/mbleigh/acts-as-taggable-on&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;has_friends-rails3 (&lt;a href=&quot;https://github.com/rrouse/has_friends&quot;&gt;https://github.com/rrouse/has_friends&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;acts_as_favable (&lt;a href=&quot;https://github.com/yorzi/acts_as_favable&quot;&gt;https://github.com/yorzi/acts_as_favable&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;thumbs_up (&lt;a href=&quot;https://github.com/brady8/thumbs_up&quot;&gt;https://github.com/brady8/thumbs_up&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;acts_as_commentable (&lt;a href=&quot;https://github.com/jackdempsey/acts_as_commentable&quot;&gt;https://github.com/jackdempsey/acts_as_commentable&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;profanity_filter (&lt;a href=&quot;https://github.com/intridea/profanity_filter&quot;&gt;https://github.com/intridea/profanity_filter&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Well, I don't mean a whole solution of SNS or regarding feature, here theses gems can help you add the basic cross-object function rapidly, it increases your confidence to focus on designing over programming at the very beginning. Here I want to give a simple introduction to &lt;strong&gt;acts_as_favable&lt;/strong&gt;, it allows for favorites refer to be added to multiple and different models.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Form and Related Tools&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;simple_form (&lt;a href=&quot;https://github.com/plataformatec/simple_form&quot;&gt;https://github.com/plataformatec/simple_form&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;formtastic (&lt;a href=&quot;https://github.com/justinfrench/formtastic&quot;&gt;https://github.com/justinfrench/formtastic&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;formtastic_datepicker_inputs (&lt;a href=&quot;https://github.com/demersus/formtastic_datepicker_inputs&quot;&gt;https://github.com/demersus/formtastic_datepicker_inputs&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;tiny_mce (&lt;a href=&quot;https://github.com/kete/tiny_mce&quot;&gt;https://github.com/kete/tiny_mce&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;paperclip (&lt;a href=&quot;https://github.com/thoughtbot/paperclip&quot;&gt;https://github.com/thoughtbot/paperclip&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;carrierwave (&lt;a href=&quot;https://github.com/jnicklas/carrierwave&quot;&gt;https://github.com/jnicklas/carrierwave&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Most of above gems are famous through &amp;lt;railscasts.com&gt; created by Ryan. There are two pairs of options here: &lt;strong&gt;simple_form&lt;/strong&gt; and &lt;strong&gt;formtastic&lt;/strong&gt; / &lt;strong&gt;paperclip&lt;/strong&gt; and &lt;strong&gt;carrierwave&lt;/strong&gt;. I like all these solutions, you should pick up one to fit your project, if you want to know differences between each pair, get more details on their wiki :) Tiny is an HUGE gem for rich editing, I list it here to remind its exist, but I recommend you  get the WYSWYG via some JS lib like &lt;a href=&quot;http://premiumsoftware.net/cleditor&quot;&gt;CLEditor&lt;/a&gt;, it works gracefully.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Searching Solutions&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;meta_seach (&lt;a href=&quot;https://github.com/ernie/meta_search&quot;&gt;https://github.com/ernie/meta_search&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;meta_where (&lt;a href=&quot;https://github.com/ernie/meta_where&quot;&gt;https://github.com/ernie/meta_where&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;thinking-sphinx (&lt;a href=&quot;https://github.com/freelancing-god/thinking-sphinx&quot;&gt;https://github.com/freelancing-god/thinking-sphinx&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;acts_at_indexed (&lt;a href=&quot;https://github.com/dougal/acts_as_indexed&quot;&gt;https://github.com/dougal/acts_as_indexed&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;sunspot (&lt;a href=&quot;https://github.com/outoftime/sunspot&quot;&gt;https://github.com/outoftime/sunspot&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Talking about searching in rails, I think you have many words to say. Here I wanna roughly split these gems into two types: Object-based searching and Full-Text searching. I heavily recommend you use meta_search and/or meta_where as your model based searching, it can convert your form params directly to a search solution, that's convenient. Full-Test searching depends on your case, but all these three gems(thinking-sphinx, acts_as_indexed, sunspot) are great.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Pagination&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;kaminari (&lt;a href=&quot;https://github.com/amatsuda/kaminari&quot;&gt;https://github.com/amatsuda/kaminari&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;kaminari_themes (&lt;a href=&quot;https://github.com/amatsuda/kaminari_themes&quot;&gt;https://github.com/amatsuda/kaminari_themes&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;No more will_paginate in Rails3, absolutely, the only option is kaminari.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Background Work&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;delayed_job (&lt;a href=&quot;https://github.com/collectiveidea/delayed_job&quot;&gt;https://github.com/collectiveidea/delayed_job&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;resque (&lt;a href=&quot;https://github.com/defunkt/resque&quot;&gt;https://github.com/defunkt/resque&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There is one post to introduce resque clearly &lt;a href=&quot;https://github.com/blog/542-introducing-resque&quot;&gt;here&lt;/a&gt;, in that post, github staff mentioned their brief history of doing background jobs, so I think you can understand well the differences between delayed_job and resque solution.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Status Machine&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;workflow (&lt;a href=&quot;https://github.com/ryan-allen/workflow&quot;&gt;https://github.com/ryan-allen/workflow&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;state_machine (&lt;a href=&quot;https://github.com/pluginaweek/state_machine&quot;&gt;https://github.com/pluginaweek/state_machine&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I like to use workflow a bit more, since it's much natural to me, you definitely need one status machine to control your stable flow stuff, such as a registration flow status or a wizard-like features.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Rack API framework&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;grape (&lt;a href=&quot;https://github.com/intridea/grape&quot;&gt;https://github.com/intridea/grape&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This gem is for adding API to Rails/Sinatra application. &lt;a href=&quot;http://intridea.com/about/people/mbleigh&quot;&gt;Michael&lt;/a&gt; gave people an awesome &lt;a href=&quot;http://confreaks.net/videos/475-rubyconf2010-the-grapes-of-rapid&quot;&gt;speech in RubyConf2010&lt;/a&gt; on his Grape, here I suggest you should watch it to know more details about GRAPE. I believe you will fall in love with it.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Memcached Client&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;memcache-client (&lt;a href=&quot;https://github.com/mperham/memcache-client&quot;&gt;https://github.com/mperham/memcache-client&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;dalli (&lt;a href=&quot;https://github.com/mperham/dalli&quot;&gt;https://github.com/mperham/dalli&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;These two gems are actually mainly written by one same author &lt;em&gt;&lt;a href=&quot;https://github.com/mperham&quot;&gt;Mike Perham&lt;/a&gt;&lt;/em&gt;, he mentioned that &lt;em&gt;Dalli is a high performance pure Ruby client for accessing memcached servers. It works with memcached 1.4+ only as it uses the newer binary protocol. It should be considered a replacement for the memcache-client gem. The API tries to be mostly compatible with memcache-client with the goal being to make it a drop-in replacement for Rails.&lt;/em&gt;&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Deployment and Monitor&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;capistrano (&lt;a href=&quot;https://github.com/capistrano/capistrano&quot;&gt;https://github.com/capistrano/capistrano&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;cap-recipes (&lt;a href=&quot;https://github.com/nesquena/cap-recipes&quot;&gt;https://github.com/nesquena/cap-recipes&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;god (&lt;a href=&quot;https://github.com/mojombo/god&quot;&gt;https://github.com/mojombo/god&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I am not a system administrator, so every time talking about the regarding aspects will make me feel silly, I just try to describe tools which can help me out on unfamiliar area, that's not bad, at least people like me, will do deployment and monitor quickly based on these gems, they do help.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Cron job and Backup as a Pro&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;whenever (&lt;a href=&quot;https://github.com/javan/whenever&quot;&gt;https://github.com/javan/whenever&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;backup (&lt;a href=&quot;https://github.com/meskyanichi/backup&quot;&gt;https://github.com/meskyanichi/backup&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Above two gems are my favorites, before knowing these two gems, I have to write complex and stupid scripts to do backups that I am not familiar with. Cron job is also a pain in ass if you are not a system administrator. Now time changes, you, as a ruby programmer, can do the corn job and backup in ruby way, surely as a PRO. :)&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Testing Gracefully&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;rspec-rails (&lt;a href=&quot;https://github.com/dchelimsky/rspec-rails&quot;&gt;https://github.com/dchelimsky/rspec-rails&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;factory_girl_rails (&lt;a href=&quot;https://github.com/thoughtbot/factory_girl_rails&quot;&gt;https://github.com/thoughtbot/factory_girl_rails&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;faker (&lt;a href=&quot;https://github.com/yyyc514/faker&quot;&gt;https://github.com/yyyc514/faker&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;watchr (&lt;a href=&quot;https://github.com/mynyml/watchr&quot;&gt;https://github.com/mynyml/watchr&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;autowatchr (&lt;a href=&quot;https://github.com/viking/autowatchr&quot;&gt;https://github.com/viking/autowatchr&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;database_cleaner (&lt;a href=&quot;https://github.com/bmabey/database_cleaner&quot;&gt;https://github.com/bmabey/database_cleaner&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;mail_safe (&lt;a href=&quot;https://github.com/myronmarston/mail_safe&quot;&gt;https://github.com/myronmarston/mail_safe&lt;/a&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Testing is always important, I know TDD and BDD are getting more and more popular, that means you have to own your super gun to make it happen. Right, here is a list of gems which can help you out, I didn't cover all different levels of testing with these gems. Point is, rspec is my favorite framework for testing, &lt;strong&gt;factory_girl&lt;/strong&gt; and &lt;strong&gt;faker&lt;/strong&gt; are good supports. Anyway, test by your way.&lt;/p&gt;
+
+&lt;h4&gt;&lt;strong&gt;&amp;raquo; Toolkit&lt;/strong&gt;&lt;/h4&gt;
+
+&lt;blockquote&gt;&lt;ul&gt;
+&lt;li&gt;ruby-debug (&lt;a href=&quot;https://github.com/mark-moseley/ruby-debug&quot;&gt;https://github.com/mark-moseley/ruby-debug&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;hirb (&lt;a href=&quot;https://github.com/cldwalker/hirb&quot;&gt;https://github.com/cldwalker/hirb&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;cheat (&lt;a href=&quot;https://github.com/defunkt/cheat&quot;&gt;https://github.com/defunkt/cheat&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;rails-settings-cached (https://github.com/huacnlee/rails-settings-cached)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;There are many handy gems which will give you convenience and power. Take above four as examples, ruby-debuy gives you a chance to check your running applications' context at specific program point; hirb display your AR items in table view in console; cheat makes your terminal working as a pool of other gems' manual; rails-settings-cached is for global configurations in Rails3 application. Yeah, throwing the brick out is to meet your GEMS.&lt;/p&gt;
+
+&lt;h3&gt;&lt;strong&gt;How to find great gems?&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;First, you need to follow up Ryan's &lt;a href=&quot;railscasts.com&quot;&gt;railscasts&lt;/a&gt;, he is good at introducing new stuff in video. Second, you can go through great open source project's &lt;strong&gt;Gemfile&lt;/strong&gt;, yeah, it's definitely the best way to come across valuable gems. Third, just subscribe &lt;a href=&quot;https://github.com/languages/Ruby&quot;&gt;github ruby trends&lt;/a&gt; to know what's going on in Ruby/Rails community. There are also some other involving sites, like &lt;a href=&quot;rubygems.org&quot;&gt;rubygems&lt;/a&gt; and &lt;a href=&quot;railsplugins.org&quot;&gt;railsplugins&lt;/a&gt;, you should take a glance when you free, I bet you will find useful gems.&lt;/p&gt;
+
+&lt;p&gt;It's nearly the end of this post, this topic was originally shared with all Intridea China Team members during last Friday Teahour. You can find the PPT &lt;a href=&quot;http://www.slideshare.net/yorzi/riding-on-rails3-with-full-stack-of-gems&quot;&gt;here&lt;/a&gt;. To share with more people, I turn it into this blog, I must miss many valuable gems in this list, so please comment your thoughts.&lt;/p&gt;
+</content>
+  </entry>
+  
+</feed>

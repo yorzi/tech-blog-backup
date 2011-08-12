@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
+    <url>
+        <loc>
+            http://yorzi.github.com/blog/2011/08/12/riding-on-rails3-with-a-full-stack-of-gems/
+        </loc>
+        <lastmod>2011-08-12T19:03:23+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yorzi.github.com/blog/archives/</loc>
+        <lastmod>2011-08-12T19:03:23+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://yorzi.github.com/</loc>
+        <lastmod>2011-08-12T19:03:23+08:00</lastmod>
+    </url>
+</urlset>
