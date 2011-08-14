@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Andy Wang's Blog: primary_key and foreign_key in Rails association</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://yorzi.github.com/blog/2009/11/12/primary_key-and-foreign_key-in-rails-association/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Andy Wang's Blog" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Andy Wang's Blog</a></h1>
+  
+    <h2>All about Ruby/Rails/Javascript/CoffeeScript</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:yorzi.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Primary_key and Foreign_key in Rails Association</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-11-12 00:00:00 +0800" pubdate  updated >Nov 12<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The has_many and belongs_to association in Rails are with many optional parameters, they are actually the parameters for DB relationship, see more details by <a href="http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html">clicking here</a>.</p>
+
+<p>As a reminder to myself, I misunderstood the primary_key an foreign_key conditions in association, it should be set in both sides in some case, for instance:</p>
+
+<pre name="code" class="ruby">
+class Student < ActiveRecord::Base
+  has_many :trial_lessons, :foreign_key => :user_id, :primary_key => :profile_id
+end
+</pre>
+
+
+<p>Above code will let you invoke the student.trial_lessons, but if you want to use trial_lesson.student, you have to define the association as below:</p>
+
+<pre name="code" class="ruby">
+class TrialLesson < ActiveRecord::Base
+  belongs_to :student, :primary_key => :profile_id, :foreign_key => :user_id
+end
+</pre>
+
+
+<blockquote><strong>Notice that</strong>: you actually set the same :primary_key and :foreign_key in both sides, it&#8217;s because the DB relationship between these two Model can be described the same way..(it&#8217;s only a way for me to remember the rule)</blockquote>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andy Wang</span></span>
+
+      
+
+
+
+
+<time datetime="2009-11-12 00:00:00 +0800" pubdate  updated >Nov 12<span>th</span>, 2009</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/Ruby-On-Rails/'>Ruby On Rails</a>, <a class='category' href='/blog/categories/association/'>association</a>, <a class='category' href='/blog/categories/belongs-to/'>belongs_to</a>, <a class='category' href='/blog/categories/code/'>code</a>, <a class='category' href='/blog/categories/has-many/'>has_many</a>, <a class='category' href='/blog/categories/rails/'>rails</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yorzi.github.com/blog/2009/11/12/primary_key-and-foreign_key-in-rails-association/" data-via="yorzi" data-counturl="http://yorzi.github.com/blog/2009/11/12/primary_key-and-foreign_key-in-rails-association/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'andywangshome';
+  var disqus_identifier = 'http://yorzi.github.com/blog/2009/11/12/primary_key-and-foreign_key-in-rails-association/';
+  var disqus_url = 'http://yorzi.github.com/blog/2009/11/12/primary_key-and-foreign_key-in-rails-association/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

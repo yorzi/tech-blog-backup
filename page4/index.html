@@ -1,0 +1,940 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Andy Wang's Blog</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://yorzi.github.com/page4/index.html"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Andy Wang's Blog" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Andy Wang's Blog</a></h1>
+  
+    <h2>All about Ruby/Rails/Javascript/CoffeeScript</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:yorzi.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/16/searchbar-in-titanium/">SearchBar in Titanium</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-07-16 00:00:00 +0800" pubdate  updated >Jul 16<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In this post, I will guide you to use SearchBar in TableView when your development is based on Titanium.</p>
+
+<p><strong>Keywords</strong>: <em>Titanium, TableView, TableViewRow, SearchBar</em></p>
+
+<p><strong>Step 1</strong>: Create a table view row datas for your content list.
+<code lang="javascript">
+// create the rest of the rows
+var data = [];
+for (var c=0;c&lt;rowCount;c++)
+{</p>
+
+<pre><code>var row = Ti.UI.createTableViewRow();
+row.backgroundImage = '../images/row_bg.png';
+row.selectedBackgroundImage = '../images/row_bg_selected.png';
+row.height = 90;
+row.url = "formulas_show.js";
+row.id = id;
+row.className = 'datarow';
+row.filter = "the data you want to search";  // here you will set the filter content which will be searched.
+row.clickName = 'row';
+
+data.push(row);
+</code></pre>
+
+<p>}
+</code></p>
+
+<p><strong>Step 2</strong>: Create a search bar.
+<code lang="javascript">
+// CREATE SEARCH BAR
+var search = Titanium.UI.createSearchBar({</p>
+
+<pre><code>barColor:'#385292', 
+showCancel:false
+</code></pre>
+
+<p>});</p>
+
+<p>search.addEventListener(&#8216;change&#8217;, function(e)
+{
+   e.value; // search string as user types
+});
+search.addEventListener(&#8216;return&#8217;, function(e)
+{
+   search.blur();
+});
+search.addEventListener(&#8216;cancel&#8217;, function(e)
+{
+   search.blur();
+});
+</code></p>
+
+<p><strong>Step 3</strong>: Create a table view for your content list.
+<code lang="javascript">
+// create table view
+tableView = Titanium.UI.createTableView({</p>
+
+<pre><code>data:data, // here will be the data array
+search:search, //here will set search bar
+filterAttribute:'filter', //here is the search filter which appears in TableViewRow as an attribute(you can define it in other name)
+backgroundColor:'white'
+</code></pre>
+
+<p>});
+</code></p>
+
+<p>Ok, now you can add search bar for table view content list. as a reminder, you should add event listener for the table view object, but the click event should be bundled with the &#8220;row&#8221;, so that you can search and click the search result linking to target window.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/07/16/searchbar-in-titanium/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/07/14/titanium-db-synchronization/">Titanium : DB Synchronization</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-07-14 00:00:00 +0800" pubdate  updated >Jul 14<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>Header Notes:</strong>
+1. Static data should be released with app, just don&#8217;t do db synchronization.
+2. Just embed sync background when ppl looking at some instructions/tips etc.
+3. Don&#8217;t update db all the time.</p>
+
+<p>App Start:
+<em><strong>app.js</strong></em>
+<code lang='javascript'>
+// Localization libs
+Ti.include('l10n/l10n.js');
+Ti.include('l10n/l10n_dialog.js');
+Ti.include('l10n/l10n_format.js');</p>
+
+<p>var db = Titanium.Database.install('eq31formulas.db', 'eq31formulas');</p>
+
+<p>// Ti.include('content/tab_formula.js')</p>
+
+<p>// this sets the background color of the master UIView (when there are no windows/tab groups on it)
+Titanium.UI.setBackgroundColor('#000');</p>
+
+<p>// create tab group
+var tabGroup = Titanium.UI.createTabGroup();</p>
+
+<p>//
+// create tab for tips
+//
+Ti.include('content/tab_tips.js');</p>
+
+<p>//
+// create tab for weibo
+//
+Ti.include('content/tab_weibo.js');</p>
+
+<p>//
+// create tab for formulas
+//
+Ti.include('content/tab_formulas.js');</p>
+
+<p>// create tab for lang settings
+var win_setting = Ti.UI.createWindow({</p>
+
+<pre><code>title:_('tab_settings')
+</code></pre>
+
+<p>});</p>
+
+<p>var tab_setting = Ti.UI.createTab({</p>
+
+<pre><code>icon:'images/nav_icon_setting.png',
+title:_('tab_settings'),
+window:win_setting
+</code></pre>
+
+<p>});</p>
+
+<p>var data = [];
+var ACTION_LANGUAGE = 0;</p>
+
+<p>var row = Ti.UI.createTableViewRow({
+  title: _(&#8216;language&#8217;),
+  hasChild: true,
+  action: ACTION_LANGUAGE,
+  className: &#8216;control&#8217;
+});</p>
+
+<p>var label_lang = Ti.UI.createLabel({
+  textAlign: &#8216;right&#8217;,
+  right: 10,
+  width: 175,
+  color: &#8216;#385487&#8217;,
+  font: {fontSize: 16},
+  text: L10N.getLanguageDisplayName()
+});</p>
+
+<p>row.add(label_lang);</p>
+
+<p>data.push(row);</p>
+
+<p>// create table view</p>
+
+<p>var tableview = Ti.UI.createTableView({
+  data:data,
+  style:Ti.UI.iPhone.TableViewStyle.GROUPED
+});</p>
+
+<p>// add table click listener</p>
+
+<p>tableview.addEventListener(&#8216;click&#8217;, function(e) {
+  var rowdata = e.rowData;
+  if (rowdata.action == ACTION_LANGUAGE) {</p>
+
+<pre><code>// show language selection dialog
+
+L10N.showLanguageSelectionDialog();
+</code></pre>
+
+<p>  }
+});</p>
+
+<p>win_setting.add(tableview);</p>
+
+<p>//
+//  add tabs
+//
+tabGroup.addTab(tab_formulas);<br/>
+tabGroup.addTab(tab_tips);<br/>
+tabGroup.addTab(tab_weibo);
+tabGroup.addTab(tab_setting);</p>
+
+<p>var omodes = [</p>
+
+<pre><code>Titanium.UI.PORTRAIT,
+Titanium.UI.UPSIDE_PORTRAIT,
+Titanium.UI.LANDSCAPE_LEFT,
+Titanium.UI.LANDSCAPE_RIGHT
+</code></pre>
+
+<p>];</p>
+
+<p>win_formulas.orientationModes = omodes;
+win_tips.orientationModes = omodes;
+win_weibo.orientationModes = omodes;</p>
+
+<p>Titanium.Analytics.featureEvent(&#8216;app.feature.blah&#8217;,{product:&#8217;killer&#8217;});</p>
+
+<p>tabGroup.addEventListener(&#8216;open&#8217;,function()
+{</p>
+
+<pre><code>Titanium.UI.setBackgroundColor('#fff');
+</code></pre>
+
+<p>});</p>
+
+<p>tabGroup.setActiveTab(0);
+tabGroup.open({</p>
+
+<pre><code>transition:Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+</code></pre>
+
+<p>});</p>
+
+<p>// add top level introduction of 31 formulas
+Ti.include(&#8220;introduction.js&#8221;);</p>
+
+<p>// synchronize db
+Ti.include(&#8220;synchronize.js&#8221;);</p>
+
+<p></code></p>
+
+<p>Prepare data while launching the app:
+<em><strong>synchronize.js</strong></em>
+<code lang="javascript">
+(function(){</p>
+
+<pre><code>var db = Titanium.Database.open('eq31formulas');
+
+    // JS test
+var currentTime = new Date();
+var month = currentTime.getMonth() + 1;
+var day = currentTime.getDate();
+var year = currentTime.getFullYear();
+
+Titanium.API.info('JS TIME:' + currentTime);
+// lesson = db.execute('SELECT * FROM LESSONS ORDER BY ID LIMIT 1')
+
+if (Titanium.Network.online == true)
+{
+    Titanium.API.info('Online--update lessons!');
+    var src = 'http://www.veecue.com/eq31formulas/data_service/lessons';
+    c = Titanium.Network.createHTTPClient();
+
+    c.onload = function()
+    {   
+        var json_data = JSON.parse(this.responseText);
+
+        Titanium.API.info('lesson count:' + json_data.length);
+
+        for(var i=0; i&lt;json_data.length; i++)
+        {
+            Titanium.API.info("updating lesson:" + i);
+            var record = json_data[i].lesson;
+            // add different control for UPDATE or INSERTION here
+            db.execute('CREATE TABLE IF NOT EXISTS LESSONS (ID INTEGER, TITLE TEXT, AIMS TEXT, ANSWER_ORDER TEXT, LANG_STEP TEXT, MODEL_ANSWER TEXT)');
+            db.execute('DELETE FROM LESSONS');
+            db.execute("INSERT INTO LESSONS (ID, TITLE, AIMS, ANSWER_ORDER, LANG_STEP, MODEL_ANSWER) VALUES(?,?,?,?,?,?)", record.id, record.title, record.aims, record.answer_order, record.lang_step, record.model_answer);   
+        }
+    };
+
+    // open the client
+    c.open('GET', src);
+
+    // send the data
+    c.send();
+}
+else
+{
+    Titanium.API.info('Offline--');
+    return;
+}   
+</code></pre>
+
+<p>})();
+</code></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/07/14/titanium-db-synchronization/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/30/iphone-android-application-based-on-titanium-and-html5/">iPhone/Android Application Based on Titanium and HTML5</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-06-30 00:00:00 +0800" pubdate  updated >Jun 30<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>After a two-day experiment on <a href="http://www.appcelerator.com/">Titanium framework</a> and HTML5 technology, I finally found, we can quickly move into iPhone/iPad application development if we have enough extra time to refactor our Rails core application into HTML5 version.</p>
+
+<p>I&#8217;ve made a Titanium based app demo to show how to structure the application according to our current system. Titanium framework includes plenty of powerful <a href="http://developer.appcelerator.com/doc/kitchensink">APIs</a> for us to generate cool &#8220;application container&#8221;, then we embed our content/system into this container. I think the Titanium can be organized clearly if we have clearly structured Rails/HTML5 application.</p>
+
+<p>Talking about HTML5, I just want to share with everyone the resources I found, Google just started a HTML5 support website named <a href="http://www.html5rocks.com/">html5rocks</a>, it has a <a href="http://www.html5rocks.com/resources.html">html5 resources page</a> where it includes almost every single HTML5 resource website I found in last two days. (html5rocks was born blocked..)</p>
+
+<p>PS, originally I want to show how I made a Titanium based iPhone application, but I found appcelerator really does a great job to help people getting started with Titanium, so I just quote it as below:</p>
+
+<blockquote>Titanium translates your hard won web skills into native applications that perform and look just like they were written in Objective-C [iPhone and iPad] or Java [Android]. With over 300 APIs, a thriving developer community, and the support you need, you can build applications that are more social, local, media rich, interactive, and extensible. <a href="http://developer.appcelerator.com/doc/mobile/get_started">Getting Started with Titanium Mobile</a>. All these information is clear and in detailed. Appcelerator does a great job to guide you to start.</blockquote>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/06/30/iphone-android-application-based-on-titanium-and-html5/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/20/renren-integration-into-eqenglish/">Renren Integration Into EQenglish</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-06-20 00:00:00 +0800" pubdate  updated >Jun 20<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img title="renren logo" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.41.10-AM-300x86.png" alt="" width="270" height="77" /></p>
+
+<p><a href="http://renren.com">The Renren Network</a>, which was formerly named Xiaonei Network is one of most successful Chinese social networking site. Renren is with an interface similar to that of <a href="http://www.facebook.com">Facebook</a>. It&#8217;s said that there are more than 22 million active users and estimated 40 million users who have registered their real names. Thus, Renren is widely considered to be the most powerful SNS service in Mainland China, especially among college students.</p>
+
+<p>And, <a href="http://www.eqenglish.com">EQEnglish</a> is the fastest growing 1:1 English training service powered by <a href="http://www.idapted.com" target="_blank">Idapted</a> in China. It&#8217;s delivering thousands of lessons a week to students all over China with its professional foreign teachers. Now, conveniently, all Renren&#8217;s users can login EQenglish directly without registration again, at the same time, EQenglish is also using Renren site&#8217;s platform <a href="http://wiki.dev.renren.com/wiki/API" target="_blank">API</a> to share learners&#8217; study status with the community. It&#8217;s obviously a win-win model for both EQenglish and Renren.</p>
+
+<p>Now, in order to introduce you about the integration between EQenglish and Renren SNS, let me take you go through the story.</p>
+
+<p>[caption id=&#8221;&#8221; align=&#8221;alignright&#8221; width=&#8221;270&#8221; caption=&#8221;Login EQenglish system via Renren account&#8221;]<img title="Login EQenglish system via Renren account" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-2.17.12-PM-300x205.png" alt="" width="270" height="185" />[/caption]</p>
+
+<p>To login EQenglish via Renren account, you need to, at least have one Renren account, then on EQenglish portal you will see a login form  as right after you click &#8220;Connect via Rreren&#8221;. After you input your user name and password EQenglish will present you a guide page on which you decide to bundle your exist EQ account with your Renren account or just every time use your Renren account login EQ platform.</p>
+
+<p>What will happen next when you do the login?</p>
+
+<p>On EQenglish website, you will be marked with a Renren icon and you can share EQ learning materials or EQ discussion thread or EQ study status with your Renren friends. For instance, you just discussed an EQ lesson named &#8220;EQ IELTS Formula 26: Evaluating Two Different Opinions&#8221; with your classmates on EQenglish studycenter, then the system will send this discussion status to your Renren friends, something like &#8220;Hey, I am discussing an interesting EQ lesson on their website, come and join in, it&#8217;s cool..&#8221;, surely, it&#8217;s based on your Renren setting on connected websites.</p>
+
+<p>There, on Renren website, is also an <a href="http://page.renren.com/699099142/index" target="_blank">application home page</a> where all the EQ followers can keep talking about their EQ study story or learning experience, At the same time, EQ consultants spread out EQ learning tips with all its fans. In past two weeks, there are more than 300 learners follow EQ application in Renren Site. People rate <a href="http://page.renren.com/699099142/reviews" target="_blank">many 5-stars</a> for this connection application.</p>
+
+<div class="mceTemp"><dl id="attachment_202" class="wp-caption alignright" style="width: 563px;"><dt><img title="EQ application home page on Renren site" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.21.01-AM.png" alt="" width="553" height="285" /></dt><dd>EQ application home page on Renren site</dd></dl></div>
+
+
+<p>So, users conveniently use their Renren accounts to login EQenglish. The user may then grant EQenglish access to their public data including: Real identity information, social graph, etc. Using this information, EQenglish can expand leaner base and strengthen the social aspects of EQ self. What&#8217;s useful is, Renren users can find all the valuable information on EQenglish message feeds through their friends feeds, People can make content(EQ learning materials), or anything else(lesson discussion thread) available for sharing.</p>
+
+<p>Technically, this integration is still have big room to improve, it depends on Renren&#8217;s open platform, We are ready to enhance user experience for all EQenglish learners, We always believe in a formula when we development EQenglish learning system, that is:
+Great Technology + Clear Convenience = Comfortable Awesome</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/06/20/renren-integration-into-eqenglish/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/06/16/experiment-bowline/">Experiment Bowline</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-06-16 00:00:00 +0800" pubdate  updated >Jun 16<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote>Bowline is a framework for making cross platform desktop applications in Ruby, HTML and JavaScript.
+
+If you&#8217;ve ever wished creating a desktop application was as simple as creating a Rails website, Bowline&#8217;s for you.
+
+Bowline respects MVC, you can design your views in HTML5/CSS3 - then bind them to your Ruby models. There&#8217;s no request/response cycle - any changes in models automatically get reflected in the view.</blockquote>
+
+
+<p style="text-align: right;"><strong>See : <a href="http://bowlineapp.com/">http://bowlineapp.com/</a></strong></p>
+
+
+<p>Experiment on this framework:</p>
+
+<p><strong>Requirements:</strong></p>
+
+<ul>
+<li>Mac OSX &gt;=10.5 or Ubuntu &#8212;&#8211;&gt; [I am on Ubuntu 9.04]</li>
+<li>Ruby 1.9 &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;&gt; [I use <a href="http://rvm.beginrescueend.com/">RVM</a> to switch ruby between different version]</li>
+<li>Bowline gem &#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;&gt; sudo gem install <a href="http://github.com/maccman/bowline">bowline</a></li>
+</ul>
+
+
+<p><strong>RVM</strong></p>
+
+<ul>
+<li><a href="http://rvm.beginrescueend.com/rvm/install/">Install RVM</a> to manage Ruby easily, then you decide which version you will use.</li>
+</ul>
+
+
+<p>OK, Now create an application in an easy way:
+<span style="color: #0000ff;"><em>&gt;&gt; bowline-gen app helloworld
+&gt;&gt; cd helloworld
+&gt;&gt; bowline-bundle
+&gt;&gt; ./script/run</em></span></p>
+
+<p>Unluckily, On Ubuntu 9.0.4, There is an error about a needed lib when I run the application, see
+<span style="color: #0000ff;"><em>/usr/lib/libstdc++.so.6: version `GLIBCXX_3.4.11&#8217; not found (required by /home/andy/.bowline/bowline-desktop)</em></span></p>
+
+<p>I searched around and found it&#8217;s something wrong with gcc version, or these is still a webkit lib involved issue under Ubuntu9.0.4, anyway, it&#8217;s interesting to me, I am now wondering if we can reference some bowline experience to create iphone/ipad application based on ruby on rails. not sure, I am researching in advance.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/06/16/experiment-bowline/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/05/19/learn-from-renren-api/">Learn From Renren API</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-05-19 00:00:00 +0800" pubdate  updated >May 19<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Been working on Renren Connect application for a while, when talking about its API, I think every coin has two sides, so let&#8217;s see its sides:</p>
+
+<p>A(davantage) side :
+1. Configure cross domain file to resolve JS cross-domain issue between application domain and renren domain. Not sure if a similar solution can solve our ajax load cross domain-issue.. or meet our other future use. The file as below:
+<code lang="html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head></p>
+
+<pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+</code></pre>
+
+<p></head>
+<body></p>
+
+<script src="http://static.connect.renren.com/js/v1.0/XdCommReceiver.jsp" type="text/javascript"></script>
+
+
+<p></body>
+</html>
+</code></p>
+
+<ol>
+<li>Learn from Renren &#8220;markable language&#8221;, it&#8217;s an clear way to capsule complex code block. It may help us to build standard function/display lib in future, I guess its a good way to reuse component among applications. sample is:
+<code lang="html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xn="http:///www.renren.com/2009/xnml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Renren Connect</title>
+</head>
+<body>
+&lt;xn:login-button autologoutlink="true">&lt;/xn:login-button>
+<script type="text/javascript" src="http://static.connect.renren.com/js/v1.0/FeatureLoader.jsp"></script>
+<script type="text/javascript">
+ XN_RequireFeatures(["EXNML"], function()
+ {
+   XN.Main.init("16356ddc758343a39400837e79f1a18e", "/xd_receiver.html");
+ });
+</script>
+</body>
+</html>
+</code>
+Above two technologies are a bit impressive to me, we may use it in future to organize our platform somehow.</li>
+</ol>
+
+
+<p>D(isadvantage) side:
+1. I think the first &#8220;D&#8221;, which is also bad, is the development document. It&#8217;s partially out-of-date, that results in many stupid tries for their API. So we should learn the lesson and plan to write handful document in a clear way..</p>
+
+<ol>
+<li>The second &#8220;D&#8221; is Renren doesn&#8217;t have convenient sandbox for testing the third party application, we can&#8217;t easily test or improve it when it&#8217;s released, cause Renren only has one single configuration for each one application, that also means we have to take risk for further development which may change your application directly when it&#8217;s released.</li>
+</ol>
+
+
+<p>Summary:
+Great Technology + Clear Convenience = Comfortable Awesome</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/05/19/learn-from-renren-api/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/28/overview-of-renren-connect-application/">Overview of RenRen Connect Application</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-04-28 00:00:00 +0800" pubdate  updated >Apr 28<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’ve read <a href="http://wiki.dev.renren.com/wiki/%E9%A6%96%E9%A1%B5">RenRen development Doc</a> and tried some simple feature for a while, its platform is interesting and exciting, but much of its document is out of date(I guess it’s not been maintained for a time). so there are pains to test most of its APIs, here I will roughly introduce what we can do based on RenRen open platform.</p>
+
+<p>First of all, RenRen platform supports <a href="http://wiki.dev.renren.com/wiki/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">five types of APPLICATION</a>, which are:
+– RenRen Canvas. It means application/content is embedded in RenRen’s web container via XNML/IFrame/OpenSocial-Gadget etc.
+– Mobile Wap application.
+– RenRen Connect. It means an external website is connected to RenRen, the two sites can share many different infos according to the channel/bridge API.
+– Desktop Application.
+– Mobile Client Application.</p>
+
+<p>Obviously, RenRen Connect is what developer need upon first step. So the question is how does it work? Follow me, I will go through the imagined application to show what feature developer can build according to RenRen connect API, now go:</p>
+
+<ol>
+<li><p>Tom is a RenRen user, he just find an “application” which tells him he can improve his oral English, that’s interesting, he clicks it in order to add the application to his list.</p></li>
+<li><p>Then he find EQenglish.com, he uses his RenRen account to login EQenglish, He find he can order an speaking evaluation for free on the website, and what’s more, he even can push this message and/or the study status to his RenRen friends.</p></li>
+<li><p>Tom goes through EQenglish website to check EQ learning methods, He can easily share the web page to his RenRen friends.</p></li>
+<li><p>Andy is an EQenglish user, he bundles his EQ account and RenRen account on EQenglish website, so he can push his study status to his RenRen friends.</p></li>
+<li><p>Andy finally buy a course, then all EQ learners who have RenRen accounts can receive an email/notification, in which it broadcasts “Andy buy a course ***” something like that.</p></li>
+<li><p>Once Andy discussed an EQ lesson, his comments is synced to his RenRen status, all of his Friends there can see his status.</p></li>
+<li><p>Tom finds Andy’s EQ profile via the discussion thread, the surprise is Andy’s is his School mate, they have the same IELTS exam time. They connect with each other on RenRen.</p></li>
+<li><p>What’s more, Tom finds a section in EQ website, He can pick up all his Friends list, and suggest them to use EQ service. Also aside the lesson discussion thread, there is a live stream box connecting to RenRen page. so He can easily comment with friend..</p></li>
+</ol>
+
+
+<p>Etc..</p>
+
+<p>Above is a rough introduction of RenRen connect feature developer can build(it is based on RenRen connect’s API, not just my imagination).<a href="http://wiki.dev.renren.com/wiki/%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3">Click here to review RenRen Conncet Production Description.</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/04/28/overview-of-renren-connect-application/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/19/why-you-should-use-dropbox/">Why You Should Use Dropbox</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-04-19 00:00:00 +0800" pubdate  updated >Apr 19<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>点击下面的连接注册Dropbox：
+<a href="https://www.dropbox.com/referrals/NTQ4OTQyNjk5" target="_blank">https://www.dropbox.com/referrals/NTQ4OTQyNjk5</a></p>
+
+<p>为什么要使用Dropbox？因为非常非常有用，赶紧了解一下啦～<a href="http://www.google.com/search?hl=en&amp;newwindow=1&amp;q=%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8dropbox&amp;btnG=Search&amp;aq=f&amp;aqi=&amp;aql=&amp;oq=&amp;gs_rfai=" target="_blank">点击查看</a>～</p>
+
+<p>这里面有个明显的阳谋，那就是：你通过上面的连接注册并且使用的话，我能得到额外赠送的使用空间，哈哈～</p>
+
+<p>谢谢！</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/04/19/why-you-should-use-dropbox/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/12/update-iphone-to-3.1.2/">Update iPhone to 3.1.2</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-04-12 00:00:00 +0800" pubdate  updated >Apr 12<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>我的一代小i从08年挺到现在，昨天刷机至3.1.2OS以后焕然一新，随后爱不释手，一直玩到深夜。不管是从性能还是整体的感觉，这个版本的一代iphone真是帅到极致。</p>
+
+<p>两年前夏天的一个下午，我从两点到凌晨两点，一直再研究刷机，即使到现在我也一直弄不明白破解和越狱有什么区别，那次我花了12个小时，开始对复杂的刷机过程心生惧怕。随后过了大概一年，就是现在的一年之前，很好奇iphone能不能在ubuntu上面同步itunes，结果机子就横在哪里，不得已，花了大概三个小时刷机并且试图回复所有的联系人和照片，即便那次更新成功，心里仍然留下了不小的伤痕，这叫一个麻烦。更要命的是后来的机子一直不稳定，经常crash。</p>
+
+<p>而这一次，我仅仅用了30分钟，并且在这三十分钟里面我还解决了一个比较奇怪的问题，感叹科技的进步，渐渐的，生活只需要一个action，action背后的逻辑似乎越来越不需要暴露出来。</p>
+
+<p>刷机TIPS: 解决刷机时候1604错误的方法。(同时秀一下新刷的iphone下面使用twitbird的截图 :))
+<a href="http://blog.wangyaodi.com/wp-content/uploads/2010/04/20100412.jpg"><img src="http://blog.wangyaodi.com/wp-content/uploads/2010/04/20100412.jpg" alt="" title="TwitBird" width="320" height="480" class="aligncenter size-full wp-image-452" /></a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/04/12/update-iphone-to-3.1.2/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/">JS: Select All Checkbox and Submit Form via Js</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-04-12 00:00:00 +0800" pubdate  updated >Apr 12<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><strong>TIPS:</strong>
+
+<code lang='js'>
+<script type="text/javascript">
+  function SetAllCheckBoxes(FormName, FieldName, CheckValue)
+  {
+    if(!document.forms[FormName])
+      return;
+    var objCheckBoxes = document.forms[FormName].elements[FieldName];
+    if(!objCheckBoxes)
+      return;
+    var countCheckBoxes = objCheckBoxes.length;
+    if(!countCheckBoxes)
+      objCheckBoxes.checked = CheckValue;
+    else
+    // set the check value for all check boxes
+      for(var i = 0; i < countCheckBoxes; i++)
+        objCheckBoxes[i].checked = CheckValue;
+  }
+
+  function SendForm(FormName, ActionName)
+  {
+    if(!document.forms[FormName])
+      return;
+    if(ActionName == 'unread')
+      document.forms[FormName].action = '<%= batch_update_notifications_path(:type => "unread") %>';
+    if(ActionName == 'remove')
+      document.forms[FormName].action = '<%= batch_update_notifications_path(:type => "remove") %>';
+    document.forms[FormName].submit();
+  }
+</script>
+</code>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+<nav role="pagination">
+  <div>
+    
+      <a class="prev" href="/page5/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+      <a class="next" href="/page3/">Newer &rarr;</a>
+    
+  </div>
+</nav>
+
+<script type="text/javascript">
+    var disqus_shortname = 'andywangshome';
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</div>
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

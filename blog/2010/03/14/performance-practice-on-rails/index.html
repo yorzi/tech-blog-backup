@@ -1,0 +1,298 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Andy Wang's Blog: Performance Practice On Rails</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://yorzi.github.com/blog/2010/03/14/performance-practice-on-rails/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Andy Wang's Blog" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Andy Wang's Blog</a></h1>
+  
+    <h2>All about Ruby/Rails/Javascript/CoffeeScript</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:yorzi.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Performance Practice on Rails</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-03-14 00:00:00 +0800" pubdate  updated >Mar 14<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>﻿﻿﻿﻿Last few days, I&#8217;ve been mainly struggling with performance issue which was sent to me on Monday. On Rails side, I didn&#8217;t add enough necessary cache before I was told about the performance issue. Then I spent two days to improve it by adding cache every where I missed to do that before.</p>
+
+<p>Some shares and confusions as below:</p>
+
+<p>Shares:
+1> A very useful educational website about scaling Rails where there are <a href="http://railslab.newrelic.com/2009/01/22/introduction">Scaling Rails Screencast Series</a> produced by Gregg Pollack and supported by New Relic.
+2> Fragment cache.</p>
+
+<pre><code>  If you add many fragment cache in view, it's really a pain when you expire your cache, so I found there is a better way to expire your cache: if the cached block involves a model, for example, learner's sidebar involves "User" model's change, so I just name the cache with User model's "updated_at", so I don't need to expire this cache, it will be done automatically.
+</code></pre>
+
+<p><code lang="ruby">
+  &lt;% cache("sidebar-profile-avatar-#{current_user.id}-#{current_user.updated_at.to_i}") do -%></p>
+
+<pre><code>&lt;div class="sbb_title"&gt;&lt;%= t :my_profile %&gt;&lt;/div&gt;
+&lt;div class="sbb_content"&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" class="profile_table"&gt;
+    &lt;tr&gt;
+      &lt;td width="100" rowspan="2" align="center" valign="top"&gt;
+        &lt;img src="&lt;%= current_user.avatar_url || "/assets/images/portrait_demo.gif" %&gt;" width="90" height="90" /&gt;
+      &lt;/td&gt;
+      &lt;td width="110" height="24"&gt;&lt;%= display_learner([current_user], nil) %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td valign="top"&gt;&lt;strong&gt;&lt;%= t :my_goal %&gt;&lt;/strong&gt;&lt;%= display_oral_score(current_user.try(:study_info).try(:target_score)) %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;% end -%&gt;
+</code></pre>
+
+<p></code>
+3> Memcached. Cache whatever you want:
+<code lang="ruby">
+  def related_lessons</p>
+
+<pre><code>cache_key = "related_lessons_for_item#{self.id}"
+return Rails.cache.read(cache_key) unless Rails.cache.read(cache_key).nil?
+if content_type == "Scenario"
+  lessons = unit.extra_items.all(:conditions =&gt; {:content_id =&gt; content.extra_lessons.map(&amp;:id)})
+elsif content_type == "ExtraLesson"
+  lessons = [content.scenario.try(:item)]
+end
+Rails.cache.write(cache_key, lessons)
+return lessons
+</code></pre>
+
+<p>  end
+</code></p>
+
+<p>Confusions:
+1> It takes much time to render a partial view. that&#8217;s pretty confusing to me. Some logs as below:
+<code lang="ruby">
+Cached fragment hit: views/sidebar-profile-roadmap-1268271150 (0.9ms)
+Rendered shared/_sidebar_profile (109.8ms)
+</code>
+It seems like even the cached fragment is found, there still needs much time to render the partial..</p>
+
+<p>2> From the log, I saw every request to &#8220;roadmap&#8221; index action will do the following stuff first, It&#8217;s slow. But what that?
+<code lang="ruby">
+&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#
+</code></p>
+
+<p>Any ideas on my confusions? All the involving clues are warmly welcomed.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andy Wang</span></span>
+
+      
+
+
+
+
+<time datetime="2010-03-14 00:00:00 +0800" pubdate  updated >Mar 14<span>th</span>, 2010</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/Ruby-On-Rails/'>Ruby On Rails</a>, <a class='category' href='/blog/categories/cache/'>cache</a>, <a class='category' href='/blog/categories/fragment-cache/'>fragment-cache</a>, <a class='category' href='/blog/categories/memcached/'>memcached</a>, <a class='category' href='/blog/categories/performance/'>performance</a>, <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/render-partial/'>render-partial</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yorzi.github.com/blog/2010/03/14/performance-practice-on-rails/" data-via="yorzi" data-counturl="http://yorzi.github.com/blog/2010/03/14/performance-practice-on-rails/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'andywangshome';
+  var disqus_identifier = 'http://yorzi.github.com/blog/2010/03/14/performance-practice-on-rails/';
+  var disqus_url = 'http://yorzi.github.com/blog/2010/03/14/performance-practice-on-rails/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

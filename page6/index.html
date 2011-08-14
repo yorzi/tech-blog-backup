@@ -1,0 +1,819 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Andy Wang's Blog</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://yorzi.github.com/page6/index.html"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="Andy Wang's Blog" type="application/atom+xml"/>
+  
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Andy Wang's Blog</a></h1>
+  
+    <h2>All about Ruby/Rails/Javascript/CoffeeScript</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:yorzi.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/22/sessions-and-cookies-in-ruby-on-rails/">Sessions and Cookies in Ruby on Rails</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-22 00:00:00 +0800" pubdate  updated >Dec 22<span>nd</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><ol style="list-style-type: none; list-style-image: none; list-style-position: outside; margin-left: 0px;">
+    <li>最近读了一篇文章，里面介绍了Session和Cookie在RoR开发中的使用方法，英文还不错的同学请<a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#scinrails" target="_blank">直接读这篇文章</a>。我仅仅在这篇Post里面做个整理，把那些有用的资料在此备份，免得下回又的麻烦Google。上面提到的文章很全面的介绍了很多细节，目录如下：
+<ol style="list-style-type: none; list-style-position: outside; margin-left: 0px;">
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sintro" target="_blank"><strong>Introduction</strong></a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#ssessions" target="_blank"><strong>Sessions</strong></a>
+<ol style="margin-top: 0.4em; margin-right: 0.4em; margin-bottom: 1em; margin-left: 1.4em;">
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sinrails" target="_blank">Session in rails</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sconfig" target="_blank">Configure your sessions</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sstorage" target="_blank">Storage options</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#slimitations" target="_blank">Session storage limitations</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#ssecurity" target="_blank">Session and Security</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#showto" target="_blank">HowTo</a>
+<ol style="margin: 0.4em;">
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sexpire" target="_blank">Implement session expiration</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sstale" target="_blank">Delete stale sessions</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#sactive" target="_blank">Find out active users</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#ssessionid" target="_blank">Access session data using session_id</a></li>
+</ol>
+</li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#smisc" target="_blank">Miscellaneous</a></li>
+</ol>
+</li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#scookies" target="_blank"><strong>Cookies</strong></a>
+<ol style="margin-top: 0.4em; margin-right: 0.4em; margin-bottom: 1em; margin-left: 1.4em;">
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#scinrails" target="_blank">Cookie on rails</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#scvr" target="_blank">cookies vs. request.cookies</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#scookiejar" target="_blank">CookieJar</a></li>
+    <li><a style="color: #2244bb;" href="http://www.quarkruby.com/2007/10/21/sessions-and-cookies-in-ruby-on-rails#scmisc" target="_blank">Miscellaneous</a></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/22/sessions-and-cookies-in-ruby-on-rails/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/22/formtastic-for-rails/">Formtastic for Rails</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-22 00:00:00 +0800" pubdate  updated >Dec 22<span>nd</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>
+
+I&#8217;ve been working on EQ portal during these days, I wanna share a useful gem which I used, it is called <a href="http://github.com/justinfrench/formtastic/tree/0.9.7">Formtastic</a>. it&#8217;s a nice way to create form via formtastic, so the finial form is something like:
+<code lang="ruby">
+<% semantic_form_for @landing, :url=>admin_landings_path do |form| %>
+  <p>
+    <% form.inputs do %>
+      <%= form.input :title, :label => 'Title' %>
+      <%= form.input :url_slug, :label => 'Url slug' %>
+      <%= form.input :meta, :label => 'Meta' %>
+      <%= form.input :content, :label => 'Content' %>
+    <% end %>
+  </p>
+  <p><%= form.buttons %></p>
+<% end %>
+</code>
+
+Then it will generate HTML like this:
+<code lang='ruby'>
+<form action="/admin/landings" class="formtastic landing" id="new_landing" method="post"><div style="margin:0;padding:0;display:inline"><input name="authenticity_token" type="hidden" value="EC9WF1oK80Iq6X4NegSkBfVx5gLiYWvBEd7VeNKWHio=" /></div>
+  <p>
+    <fieldset class="inputs"><ol>
+      <li class="string required" id="landing_title_input"><label for="landing_title">Title<abbr title="required">*</abbr></label><input id="landing_title" maxlength="255" name="landing[title]" size="30" type="text" /></li>
+      <li class="string required" id="landing_url_slug_input"><label for="landing_url_slug">Url slug<abbr title="required">*</abbr></label><input id="landing_url_slug" maxlength="255" name="landing[url_slug]" size="30" type="text" /></li>
+      <li class="text required" id="landing_meta_input"><label for="landing_meta">Meta<abbr title="required">*</abbr></label><textarea cols="40" id="landing_meta" name="landing[meta]" rows="20"></textarea></li>
+      <li class="text required" id="landing_content_input"><label for="landing_content">Content<abbr title="required">*</abbr></label><textarea cols="40" id="landing_content" name="landing[content]" rows="20"></textarea></li>
+
+    </ol></fieldset>
+  </p>
+  <p><fieldset class="buttons"><ol><li class="commit"><input class="create" id="landing_submit" name="commit" type="submit" value="Create Landing" /></li></ol></fieldset></p>
+</form>
+</code>
+Also, it can be configured well in display style(not try yet), as well as working with this <a href="http://github.com/redinger/validation_reflection">validation plugin</a>
+
+There is a more detailed Doc at: <a href="http://rdoc.info/rdoc/justinfrench/formtastic/blob/35eadf9a0f3e30101993419c3dd3327fb2fdd0b6/Formtastic/SemanticFormBuilder.html">http://rdoc.info/rdoc/justinfrench/formtastic/blob/35eadf9a0f3e30101993419c3dd3327fb2fdd0b6/Formtastic/SemanticFormBuilder.html</a>.  And samples at: <a href="http://asciicasts.com/episodes/184-formtastic-part-1">http://asciicasts.com/episodes/184-formtastic-part-1</a>
+
+Enjoy it.</div>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/22/formtastic-for-rails/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/18/2010-future-technologies/">2010 - Future Technologies</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-18 00:00:00 +0800" pubdate  updated >Dec 18<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p style="padding: 0px; margin: 0px;">技术总是向前发展，那么，2010年CIO和IT管理人员应该重点关注那些技术呢？</p>
+
+
+<p style="padding: 0px; margin: 0px;"></p>
+
+
+<p style="padding: 0px; margin: 0px;">通过对数位行业分析师、供应商、用户、IT专业人员、系统集成商的调查和访问，我们总结出了2010年IT领域10个非常有前景的发展领域，它们是：</p>
+
+
+<p style="padding: 0px; margin: 0px;"></p>
+
+
+<p style="padding: 0px; margin: 0px;">1.云计算（cloud computing）</p>
+
+
+<p style="padding: 0px; margin: 0px;">2.绿色IT（Green IT）</p>
+
+
+<p style="padding: 0px; margin: 0px;">3.虚拟化（Virtualization）</p>
+
+
+<p style="padding: 0px; margin: 0px;">4.生物特征身份认证（Biometric authentication）</p>
+
+
+<p style="padding: 0px; margin: 0px;">5.下一代防火墙（Next-generation firewalls）</p>
+
+
+<p style="padding: 0px; margin: 0px;">6.员工拥有IT（employee-owned IT）</p>
+
+
+<p style="padding: 0px; margin: 0px;">7.忠诚方案&#8221;(loyalty schemes)</p>
+
+
+<p style="padding: 0px; margin: 0px;">8.固态硬盘（Solid state disks）</p>
+
+
+<p style="padding: 0px; margin: 0px;">9.智能网格（Smart grids）</p>
+
+
+<p style="padding: 0px; margin: 0px;">10.混合式服务器（Hybrid servers）</p>
+
+
+<p style="padding: 0px; margin: 0px;"></p>
+
+
+<p style="padding: 0px; margin: 0px;">原文：<a href="http://www.javaeye.com/news/12479" target="_blank">http://www.javaeye.com/news/12479</a></p>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/18/2010-future-technologies/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/17/chrome-on-ubuntu9-04/">Chrome on Ubuntu9.04</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-17 00:00:00 +0800" pubdate  updated >Dec 17<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Chrome刚出来的时候，没有支持Ubuntu的版本，所以一直没有用，前几天出了<a href="http://www.google.com/chrome/index.html?hl=zh_cn&brand=CHMA&utm_campaign=zh_cn&utm_source=zh_cn-ha-apac-zh_cn-bk&utm_medium=ha">支持Linux/Mac的版本</a>，这几天太忙没顾上尝试一下，今天上午装上一看，简直太帅了。</p>
+
+<p>如果你是一个Google的Fans，那你一定会喜欢Chrome，它的扩展相较<a href="http://www.mozillaonline.com/">FF</a>虽然还不是很丰富，但是我很喜欢的几款应用都有相应的Extention，比方：<a href="http://www.shareaholic.com/">shareaholic</a>, <a href="http://www.evernote.com/">Evernot</a>, <a href="http://www.rememberthemilk.com/">RTM</a>, <a href="http://www.aviary.com">Aviary</a>等等。除了这些，Chrome和GMail/GR/GC的结合还都不错，简直方便极了。</p>
+
+<p>重要的是，突然感觉屏幕大了很多，上面至少省出来150PX。
+现在我通常就得开三种浏览器了，工作的事情用FF，测试的时候用Galeon，自己的页面都转移到Chrome上面来。Oyeah！</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/17/chrome-on-ubuntu9-04/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/16/seo-tools/">SEO Tools</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-16 00:00:00 +0800" pubdate  updated >Dec 16<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>友情链接检测工具：<a href="http://link.chinaz.com/">http://link.chinaz.com/</a></p>
+
+<p>关键词排名查询工具：<a href="http://tool.chinaz.com/KeyWords/">http://tool.chinaz.com/KeyWords/</a></p>
+
+<p>关键词密度查询：<a href="http://tool.chinaz.com/Tools/Density.aspx">http://tool.chinaz.com/Tools/Density.aspx</a></p>
+
+<p>模拟搜索引擎抓取工具：<a href="http://tool.chinaz.com/Tools/Robot.aspx">http://tool.chinaz.com/Tools/Robot.aspx</a></p>
+
+<p>网页MATA信息检测：<a href="http://tool.chinaz.com/Tools/MetaCheck.aspx">http://tool.chinaz.com/Tools/MetaCheck.aspx</a></p>
+
+<p>百度近日收录查询：<a href="http://tool.chinaz.com/baidu/">http://tool.chinaz.com/baidu/</a></p>
+
+<p>Google网站管理员工具：<a href="http://www.google.com/webmasters/tools/?hl=zh_CN">http://www.google.com/webmasters/tools/?hl=zh_CN</a></p>
+
+<p>雅虎站长工具：<a href="http://sitemap.cn.yahoo.com/">http://sitemap.cn.yahoo.com/</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/16/seo-tools/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/15/yorzi-in-search/">&#8216;Yorzi&#8217; in Search</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-15 00:00:00 +0800" pubdate  updated >Dec 15<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>今天无意间search了一下“yorzi”，结果令我大吃一惊&#8230;.</p>
+
+<p>Google.cn : <a href="http://www.google.cn/search?hl=zh-CN&newwindow=1&q=yorzi&btnG=Google+%E6%90%9C%E7%B4%A2&aq=f&oq=">5030条记录</a>
+Google.com : <a href="http://www.google.com/search?hl=en&source=hp&q=yorzi&aq=f&oq=&aqi=g10">5010条记录</a>
+cn.bing.com : <a href="http://cn.bing.com/search?q=yorzi&form=QBLH&filt=all&qs=n">108条记录</a>
+Bing.com : <a href="http://www.bing.com/search?q=yorzi&form=QBLH&scope=web&qs=n">146条记录</a>
+Baidu.com : <a href="http://www.baidu.com/s?bs=yorzi&f=8&wd=yorzi">256条记录</a></p>
+
+<p>而我相信，此篇发布以后，Google的数量会上升，而其他估计没反应。。</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/15/yorzi-in-search/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/15/seo-on-rails/">SEO on Rails</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-15 00:00:00 +0800" pubdate  updated >Dec 15<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>This post is a copy of my work stuff, but I want to archive all the links below, they are all about SEO on Rails application, as well as a useful post about jQuery on Rails.
+<div>
+
+Finally, we decided to create a Rails App for the EQV2 New Website, so I did several homework for this mission. They are:
+
+1. SEO on Rails.
+Several rules/good points for seo according to the following websites:
+1&gt; <a href="http://www.elctech.com/articles/rails-seo-starter-guide">http://www.elctech.com/articles/rails-seo-starter-guide</a>
+2&gt; <a href="http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/">http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/</a>
+3&gt; <a href="http://www.seoonrails.com/">http://www.seoonrails.com/</a>
+4&gt; <a href="http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx">http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx</a>
+
+2. Maybe use JQuery more in EQV2.
+1&gt; <a href="http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/">http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/</a>
+2&gt; <a href="http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063">http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063</a>
+
+3. Cache Views.
+
+MORE IDEAS?
+
+But, first version should be structured well and make sure it&#8217;s been done before the &#8220;deadline&#8221;, so this app will be according to the recommendation but not totally implemented in the best way, in all, it still needs your suggestion.</div>
+</div>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/15/seo-on-rails/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/11/rails-application-templates/">Rails Application Templates</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-11 00:00:00 +0800" pubdate  updated >Dec 11<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When talking about templates in Rails, usually people mean the templates which help to re-use views, but this templates is a <a href="http://github.com/rails/rails/commit/e8cc4b116c460c524961a07da92da3f323854c15">feature after Rails 2.3 for generating Rails application</a> easily, so give it a try if you haven&#8217;t used it yet.</p>
+
+<p>It&#8217;s helpful for me to create Rails application according to similar skeleton, a sample below was written about one year ago, but recently I want to create a new application with the same environment/configuration.</p>
+
+<p><code lang="ruby"></p>
+
+<h1>idapted_template.rb</h1>
+
+<p>generate :rspec</p>
+
+<p>environment 'config.time_zone = "Beijing"'
+environment 'config.i18n.default_locale = :zh'</p>
+
+<p>name = ask("What's app's name?")
+file 'config/site_config.yml', &lt;&lt;-CODE
+app: #{name}
+domain: mydomain
+CODE</p>
+
+<p>user = ask("What's db user name?")
+pwd = ask("What's db user password?")
+file 'config/database.yml', &lt;&lt;-CODE
+development:
+  adapter: mysql
+  encoding: utf8
+  database: #{name}_development
+  user: #{user}
+  password: #{pwd}
+  pool: 5
+  timeout: 5000</p>
+
+<p>test:
+  adapter: mysql
+  encoding: utf8
+  database: #{name}_test
+  user: #{user}
+  password: #{pwd}
+  pool: 5
+  timeout: 5000</p>
+
+<p>production:
+  adapter: mysql
+  encoding: utf8
+  database: #{name}_production
+  user: #{user}
+  password: #{pwd}
+  pool: 5
+  timeout: 5000
+CODE</p>
+
+<p>rake 'db:create:all'
+rake 'db:sessions:create'
+rake 'db:migrate'</p>
+
+<p>gem 'idp_helpers'
+gem 'idp_core'</p>
+
+<p>run "rm public/index.html"</p>
+
+<p>run "rm -rf tmp log"
+run "svn import . http://mydomain.com/svn/projects/applications/#{name} -m 'add new app'"
+run "rm -rf *"
+run "svn checkout http://mydomain.com/svn/projects/applications/#{name} ."</p>
+
+<p>file 'ignore_list', &lt;<-CODE
+log
+tmp
+nbproject
+CODE
+run "svn propset svn:ignore -F ignore_list ."
+run "rm ignore_list"
+run "svn commit -m 'set svn ignore'"
+</code></p>
+
+<p>There are several useful commands which help you write powerful templates, you can learn more good examples <a href="http://m.onkey.org/2008/12/4/rails-templates">here</a>. or watch Ryan&#8217;s Railscasts about <a href="http://railscasts.com/episodes/148-app-templates-in-rails-2-3">App Templates in Rails 2.3</a>.</p>
+
+<p>Enjoy it.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/11/rails-application-templates/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby/">Comparing Equality (==, Eql?, Equal?) and Case Equality (===) in Ruby</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-09 00:00:00 +0800" pubdate  updated >Dec 9<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>In weekly code review, GL mentioned a weird issues :
+<code lang="ruby">
+def self.test(obj)</p>
+
+<pre><code>case obj.class
+when Student, TrialPlan
+  puts "1"
+when Call
+  puts "2"
+else
+  puts "3"
+end
+</code></pre>
+
+<p>end
+</code>
+This doesn&#8217;t behave as expected. When we run test(Student.first), it prints out &#8220;3&#8221;!</p>
+
+<p>but this works fine.
+<code lang="ruby">
+def self.test(obj)</p>
+
+<pre><code>case obj.class.to_s
+when "Student", "TrialPlan"
+  puts "1"
+when "Call"
+  puts "2"
+else
+  puts "3"
+end
+</code></pre>
+
+<p>end
+</code></p>
+
+<p>Then I searched around for explaining this, I found the <em>case statement</em> in Ruby is very different with what in other languages. Ruby implements the Case statement according to its special operator &#8220;===&#8221;, which is not the same as &#8220;==&#8221;.</p>
+
+<p>what&#8217;s difference? See below explainations:
+<a href="http://www.skorks.com/2009/08/how-a-ruby-case-statement-works-and-what-you-can-do-with-it/">how-a-ruby-case-statement-works-and-what-you-can-do-with-it/</a>
+<a href="http://blog.mustmodify.com/2008/11/ruby-case-statement-comparison-feature.html">ruby-case-statement-comparison-feature.html</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2009/12/07/love-named_scope/">Love Named_scope</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-07 00:00:00 +0800" pubdate  updated >Dec 7<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Rails Best Practice Snippet: About named_scope.
+Reference link to the PDF. <a rel="attachment wp-att-125" href="http://tech.wangyaodi.com/?attachment_id=125">Rails-best-practices.</a></p>
+
+<p>named_scope is a Rails 2.x feature which can simplify your rails code, move your finders into their own Model, and compact the code logically and gracefully. Below code refactoring is a named_scope sample to show the tricky.</p>
+
+<p><strong>BEFORE</strong>
+<code lang="ruby">
+class PostController &lt; ApplicationController
+  def search</p>
+
+<pre><code>conditions = { :title =&gt; "%#{params[:title]}%" } if params[:title]
+conditions.merge!{ :content =&gt; "%#{params[:content]}%" } if params[:content]
+case params[:order]
+  when "title" : order = "title desc"
+  when "created_at" : order = "created_at"
+end
+if params[:is_published]
+  conditions.merge!{ :is_published =&gt; true }
+end
+@posts = Post.find(:all, :conditions =&gt; conditions, :order =&gt; order,
+                         :limit =&gt; params[:limit])
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p><strong>AFTER</strong>
+<code lang="ruby">
+class Post &lt; ActiveRecord::Base
+  named_scope :matching, lambda { |column, value|</p>
+
+<pre><code>return {} if value.blank?
+{ :conditions =&gt; ["#{column} like ?", "%#{value}%"] }
+</code></pre>
+
+<p>  }
+  named_scope :order, lambda { |order|
+  { :order => case order</p>
+
+<pre><code>  when "title" : "title desc"
+  when "created_at" : "created_at"
+end }
+</code></pre>
+
+<p>  }
+end
+</code>
+<code lang="ruby">
+class PostController &lt; ApplicationController
+  def search</p>
+
+<pre><code>@posts = Post.matching(:title, params[:title])
+             .matching(:content, params[:content])
+             .order(params[:order])
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p>More references :
+<a href="http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality">http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality</a>
+<a href="http://railscasts.com/episodes/108-named-scope">http://railscasts.com/episodes/108-named-scope</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/blog/2009/12/07/love-named_scope/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+<nav role="pagination">
+  <div>
+    
+      <a class="prev" href="/page7/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+      <a class="next" href="/page5/">Newer &rarr;</a>
+    
+  </div>
+</nav>
+
+<script type="text/javascript">
+    var disqus_shortname = 'andywangshome';
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</div>
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>
