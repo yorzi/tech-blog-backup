@@ -1,0 +1,1 @@
+This is generated content by [Octopress](http://octopress.org), you can checkout my [site_engine](https://github.com/yorzi/site_engine) to know more about this blog.
