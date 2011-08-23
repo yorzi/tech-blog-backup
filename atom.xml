@@ -4,7 +4,7 @@
   <title>@yorzi</title>
   <link href="http://tech.wangyaodi.com/atom.xml" rel="self"/>
   <link href="http://tech.wangyaodi.com/"/>
-  <updated>2011-08-15T22:21:57+08:00</updated>
+  <updated>2011-08-23T11:06:12+08:00</updated>
   <id>http://tech.wangyaodi.com/</id>
   <author>
     <name>Andy Wang</name>
@@ -16,9 +16,9 @@
   
   <entry>
     <title>Now My Blog Is Running on Octopress</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/08/14/now-my-blog-is-running-on-octopress/"/>
+    <link href="http://tech.wangyaodi.com/2011/08/14/now-my-blog-is-running-on-octopress/"/>
     <updated>2011-08-14T19:39:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/08/14/now-my-blog-is-running-on-octopress</id>
+    <id>http://tech.wangyaodi.com/2011/08/14/now-my-blog-is-running-on-octopress</id>
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://img.skitch.com/20110814-m6jxiyu37ygd2pgxwfejamf95g.jpg&quot; alt=&quot;Octopress&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;Octopress is owesome!&lt;/p&gt;
@@ -33,9 +33,9 @@
   
   <entry>
     <title>Riding on Rails3 with full stack of Gems</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/06/14/riding-on-rails3-with-full-stack-of-gems/"/>
+    <link href="http://tech.wangyaodi.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems/"/>
     <updated>2011-06-14T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/06/14/riding-on-rails3-with-full-stack-of-gems</id>
+    <id>http://tech.wangyaodi.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems</id>
     <content type="html">&lt;p&gt;&lt;strong&gt;NOTICE:&lt;/strong&gt; Below post was released a month ago on &lt;a href=&quot;http://intridea.com/2011/5/13/rails3-gems&quot;&gt;Intridea Company Blog&lt;/a&gt;, also post here as a backup.&lt;/p&gt;
 
 &lt;p&gt;It's been close to a year since Rails3 came out. Luckily, I've worked on several Rails3 projects after it's released, so I'd like to share a stack of gems that I used in my previous projects. I guess they will give people a bit help while developing a new Rails3 app.&lt;/p&gt;
@@ -301,9 +301,9 @@
   
   <entry>
     <title>Weekly Updates : Javascript Rocks!</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/03/21/weekly-updates-javascript-rocks/"/>
+    <link href="http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks/"/>
     <updated>2011-03-21T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/03/21/weekly-updates-javascript-rocks</id>
+    <id>http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks</id>
     <content type="html">&lt;p&gt;After quit from Idapted/Eleutian, I'd like to have a long term plan for writing blogs. However, as everything starts, it's always hard. I thought it around, and finally decided to open my mind, and just try to start with a strong belief : Sharing! Then an idea comes out.&lt;/p&gt;
 
 &lt;p&gt;First of all, I think my weekly updates will help to share great things I came across or even I started to use, it has much fun to replay all these stuff, so I will do that in the weekend, that's also part of my study review.&lt;/p&gt;
@@ -335,9 +335,9 @@ Add JSLint to you TextMate: &lt;a href=&quot;https://github.com/subtleGradient/j
   
   <entry>
     <title>JS note: setTimeout and setInterval</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/03/09/settimeout-and-setinterval/"/>
+    <link href="http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/"/>
     <updated>2011-03-09T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/03/09/settimeout-and-setinterval</id>
+    <id>http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval</id>
     <content type="html">&lt;p&gt;Yesterday, I discussed a JS issue with &lt;a href=&quot;http://www.yakjuly.com/&quot;&gt;Blade&lt;/a&gt;, that I have to set up an automatic photo-switch effect on an existing page. I don't want to change anything except adding a piece of javascript for doing that job because this page is already messy up by another engineer. Blade suggested I should use &lt;strong&gt;&lt;a href=&quot;https://developer.mozilla.org/en/DOM/window.setTimeout&quot;&gt;setTimeout&lt;/a&gt;&lt;/strong&gt; for this effect.&lt;/p&gt;
 
 &lt;h4&gt;&lt;strong&gt;* Case Study&lt;/strong&gt;&lt;/h4&gt;
@@ -470,9 +470,9 @@ Actually, you can figure out this effect with &lt;strong&gt;&lt;a href=&quot;htt
   
   <entry>
     <title>Real-Time Application with Rails3</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/02/18/real-time-application-with-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3/"/>
     <updated>2011-02-18T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/02/18/real-time-application-with-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3</id>
     <content type="html">&lt;p&gt;I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.&lt;/p&gt;
 
 &lt;p&gt;First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called &lt;a href=&quot;http://en.wikipedia.org/wiki/Real-time_computing&quot;&gt;real-time computing&lt;/a&gt; (RTC).&lt;/p&gt;
@@ -505,9 +505,9 @@ JSChat.org: &lt;a href=&quot;http://jschat.org/&quot;&gt;http://jschat.org/&lt;/
   
   <entry>
     <title>Zen Coding for TextMate</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/02/12/zen-coding-for-textmate/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/12/zen-coding-for-textmate/"/>
     <updated>2011-02-12T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/02/12/zen-coding-for-textmate</id>
+    <id>http://tech.wangyaodi.com/2011/02/12/zen-coding-for-textmate</id>
     <content type="html">&lt;p&gt;Bundles make &lt;a href=&quot;http://macromates.com/&quot;&gt;TextMate&lt;/a&gt; as a super Editor, so if you love TextMate, you must love colorful bundles based on it.&lt;/p&gt;
 
 &lt;p&gt;I just find an interesting bundle to speed up your HTML/CSS coding, which is named as &lt;a href=&quot;https://github.com/sergeche/zen-coding&quot;&gt;Zen Coding&lt;/a&gt;.&lt;/p&gt;
@@ -540,9 +540,9 @@ The sytax is simple to understand, there is a sytax list &lt;a href=&quot;http:/
   
   <entry>
     <title>Dalli on Rails3</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/01/22/dalli-on-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3/"/>
     <updated>2011-01-22T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/01/22/dalli-on-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3</id>
     <content type="html">&lt;p&gt;Today I tried a new pure Ruby &lt;a href=&quot;http://memcached.org/&quot; target=&quot;_blank&quot;&gt;memcahed&lt;/a&gt; client in one of my Rails3 projects, it's named as &quot;&lt;a href=&quot;https://github.com/mperham/dalli&quot; target=&quot;_blank&quot;&gt;Dalli&lt;/a&gt;&quot;. It's an excellent memcached client as &lt;a href=&quot;http://www.mikeperham.com/&quot;&gt;Mike Perham&lt;/a&gt; announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on &lt;a href=&quot;http://heroku.com&quot; target=&quot;_blank&quot;&gt;Heroku&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Make sure you've installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:
@@ -600,9 +600,9 @@ ActiveSupport::Memoizable : &lt;br /&gt;&lt;a href=&quot;http://ilstar.blogbus.c
   
   <entry>
     <title>Love Git, Love Coding</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/01/21/love-git-love-coding/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/21/love-git-love-coding/"/>
     <updated>2011-01-21T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/01/21/love-git-love-coding</id>
+    <id>http://tech.wangyaodi.com/2011/01/21/love-git-love-coding</id>
     <content type="html">&lt;blockquote&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;&lt;strong&gt;&lt;span style=&quot;color: #0000ff;&quot;&gt;“550,000&lt;/span&gt; people hosting over &lt;span style=&quot;color: #0000ff;&quot;&gt;1,620,000&lt;/span&gt; git repositories on github.com”&lt;/strong&gt;&lt;/span&gt;&lt;/blockquote&gt;
 
 
@@ -626,9 +626,9 @@ Why you shoud switch from Subversion to Git：&lt;a href=&quot;http://thinkvitam
   
   <entry>
     <title>Deploy Rails3 App in Sub-directory</title>
-    <link href="http://tech.wangyaodi.com/blog/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
     <updated>2011-01-20T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2011/01/20/deploy-rails3-app-in-sub-directory</id>
+    <id>http://tech.wangyaodi.com/2011/01/20/deploy-rails3-app-in-sub-directory</id>
     <content type="html">&lt;p&gt;Last weekend, &lt;a href=&quot;http://www.dujinfang.com&quot;&gt;seven&lt;/a&gt; and &lt;a href=&quot;http://blog.sonitech.org/&quot;&gt;sonic&lt;/a&gt; did a great job to move all Idapted servers to a new datacenter, that's really a fabulous movement. Seven just wrote it out on &lt;a href=&quot;http://www.dujinfang.com/past/2011/1/18/rails-fu-wu-qi-qian-yi-dian-di/&quot;&gt;his blog&lt;/a&gt;, if you want to know more about this migration, please go through his post. Anyway, in this post I wanna share a simple but valuable tip about deploying Rails3 app in sub directory.&lt;/p&gt;
 
 &lt;script src=&quot;https://gist.github.com/787610.js&quot;&gt;&lt;/script&gt;
@@ -643,9 +643,9 @@ Why you shoud switch from Subversion to Git：&lt;a href=&quot;http://thinkvitam
   
   <entry>
     <title>when generating a public website</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/12/05/when-generating-a-public-website/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website/"/>
     <updated>2010-12-05T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/12/05/when-generating-a-public-website</id>
+    <id>http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website</id>
     <content type="html">&lt;p&gt;To backup a great topic, I pasted the following content to reminder me the public website concerns, it's not a summary by myself, I picked them up from &lt;a href=&quot;http://www.stackoverflow.com&quot; target=&quot;_blank&quot;&gt;stackoverflow.com&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Interface and User Experience&lt;/strong&gt;&lt;/p&gt;
@@ -754,9 +754,9 @@ Why you shoud switch from Subversion to Git：&lt;a href=&quot;http://thinkvitam
   
   <entry>
     <title>acts_as_favable is handy</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/12/01/acts_as_favable-is-handy/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy/"/>
     <updated>2010-12-01T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/12/01/acts_as_favable-is-handy</id>
+    <id>http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy</id>
     <content type="html">&lt;p&gt;Yes, it's more than two months in which I didn't write up any post here. I know I'd like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I've got many technology things/thoughts and tips that I want to share out.&lt;/p&gt;
 
 &lt;p&gt;Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that's very easy to do that with acts_as_favable.&lt;/p&gt;
@@ -772,9 +772,9 @@ Why you shoud switch from Subversion to Git：&lt;a href=&quot;http://thinkvitam
   
   <entry>
     <title>perfect backup solution for developers</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers/"/>
     <updated>2010-09-10T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/09/10/perfect-backup-solution-for-developers</id>
+    <id>http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers</id>
     <content type="html">&lt;p&gt;If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with &quot;backup&quot; and &quot;whenever&quot;.&lt;/p&gt;
 
 &lt;p&gt;Yes, &lt;a href=&quot;http://github.com/meskyanichi/backup&quot;&gt;Backup&lt;/a&gt; and &lt;a href=&quot;http://github.com/javan/whenever&quot;&gt;Whenever&lt;/a&gt; is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.&lt;/p&gt;
@@ -787,9 +787,9 @@ Why you shoud switch from Subversion to Git：&lt;a href=&quot;http://thinkvitam
   
   <entry>
     <title>StudyNote: convert string to DateTime</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime/"/>
     <updated>2010-09-02T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/09/02/studynote-convert-string-to-datetime</id>
+    <id>http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime</id>
     <content type="html">&lt;p&gt;I've been being confused of this &quot;conversion&quot; issue for a while, Today I figured out a clear way to do the function.
 &lt;code lang='ruby'&gt;
 DateTime.strptime(&quot;2009/04/16 19:52:30&quot;, &quot;%Y/%m/%d %H:%M:%S&quot;).to_time
@@ -834,9 +834,9 @@ Also, I'd like to note down the ruby Time format rule:&lt;/p&gt;
   
   <entry>
     <title>Script: Fetch parameter value from url</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/09/01/script-fetch-parameter-value-from-url/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/01/script-fetch-parameter-value-from-url/"/>
     <updated>2010-09-01T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/09/01/script-fetch-parameter-value-from-url</id>
+    <id>http://tech.wangyaodi.com/2010/09/01/script-fetch-parameter-value-from-url</id>
     <content type="html">&lt;p&gt;I wanna get the query string value, and set it to specific element, how to do that by javascript?
 Say, http://sample.com?author=andy, how to get author value which can be lately used. see the script below:&lt;/p&gt;
 
@@ -861,9 +861,9 @@ Say, http://sample.com?author=andy, how to get author value which can be lately 
   
   <entry>
     <title>MacPorts is a monster</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/09/01/macports-is-a-monster/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/01/macports-is-a-monster/"/>
     <updated>2010-09-01T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/09/01/macports-is-a-monster</id>
+    <id>http://tech.wangyaodi.com/2010/09/01/macports-is-a-monster</id>
     <content type="html">&lt;h1&gt;MacPorts is a monster.. see the log I installed ImageMagick. Anyway, it works for me. but the &lt;a href=&quot;http://weblogs.manas.com.ar/mverzilli/2010/05/19/install-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in/&quot;&gt;brew solution&lt;/a&gt; is not working for me.&lt;/h1&gt;
 
 &lt;p&gt;andy@Wang-Andys-MacBook-Pro~/proj.workspace:sudo port install ImageMagick
@@ -1202,9 +1202,9 @@ Say, http://sample.com?author=andy, how to get author value which can be lately 
   
   <entry>
     <title>How to keep a space in your iPhone App name?</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
     <updated>2010-08-31T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
+    <id>http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
     <content type="html">&lt;p&gt;The answer is, &lt;strong&gt;you can't submit your iPhone App with &lt;em&gt;whitespace&lt;/em&gt; in its name&lt;/strong&gt;. But you do &lt;strong&gt;be able to add space in your App display name&lt;/strong&gt; under icon. I guess your purpose is the second one, you only want to display the space under app icon on device, don't you?&lt;/p&gt;
 
 &lt;p&gt;OK, just name your app as whatever name with space before you setup the distribution package, e.g. &quot;Example Name.app&quot;. Then,&lt;/p&gt;
@@ -1222,9 +1222,9 @@ PS: Also you might want to remove the previously generated .ipa file with the sp
   
   <entry>
     <title>Study Note: Install Git1.7.1 on CentOS5.5</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
     <updated>2010-08-29T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <id>http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
     <content type="html">&lt;p&gt;Step 1. Install the dependencies&lt;/p&gt;
 
 &lt;pre&gt;
@@ -1272,9 +1272,9 @@ $ sudo /sbin/ldconfig
   
   <entry>
     <title>First iPhone app : IELTS 31 Formulas</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
     <updated>2010-08-28T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/08/28/first-iphone-app-ielts-31-formulas</id>
+    <id>http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
     <content type="html">&lt;p&gt;&lt;a href=&quot;http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg&quot; title=&quot;31 Formulas&quot; class=&quot;aligncenter&quot; width=&quot;688&quot; height=&quot;514&quot; /&gt;&lt;/a&gt;
 In last two month, I worked with our designer(&lt;a href=&quot;http://www.lijiapeng.com&quot;&gt;buzz&lt;/a&gt;) for Idapted first iPhone App. We spent a lot time on releasing this app as Apple's process is really awful to a first user. Well, everything was done in the last. Now our first iPhone App is available in Apple Store. It's free in current version. you can install it from here: &lt;a href=&quot;http://goo.gl/ht4p&quot;&gt;http://goo.gl/ht4p&lt;/a&gt;. It's based on &lt;a href=&quot;http://www.appcelerator.com/products/&quot;&gt;Titanium 1.4&lt;/a&gt;. so a big thanks to the brilliant &lt;a href=&quot;http://www.appcelerator.com/company/leadership-team/&quot;&gt;Appcelerator Team&lt;/a&gt;.&lt;/p&gt;
 
@@ -1286,9 +1286,9 @@ In last two month, I worked with our designer(&lt;a href=&quot;http://www.lijiap
   
   <entry>
     <title>where optimization happens</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/08/27/where-optimization-happens/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/27/where-optimization-happens/"/>
     <updated>2010-08-27T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/08/27/where-optimization-happens</id>
+    <id>http://tech.wangyaodi.com/2010/08/27/where-optimization-happens</id>
     <content type="html">&lt;p&gt;Jonathan just mentioned &lt;a href=&quot;http://www.idapted.com/blog/2010/08/16/small-details-big-gains/&quot; target=&quot;_blank&quot;&gt;small details and big gains&lt;/a&gt; in his post days ago, I totally agree with him from technology perspective, meanwhile, I found more samples to support his points. Yeah, technology is born for changing people's life, I call this kind of changes as Optimization.Optimization is happening everyday to Idapted Platform, as it's one of most important way to become perfect.&lt;/p&gt;
 
 &lt;p&gt;In last week, our StudyCenter, the front end user interface system, was optimized in its registration flow. Previously, we have many registration channels for different partners. Our marketing department is mainly responsible for these registration channels, and update them frequently. Accordingly, technology team and sales team also need to cooperate. Here problem is, demands change more quickly than tech guys and sales system can follow up.&lt;/p&gt;
@@ -1305,9 +1305,9 @@ In last two month, I worked with our designer(&lt;a href=&quot;http://www.lijiap
   
   <entry>
     <title>install sqlite3-ruby on CentOS</title>
-    <link href="http://tech.wangyaodi.com/blog/2010/08/26/install-sqlite3-ruby-on-centos/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/26/install-sqlite3-ruby-on-centos/"/>
     <updated>2010-08-26T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/blog/2010/08/26/install-sqlite3-ruby-on-centos</id>
+    <id>http://tech.wangyaodi.com/2010/08/26/install-sqlite3-ruby-on-centos</id>
     <content type="html">&lt;p&gt;Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here’s the solution to get it running:&lt;/p&gt;
 
 &lt;p&gt;Go to sqlite.org and get the amalgamation package or wget directly (below is my way):&lt;/p&gt;

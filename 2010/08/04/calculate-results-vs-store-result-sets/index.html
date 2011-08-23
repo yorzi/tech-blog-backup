@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>@yorzi: calculate results VS. store result sets</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="@yorzi" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17239385-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/" style="color:red">@yorzi</a></h1>
+  
+    <h2>All about Ruby/Rails/Javascript/CoffeeScript/iOS/Ubuntu</h2>
+  
+  <a href="https://github.com/yorzi/site_engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://assets0.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_right_red_aa0000.png&path=" alt="Fork me on GitHub"></a>
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="wangyaodi@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:tech.wangyaodi.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://about.me/wangyaodi">About Me</a></li>
+  <li><a href="https://plus.google.com/108320517625960982177/about?hl=en" style="color:red">@yorzi</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Calculate Results vs. Store Result Sets</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-08-04 00:00:00 +0800" pubdate  updated >Aug 4<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Firstly, what&#8217;s the results in title? For example, the results may be learners who will be alive in coming two weeks, or the results may be study times of one learner, etc. Generally, results should be some data coming from analyzing other data.</p>
+
+<p>Here my question is, how can we get certain results much faster and easily?</p>
+
+<p><strong>Case 1:</strong>
+We want to pick up a name list, all people in the list should be under certain condition, say, condition A, condition B, condition C, so normally, we just select the results which obey the rule(condition). Right? It depends.</p>
+
+<p>If name list is always dynamically different in condition A,B,C, it&#8217;s really hard to store the results set, we have to calculate instantly to make sure the results is accurate.</p>
+
+<p>If name list is very difficult to figure out in condition A,B,C, we should store the stable part of the result set, so that we will not get stuck when calculate tons of data very time.</p>
+
+<p><strong>Case 2.</strong>
+We want to show study times of a learner, how can we do that? Should we store the study times as one attributor of study record or should we just make one study record as one-time study? Obviously, it depends on the complication of study record and the definition of one-time study.</p>
+
+<p>In our case, one study record is instantly changed when it&#8217;s in different status, so storing study times in study record is not a good idea because the results might be locked when status changes. But if we calculate study times based on its status, it will be more reliable and accurate. and also it will not be locked when status is with exception.</p>
+
+<p><strong>Conclusion:</strong>
+To store result set, is a way to cache results, but some times it&#8217;s not easy to maintain the result sets, for instance, if there are too many conditions when getting a results set, it&#8217;s always in heavy load to update result sets, you have to listen to every condition level changes. If the situation is complex, remember to cache your result set and maintain it carefully.</p>
+
+<p>To calculate results instantly lets you ignore the real data, you just need to use the rule carefully, that will be more accurate, because you very time select what the rule defines. However the disadvantage is, when the data sets is large, you have to pay more to do that instantly, so you want to do a cron job or just cache the stable part of previous result sets.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andy Wang</span></span>
+
+      
+
+
+
+
+<time datetime="2010-08-04 00:00:00 +0800" pubdate  updated >Aug 4<span>th</span>, 2010</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/Deployment/'>Deployment</a>, <a class='category' href='/blog/categories/Mysql/'>Mysql</a>, <a class='category' href='/blog/categories/case-study/'>case-study</a>, <a class='category' href='/blog/categories/database/'>database</a>, <a class='category' href='/blog/categories/db/'>db</a>, <a class='category' href='/blog/categories/db-optimization/'>db optimization</a>, <a class='category' href='/blog/categories/instant-calculate/'>instant calculate</a>, <a class='category' href='/blog/categories/result-set/'>result set</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets/" data-via="yorzi" data-counturl="http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'andywangshome';
+  var disqus_identifier = 'http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets/';
+  var disqus_url = 'http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <img src="https://img.skitch.com/20110814-rrw7uufrh7wc6eugk6yf4163qb.jpg"></img>
+  <p>Hi, I&#8217;m <b style="color:red">Andy Wang</b>.<br />
+     I live in <b style="color:red">Beijing</b>, China. <br />
+     I&#8217;m a <b style="color:red">Sr. Ruby/Rails Engineer</b> at <a href="http://intridea.com">Intridea</a>.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/01/22/dalli-on-rails3/">Dalli on Rails3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/01/21/love-git-love-coding/">Love Git, Love Coding</a>
+      </li>
+    
+  </ul>
+  <p>>>>>>>>>  <a style="color:red" href="/blog/archives">More Posts in Archives</a></p>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

@@ -1,0 +1,396 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>@yorzi: JS note: setTimeout and setInterval</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="@yorzi" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17239385-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/" style="color:red">@yorzi</a></h1>
+  
+    <h2>All about Ruby/Rails/Javascript/CoffeeScript/iOS/Ubuntu</h2>
+  
+  <a href="https://github.com/yorzi/site_engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://assets0.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_right_red_aa0000.png&path=" alt="Fork me on GitHub"></a>
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="wangyaodi@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:tech.wangyaodi.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://about.me/wangyaodi">About Me</a></li>
+  <li><a href="https://plus.google.com/108320517625960982177/about?hl=en" style="color:red">@yorzi</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">JS Note: setTimeout and setInterval</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2011-03-09 00:00:00 +0800" pubdate  updated >Mar 9<span>th</span>, 2011</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>Yesterday, I discussed a JS issue with <a href="http://www.yakjuly.com/">Blade</a>, that I have to set up an automatic photo-switch effect on an existing page. I don&#8217;t want to change anything except adding a piece of javascript for doing that job because this page is already messy up by another engineer. Blade suggested I should use <strong><a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a></strong> for this effect.</p>
+
+<h4><strong>* Case Study</strong></h4>
+
+
+<p>The basic case is something like below(there are some other effects based on the structure and style, so don&#8217;t affect others):
+<code lang='html'></p>
+
+<div id="tab_ls">
+        <a class="active" id="haikou"></a>
+    <a id="dalian"></a>  
+        <a id="changsha"></a> 
+</div>
+
+
+
+
+<div id="tab_con">
+    <div style="display: block;" id="fk">   
+        <div id="end"></div>
+        <div id="ctt">
+            <img src="http://www.2011roadshow.com/images/haikou.jpg">
+                    <h3>会议城市：海口</h3>
+            <p>时间：8月26日 14：00-18：00</p>
+                    <p>地点：海口鑫源温泉大酒店</p>
+        </div>
+    </div>
+        
+    <div id="fk" style="display:none">
+        <div id="end"></div>
+            <div id="ctt">
+            <img src="http://www.2011roadshow.com/images/dalian.jpg">
+                    <h3>会议城市：大连</h3>
+            <p>时间：9月3日 14：00-18：00</p>
+                    <p>地点：香洲花园酒店 </p>
+        </div>
+    </div>
+
+    <div id="fk" style="display:none">
+        <div id="end"></div>
+            <div id="ctt">
+            <img src="images/changsha.jpg">
+                    <h3>城市：长沙</h3>
+            <p>时间：9月4日 14：00-18：00</p>
+                    <p>地点：长沙潇湘华天大酒店</p>
+        </div>
+    </div>
+</div>
+
+
+<p></code>
+Now the task is to write a js to roll the cities and regarding images, how to make it happen?</p>
+
+<h4>* Solution with <strong>setTimeout</strong></h4>
+
+
+<p><code lang='javascript'></p>
+
+<script type="text/javascript">
+    var cities;
+    var cityImages;
+    var currentCity;
+    var pause = false;
+    var timer1;
+    var timer2 ;
+    
+    function showNextImage()
+    {           
+        if (pause) {
+            // do nothing
+        } else {
+            console.log("show next image");
+            console.log(currentCity);
+            if(cities.last() == currentCity) {
+                currentCity = currentCity.first();
+            } else {
+                currentCity = currentCity.next();
+            }
+            console.log(currentCity);
+            
+            var index = cities.index(currentCity);
+            console.log(index);
+            cityImages.hide();
+            console.log(cityImages.get(index));
+            $(cityImages.get(index)).show();
+            cities.removeClass("active")
+            currentCity.addClass("active");
+        }
+        timer1 = window.setTimeout("showNextImage()", 2000);
+    }
+    
+    function repeatPlay()
+    {   
+        console.log("repeat play");
+        showNextImage();
+        if (timer2 != null){
+            clearTimeout(timer2);
+            timer2 = null;
+        }
+    }
+
+  $(window).load(function(){
+    cities = $("#tab_ls a");
+    cityImages = $("#tab_con div#fk");
+    currentCity = cities.first()
+    console.log(cities);
+    console.log("window load");
+    repeatPlay();
+    $("#tab_ls a").click(function(){
+                clearTimeout(timer1);
+        timer1 = null;
+            timer2 = window.setTimeout("repeatPlay()", 6000);
+    });
+  });
+</script>
+
+
+<p></code>
+Actually, you can figure out this effect with <strong><a href="https://developer.mozilla.org/en/window.setInterval">setInterval</a></strong> as well. The difference between setTimeout and setInterval is how many times you want to run the function which is set as their parameters. setTimeout will execute the function only once when time is out. But setInterval execute the function repeatedly in certain interval which is set as a parameter.</p>
+
+<p>Every time you should remember to clear the Timeout or Interval after finish your job through <strong><a href="https://developer.mozilla.org/en/DOM/window.clearTimeout">clearTimeout</a></strong> and <strong><a href="https://developer.mozilla.org/en/DOM/window.clearInterval">clearInterval</a></strong>.</p>
+
+<p>I have linked the regarding references for the four methods about, you should read the document and related samples to know more details.</p>
+
+<p>More Resources:
+<a href="http://hi.baidu.com/ruhaole/blog/item/af905fefc2dad33aadafd57a.html">如何在jQuery中使用 setInterval，setTimeout</a>
+<a href="http://cn.dydou.cn/wyzz/2010/0710/13733.html">jQuery：Tab切换功能的集合</a></p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andy Wang</span></span>
+
+      
+
+
+
+
+<time datetime="2011-03-09 00:00:00 +0800" pubdate  updated >Mar 9<span>th</span>, 2011</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/JavaScript/'>JavaScript</a>, <a class='category' href='/blog/categories/UI-UE/'>UI/UE</a>, <a class='category' href='/blog/categories/javascript/'>javascript</a>, <a class='category' href='/blog/categories/js/'>js</a>, <a class='category' href='/blog/categories/setInterval/'>setInterval</a>, <a class='category' href='/blog/categories/setTimeout/'>setTimeout</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/" data-via="yorzi" data-counturl="http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'andywangshome';
+  var disqus_identifier = 'http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/';
+  var disqus_url = 'http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <img src="https://img.skitch.com/20110814-rrw7uufrh7wc6eugk6yf4163qb.jpg"></img>
+  <p>Hi, I&#8217;m <b style="color:red">Andy Wang</b>.<br />
+     I live in <b style="color:red">Beijing</b>, China. <br />
+     I&#8217;m a <b style="color:red">Sr. Ruby/Rails Engineer</b> at <a href="http://intridea.com">Intridea</a>.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/01/22/dalli-on-rails3/">Dalli on Rails3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/01/21/love-git-love-coding/">Love Git, Love Coding</a>
+      </li>
+    
+  </ul>
+  <p>>>>>>>>>  <a style="color:red" href="/blog/archives">More Posts in Archives</a></p>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

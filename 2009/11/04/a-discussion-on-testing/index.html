@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>@yorzi: A discussion on testing</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="@yorzi" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17239385-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/" style="color:red">@yorzi</a></h1>
+  
+    <h2>All about Ruby/Rails/Javascript/CoffeeScript/iOS/Ubuntu</h2>
+  
+  <a href="https://github.com/yorzi/site_engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://assets0.github.com/img/e6bef7a091f5f3138b8cd40bc3e114258dd68ddf?repo=&url=http%3A%2F%2Fs3.amazonaws.com%2Fgithub%2Fribbons%2Fforkme_right_red_aa0000.png&path=" alt="Fork me on GitHub"></a>
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="wangyaodi@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:tech.wangyaodi.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://about.me/wangyaodi">About Me</a></li>
+  <li><a href="https://plus.google.com/108320517625960982177/about?hl=en" style="color:red">@yorzi</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">A Discussion on Testing</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-11-04 00:00:00 +0800" pubdate  updated >Nov 4<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><p>In this week code review meeting, I open a discussion about testing code of Ruby on Rails. Actually I think the test for a complex system is not that easy if you wanna do it gracefully, but it&#8217;s still worth starting in small steps, that&#8217;s what&#8217;s important. I&#8217;d like to share the ideas people contributed, and the included contents are as following:
+Andy:</p>
+
+<blockquote>
+Tried something new for RoR testing yesterday, it&#8217;s factory_girl(fixtures replacement solution. <a href='http://github.com/thoughtbot/factory_girl'>see more details</a>). In this week code review, I show the testing code, and also have questions about test:
+
+1. How to make sure that you test all(99.5%) situations.
+2. If you test before you code, how to control/ensure the function points properly?
+
+feel free to comment here if you have any thoughts on it.
+</blockquote>
+
+
+<p>I commented in front:</p>
+
+<blockquote>
+My understanding of TEST:
+It means we should &#8220;program&#8221;(with mock and stub) one more time in different rule(based on the testing framework) to make sure features working correctly. but there is still a big chance to make mistake in both side(twice programming), so non-structured testing does not work very well. idea?
+</blockquote>
+
+
+<p>Then Guolei&#8217;s view point:</p>
+
+<blockquote>
+I don&#8217;t think writing test code is &#8220;twice programming&#8221;.
+1. Test code should be very plain and very simple. Mock and stub do make it complex, but there&#8217;s rarely case requiring mock and stub. If you find your test code is more complex that function code, then you are going wrong way.
+2. Actually writing test code can not be called &#8220;program&#8221;. It&#8217;s more like you are telling computer what it should do. It&#8217;s from the aspect of business logic, non with technique. So you should never make mistake when you get familiar with it, even so, it takes no time to fix it.
+3. The value of test code shines when refactoring code and for complex logic. I think Andy&#8217;s code is not a good example because the logic is so simple that there&#8217;s more test code than function code.
+</blockquote>
+
+
+<p>Gary&#8217;s sample:</p>
+
+<blockquote>
+Your test code is for a process. I would rather test a method one time, I this case I can try all possible input and test.
+for example:
+</blockquote>
+
+
+<pre name="code" class="ruby">
+describe "article?" do
+    it "should figure out the page is article type" do
+      2.times do
+        @page.page_parts.create
+      end
+      @page.article?.should == true
+    end
+    it "should figure out the page is not article type" do
+      2.times do
+        @page.page_parts.create(:group_id => 0)
+      end
+      @page.article?.should == false
+    end
+  end
+</pre>
+
+
+<p>Then I posted:</p>
+
+<blockquote>
+Yeah.. I don&#8217;t doubt about the value of writing test code, and I totally agree on what GL mentioned should be the basic principle of adding test code.
+
+The problem is, when I wanna cover all the situations/cases, there is, so far, no good way than writing lots of cases for it. so how to ensure it covering all the test-needed points, specially the business logic?
+It&#8217;s not something about which skills(mock and stub) should be used somehow, it&#8217;s about what should be test and how to make sure you fully test what you want to test.
+
+For example in my test code, how to ensure it can fully test the Item model? if I missed points, is this test still believable? I know surely it should cover all situations as what we want, but how to make the coverage happened correctly? The test code may save my time and energy when refactoring or doing enhancement, but if it&#8217;s not that correctly covering the case, does it still play an important role?
+
+I am a bit confused of the way we are testing the system rather than writing test code for specific function, any more ideas?
+</blockquote>
+
+
+<p>JP&#8217;s response followed up:</p>
+
+<blockquote>
+As previously mentioned, I think its best to look at tests as a future investment, not a &#8220;I cover every point&#8221;. There are two types of &#8220;future investment&#8221;
+
+1. Immediate future. You are about to write some code (function) and you know how you want it to work and what the different possibilities are. You write the test code first and then code the function. Now, as you code the function, it is much faster to see if it works (this is especially true for complex logic like the content inputting system).
+
+2. Further future. You have a list of &#8220;known&#8221; situations/cases. You might modify the working code in the future and in the future you might forget what all these different situations/cases are - but you know what they are right now. So, you write test code. Now, if you modify the code in the future and the tests still pass, you can feel comfortable that the code you modified did not break any &#8220;known&#8221; conditions.
+In both cases tests cannot find &#8220;unknown&#8221; cases&#8230;and I don&#8217;t think this is the point.
+
+Two specific cases come to mind where I felt I used test code really well:
+a) Immediate Future: When first starting the Erlang queue system I wrote a number of test cases to simulate the trainer client&#8217;s various conditions. This allowed me to write the erlang code and then run a bunch of cases on it really quickly which saved a lot of time (otherwise I would have had to do lots and lots of clicks on the Trainer Client). Unfortunately, once the queue system started integrating all of the other apps and connecting to FS I could no longer find a reasonable way to keep these test cases to work (as so many things would have to be stubbed).
+
+a) Further future: The old, old carb.rb model. This was incredibly complex (even from the beginning). I wrote test code after writing that model. Then, a few months later, made significant changes to that model but was able to use that test code to insure I covered all the conditions (this was before Andy started working on it).
+</blockquote>
+
+
+<p>Seven&#8217;s response:</p>
+
+<blockquote>
+I&#8217;m only on the first step of writing test code, but it do helps me free my hands and ears from testing calls with FreeSWITCH. Nice.
+</blockquote>
+
+
+<p>My last response:</p>
+
+<blockquote>
+I think I got what I want from above discussion, thanks to all for sharing your view points or samples.
+</blockquote>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andy Wang</span></span>
+
+      
+
+
+
+
+<time datetime="2009-11-04 00:00:00 +0800" pubdate  updated >Nov 4<span>th</span>, 2009</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/Ruby-On-Rails/'>Ruby On Rails</a>, <a class='category' href='/blog/categories/discussion/'>discussion</a>, <a class='category' href='/blog/categories/rails/'>rails</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/testing/'>testing</a>, <a class='category' href='/blog/categories/work/'>work</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing/" data-via="yorzi" data-counturl="http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'andywangshome';
+  var disqus_identifier = 'http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing/';
+  var disqus_url = 'http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <img src="https://img.skitch.com/20110814-rrw7uufrh7wc6eugk6yf4163qb.jpg"></img>
+  <p>Hi, I&#8217;m <b style="color:red">Andy Wang</b>.<br />
+     I live in <b style="color:red">Beijing</b>, China. <br />
+     I&#8217;m a <b style="color:red">Sr. Ruby/Rails Engineer</b> at <a href="http://intridea.com">Intridea</a>.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/01/22/dalli-on-rails3/">Dalli on Rails3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/01/21/love-git-love-coding/">Love Git, Love Coding</a>
+      </li>
+    
+  </ul>
+  <p>>>>>>>>>  <a style="color:red" href="/blog/archives">More Posts in Archives</a></p>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2011 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>
