@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: study notes | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/study-notes/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
+    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <updated>2010-09-02T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <content type="html"><![CDATA[<p>I've been being confused of this "conversion" issue for a while, Today I figured out a clear way to do the function.
+<code lang='ruby'>
+DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
+</code>
+Also, I'd like to note down the ruby Time format rule:</p>
+
+<pre>
+  %a - The abbreviated weekday name (``Sun'')
+  %A - The  full  weekday  name (``Sunday'')
+  %b - The abbreviated month name (``Jan'')
+  %B - The  full  month  name (``January'')
+  %c - The preferred local date and time representation
+  %d - Day of the month (01..31)
+  %H - Hour of the day, 24-hour clock (00..23)
+  %I - Hour of the day, 12-hour clock (01..12)
+  %j - Day of the year (001..366)
+  %m - Month of the year (01..12)
+  %M - Minute of the hour (00..59)
+  %p - Meridian indicator (``AM''  or  ``PM'')
+  %S - Second of the minute (00..60)
+  %U - Week  number  of the current year,
+          starting with the first Sunday as the first
+          day of the first week (00..53)
+  %W - Week  number  of the current year,
+          starting with the first Monday as the first
+          day of the first week (00..53)
+  %w - Day of the week (Sunday is 0, 0..6)
+  %x - Preferred representation for the date alone, no time
+  %X - Preferred representation for the time alone, no date
+  %y - Year without a century (00..99)
+  %Y - Year with century
+  %Z - Time zone name
+  %% - Literal ``%'' character
+
+   t = Time.now
+   t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
+   t.strftime("at %I:%M%p")            #=> "at 08:56AM"
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Study Note: Install Git1.7.1 on CentOS5.5]]></title>
+    <link href="http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <updated>2010-08-29T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <content type="html"><![CDATA[<p>Step 1. Install the dependencies</p>
+
+<pre>
+$ sudo yum -y install curl-devel expat-devel \
+gettext-devel openssl-devel zlib-devel  
+$ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz  
+$ tar zxf libiconv-1.13.1.tar.gz  
+$ cd libiconv-1.13.1  
+$ ./configure prefix=/usr/local  
+$ make  
+$ sudo make install
+</pre>
+
+
+<p>Step 2. Install Git1.7.1</p>
+
+<pre>
+$ wget http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz  
+$ tar zxf git-1.7.1.tar.gz  
+$ cd  git-1.7.1  
+$ ./configure prefix=/usr/local
+$ make
+$ sudo make install 
+</pre>
+
+
+<p>Step 3. You might get errors as:</p>
+
+<pre>error while loading shared libraries: libiconv.so.2:\
+cannot open shared object file: No such file or directory</pre>
+
+
+<p>Then, you should do the following:</p>
+
+<pre>
+$ sudo vim /etc/ld.so.conf
+# you should add online as "/usr/local/lib"
+$ sudo /sbin/ldconfig
+</pre>
+
+
+<p>Done, try git --version, it's successfully installed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Study Note : serialize object in ActiveRecord]]></title>
+    <link href="http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord/"/>
+    <updated>2010-08-04T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord</id>
+    <content type="html"><![CDATA[<h2><span style="color: #444444; line-height: 24px; font-size: 16px;">Copied from <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M001799" target="_blank">Ruby on Rails API doc</a>. Store here as a study notes for myself.
+
+Active Record can <a href="Base.html#M001799">serialize</a> any object in text <a href="Base.html#M001809">columns</a> using YAML. To do so, you must specify this with a call to the class method <tt><a href="Base.html#M001799">serialize</a></tt>. This makes it possible to store arrays, hashes, and other non-mappable objects without doing any additional work. Example:</span></h2>
+
+
+<pre>  class User &lt; ActiveRecord::Base
+    serialize :preferences
+  end
+
+  user = User.create(:preferences =&gt; { "background" =&gt; "black", "display" =&gt; large })
+  User.find(user.id).preferences # =&gt; { "background" =&gt; "black", "display" =&gt; large }</pre>
+
+
+<p>You can also specify a class option as the second parameter that‘ll raise an exception if a serialized object is retrieved as a descendant of a class not in the hierarchy. Example:</p>
+
+<pre>  class User &lt; ActiveRecord::Base
+    serialize :preferences, Hash
+  end
+
+  user = User.create(:preferences =&gt; %w( one two three ))
+  User.find(user.id).preferences    # raises SerializationTypeMismatch</pre>
+
+]]></content>
+  </entry>
+  
+</feed>

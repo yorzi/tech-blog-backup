@@ -1,0 +1,1372 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>@yorzi</title>
+  <meta name="author" content="Andy Wang">
+
+  
+  <meta name="description" content="TIPS: function SetAllCheckBoxes(FormName, FieldName, CheckValue) { if(!document.forms[FormName]) return; var objCheckBoxes = document.forms[FormName &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yorzi.github.com/blog/page/5/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="@yorzi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17239385-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/" style="color:red">@yorzi</a></h1>
+  
+    <h2>great people share knowledge</h2>
+  
+  <a href="https://github.com/yorzi/site_engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme.png" alt="Fork me on GitHub"></a>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="wangyaodi@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yorzi.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://about.me/wangyaodi">About Me</a></li>
+  <li><a href="http://wangyaodi.com">Hire @yorzi</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/">JS: Select All Checkbox and Submit Form via Js</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-12T00:00:00+08:00" pubdate data-updated="true">Apr 12<span>th</span>, 2010</time>
+        
+         | <a href="/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><strong>TIPS:</strong>
+
+<code lang='js'>
+<script type="text/javascript">
+  function SetAllCheckBoxes(FormName, FieldName, CheckValue)
+  {
+    if(!document.forms[FormName])
+      return;
+    var objCheckBoxes = document.forms[FormName].elements[FieldName];
+    if(!objCheckBoxes)
+      return;
+    var countCheckBoxes = objCheckBoxes.length;
+    if(!countCheckBoxes)
+      objCheckBoxes.checked = CheckValue;
+    else
+    // set the check value for all check boxes
+      for(var i = 0; i < countCheckBoxes; i++)
+        objCheckBoxes[i].checked = CheckValue;
+  }
+
+  function SendForm(FormName, ActionName)
+  {
+    if(!document.forms[FormName])
+      return;
+    if(ActionName == 'unread')
+      document.forms[FormName].action = '<%= batch_update_notifications_path(:type => "unread") %>';
+    if(ActionName == 'remove')
+      document.forms[FormName].action = '<%= batch_update_notifications_path(:type => "remove") %>';
+    document.forms[FormName].submit();
+  }
+</script>
+</code>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/03/26/valuable-ruby-on-rails-materials/">Valuable Ruby on Rails Materials</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-26T00:00:00+08:00" pubdate data-updated="true">Mar 26<span>th</span>, 2010</time>
+        
+         | <a href="/2010/03/26/valuable-ruby-on-rails-materials/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>一直关注<a href="http://blog.xdite.net/">XDite的blog</a>，他写的关于Rails的文章总是能让我从中受益。看见他写的Ruby on Rails的入门书单与练习作业，感觉非常的精炼，这个post很适合当作Rails新手的入门指导，鉴于此，我也把它推荐给Team，用来培训新入职的Rails developer. 在这里谢谢XDite老师 :)</p>
+
+<p>以下为全文转载，<a href="http://blog.xdite.net/?p=1754&amp;utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+xxddite+(Blog.XDite.net)">原文链接请点击此处</a>。</p>
+
+<p>==================================================</p>
+
+<p>學習 Ruby on Rails 最快的途徑無非是直接使用 Rails 撰寫產品。而這個過程中若有 mentor 指導以及 code review，學習進度也會加速不少。</p>
+
+<p>但現實生活中並非如此理想，</p>
+
+<p>第一，並不是每個人都有每天必須要以 Rails 撰寫產品的壓力（not a Rails Developer）。</p>
+
+<p>第二，沒有循序漸進的入門途徑以及沒有 mentor。（Framework 進展太快，導致現有書籍版本跟不上進度，另外具有經驗的 mentor 太少，有的話也沒興趣回答過於初階的問題）</p>
+
+<p>最近幾個月都在訓練 Rails Developer，零碎的東西講了不少遍。懶得一次次重講基礎的東西和開訓練菜單，乾脆整理成文字，以後新人就直接看這篇…</p>
+
+<p>新人需要具備的「一般」基礎技能：</p>
+
+<ol>
+    <li>對 Git 的觀念與技巧掌握。</li>
+    <li>對 VIM / Textmate 的基本開發技巧掌握。</li>
+    <li>熟悉 Linux Command Line 的操作。</li>
+</ol>
+
+
+<ul>
+<li>Git</li>
+</ul>
+
+
+<p>書單</p>
+
+<p>Peepcode 的 <a href="http://peepcode.com/products/git" target="_blank">Git</a> 與 <a href="http://progit.org/book/" target="_blank">Pro Git</a></p>
+
+<p>練習</p>
+
+<p>上 Github 開啟一個專案，練習 git commit , git push , git pull, git branch , git checkout , git merge</p>
+
+<ul>
+<li>Editor</li>
+</ul>
+
+
+<p>書單</p>
+
+<p>c9s 的 <a href="http://c9s.blogspot.com/2009/08/vim-hacks-coscup.html" target="_blank">VIM Hacks</a> 與 Oreilly 的 <a href="http://tlsj.tenlong.com.tw/WebModule/BookSearch/bookSearchViewAction.do?isbn=9789866840326&amp;sid=48676&amp;aid=69e42ffb" target="_blank">精通 vi 與 vim</a> 與 Pragmatic 的 <a href="http://www.pragprog.com/titles/textmate/textmate" target="_blank">TextMate: Power Editing for the Mac</a></p>
+
+<p>練習</p>
+
+<p>vgod 的 <a href="http://blog.vgod.tw/2009/12/08/vim-cheat-sheet-for-programmers/" target="_blank">給程式設計師的Vim入門圖解說明</a> 全部練習一遍</p>
+
+<ul>
+<li>Linux CLI</li>
+</ul>
+
+
+<p>書單與練習：</p>
+
+<p>Peepcode 的 <a href="http://peepcode.com/products/meet-the-command-line" target="_blank">Meet the Command Line</a> 、<a href="http://peepcode.com/products/advanced-command-line" target="_blank">Advanced Command Line </a> 全部練過一遍</p>
+
+<p>=====</p>
+
+<p>新人需要具備的 Rails 基礎技能：</p>
+
+<ol>
+    <li>可手刻 CRUD ( Create / Read / Update / Delete ) 並且理解 CRUD 中的 params 傳遞方法</li>
+    <li>route 中 resources 觀念配合 model 裡 has_many 的設計，理解並熟悉 RESTful 觀念。</li>
+    <li>route 的優先順序與 routes 中 resource / namespace 的實作。</li>
+    <li>named_scope 、 counter_cache、before_filter</li>
+    <li>plugin 的使用：<a href="http://github.com/technoweenie/restful-authentication" target="_blank">restful-authentication</a>、<a href="http://wiki.github.com/mislav/will_paginate/" target="_blank">will_paginate</a>、<a href="http://github.com/thoughtbot/paperclip" target="_blank">paperclip</a></li>
+    <li>rake 原理以及撰寫 task</li>
+    <li>ruby on rails 的 production setup 與撰寫 <a href="http://www.capify.org/" target="_blank">capistrano</a> recipes</li>
+</ol>
+
+
+<p>書單：（案頭必備）</p>
+
+<p><a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010350699" target="_blank">Ruby Programming — 向 Ruby 之父學程式設計</a>
+<a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010400655" target="_blank">Ruby for Rails - Rails 開發者必備的 Ruby 學習手冊</a> （英文新版： <a href="http://www.manning.com/black2/" target="_blank">The Well-Grounded Rubyist</a> )
+<a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010374225" target="_blank">碼上就會：Rails敏捷開發網站</a> （英文新版: <a href="http://www.pragprog.com/titles/rails3/agile-web-development-with-rails-third-edition" target="_blank">Agile Web Development with Rails, Third Edition</a> )
+<a href="http://my.safaribooksonline.com/9780321445612" target="_blank">The Rails Way</a>
+<a href="http://oreilly.com/catalog/9780596514815" target="_blank">Ruby Pocket Reference</a>
+<a href="http://www.pragprog.com/titles/fr_rr/rails-recipes" target="_blank">Rails Recipes</a>
+<a href="http://www.pragprog.com/titles/fr_arr/advanced-rails-recipes" target="_blank">Advanced Rails Recipes: 84 New Ways to Build Stunning Rails Apps</a></p>
+
+<p>線上工具：（必加書籤）</p>
+
+<p>Ruby API : <a href="http://www.ruby-doc.org/core/classes/String.html" target="_blank">String</a>、<a href="http://www.ruby-doc.org/core/classes/Array.html" target="_blank">Array</a>、<a href="http://www.ruby-doc.org/core/classes/Hash.html" target="_blank">Hash</a>
+APIDock : <a href="http://apidock.com/rails" target="_blank">Ruby on Rails</a></p>
+
+<p>練習作業：</p>
+
+<p>（1）開發一個簡易論壇系統。系統要有 Forum 與 Post 兩個 model，寫出 CRUD 介面，並且文章網址是使用 <a href="http://example.org/forum/1/post/2" target="_blank">http://example.org/forum/1/post/2</a> 這種表示。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>CRUD &amp; migration</li>
+<li>has_many 與 belongs_to</li>
+<li>resources 與雙層 resources</li>
+<li>before_filter : find_event</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://rails.pixnet.net/blog/post/22956704" target="_blank">深入淺出 RoR (4-3) - RESTful 與 CRUD action</a></li>
+<li><a href="http://ihower.tw/training/rails-tutoral.html" target="_blank">ihower training : Ruby on Rails 入門</a></li>
+</ul>
+
+
+<p>( 2）使用者必須能夠 註冊 / 登入，登入後才可以發表 Post，不然只能瀏覽。只有自己的 Post 才能進行修改與刪除。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>routes 優先權與 route alias</li>
+<li>plugin 安裝與使用</li>
+<li>before_filter : login_required</li>
+<li>session : current_user</li>
+<li><a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002281" target="_blank">attr_accessible</a> / <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002280" target="_blank">attr_protected</a></li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/technoweenie/restful-authentication" target="_blank">restful-authentication</a></li>
+</ul>
+
+
+<p>( 3）論壇的文章要能夠分頁，每一頁 20 筆，每一個論壇要秀出現在論壇裡有多少 post 數量。可用 params 配合 named_scope 在文章列表排序。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>pagination</li>
+<li>counter_cache</li>
+<li>named_scope :recent</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://wiki.github.com/mislav/will_paginate/" target="_blank">will_paginate</a></li>
+<li><a href="http://railscasts.com/episodes/23-counter-cache-column" target="_blank">Railscast : Counter Cache Column</a></li>
+<li><a href="http://railscasts.com/episodes/108-named-scope" target="_blank">Railscast : named_scope</a></li>
+</ul>
+
+
+<p>( 4）每篇文章可以上傳附件</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>form_for  multipart</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/thoughtbot/paperclip" target="_blank">paperclip</a></li>
+</ul>
+
+
+<p>( 5）Admin 可以刪改所有文章，建立一個後台做這件事。網址是 <a href="http://example.org/admin/" target="_blank">http://example.org/admin/</a>。只有身分是 admin 的人可以進後台。admin 的判別方是 column 裡加一個 boolean，判斷是否 admin。這個 attribute 必須用 <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002281" target="_blank">attr_accessible</a> / <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002280" target="_blank">attr_protected</a> 保護。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>route : namespace</li>
+<li>before_filter : require_is_admin</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://railstips.org/blog/archives/2007/04/28/namespaces-added-to-routes/" target="_blank">Namespaces added to routes</a></li>
+</ul>
+
+
+<p>( 6）用 Rake 撰寫自動化步驟，生假資料。寫一個 rake 可以達成以下步驟：「砍 db =&gt; 建 db =&gt; 跑 migration =&gt; 生種子資料」，另一個 rake 是生假文章與假論壇。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>rake -T</li>
+<li>rake db:drop ; rake db:create ; rake db:migrate ; rake db:seed</li>
+<li>rake dev:fake ( 自己寫 namespace : dev, 裡面放一個 task 叫做 fake，fake 資料用 <a href="http://github.com/ryanb/populator" target="_blank">Populator</a> 生）</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://railsenvy.com/2007/6/11/ruby-on-rails-rake-tutorial" target="_blank">Ruby on Rails Rake Tutorial (aka. How rake turned me into an alcoholic)</a></li>
+<li><a href="http://ryandaigle.com/articles/2009/5/13/what-s-new-in-edge-rails-database-seeding" target="_blank">What’s New in Edge Rails: Database Seeding</a></li>
+</ul>
+
+
+<p>( 7）在租來的 VPS 上面建置 Ruby on Rails production 環境，使用 Ruby Enterprise 與 mod_rails。使用 capistrano 佈署 application。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>cap deploy:setup , cap deploy , cap deploy:rollback , cap deploy:restart</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/jnstq/rails-nginx-passenger-ubuntu" target="_blank">rails-nginx-passenger-ubuntu </a></li>
+<li>AWDR3 的 deploy 章節 , <a href="http://oreilly.com/catalog/9780596514815" target="_blank">Ruby Pocket Reference</a> 的 capistrano 章節</li>
+</ul>
+
+
+<p>===</p>
+
+<p>PS. 實際測試的結果是，完全不懂 Ruby on Rails 的新人，從頭帶過大概兩週可以練完這一份作業。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/03/17/find_in_batches-is-not-working/">Find_in_batches Is Not Working</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-17T00:00:00+08:00" pubdate data-updated="true">Mar 17<span>th</span>, 2010</time>
+        
+         | <a href="/2010/03/17/find_in_batches-is-not-working/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Days ago, I came across a situation in which <a href="http://api.rubyonrails.org/classes/ActiveRecord/Batches/ClassMethods.html">find_in_batches</a> does not work correctly, the sample code is as below:
+<code lang="ruby"></p>
+
+<h1>NOT WORKING AS EXPECTED.</h1>
+
+<p>namespace :studycenter do
+  desc 'generate item extra items'
+  task :update_extra_items => :environment do</p>
+
+<pre><code>puts "starting at #{@time = Time.now}......"
+Item.find_in_batches(:conditions =&gt; {:content_type =&gt; "Scenario"}) do |items|
+  items.each do |item|
+    begin
+      if item.extra_items.blank?
+        item.related_lessons.each do |extra|
+          @item = ItemExtraItem.create({:item_id =&gt; item.id, :extra_item_id =&gt; extra.id})
+          puts "=============================================#{@item.id}"
+        end
+      end
+      puts "finished item with ID:#{item.id}"
+    rescue Exception =&gt; e
+      puts "something wrong happened!! item with ID:#{item.id}"
+      next
+    end
+  end
+  puts "------------------spent #{(Time.now - @time)/60} minutes!"
+end
+puts "finished at #{Time.now}, totally, spent #{(Time.now - @time)/60} minutes!"
+</code></pre>
+
+<p>  end
+end
+</code>
+Then I refactor this task, so I can migrate data which generated day by day.
+<code lang="ruby"></p>
+
+<h1>WORKING WELL</h1>
+
+<p>namespace :studycenter do
+  desc 'generate item extra items'
+  task :update_extra_items => :environment do</p>
+
+<pre><code>puts "starting at #{@time = Time.now}......"
+(1..300).each do |n|
+  items = Item.all(:conditions =&gt; ["content_type = 'Scenario' and items.created_at &gt;= ? and items.created_at &lt; ?",("2010-03-13".to_date - n.days), ("2010-03-13".to_date - (n-1).days) ])
+  items.each do |item|
+    begin
+      if item.extra_items.blank?
+        item.related_lessons.each do |extra|
+          @item = ItemExtraItem.create({:item_id =&gt; item.id, :extra_item_id =&gt; extra.id})
+          puts "=============================================#{@item.id}"
+        end
+      end
+      puts "finished item with ID:#{item.id}"
+    rescue Exception =&gt; e
+      puts "something wrong happened!! item with ID:#{item.id}"
+      next
+    end
+  end
+  puts "------------------spent #{(Time.now - @time)/60} minutes!"
+end
+puts "finished at #{Time.now}, totally, spent #{(Time.now - @time)/60} minutes!"
+</code></pre>
+
+<p>  end
+end
+</code>
+Do you know why find_in_batches is not working here?
+PS:  item.related_lessons is an item array, so the item and its related lesson are all the same class.</p>
+
+<p><strong>Answer</strong>: In find_in_batches loop, the specific Class only has a range of its instances(e.g. 1~1000), so item.related_lessons can not find the item(e.g. 1001) out of the range..</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/03/14/performance-practice-on-rails/">Performance Practice on Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-03-14T00:00:00+08:00" pubdate data-updated="true">Mar 14<span>th</span>, 2010</time>
+        
+         | <a href="/2010/03/14/performance-practice-on-rails/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>﻿﻿﻿﻿Last few days, I&#8217;ve been mainly struggling with performance issue which was sent to me on Monday. On Rails side, I didn&#8217;t add enough necessary cache before I was told about the performance issue. Then I spent two days to improve it by adding cache every where I missed to do that before.</p>
+
+<p>Some shares and confusions as below:</p>
+
+<p>Shares:
+1> A very useful educational website about scaling Rails where there are <a href="http://railslab.newrelic.com/2009/01/22/introduction">Scaling Rails Screencast Series</a> produced by Gregg Pollack and supported by New Relic.
+2> Fragment cache.</p>
+
+<pre><code>  If you add many fragment cache in view, it's really a pain when you expire your cache, so I found there is a better way to expire your cache: if the cached block involves a model, for example, learner's sidebar involves "User" model's change, so I just name the cache with User model's "updated_at", so I don't need to expire this cache, it will be done automatically.
+</code></pre>
+
+<p><code lang="ruby">
+  &lt;% cache("sidebar-profile-avatar-#{current_user.id}-#{current_user.updated_at.to_i}") do -%></p>
+
+<pre><code>&lt;div class="sbb_title"&gt;&lt;%= t :my_profile %&gt;&lt;/div&gt;
+&lt;div class="sbb_content"&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" class="profile_table"&gt;
+    &lt;tr&gt;
+      &lt;td width="100" rowspan="2" align="center" valign="top"&gt;
+        &lt;img src="&lt;%= current_user.avatar_url || "/assets/images/portrait_demo.gif" %&gt;" width="90" height="90" /&gt;
+      &lt;/td&gt;
+      &lt;td width="110" height="24"&gt;&lt;%= display_learner([current_user], nil) %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td valign="top"&gt;&lt;strong&gt;&lt;%= t :my_goal %&gt;&lt;/strong&gt;&lt;%= display_oral_score(current_user.try(:study_info).try(:target_score)) %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;% end -%&gt;
+</code></pre>
+
+<p></code>
+3> Memcached. Cache whatever you want:
+<code lang="ruby">
+  def related_lessons</p>
+
+<pre><code>cache_key = "related_lessons_for_item#{self.id}"
+return Rails.cache.read(cache_key) unless Rails.cache.read(cache_key).nil?
+if content_type == "Scenario"
+  lessons = unit.extra_items.all(:conditions =&gt; {:content_id =&gt; content.extra_lessons.map(&amp;:id)})
+elsif content_type == "ExtraLesson"
+  lessons = [content.scenario.try(:item)]
+end
+Rails.cache.write(cache_key, lessons)
+return lessons
+</code></pre>
+
+<p>  end
+</code></p>
+
+<p>Confusions:
+1> It takes much time to render a partial view. that&#8217;s pretty confusing to me. Some logs as below:
+<code lang="ruby">
+Cached fragment hit: views/sidebar-profile-roadmap-1268271150 (0.9ms)
+Rendered shared/_sidebar_profile (109.8ms)
+</code>
+It seems like even the cached fragment is found, there still needs much time to render the partial..</p>
+
+<p>2> From the log, I saw every request to &#8220;roadmap&#8221; index action will do the following stuff first, It&#8217;s slow. But what that?
+<code lang="ruby">
+&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#
+</code></p>
+
+<p>Any ideas on my confusions? All the involving clues are warmly welcomed.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/01/19/jrails-means-jquery-on-rails/">jRails Means jQuery on Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-19T00:00:00+08:00" pubdate data-updated="true">Jan 19<span>th</span>, 2010</time>
+        
+         | <a href="/2010/01/19/jrails-means-jquery-on-rails/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><em><strong>Note: This introduction post to jRails is copied(mirrored) form <a href="http://mirror.ozdiy.com/assets/b8/2f96a12bc919b37e09d303b86ea1b9_1251811910.html#install">this link</a>, so that I can bakeup this for advanced learning.</strong></em></p>
+
+<div>
+<h2>Intro</h2>
+jRails is a drop-in <a href="http://jquery.com/">jQuery</a> replacement for <a href="http://www.prototypejs.org/">Prototype</a>/<a href="http://script.aculo.us/">script.aculo.us</a> on Rails.         Using jRails, you can get all of the same default Rails helpers for javascript functionality using the lighter jQuery library.</div>
+
+
+<p><a name="news"></a></p>
+
+<div>
+<h2>News</h2>
+<h3>jRails 0.4 : jQuery 1.5!</h3>
+jQuery-UI has just gotten a major update to version 1.5 which stabilizes most of the controls and incorporates the Enchant effects library. jRails follows suit with a single js file for jquery-ui that includes both the modules and effects. The default jRails installation includes a compressed jquery-ui js file that includes the basic modules and effects supported by Prototype/Scriptaculous. There are no modifications to this file, so if you&#8217;d like to generate your own with additional modules or effects, just pop on over to the jQuery UI site and <a href="http://ui.jquery.com/download_builder/">customize your own</a>.
+
+This release of jRails also adds support for jQuery.noConflict(). Just uncomment the line in the init.rb file and set it to whatever you like. Now you can use jRails with other libraries without causing problems.</div>
+
+
+<p><a name="features"></a></p>
+
+<div>
+<h2>Features</h2>
+jRails provides drop-in functionality for these existing Rails methods.
+<ul>
+    <li>
+<ul>
+    <li><strong>Prototype</strong></li>
+    <li>form_remote_for</li>
+    <li>form_remote_tag</li>
+    <li>link_to_remote</li>
+    <li>observe_field</li>
+    <li>observe_form</li>
+    <li>periodically_call_remote</li>
+    <li>remote_form_for</li>
+    <li>submit_to_remote</li>
+</ul>
+</li>
+    <li>
+<ul>
+    <li><strong>Scriptaculous</strong></li>
+    <li>draggable_element</li>
+    <li>drop_receiving_element</li>
+    <li>sortable_element</li>
+    <li>visual_effect</li>
+</ul>
+</li>
+    <li>
+<ul>
+    <li><strong>RJS</strong></li>
+    <li>hide</li>
+    <li>insert_html</li>
+    <li>remove</li>
+    <li>replace</li>
+    <li>replace_html</li>
+    <li>show</li>
+    <li>toggle</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<p><a name="effects"></a></p>
+
+<div>
+<h2>Visual Effects</h2>
+These are the current effects that are included by default in jRails.
+<div>
+<div style="display: block;" onclick="$(this).hide().appear()">
+
+Appear</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).fade().pause(1500).appear()">
+
+Fade</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).puff().pause(1500).appear()">
+
+Puff</div>
+</div>
+<div>
+<div onclick="$(this).blindDown()">
+
+BlindDown</div>
+</div>
+<div>
+<div onclick="$(this).blindUp().pause(1500).appear()">
+
+BlindUp</div>
+</div>
+<div>
+<div onclick="$(this).blindRight()">
+
+BlindRight</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).blindLeft().pause(1500).appear()">
+
+BlindLeft</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).switchOff().pause(1500).appear()">
+
+SwitchOff</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).switchOn()">
+
+SwitchOn</div>
+</div>
+<div>
+<div onclick="$(this).slideDown()">
+
+SlideDown</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).slideUp().pause(1500).appear()">
+
+SlideUp</div>
+</div>
+<div>
+<div onclick="$(this).dropIn()">
+
+DropIn</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).dropOut().pause(1500).appear()">
+
+DropOut</div>
+</div>
+<div>
+<div onclick="$(this).shake()">
+
+Shake</div>
+</div>
+<div>
+<div style="opacity: 1;" onclick="$(this).pulsate()">
+
+Pulsate</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).squish().pause(1500).appear()">
+
+Squish</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).fold().pause(1500).appear()">
+
+Fold</div>
+</div>
+<div>
+<div onclick="$(this).foldOut()">
+
+FoldOut</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).grow()">
+
+Grow</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).shrink().pause(1500).appear()">
+
+Shrink</div>
+</div>
+<div>
+<div onclick="$(this).highlight()">
+
+Highlight</div>
+</div>
+</div>
+
+
+<p><a name="howto"></a></p>
+
+<h2>How to use</h2>
+
+
+<p>Just install and go!        Once installed, the previous Prototype/script.aculo.us helpers will be replaced by jQuery ones.         In order for them to function correctly, just include the appropriate javascript files in the head of your page.</p>
+
+<div>
+<pre>&lt;script src="/javascripts/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/javascripts/jquery-ui.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="/javascripts/jrails.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+</div>
+
+
+<p>You can also use the Rails javascript_include_tag helper with :default to load them automagically.</p>
+
+<div>
+<pre>&lt;%= javascript_include_tag :defaults %&gt;</pre>
+</div>
+
+
+<p><a name="installation"></a></p>
+
+<div>
+<h2>Install</h2>
+To install the jRails plugin:
+<div>
+<pre>./script/plugin install git://github.com/aaronchi/jrails.git</pre>
+</div>
+Then copy the javascript files in the plugin folder to your javascripts directory.</div>
+
+
+<p><a name="changelog"></a></p>
+
+<div>
+<h2>Changelog</h2>
+<ul>
+    <li><label>0.1.0 </label>: Initial Release</li>
+    <li><label>0.2.0 </label>: Major Effects Updates</li>
+    <li><label>0.3.0 </label>: jQuery Enchant</li>
+    <li><label>0.4.0 </label>: jQuery-ui 1.5 and jQuery.noConflict support</li>
+</ul>
+</div>
+
+
+<p><a name="contact"></a></p>
+
+<div>
+<h2>Contact</h2>
+You can post to the <a href="http://groups.google.com/group/jrails">jRails group forum</a> and I&#8217;ll get back to you as soon as I can
+
+Comments, bug reports and feedback are welcomed.        I&#8217;m also considering developing a similar library for <a href="http://mootools.net/">MooTools</a> so if you are interested, please let me know.</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/01/14/a-ab-test-solution-in-ror/">An A/B Test Solution in ROR</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-14T00:00:00+08:00" pubdate data-updated="true">Jan 14<span>th</span>, 2010</time>
+        
+         | <a href="/2010/01/14/a-ab-test-solution-in-ror/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Last few days, I worked for a mission to add more flexible control to <a href="http://www.eqenglish.com">our website</a> landing pages. What I did is to add a &#8220;a/b&#8221; test feature for new landing pages, that means, if people have two designs and want to compare the results, they only release two versions of landing page, and then only get one url for the two versions of pages, after that the url will automatically redirect to different versions evenly, so that through Google analytics marketing people can easily decide which landing page is much better.</p>
+
+<p><strong>Landing pages A/B test solution:</strong>
+<code lang="ruby">
+class LandingsController &lt; ApplicationController
+  layout "layouts/blank"
+  caches_page "ielts","ab_test"</p>
+
+<p>  def ielts</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first
+if @landing_page.ab_test?
+  if not params[:channel].blank?
+    redirect_to landing_ab_test_with_channel_path(["a","b"].rand,params[:url_slug],params[:channel])
+  else
+    redirect_to landing_ab_test_path(["a","b"].rand,params[:url_slug])
+  end
+else
+  render :layout =&gt; "layouts/landing_page"
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def ab_test</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:type].to_s + "/" + params[:url_slug].to_s)
+(@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first) if @landing_page.nil?
+render :layout =&gt; "layouts/landing_page"
+</code></pre>
+
+<p>  end
+end
+</code>
+<strong>Routing:</strong>
+<code lang="ruby">
+   map.landing_trunk "ielts/:url_slug", :controller => "landings", :action => "ielts"
+   map.landing_trunk_with_channel "ielts/:url_slug/:channel", :controller => "landings", :action => "ielts"
+   map.landing_ab_test "ielts/sub/:type/:url_slug/", :controller => "landings", :action => "ab_test"
+   map.landing_ab_test_with_channel "ielts/sub/:type/:url_slug/:channel", :controller => "landings", :action => "ab_test"
+</code></p>
+
+<p><strong>A/B test Sample:</strong>
+<em>Suppose</em>:</p>
+
+<pre><code>          We release a type of landing page called : university
+          And we have two kinds of different designs : called "a/university" and "b/university"
+          Then we may release the landing page to many universities, such as "beida", "renda", "qinghua" etc.. they are different channels.
+</code></pre>
+
+<p><em>Then we can</em>:</p>
+
+<pre><code>         Only release the url as "http://www.eqenglish.com/ielts/university" to any universities by following "/beida", "/renda", "/qinghua" etc...
+         It should be like this "http://www.eqenglish.com/ielts/university/beida",  "http://www.eqenglish.com/ielts/university/renda"... etc.. (For client use)
+         But in google analytics, you will see : "http://www.eqenglish.com/ielts/sub/a/university/beida"
+                                                              and : "http://www.eqenglish.com/ielts/sub/b/university/beida"  (For our analysis)
+</code></pre>
+
+<p> It means, different landing page and different channel and (&#8220;a&#8221; or &#8220;b&#8221;) will be in a unique URL for certain purpose. but for our client, they don&#8217;t need to care about &#8220;a/b&#8221; test, system will redirect pages automatically.</p>
+
+<p>Any involving comments are welcomed.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/01/07/formtastic/">Again About Formtastic</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-07T00:00:00+08:00" pubdate data-updated="true">Jan 7<span>th</span>, 2010</time>
+        
+         | <a href="/2010/01/07/formtastic/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Actually,
+I don&#8217;t know how fantastic Formtastic is before this afternoon, I used it to refactor my form and it&#8217;s pretty cool for me to wrap up all the massive code which I hate as always. Now every form is becoming nice.</p>
+
+<p>Some relevant and useful additions about Formtastic:</p>
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong><span style="line-height: 1.4em; padding: 0px; margin: 0px;">SASS</span>-stylesheets</strong> – for even more pretty styled forms in all browsers (mixins for different form layouts, etc.)<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/activestylus/formtastic-sass">http://github.com/activestylus/formtastic-sass</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>TextMate-bundle</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/formtastic_tmbundle">http://github.com/grimen/formtastic_tmbundle</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>In-place editor</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/rubymood/jintastic">http://github.com/rubymood/jintastic</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>Client-side validations</strong> that is compatible with Formtastic markup:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/validatious-on-rails">http://github.com/grimen/validatious-on-rails</a></p>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/01/06/cms-formtastic-routing-cache-in-rails/">A Note for Building a Simple Rails Application</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-06T00:00:00+08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2010</time>
+        
+         | <a href="/2010/01/06/cms-formtastic-routing-cache-in-rails/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近花了一些时间改造公司的网站（<a href="http://www.eqenglish.com">EQV2</a>），这个网站是一个偏重内容和设计的信息类主站，并没有太多功能性的要求，所以在使用<a href="http://rubyonrails.org/">Ruby on Rails</a>开发这个网站的时候，尝试了一些之前涉及不多的技术。最初这个网站利用<a href="http://radiantcms.org/">Radiant</a>（RoR的开源CMS系统）搭建，考虑到没有专门的技术人员来管理和研究<a href="http://radiantcms.org/">Radiant</a>，而且和我们自己的系统平台的集成也会有些麻烦，最终决定放弃这把牛刀，仅仅做一个简单而且结构清晰的网站就OK。</p>
+
+<p>我简单列一下这次改造过程中的一些比较典型的处理方法和技术：</p>
+
+<ul>
+<li><p><a href="http://blog.wangyaodi.com/2009/12/22/formtastic-for-rails/">Formtastic</a> + nifty_scaffold
+ 用这两招可以方便的产生后台的CRUD管理部分，不知道为什么我第一反应没有使用<a href="http://activescaffold.com/">ActiveScaffold</a>，可能是从Rails2.3+以后Denny老说使用起来有问题有冲突，我就本能的绕开它了。
+ 参考： <a href="http://asciicasts.com/episodes/184-formtastic-part-1">http://asciicasts.com/episodes/184-formtastic-part-1</a></p></li>
+<li><p><a href="http://blog.wangyaodi.com/2009/11/13/feed-parser-in-ruby/">feedzirra</a> + <a href="http://blog.wangyaodi.com/2009/11/13/%E5%9C%A8ror%E4%B8%AD%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">whenever</a>
+feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可以自动更新源RSS，在我们的系统中我用它们更新Blog中的内容到网站上面来。
+ 参考： <a href="http://github.com/pauldix/feedzirra">http://github.com/pauldix/feedzirra</a></p>
+
+<pre><code>        &lt;a href="http://github.com/javan/whenever/"&gt;http://github.com/javan/whenever/&lt;/a&gt;
+</code></pre></li>
+<li><p><a href="http://code.google.com/p/rubycas-server/">cas</a>
+ <a href="http://www.dujinfang.com">7哥</a>搭建了一个idp_cas的server，我就结合这个做了一个单点登录的控制，用来对后台内容管理做权限控制。这个方案很轻量级，避免了直接集成复杂的idp用户验证系统。</p></li>
+<li><p>Routing
+ 此次最想突出介绍的是ROR的<a href="http://api.rubyonrails.org/classes/ActionController/Routing.html">Routing</a>机制，强大的Routing可以将URL改写成任何形式，以适应SEO的需要，同时也可以做坏链的容错处理。很好很强大，就是不知道效率如何，这个有待进一步熟悉。</p></li>
+<li><p>caches_page
+ 由于本次改造过程中主要涉及内容性质的View，所以我只进行了Page Cache，Rails的Cache方法也很简单易用，我稍后会做一个较为详细的总结，讨论一下各种Cache的问题。</p></li>
+</ul>
+
+
+<p>此次改造的重点是网站结构和UI/UE的设计，Noah和Buzz主要负责这方面的工作，正因为他们出色的工作成果才使得EQV2顺利按期交付。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/12/29/session-in-ruby-on-rails/">Session in Ruby on Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-29T00:00:00+08:00" pubdate data-updated="true">Dec 29<span>th</span>, 2009</time>
+        
+         | <a href="/2009/12/29/session-in-ruby-on-rails/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>session</strong>: a way to store information across pages.</p>
+
+<p><strong>set value as:</strong></p>
+
+<pre><code>    session[:person] = ＠user
+</code></pre>
+
+<p><strong>read values as:</strong></p>
+
+<pre><code>    Hello #{session[:person]}
+</code></pre>
+
+<p><strong>set as nil:</strong></p>
+
+<pre><code>    session[:person] = nil
+</code></pre>
+
+<p><strong>reset all sessions</strong></p>
+
+<pre><code>    reset_session
+</code></pre>
+
+<p>There are many solutions to store session in ruby on rails, including
+<strong>PStore</strong> [it&#8217;s the default way in rails]
+<strong>ActiveRecordStore</strong> [to use ActiveRecord, better to share information across apps in this way]
+<strong>DRbStore</strong>
+<strong>FileStore</strong>
+<strong>MemoryStore</strong></p>
+
+<p>Much more compares on above solutions : check out <a href="http://scott.elitists.net/sessions.html">Ruby on Rails Session Container Performance</a> see the details.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/12/28/seo-web-developer-cheat-sheet/">SEO Web Developer Cheat Sheet</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-28T00:00:00+08:00" pubdate data-updated="true">Dec 28<span>th</span>, 2009</time>
+        
+         | <a href="/2009/12/28/seo-web-developer-cheat-sheet/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>发现好东西不敢独享，拿出来分享一下：<a href='http://blog.wangyaodi.com/wp-content/uploads/2009/12/SEO_Web_Developer_Cheat_Sheet.pdf'>SEO Web Developer Cheat Sheet</a></p>
+
+<p>Cheat Sheet是一种流行的手册文化，如果能把常用的东西凑到一块，简明扼要的排版出来，用的时候方便不少。以前写过一个介绍<a href="http://blog.wangyaodi.com/2009/11/11/cheat-sheet-in-terminal/">Cheat命令</a>的帖子，如果你是搞技术的，不妨试试。</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/6/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/4/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <img src="https://img.skitch.com/20110814-rrw7uufrh7wc6eugk6yf4163qb.jpg"></img>
+  <p>Hi, I&#8217;m <b style="color:red">Andy Wang</b>.<br />
+     I live in <b style="color:red">Beijing</b>, China. <br />
+     I&#8217;m a <b style="color:red">Sr. Ruby/Rails Engineer</b> at <a href="http://intridea.com">Intridea</a>.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/yorzi">@yorzi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'yorzi',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/wangyaodi@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'andywangshome';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

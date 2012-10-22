@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: EQenglish | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/eqenglish/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[where optimization happens]]></title>
+    <link href="http://yorzi.github.com/2010/08/27/where-optimization-happens/"/>
+    <updated>2010-08-27T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/27/where-optimization-happens</id>
+    <content type="html"><![CDATA[<p>Jonathan just mentioned <a href="http://www.idapted.com/blog/2010/08/16/small-details-big-gains/" target="_blank">small details and big gains</a> in his post days ago, I totally agree with him from technology perspective, meanwhile, I found more samples to support his points. Yeah, technology is born for changing people's life, I call this kind of changes as Optimization.Optimization is happening everyday to Idapted Platform, as it's one of most important way to become perfect.</p>
+
+<p>In last week, our StudyCenter, the front end user interface system, was optimized in its registration flow. Previously, we have many registration channels for different partners. Our marketing department is mainly responsible for these registration channels, and update them frequently. Accordingly, technology team and sales team also need to cooperate. Here problem is, demands change more quickly than tech guys and sales system can follow up.</p>
+
+<p>Now we refactor the control of registration flow, to re-think every departments' needs, we split the conditions for each department, after this improvement, people in different departments will not affect others, specially to tech guys, this is more flexible and maintainable. They will not messy all the situations up.</p>
+
+<p>Another sample of optimization is that, we iterated many rounds of development to build a CRM system internally before, however, we integrated too many features inside the CRM, which were used by different departments. Because Idapted customers' accounts are increasing rapidly, the speed of whole system is getting slower and slower. Obviously, the CRM system needs optimization.</p>
+
+<p>We finally split the CRM system in three parts which are used by different people, The independent and small system is well designed for certain users, that's the key of this Optimization. It gains us faster system response and clearer business devision.</p>
+
+<p>All in all, to serve learners better user experience, to improve internal working process or to increase system efficiency, all of these optimizations are about making things perfect. This is the belief of <a href="http://www.idapted.com">Idapted</a>.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Renren Integration into EQenglish]]></title>
+    <link href="http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish/"/>
+    <updated>2010-06-20T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish</id>
+    <content type="html"><![CDATA[<p><img title="renren logo" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.41.10-AM-300x86.png" alt="" width="270" height="77" /></p>
+
+<p><a href="http://renren.com">The Renren Network</a>, which was formerly named Xiaonei Network is one of most successful Chinese social networking site. Renren is with an interface similar to that of <a href="http://www.facebook.com">Facebook</a>. It's said that there are more than 22 million active users and estimated 40 million users who have registered their real names. Thus, Renren is widely considered to be the most powerful SNS service in Mainland China, especially among college students.</p>
+
+<p>And, <a href="http://www.eqenglish.com">EQEnglish</a> is the fastest growing 1:1 English training service powered by <a href="http://www.idapted.com" target="_blank">Idapted</a> in China. It's delivering thousands of lessons a week to students all over China with its professional foreign teachers. Now, conveniently, all Renren's users can login EQenglish directly without registration again, at the same time, EQenglish is also using Renren site's platform <a href="http://wiki.dev.renren.com/wiki/API" target="_blank">API</a> to share learners' study status with the community. It's obviously a win-win model for both EQenglish and Renren.</p>
+
+<p>Now, in order to introduce you about the integration between EQenglish and Renren SNS, let me take you go through the story.</p>
+
+<p>[caption id="" align="alignright" width="270" caption="Login EQenglish system via Renren account"]<img title="Login EQenglish system via Renren account" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-2.17.12-PM-300x205.png" alt="" width="270" height="185" />[/caption]</p>
+
+<p>To login EQenglish via Renren account, you need to, at least have one Renren account, then on EQenglish portal you will see a login form  as right after you click "Connect via Rreren". After you input your user name and password EQenglish will present you a guide page on which you decide to bundle your exist EQ account with your Renren account or just every time use your Renren account login EQ platform.</p>
+
+<p>What will happen next when you do the login?</p>
+
+<p>On EQenglish website, you will be marked with a Renren icon and you can share EQ learning materials or EQ discussion thread or EQ study status with your Renren friends. For instance, you just discussed an EQ lesson named "EQ IELTS Formula 26: Evaluating Two Different Opinions" with your classmates on EQenglish studycenter, then the system will send this discussion status to your Renren friends, something like "Hey, I am discussing an interesting EQ lesson on their website, come and join in, it's cool..", surely, it's based on your Renren setting on connected websites.</p>
+
+<p>There, on Renren website, is also an <a href="http://page.renren.com/699099142/index" target="_blank">application home page</a> where all the EQ followers can keep talking about their EQ study story or learning experience, At the same time, EQ consultants spread out EQ learning tips with all its fans. In past two weeks, there are more than 300 learners follow EQ application in Renren Site. People rate <a href="http://page.renren.com/699099142/reviews" target="_blank">many 5-stars</a> for this connection application.</p>
+
+<div class="mceTemp"><dl id="attachment_202" class="wp-caption alignright" style="width: 563px;"><dt><img title="EQ application home page on Renren site" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.21.01-AM.png" alt="" width="553" height="285" /></dt><dd>EQ application home page on Renren site</dd></dl></div>
+
+
+<p>So, users conveniently use their Renren accounts to login EQenglish. The user may then grant EQenglish access to their public data including: Real identity information, social graph, etc. Using this information, EQenglish can expand leaner base and strengthen the social aspects of EQ self. What's useful is, Renren users can find all the valuable information on EQenglish message feeds through their friends feeds, People can make content(EQ learning materials), or anything else(lesson discussion thread) available for sharing.</p>
+
+<p>Technically, this integration is still have big room to improve, it depends on Renren's open platform, We are ready to enhance user experience for all EQenglish learners, We always believe in a formula when we development EQenglish learning system, that is:
+Great Technology + Clear Convenience = Comfortable Awesome</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[an A/B test solution in ROR]]></title>
+    <link href="http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror/"/>
+    <updated>2010-01-14T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror</id>
+    <content type="html"><![CDATA[<p>Last few days, I worked for a mission to add more flexible control to <a href="http://www.eqenglish.com">our website</a> landing pages. What I did is to add a "a/b" test feature for new landing pages, that means, if people have two designs and want to compare the results, they only release two versions of landing page, and then only get one url for the two versions of pages, after that the url will automatically redirect to different versions evenly, so that through Google analytics marketing people can easily decide which landing page is much better.</p>
+
+<p><strong>Landing pages A/B test solution:</strong>
+<code lang="ruby">
+class LandingsController &lt; ApplicationController
+  layout "layouts/blank"
+  caches_page "ielts","ab_test"</p>
+
+<p>  def ielts</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first
+if @landing_page.ab_test?
+  if not params[:channel].blank?
+    redirect_to landing_ab_test_with_channel_path(["a","b"].rand,params[:url_slug],params[:channel])
+  else
+    redirect_to landing_ab_test_path(["a","b"].rand,params[:url_slug])
+  end
+else
+  render :layout =&gt; "layouts/landing_page"
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def ab_test</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:type].to_s + "/" + params[:url_slug].to_s)
+(@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first) if @landing_page.nil?
+render :layout =&gt; "layouts/landing_page"
+</code></pre>
+
+<p>  end
+end
+</code>
+<strong>Routing:</strong>
+<code lang="ruby">
+   map.landing_trunk "ielts/:url_slug", :controller => "landings", :action => "ielts"
+   map.landing_trunk_with_channel "ielts/:url_slug/:channel", :controller => "landings", :action => "ielts"
+   map.landing_ab_test "ielts/sub/:type/:url_slug/", :controller => "landings", :action => "ab_test"
+   map.landing_ab_test_with_channel "ielts/sub/:type/:url_slug/:channel", :controller => "landings", :action => "ab_test"
+</code></p>
+
+<p><strong>A/B test Sample:</strong>
+<em>Suppose</em>:</p>
+
+<pre><code>          We release a type of landing page called : university
+          And we have two kinds of different designs : called "a/university" and "b/university"
+          Then we may release the landing page to many universities, such as "beida", "renda", "qinghua" etc.. they are different channels.
+</code></pre>
+
+<p><em>Then we can</em>:</p>
+
+<pre><code>         Only release the url as "http://www.eqenglish.com/ielts/university" to any universities by following "/beida", "/renda", "/qinghua" etc...
+         It should be like this "http://www.eqenglish.com/ielts/university/beida",  "http://www.eqenglish.com/ielts/university/renda"... etc.. (For client use)
+         But in google analytics, you will see : "http://www.eqenglish.com/ielts/sub/a/university/beida"
+                                                              and : "http://www.eqenglish.com/ielts/sub/b/university/beida"  (For our analysis)
+</code></pre>
+
+<p> It means, different landing page and different channel and ("a" or "b") will be in a unique URL for certain purpose. but for our client, they don't need to care about "a/b" test, system will redirect pages automatically.</p>
+
+<p>Any involving comments are welcomed.</p>
+]]></content>
+  </entry>
+  
+</feed>

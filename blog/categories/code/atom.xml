@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: code | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/code/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[primary_key and foreign_key in Rails association]]></title>
+    <link href="http://yorzi.github.com/2009/11/12/primary_key-and-foreign_key-in-rails-association/"/>
+    <updated>2009-11-12T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/12/primary_key-and-foreign_key-in-rails-association</id>
+    <content type="html"><![CDATA[<p>The has_many and belongs_to association in Rails are with many optional parameters, they are actually the parameters for DB relationship, see more details by <a href="http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html">clicking here</a>.</p>
+
+<p>As a reminder to myself, I misunderstood the primary_key an foreign_key conditions in association, it should be set in both sides in some case, for instance:</p>
+
+<pre name="code" class="ruby">
+class Student < ActiveRecord::Base
+  has_many :trial_lessons, :foreign_key => :user_id, :primary_key => :profile_id
+end
+</pre>
+
+
+<p>Above code will let you invoke the student.trial_lessons, but if you want to use trial_lesson.student, you have to define the association as below:</p>
+
+<pre name="code" class="ruby">
+class TrialLesson < ActiveRecord::Base
+  belongs_to :student, :primary_key => :profile_id, :foreign_key => :user_id
+end
+</pre>
+
+
+<blockquote><strong>Notice that</strong>: you actually set the same :primary_key and :foreign_key in both sides, it's because the DB relationship between these two Model can be described the same way..(it's only a way for me to remember the rule)</blockquote>
+
+]]></content>
+  </entry>
+  
+</feed>

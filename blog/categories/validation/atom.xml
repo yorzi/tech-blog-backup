@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: validation | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/validation/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Again about Formtastic]]></title>
+    <link href="http://yorzi.github.com/2010/01/07/formtastic/"/>
+    <updated>2010-01-07T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/01/07/formtastic</id>
+    <content type="html"><![CDATA[<p>Actually,
+I don't know how fantastic Formtastic is before this afternoon, I used it to refactor my form and it's pretty cool for me to wrap up all the massive code which I hate as always. Now every form is becoming nice.</p>
+
+<p>Some relevant and useful additions about Formtastic:</p>
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong><span style="line-height: 1.4em; padding: 0px; margin: 0px;">SASS</span>-stylesheets</strong> – for even more pretty styled forms in all browsers (mixins for different form layouts, etc.)<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/activestylus/formtastic-sass">http://github.com/activestylus/formtastic-sass</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>TextMate-bundle</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/formtastic_tmbundle">http://github.com/grimen/formtastic_tmbundle</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>In-place editor</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/rubymood/jintastic">http://github.com/rubymood/jintastic</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>Client-side validations</strong> that is compatible with Formtastic markup:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/validatious-on-rails">http://github.com/grimen/validatious-on-rails</a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

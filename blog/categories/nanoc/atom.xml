@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nanoc | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/nanoc/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Now My Blog Is Running on Octopress]]></title>
+    <link href="http://yorzi.github.com/2011/08/14/now-my-blog-is-running-on-octopress/"/>
+    <updated>2011-08-14T19:39:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/08/14/now-my-blog-is-running-on-octopress</id>
+    <content type="html"><![CDATA[<p><img src="https://img.skitch.com/20110814-m6jxiyu37ygd2pgxwfejamf95g.jpg" alt="Octopress" /></p>
+
+<p>Octopress is owesome!</p>
+
+<p>Last time I tried to migrate my wordpress blog to <a href="https://github.com/mojombo/jekyll">Jekyll</a>, then I failed to find some beautiful theme. And when <a href="cn.intridea.com">intridea cn blog</a> was built using <a href="https://github.com/ddfreyne/nanoc">nanoc</a>, I'd like to give it try, you know, I still gave nanoc up as I can not make the theme pretty by myself.</p>
+
+<p>Days ago, I came across the <a href="http://www.octopress.org">octopress</a>, I totally fell in love with its convenience and cool blog theme. I spent several hours to move my blog to github this afternoon. Oh my, Now I can write blogs in Markdown and deploy it to github.</p>
+
+<p>Octopress has its official website with many valuable materials to help you get start and doing other regarding interesting things. Cool, hah? Try it out now!</p>
+]]></content>
+  </entry>
+  
+</feed>

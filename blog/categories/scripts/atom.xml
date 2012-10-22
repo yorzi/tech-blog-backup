@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Scripts | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/scripts/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[perfect backup solution for developers]]></title>
+    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <updated>2010-09-10T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with "backup" and "whenever".</p>
+
+<p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
+
+<p>While using Backup, it's like a configuration file with easy rule, don't worry about the rule, I believe you will understand it in seconds. It also owns many common slots to different DB(or S3), you can also config your customized command and script inside its backup.rb file. Whenever is the Ruby way to manage your <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> jobs, It's pretty cool.</p>
+
+<p>Don't hesitate to try them out, you will find the inside beauty of backup. Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[create new user on CentOS]]></title>
+    <link href="http://yorzi.github.com/2010/07/18/create-new-user-on-centos/"/>
+    <updated>2010-07-18T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/18/create-new-user-on-centos</id>
+    <content type="html"><![CDATA[<p><strong>STUDY NOTES:</strong></p>
+
+<p><strong>syntax:</strong>
+useradd -s /bin/bash -d [folder_name]  -c “[name]” [userid]</p>
+
+<p><strong>sample:</strong>
+useradd -s /bin/bash -d /home/andy -c "Andy Wang" andy</p>
+
+<p><strong>chagne password:</strong>
+passwd andy</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SSH tunnel script]]></title>
+    <link href="http://yorzi.github.com/2009/11/03/ssh-turnl-script/"/>
+    <updated>2009-11-03T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/03/ssh-turnl-script</id>
+    <content type="html"><![CDATA[<p>Why SSH tunneling?</p>
+
+<p>Obviously, if you live in Chxna or some other place where you are restricted to access free network, and if you luckily own a ssh accessible account on a server that is hosted in a free country, congratulations, you can use ssh tunnel to fuck the wall.</p>
+
+<p>Seriously, you just need to install ssh tool on your PC, (it will be much easier to setup a ssh tunnel if you are using a *nix OS), putty is a good choose if you are on Windows. I will show the script to explain what you should do on Ubuntu 9.04.</p>
+
+<pre name="code" class="ruby">
+   ssh -qTfnN -D LocalPort remotehost(dreamhost)
+</pre>
+
+
+<p><code>
+All the added options are for a ssh session that’s used for tunneling.
+-q :- be very quite, we are acting only as a tunnel.
+-T :- Do not allocate a pseudo tty, we are only acting a tunnel.
+-f :- move the ssh process to background, as we don’t want to interact with this ssh session directly.
+-N :- Do not execute remote command.
+-n :- redirect standard input to /dev/null.
+In addition on a slow line you can gain performance by enabling compression with the -C option.
+</code>
+ Enjoy it.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: note | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/note/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Session in Ruby on Rails]]></title>
+    <link href="http://yorzi.github.com/2009/12/29/session-in-ruby-on-rails/"/>
+    <updated>2009-12-29T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/12/29/session-in-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p><strong>session</strong>: a way to store information across pages.</p>
+
+<p><strong>set value as:</strong></p>
+
+<pre><code>    session[:person] = ＠user
+</code></pre>
+
+<p><strong>read values as:</strong></p>
+
+<pre><code>    Hello #{session[:person]}
+</code></pre>
+
+<p><strong>set as nil:</strong></p>
+
+<pre><code>    session[:person] = nil
+</code></pre>
+
+<p><strong>reset all sessions</strong></p>
+
+<pre><code>    reset_session
+</code></pre>
+
+<p>There are many solutions to store session in ruby on rails, including
+<strong>PStore</strong> [it's the default way in rails]
+<strong>ActiveRecordStore</strong> [to use ActiveRecord, better to share information across apps in this way]
+<strong>DRbStore</strong>
+<strong>FileStore</strong>
+<strong>MemoryStore</strong></p>
+
+<p>Much more compares on above solutions : check out <a href="http://scott.elitists.net/sessions.html">Ruby on Rails Session Container Performance</a> see the details.</p>
+]]></content>
+  </entry>
+  
+</feed>

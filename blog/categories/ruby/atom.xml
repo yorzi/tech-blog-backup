@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Real-Time Application with Rails3]]></title>
+    <link href="http://yorzi.github.com/2011/02/18/real-time-application-with-rails3/"/>
+    <updated>2011-02-18T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/02/18/real-time-application-with-rails3</id>
+    <content type="html"><![CDATA[<p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
+
+<p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>
+
+<p>There are some example use cases of RTAs, including:</p>
+
+<pre>
+   * Videoconference applications
+   * VoIP (voice over Internet Protocol)
+   * Online gaming
+   * Community storage solutions
+   * Chatting
+   * IM (instant messaging)
+</pre>
+
+
+<p>Mainly, I am interested in two solutions, which are <a href="https://github.com/lifo/cramp">Cramp</a> based RTA and a NR2J(<a href="http://nodejs.org/">Node.js</a>+<a href="https://github.com/antirez/redis">Redis</a>+<a href="https://github.com/maccman/juggernaut">Juggernaut</a>+Jquery) solution, both of these two solutions have existing samples, I suggest you should go through all of them to understand RTA well.</p>
+
+<p><strong>Cramp based RTA</strong>
+Cramp is a ruby web framework with asynchronous feature, which is always running inside EventMachine reactor loop, there is a <a href="http://m.onkey.org/introducing-cramp">detailed introduction</a> for it. A sample code is <a href="https://github.com/akitaonrails/cramp_chat_demo">available here</a>.</p>
+
+<p><strong>NR2J solution</strong>
+Introduction is <a href="http://www.golygon.com/2010/12/private-chat-room-in-ruby-on-rails-3-0/">here</a> and sample code is <a href="https://github.com/prabgupt/chatclient">here</a>. I tried Node.js before, it's getting popular recently, but I still don't be used to implementing server side code with JS. I love Ruby and Rails anyway.</p>
+
+<p><strong>Other RTA resources:</strong>
+Real-Time/WebSocket/Rails3: <a href="http://laktek.com/tag/realie/">http://laktek.com/tag/realie/</a>
+JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[perfect backup solution for developers]]></title>
+    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <updated>2010-09-10T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with "backup" and "whenever".</p>
+
+<p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
+
+<p>While using Backup, it's like a configuration file with easy rule, don't worry about the rule, I believe you will understand it in seconds. It also owns many common slots to different DB(or S3), you can also config your customized command and script inside its backup.rb file. Whenever is the Ruby way to manage your <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> jobs, It's pretty cool.</p>
+
+<p>Don't hesitate to try them out, you will find the inside beauty of backup. Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
+    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <updated>2010-09-02T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <content type="html"><![CDATA[<p>I've been being confused of this "conversion" issue for a while, Today I figured out a clear way to do the function.
+<code lang='ruby'>
+DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
+</code>
+Also, I'd like to note down the ruby Time format rule:</p>
+
+<pre>
+  %a - The abbreviated weekday name (``Sun'')
+  %A - The  full  weekday  name (``Sunday'')
+  %b - The abbreviated month name (``Jan'')
+  %B - The  full  month  name (``January'')
+  %c - The preferred local date and time representation
+  %d - Day of the month (01..31)
+  %H - Hour of the day, 24-hour clock (00..23)
+  %I - Hour of the day, 12-hour clock (01..12)
+  %j - Day of the year (001..366)
+  %m - Month of the year (01..12)
+  %M - Minute of the hour (00..59)
+  %p - Meridian indicator (``AM''  or  ``PM'')
+  %S - Second of the minute (00..60)
+  %U - Week  number  of the current year,
+          starting with the first Sunday as the first
+          day of the first week (00..53)
+  %W - Week  number  of the current year,
+          starting with the first Monday as the first
+          day of the first week (00..53)
+  %w - Day of the week (Sunday is 0, 0..6)
+  %x - Preferred representation for the date alone, no time
+  %X - Preferred representation for the time alone, no date
+  %y - Year without a century (00..99)
+  %Y - Year with century
+  %Z - Time zone name
+  %% - Literal ``%'' character
+
+   t = Time.now
+   t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
+   t.strftime("at %I:%M%p")            #=> "at 08:56AM"
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[install sqlite3-ruby on CentOS]]></title>
+    <link href="http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos/"/>
+    <updated>2010-08-26T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos</id>
+    <content type="html"><![CDATA[<p>Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here’s the solution to get it running:</p>
+
+<p>Go to sqlite.org and get the amalgamation package or wget directly (below is my way):</p>
+
+<pre>
+# cd into my source tarball folder
+cd /usr/src
+# get the amalgation package
+wget http://sqlite.org/sqlite-amalgamation-3.6.23.1.tar.gz
+# unpack it
+tar xvzf sqlite-amalgamation-3.6.23.1.tar.gz
+# cd into the created folder
+cd sqlite-amalgamation-3.6.23.1
+# run configuration
+./configure
+# make and intall the package
+make && sudo make install
+</pre>
+
+
+<p>After successfully install the installer will tell where the library files have been stored in. In my case this was “/usr/local/lib”.</p>
+
+<p>So I can install the gem now with:</p>
+
+<pre>
+gem install sqlite3-ruby — –with-sqlite3-include=/usr/local/include \
+–with-sqlite3-lib=/usr/local/lib
+</pre>
+
+
+<h1>getting this as a result</h1>
+
+<p>Building native extensions. This could take a while…
+Successfully installed sqlite3-ruby-1.3.1
+1 gem installed</p>
+
+<p>Ok, done.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Experiment Bowline]]></title>
+    <link href="http://yorzi.github.com/2010/06/16/experiment-bowline/"/>
+    <updated>2010-06-16T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/06/16/experiment-bowline</id>
+    <content type="html"><![CDATA[<blockquote>Bowline is a framework for making cross platform desktop applications in Ruby, HTML and JavaScript.
+
+If you've ever wished creating a desktop application was as simple as creating a Rails website, Bowline's for you.
+
+Bowline respects MVC, you can design your views in HTML5/CSS3 - then bind them to your Ruby models. There's no request/response cycle - any changes in models automatically get reflected in the view.</blockquote>
+
+
+<p style="text-align: right;"><strong>See : <a href="http://bowlineapp.com/">http://bowlineapp.com/</a></strong></p>
+
+
+<p>Experiment on this framework:</p>
+
+<p><strong>Requirements:</strong></p>
+
+<ul>
+<li>Mac OSX &gt;=10.5 or Ubuntu -----&gt; [I am on Ubuntu 9.04]</li>
+<li>Ruby 1.9 -----------------------------&gt; [I use <a href="http://rvm.beginrescueend.com/">RVM</a> to switch ruby between different version]</li>
+<li>Bowline gem -----------------------&gt; sudo gem install <a href="http://github.com/maccman/bowline">bowline</a></li>
+</ul>
+
+
+<p><strong>RVM</strong></p>
+
+<ul>
+<li><a href="http://rvm.beginrescueend.com/rvm/install/">Install RVM</a> to manage Ruby easily, then you decide which version you will use.</li>
+</ul>
+
+
+<p>OK, Now create an application in an easy way:
+<span style="color: #0000ff;"><em>&gt;&gt; bowline-gen app helloworld
+&gt;&gt; cd helloworld
+&gt;&gt; bowline-bundle
+&gt;&gt; ./script/run</em></span></p>
+
+<p>Unluckily, On Ubuntu 9.0.4, There is an error about a needed lib when I run the application, see
+<span style="color: #0000ff;"><em>/usr/lib/libstdc++.so.6: version `GLIBCXX_3.4.11' not found (required by /home/andy/.bowline/bowline-desktop)</em></span></p>
+
+<p>I searched around and found it's something wrong with gcc version, or these is still a webkit lib involved issue under Ubuntu9.0.4, anyway, it's interesting to me, I am now wondering if we can reference some bowline experience to create iphone/ipad application based on ruby on rails. not sure, I am researching in advance.</p>
+]]></content>
+  </entry>
+  
+</feed>

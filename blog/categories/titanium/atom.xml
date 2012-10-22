@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Titanium | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/titanium/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[How to keep a space in your iPhone App name?]]></title>
+    <link href="http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
+    <updated>2010-08-31T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
+    <content type="html"><![CDATA[<p>The answer is, <strong>you can't submit your iPhone App with <em>whitespace</em> in its name</strong>. But you do <strong>be able to add space in your App display name</strong> under icon. I guess your purpose is the second one, you only want to display the space under app icon on device, don't you?</p>
+
+<p>OK, just name your app as whatever name with space before you setup the distribution package, e.g. "Example Name.app". Then,</p>
+
+<p>1) In Xcode Organizer right click on the build date of the app and select "Reveal Archived App in Finder"
+2) Open ArchiveInfo.plist in a text editor, edit the attribute "<strong><em><string>Example Name.app</string></em></strong>"
+Change that to ExampleName.app and save the file.
+4) In Finder remove the space in the file names on both the .app and the .app.dSYM files
+5) Once you get back to Xcode Organizer, you should be able to submitting app to itunesconnect successfully.
+PS: Also you might want to remove the previously generated .ipa file with the space. just delete the file, a new one will be created after the above steps automatically</p>
+
+<p>Now you are just submitting an app named "ExampleName.app", and its display name will remain "Example Name.app".</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[iPhone App : Debug and Release through Titanium]]></title>
+    <link href="http://yorzi.github.com/2010/08/25/iphone-app-debug-and-release-via-titanium/"/>
+    <updated>2010-08-25T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/25/iphone-app-debug-and-release-via-titanium</id>
+    <content type="html"><![CDATA[<p>Once people develop an iPhone App using <a href="http://www.appcelerator.com/">Titanium1.4</a>, they must be very happy when the App is running on iPhone simulator. They feel great until they decide to debug their app on their devices or even release their app to AppleAppStore. This happens specially to these who firstly do this. Why? There are many reasons that you will hate Apple during the debug or release process. I bat you are like me then.</p>
+
+<p>Assume that: You've already finished coding an iPhone app in Titanium 1.4 framework. Now you want to install your app on your device. If you do this first time, guess what will happen to you? Let me tell you my story.</p>
+
+<p>You will be blocked by Titanium certificates detections when you want to install your app to your device. see below image:</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dut81/mail-1320x770"><img src="http://img.skitch.com/20100825-fuf9q1dac5ir21f5g4im2h93gi.jpg" alt="mail (1320շ70)" /></a><br /></div>
+
+
+<br />
+
+
+<p>Well, in order to become an iPhone developer, you should pay Apple for an iPhone Program Permission. My boss paid Apple for an iPhone Program Team permission, it cost him about one month to pass Apple's approval. After that, he, as an admin agent iPhone developer, invited me as an iPhone developer member with admin permission. Here we had been running into issue for two days. Finally, we found that he only can invite my exist Apple ID as an iPhone developer, because I can't finish a registration process after he invite me with a non-exist Apple ID. The evil is Apple indicates that, we should invite non-exist accounts as team members.</p>
+
+<p>Now have I got the permission to debug my app on my iphone? Wait a moment. Actually I should be invited twice separately, one is for <a href="https://itunesconnect.apple.com/">iTunesconnect</a>. another one is for <a href="http://developer.apple.com/iphone/index.action">Provisioning Portal</a>(Dev Center). These two sites are different, only in Dev Center, I can config my provisioning profile, which is a main concept for releasing iPhone App or allowing to install App on certain devices. But in iTunesconnect, I need to release my app to iTunes/Apple App Store.</p>
+
+<p>So far, I've got enough permission to debug the App on my own iPhone. But I am still unable to distribute my App to others' devices. How that happens? As an iPhone developer, I need to pass Titanium's detection of several certificates. only after that, I can install app on my iPhone. (PS: if you want to test your app on Android, the only need is to connect your device.)</p>
+
+<p>In following images, I will show you the steps through which you can pass all the Titanium detection of certificates.</p>
+
+<div><a href="http://skitch.com/yorzi/dutdc/preparation-iphone-provisioning-portal-apple-developer"><img src="http://img.skitch.com/20100825-b8ne3uxkfenjthcgnscecb89t.jpg" alt="Preparation - iPhone Provisioning Portal - Apple Developer" /></a><br /></div>
+
+
+<br />
+
+
+<p>Then you will get the following files after your above configuration.</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dutrp/users-andy-desktop-apple-developer-app"><img src="http://img.skitch.com/20100825-ds2k13epf4b7grcmabr89yk11r.jpg" alt="/Users/andy/Desktop/apple_developer/app" /></a><br /></div>
+
+
+<br />
+
+
+<p>After you import the above certificates to your keychain, you should see something similar in your Keychian.</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dutds/keychain-access"><img src="http://img.skitch.com/20100825-ra2mqhmcu94pk7kuxcpa7c6i2g.jpg" alt="Keychain Access" /></a><br /></div>
+
+
+<br />
+
+
+<p>Finally, your Titanium will be the "ready status" for your debug and release on real device.</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dutfb/titanium-developer-1.2.1"><img src="http://img.skitch.com/20100825-m5b6ugwjywb66qggswbsumsmfk.jpg" alt="Titanium Developer (1.2.1)" /></a><br /></div>
+
+
+<br />
+
+
+<p>The whole process might be painful unless you understand every concepts that Apple creates. I encounter problems when creating distribution provisioning profile. Only admin agent developer has permission to do so. Thus, you should ask admin agent for this provisioning profile, he can share this profile with a private key file, you import this key file to your Keychian, then you can distribute the app to whatever devices which is bundled into specific provisioning profile.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Start working on Titanium]]></title>
+    <link href="http://yorzi.github.com/2010/07/30/start-working-on-titanium/"/>
+    <updated>2010-07-30T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/30/start-working-on-titanium</id>
+    <content type="html"><![CDATA[<p>Been working on Titanium for a while, I find a must read PPT to guide you smoothly getting start on <a href="http://developer.appcelerator.com/get_started">Titanium Mobile Development</a>.</p>
+
+<div style="width:425px" id="__ss_4793534"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/kwhinnery/oscon-titanium-tutorial" title="OSCON Titanium Tutorial">OSCON Titanium Tutorial</a></strong><object id="__sse4793534" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=titaniumtutorial-100719215658-phpapp02&stripped_title=oscon-titanium-tutorial" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse4793534" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=titaniumtutorial-100719215658-phpapp02&stripped_title=oscon-titanium-tutorial" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/kwhinnery">Kevin Whinnery</a>.</div></div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SearchBar in Titanium]]></title>
+    <link href="http://yorzi.github.com/2010/07/16/searchbar-in-titanium/"/>
+    <updated>2010-07-16T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/16/searchbar-in-titanium</id>
+    <content type="html"><![CDATA[<p>In this post, I will guide you to use SearchBar in TableView when your development is based on Titanium.</p>
+
+<p><strong>Keywords</strong>: <em>Titanium, TableView, TableViewRow, SearchBar</em></p>
+
+<p><strong>Step 1</strong>: Create a table view row datas for your content list.
+<code lang="javascript">
+// create the rest of the rows
+var data = [];
+for (var c=0;c&lt;rowCount;c++)
+{</p>
+
+<pre><code>var row = Ti.UI.createTableViewRow();
+row.backgroundImage = '../images/row_bg.png';
+row.selectedBackgroundImage = '../images/row_bg_selected.png';
+row.height = 90;
+row.url = "formulas_show.js";
+row.id = id;
+row.className = 'datarow';
+row.filter = "the data you want to search";  // here you will set the filter content which will be searched.
+row.clickName = 'row';
+
+data.push(row);
+</code></pre>
+
+<p>}
+</code></p>
+
+<p><strong>Step 2</strong>: Create a search bar.
+<code lang="javascript">
+// CREATE SEARCH BAR
+var search = Titanium.UI.createSearchBar({</p>
+
+<pre><code>barColor:'#385292', 
+showCancel:false
+</code></pre>
+
+<p>});</p>
+
+<p>search.addEventListener('change', function(e)
+{
+   e.value; // search string as user types
+});
+search.addEventListener('return', function(e)
+{
+   search.blur();
+});
+search.addEventListener('cancel', function(e)
+{
+   search.blur();
+});
+</code></p>
+
+<p><strong>Step 3</strong>: Create a table view for your content list.
+<code lang="javascript">
+// create table view
+tableView = Titanium.UI.createTableView({</p>
+
+<pre><code>data:data, // here will be the data array
+search:search, //here will set search bar
+filterAttribute:'filter', //here is the search filter which appears in TableViewRow as an attribute(you can define it in other name)
+backgroundColor:'white'
+</code></pre>
+
+<p>});
+</code></p>
+
+<p>Ok, now you can add search bar for table view content list. as a reminder, you should add event listener for the table view object, but the click event should be bundled with the "row", so that you can search and click the search result linking to target window.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Titanium : DB Synchronization]]></title>
+    <link href="http://yorzi.github.com/2010/07/14/titanium-db-synchronization/"/>
+    <updated>2010-07-14T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/14/titanium-db-synchronization</id>
+    <content type="html"><![CDATA[<p><strong>Header Notes:</strong>
+1. Static data should be released with app, just don't do db synchronization.
+2. Just embed sync background when ppl looking at some instructions/tips etc.
+3. Don't update db all the time.</p>
+
+<p>App Start:
+<em><strong>app.js</strong></em>
+<code lang='javascript'>
+// Localization libs
+Ti.include('l10n/l10n.js');
+Ti.include('l10n/l10n_dialog.js');
+Ti.include('l10n/l10n_format.js');</p>
+
+<p>var db = Titanium.Database.install('eq31formulas.db', 'eq31formulas');</p>
+
+<p>// Ti.include('content/tab_formula.js')</p>
+
+<p>// this sets the background color of the master UIView (when there are no windows/tab groups on it)
+Titanium.UI.setBackgroundColor('#000');</p>
+
+<p>// create tab group
+var tabGroup = Titanium.UI.createTabGroup();</p>
+
+<p>//
+// create tab for tips
+//
+Ti.include('content/tab_tips.js');</p>
+
+<p>//
+// create tab for weibo
+//
+Ti.include('content/tab_weibo.js');</p>
+
+<p>//
+// create tab for formulas
+//
+Ti.include('content/tab_formulas.js');</p>
+
+<p>// create tab for lang settings
+var win_setting = Ti.UI.createWindow({</p>
+
+<pre><code>title:_('tab_settings')
+</code></pre>
+
+<p>});</p>
+
+<p>var tab_setting = Ti.UI.createTab({</p>
+
+<pre><code>icon:'images/nav_icon_setting.png',
+title:_('tab_settings'),
+window:win_setting
+</code></pre>
+
+<p>});</p>
+
+<p>var data = [];
+var ACTION_LANGUAGE = 0;</p>
+
+<p>var row = Ti.UI.createTableViewRow({
+  title: _('language'),
+  hasChild: true,
+  action: ACTION_LANGUAGE,
+  className: 'control'
+});</p>
+
+<p>var label_lang = Ti.UI.createLabel({
+  textAlign: 'right',
+  right: 10,
+  width: 175,
+  color: '#385487',
+  font: {fontSize: 16},
+  text: L10N.getLanguageDisplayName()
+});</p>
+
+<p>row.add(label_lang);</p>
+
+<p>data.push(row);</p>
+
+<p>// create table view</p>
+
+<p>var tableview = Ti.UI.createTableView({
+  data:data,
+  style:Ti.UI.iPhone.TableViewStyle.GROUPED
+});</p>
+
+<p>// add table click listener</p>
+
+<p>tableview.addEventListener('click', function(e) {
+  var rowdata = e.rowData;
+  if (rowdata.action == ACTION_LANGUAGE) {</p>
+
+<pre><code>// show language selection dialog
+
+L10N.showLanguageSelectionDialog();
+</code></pre>
+
+<p>  }
+});</p>
+
+<p>win_setting.add(tableview);</p>
+
+<p>//
+//  add tabs
+//
+tabGroup.addTab(tab_formulas);<br/>
+tabGroup.addTab(tab_tips);<br/>
+tabGroup.addTab(tab_weibo);
+tabGroup.addTab(tab_setting);</p>
+
+<p>var omodes = [</p>
+
+<pre><code>Titanium.UI.PORTRAIT,
+Titanium.UI.UPSIDE_PORTRAIT,
+Titanium.UI.LANDSCAPE_LEFT,
+Titanium.UI.LANDSCAPE_RIGHT
+</code></pre>
+
+<p>];</p>
+
+<p>win_formulas.orientationModes = omodes;
+win_tips.orientationModes = omodes;
+win_weibo.orientationModes = omodes;</p>
+
+<p>Titanium.Analytics.featureEvent('app.feature.blah',{product:'killer'});</p>
+
+<p>tabGroup.addEventListener('open',function()
+{</p>
+
+<pre><code>Titanium.UI.setBackgroundColor('#fff');
+</code></pre>
+
+<p>});</p>
+
+<p>tabGroup.setActiveTab(0);
+tabGroup.open({</p>
+
+<pre><code>transition:Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+</code></pre>
+
+<p>});</p>
+
+<p>// add top level introduction of 31 formulas
+Ti.include("introduction.js");</p>
+
+<p>// synchronize db
+Ti.include("synchronize.js");</p>
+
+<p></code></p>
+
+<p>Prepare data while launching the app:
+<em><strong>synchronize.js</strong></em>
+<code lang="javascript">
+(function(){</p>
+
+<pre><code>var db = Titanium.Database.open('eq31formulas');
+
+    // JS test
+var currentTime = new Date();
+var month = currentTime.getMonth() + 1;
+var day = currentTime.getDate();
+var year = currentTime.getFullYear();
+
+Titanium.API.info('JS TIME:' + currentTime);
+// lesson = db.execute('SELECT * FROM LESSONS ORDER BY ID LIMIT 1')
+
+if (Titanium.Network.online == true)
+{
+    Titanium.API.info('Online--update lessons!');
+    var src = 'http://www.veecue.com/eq31formulas/data_service/lessons';
+    c = Titanium.Network.createHTTPClient();
+
+    c.onload = function()
+    {   
+        var json_data = JSON.parse(this.responseText);
+
+        Titanium.API.info('lesson count:' + json_data.length);
+
+        for(var i=0; i&lt;json_data.length; i++)
+        {
+            Titanium.API.info("updating lesson:" + i);
+            var record = json_data[i].lesson;
+            // add different control for UPDATE or INSERTION here
+            db.execute('CREATE TABLE IF NOT EXISTS LESSONS (ID INTEGER, TITLE TEXT, AIMS TEXT, ANSWER_ORDER TEXT, LANG_STEP TEXT, MODEL_ANSWER TEXT)');
+            db.execute('DELETE FROM LESSONS');
+            db.execute("INSERT INTO LESSONS (ID, TITLE, AIMS, ANSWER_ORDER, LANG_STEP, MODEL_ANSWER) VALUES(?,?,?,?,?,?)", record.id, record.title, record.aims, record.answer_order, record.lang_step, record.model_answer);   
+        }
+    };
+
+    // open the client
+    c.open('GET', src);
+
+    // send the data
+    c.send();
+}
+else
+{
+    Titanium.API.info('Offline--');
+    return;
+}   
+</code></pre>
+
+<p>})();
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

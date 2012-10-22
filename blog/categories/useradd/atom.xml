@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: useradd | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/useradd/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[create new user on CentOS]]></title>
+    <link href="http://yorzi.github.com/2010/07/18/create-new-user-on-centos/"/>
+    <updated>2010-07-18T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/18/create-new-user-on-centos</id>
+    <content type="html"><![CDATA[<p><strong>STUDY NOTES:</strong></p>
+
+<p><strong>syntax:</strong>
+useradd -s /bin/bash -d [folder_name]  -c “[name]” [userid]</p>
+
+<p><strong>sample:</strong>
+useradd -s /bin/bash -d /home/andy -c "Andy Wang" andy</p>
+
+<p><strong>chagne password:</strong>
+passwd andy</p>
+]]></content>
+  </entry>
+  
+</feed>

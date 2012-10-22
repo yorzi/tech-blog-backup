@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: db | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/db/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[perfect backup solution for developers]]></title>
+    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <updated>2010-09-10T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with "backup" and "whenever".</p>
+
+<p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
+
+<p>While using Backup, it's like a configuration file with easy rule, don't worry about the rule, I believe you will understand it in seconds. It also owns many common slots to different DB(or S3), you can also config your customized command and script inside its backup.rb file. Whenever is the Ruby way to manage your <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> jobs, It's pretty cool.</p>
+
+<p>Don't hesitate to try them out, you will find the inside beauty of backup. Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[calculate results VS. store result sets]]></title>
+    <link href="http://yorzi.github.com/2010/08/04/calculate-results-vs-store-result-sets/"/>
+    <updated>2010-08-04T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/04/calculate-results-vs-store-result-sets</id>
+    <content type="html"><![CDATA[<p>Firstly, what's the results in title? For example, the results may be learners who will be alive in coming two weeks, or the results may be study times of one learner, etc. Generally, results should be some data coming from analyzing other data.</p>
+
+<p>Here my question is, how can we get certain results much faster and easily?</p>
+
+<p><strong>Case 1:</strong>
+We want to pick up a name list, all people in the list should be under certain condition, say, condition A, condition B, condition C, so normally, we just select the results which obey the rule(condition). Right? It depends.</p>
+
+<p>If name list is always dynamically different in condition A,B,C, it's really hard to store the results set, we have to calculate instantly to make sure the results is accurate.</p>
+
+<p>If name list is very difficult to figure out in condition A,B,C, we should store the stable part of the result set, so that we will not get stuck when calculate tons of data very time.</p>
+
+<p><strong>Case 2.</strong>
+We want to show study times of a learner, how can we do that? Should we store the study times as one attributor of study record or should we just make one study record as one-time study? Obviously, it depends on the complication of study record and the definition of one-time study.</p>
+
+<p>In our case, one study record is instantly changed when it's in different status, so storing study times in study record is not a good idea because the results might be locked when status changes. But if we calculate study times based on its status, it will be more reliable and accurate. and also it will not be locked when status is with exception.</p>
+
+<p><strong>Conclusion:</strong>
+To store result set, is a way to cache results, but some times it's not easy to maintain the result sets, for instance, if there are too many conditions when getting a results set, it's always in heavy load to update result sets, you have to listen to every condition level changes. If the situation is complex, remember to cache your result set and maintain it carefully.</p>
+
+<p>To calculate results instantly lets you ignore the real data, you just need to use the rule carefully, that will be more accurate, because you very time select what the rule defines. However the disadvantage is, when the data sets is large, you have to pay more to do that instantly, so you want to do a cron job or just cache the stable part of previous result sets.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Titanium : DB Synchronization]]></title>
+    <link href="http://yorzi.github.com/2010/07/14/titanium-db-synchronization/"/>
+    <updated>2010-07-14T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/14/titanium-db-synchronization</id>
+    <content type="html"><![CDATA[<p><strong>Header Notes:</strong>
+1. Static data should be released with app, just don't do db synchronization.
+2. Just embed sync background when ppl looking at some instructions/tips etc.
+3. Don't update db all the time.</p>
+
+<p>App Start:
+<em><strong>app.js</strong></em>
+<code lang='javascript'>
+// Localization libs
+Ti.include('l10n/l10n.js');
+Ti.include('l10n/l10n_dialog.js');
+Ti.include('l10n/l10n_format.js');</p>
+
+<p>var db = Titanium.Database.install('eq31formulas.db', 'eq31formulas');</p>
+
+<p>// Ti.include('content/tab_formula.js')</p>
+
+<p>// this sets the background color of the master UIView (when there are no windows/tab groups on it)
+Titanium.UI.setBackgroundColor('#000');</p>
+
+<p>// create tab group
+var tabGroup = Titanium.UI.createTabGroup();</p>
+
+<p>//
+// create tab for tips
+//
+Ti.include('content/tab_tips.js');</p>
+
+<p>//
+// create tab for weibo
+//
+Ti.include('content/tab_weibo.js');</p>
+
+<p>//
+// create tab for formulas
+//
+Ti.include('content/tab_formulas.js');</p>
+
+<p>// create tab for lang settings
+var win_setting = Ti.UI.createWindow({</p>
+
+<pre><code>title:_('tab_settings')
+</code></pre>
+
+<p>});</p>
+
+<p>var tab_setting = Ti.UI.createTab({</p>
+
+<pre><code>icon:'images/nav_icon_setting.png',
+title:_('tab_settings'),
+window:win_setting
+</code></pre>
+
+<p>});</p>
+
+<p>var data = [];
+var ACTION_LANGUAGE = 0;</p>
+
+<p>var row = Ti.UI.createTableViewRow({
+  title: _('language'),
+  hasChild: true,
+  action: ACTION_LANGUAGE,
+  className: 'control'
+});</p>
+
+<p>var label_lang = Ti.UI.createLabel({
+  textAlign: 'right',
+  right: 10,
+  width: 175,
+  color: '#385487',
+  font: {fontSize: 16},
+  text: L10N.getLanguageDisplayName()
+});</p>
+
+<p>row.add(label_lang);</p>
+
+<p>data.push(row);</p>
+
+<p>// create table view</p>
+
+<p>var tableview = Ti.UI.createTableView({
+  data:data,
+  style:Ti.UI.iPhone.TableViewStyle.GROUPED
+});</p>
+
+<p>// add table click listener</p>
+
+<p>tableview.addEventListener('click', function(e) {
+  var rowdata = e.rowData;
+  if (rowdata.action == ACTION_LANGUAGE) {</p>
+
+<pre><code>// show language selection dialog
+
+L10N.showLanguageSelectionDialog();
+</code></pre>
+
+<p>  }
+});</p>
+
+<p>win_setting.add(tableview);</p>
+
+<p>//
+//  add tabs
+//
+tabGroup.addTab(tab_formulas);<br/>
+tabGroup.addTab(tab_tips);<br/>
+tabGroup.addTab(tab_weibo);
+tabGroup.addTab(tab_setting);</p>
+
+<p>var omodes = [</p>
+
+<pre><code>Titanium.UI.PORTRAIT,
+Titanium.UI.UPSIDE_PORTRAIT,
+Titanium.UI.LANDSCAPE_LEFT,
+Titanium.UI.LANDSCAPE_RIGHT
+</code></pre>
+
+<p>];</p>
+
+<p>win_formulas.orientationModes = omodes;
+win_tips.orientationModes = omodes;
+win_weibo.orientationModes = omodes;</p>
+
+<p>Titanium.Analytics.featureEvent('app.feature.blah',{product:'killer'});</p>
+
+<p>tabGroup.addEventListener('open',function()
+{</p>
+
+<pre><code>Titanium.UI.setBackgroundColor('#fff');
+</code></pre>
+
+<p>});</p>
+
+<p>tabGroup.setActiveTab(0);
+tabGroup.open({</p>
+
+<pre><code>transition:Titanium.UI.iPhone.AnimationStyle.FLIP_FROM_LEFT
+</code></pre>
+
+<p>});</p>
+
+<p>// add top level introduction of 31 formulas
+Ti.include("introduction.js");</p>
+
+<p>// synchronize db
+Ti.include("synchronize.js");</p>
+
+<p></code></p>
+
+<p>Prepare data while launching the app:
+<em><strong>synchronize.js</strong></em>
+<code lang="javascript">
+(function(){</p>
+
+<pre><code>var db = Titanium.Database.open('eq31formulas');
+
+    // JS test
+var currentTime = new Date();
+var month = currentTime.getMonth() + 1;
+var day = currentTime.getDate();
+var year = currentTime.getFullYear();
+
+Titanium.API.info('JS TIME:' + currentTime);
+// lesson = db.execute('SELECT * FROM LESSONS ORDER BY ID LIMIT 1')
+
+if (Titanium.Network.online == true)
+{
+    Titanium.API.info('Online--update lessons!');
+    var src = 'http://www.veecue.com/eq31formulas/data_service/lessons';
+    c = Titanium.Network.createHTTPClient();
+
+    c.onload = function()
+    {   
+        var json_data = JSON.parse(this.responseText);
+
+        Titanium.API.info('lesson count:' + json_data.length);
+
+        for(var i=0; i&lt;json_data.length; i++)
+        {
+            Titanium.API.info("updating lesson:" + i);
+            var record = json_data[i].lesson;
+            // add different control for UPDATE or INSERTION here
+            db.execute('CREATE TABLE IF NOT EXISTS LESSONS (ID INTEGER, TITLE TEXT, AIMS TEXT, ANSWER_ORDER TEXT, LANG_STEP TEXT, MODEL_ANSWER TEXT)');
+            db.execute('DELETE FROM LESSONS');
+            db.execute("INSERT INTO LESSONS (ID, TITLE, AIMS, ANSWER_ORDER, LANG_STEP, MODEL_ANSWER) VALUES(?,?,?,?,?,?)", record.id, record.title, record.aims, record.answer_order, record.lang_step, record.model_answer);   
+        }
+    };
+
+    // open the client
+    c.open('GET', src);
+
+    // send the data
+    c.send();
+}
+else
+{
+    Titanium.API.info('Offline--');
+    return;
+}   
+</code></pre>
+
+<p>})();
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>

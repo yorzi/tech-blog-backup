@@ -1,16 +1,1314 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[My Octopress Blog]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2012-10-22T22:05:05+08:00</updated>
-  <id>http://yoursite.com/</id>
+  <title><![CDATA[@yorzi]]></title>
+  <link href="http://yorzi.github.com/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
-    
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Run a Static Website on Heroku for Free]]></title>
+    <link href="http://yorzi.github.com/2012/10/22/run-a-static-website-on-heroku-for-free/"/>
+    <updated>2012-10-22T20:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2012/10/22/run-a-static-website-on-heroku-for-free</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Now My Blog Is Running on Octopress]]></title>
+    <link href="http://yorzi.github.com/2011/08/14/now-my-blog-is-running-on-octopress/"/>
+    <updated>2011-08-14T19:39:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/08/14/now-my-blog-is-running-on-octopress</id>
+    <content type="html"><![CDATA[<p><img src="https://img.skitch.com/20110814-m6jxiyu37ygd2pgxwfejamf95g.jpg" alt="Octopress" /></p>
+
+<p>Octopress is owesome!</p>
+
+<p>Last time I tried to migrate my wordpress blog to <a href="https://github.com/mojombo/jekyll">Jekyll</a>, then I failed to find some beautiful theme. And when <a href="cn.intridea.com">intridea cn blog</a> was built using <a href="https://github.com/ddfreyne/nanoc">nanoc</a>, I&#8217;d like to give it try, you know, I still gave nanoc up as I can not make the theme pretty by myself.</p>
+
+<p>Days ago, I came across the <a href="http://www.octopress.org">octopress</a>, I totally fell in love with its convenience and cool blog theme. I spent several hours to move my blog to github this afternoon. Oh my, Now I can write blogs in Markdown and deploy it to github.</p>
+
+<p>Octopress has its official website with many valuable materials to help you get start and doing other regarding interesting things. Cool, hah? Try it out now!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Riding on Rails3 with full stack of Gems]]></title>
+    <link href="http://yorzi.github.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems/"/>
+    <updated>2011-06-14T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems</id>
+    <content type="html"><![CDATA[<p><strong>NOTICE:</strong> Below post was released a month ago on <a href="http://intridea.com/2011/5/13/rails3-gems">Intridea Company Blog</a>, also post here as a backup.</p>
+
+<p>It&#8217;s been close to a year since Rails3 came out. Luckily, I&#8217;ve worked on several Rails3 projects after it&#8217;s released, so I&#8217;d like to share a stack of gems that I used in my previous projects. I guess they will give people a bit help while developing a new Rails3 app.</p>
+
+<p>I don&#8217;t want to explain too much on these gems separately, well, most of the gems have good documents on their project wiki(every great gem should be well documented, right?). Instead, I just add regarding links to their repos so that you&#8217;d better take a further look while you really use it. In order to introduce the lists of gems clearly, I simply categorized them based on a rough structure.</p>
+
+<p>Ok, here we start:</p>
+
+<h4><strong>&raquo; Authentication</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>OmniAuth (<a href="https://github.com/intridea/omniauth">https://github.com/intridea/omniauth</a>)</li>
+  <li>Devise (<a href="https://github.com/plataformatec/devise">https://github.com/plataformatec/devise</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>The above two are really amazing gems to speed up your authentication. Yes, I love both of them in different cases: ideally OmniAuth is better for applications which want to support multi-provider external authentication, so I&#8217;ve just added OmniAuth into RefactorMyCode Rails3 branch to take its auth benefits; Devise is totally powerful enough for classic authentication case. However, if you have too much your own business logic inside your login/registration/auth flow, you definitely need to make your own authentication.</p>
+
+<h4><strong>&raquo; Access Control</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>CanCan (<a href="https://github.com/ryanb/cancan">https://github.com/ryanb/cancan</a>)</li>
+  <li>declarative_authorization (<a href="https://github.com/stffn/declarative_authorization">https://github.com/stffn/declarative_authorization</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p><a href="https://github.com/ryanb">Ryan</a> is a star in Rails world, so his CanCan is really popular, which aims to do neat but powerful authorization. However, the declarative_autharization is also an option, actually, Ryan mentioned CanCan was inspired by declarative_autharization.</p>
+
+<h4><strong>&raquo; Views/Page and Admin Scaffold</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>compass (<a href="https://github.com/chriseppstein/compass">https://github.com/chriseppstein/compass</a>)</li>
+  <li>haml (<a href="https://github.com/nex3/haml">https://github.com/nex3/haml</a>)</li>
+  <li>sanitize (<a href="https://github.com/rgrove/sanitize">https://github.com/rgrove/sanitize</a>)</li>
+  <li>rails_admin (<a href="https://github.com/sferik/rails_admin">https://github.com/sferik/rails_admin</a>)</li>
+  <li>web-app-theme (<a href="https://github.com/andreferraro/web-app-theme">https://github.com/andreferraro/web-app-theme</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>From a front-end perspective, I suggest you might need to try above gems to speed up and simplify your UI designing. For example on the admin section, it&#8217;d be great if you can apply your CRUD quickly to pages, that&#8217;s what rails_admin does. Surely, these gems won&#8217;t end all your UI problems, but it really helps when you doing prototype or being lack of some real designers.</p>
+
+<h4><strong>&raquo; Quick SNS</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>acts-as-taggable-on (<a href="https://github.com/mbleigh/acts-as-taggable-on">https://github.com/mbleigh/acts-as-taggable-on</a>)</li>
+  <li>has_friends-rails3 (<a href="https://github.com/rrouse/has_friends">https://github.com/rrouse/has_friends</a>)</li>
+  <li>acts_as_favable (<a href="https://github.com/yorzi/acts_as_favable">https://github.com/yorzi/acts_as_favable</a>)</li>
+  <li>thumbs_up (<a href="https://github.com/brady8/thumbs_up">https://github.com/brady8/thumbs_up</a>)</li>
+  <li>acts_as_commentable (<a href="https://github.com/jackdempsey/acts_as_commentable">https://github.com/jackdempsey/acts_as_commentable</a>)</li>
+  <li>profanity_filter (<a href="https://github.com/intridea/profanity_filter">https://github.com/intridea/profanity_filter</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>Well, I don&#8217;t mean a whole solution of SNS or regarding feature, here theses gems can help you add the basic cross-object function rapidly, it increases your confidence to focus on designing over programming at the very beginning. Here I want to give a simple introduction to <strong>acts_as_favable</strong>, it allows for favorites refer to be added to multiple and different models.</p>
+
+<h4><strong>&raquo; Form and Related Tools</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>simple_form (<a href="https://github.com/plataformatec/simple_form">https://github.com/plataformatec/simple_form</a>)</li>
+  <li>formtastic (<a href="https://github.com/justinfrench/formtastic">https://github.com/justinfrench/formtastic</a>)</li>
+  <li>formtastic_datepicker_inputs (<a href="https://github.com/demersus/formtastic_datepicker_inputs">https://github.com/demersus/formtastic_datepicker_inputs</a>)</li>
+  <li>tiny_mce (<a href="https://github.com/kete/tiny_mce">https://github.com/kete/tiny_mce</a>)</li>
+  <li>paperclip (<a href="https://github.com/thoughtbot/paperclip">https://github.com/thoughtbot/paperclip</a>)</li>
+  <li>carrierwave (<a href="https://github.com/jnicklas/carrierwave">https://github.com/jnicklas/carrierwave</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>Most of above gems are famous through &lt;railscasts.com> created by Ryan. There are two pairs of options here: <strong>simple_form</strong> and <strong>formtastic</strong> / <strong>paperclip</strong> and <strong>carrierwave</strong>. I like all these solutions, you should pick up one to fit your project, if you want to know differences between each pair, get more details on their wiki :) Tiny is an HUGE gem for rich editing, I list it here to remind its exist, but I recommend you  get the WYSWYG via some JS lib like <a href="http://premiumsoftware.net/cleditor">CLEditor</a>, it works gracefully.</p>
+
+<h4><strong>&raquo; Searching Solutions</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>meta_seach (<a href="https://github.com/ernie/meta_search">https://github.com/ernie/meta_search</a>)</li>
+  <li>meta_where (<a href="https://github.com/ernie/meta_where">https://github.com/ernie/meta_where</a>)</li>
+  <li>thinking-sphinx (<a href="https://github.com/freelancing-god/thinking-sphinx">https://github.com/freelancing-god/thinking-sphinx</a>)</li>
+  <li>acts_at_indexed (<a href="https://github.com/dougal/acts_as_indexed">https://github.com/dougal/acts_as_indexed</a>)</li>
+  <li>sunspot (<a href="https://github.com/outoftime/sunspot">https://github.com/outoftime/sunspot</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>Talking about searching in rails, I think you have many words to say. Here I wanna roughly split these gems into two types: Object-based searching and Full-Text searching. I heavily recommend you use meta_search and/or meta_where as your model based searching, it can convert your form params directly to a search solution, that&#8217;s convenient. Full-Test searching depends on your case, but all these three gems(thinking-sphinx, acts_as_indexed, sunspot) are great.</p>
+
+<h4><strong>&raquo; Pagination</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>kaminari (<a href="https://github.com/amatsuda/kaminari">https://github.com/amatsuda/kaminari</a>)</li>
+  <li>kaminari_themes (<a href="https://github.com/amatsuda/kaminari_themes">https://github.com/amatsuda/kaminari_themes</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>No more will_paginate in Rails3, absolutely, the only option is kaminari.</p>
+
+<h4><strong>&raquo; Background Work</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>delayed_job (<a href="https://github.com/collectiveidea/delayed_job">https://github.com/collectiveidea/delayed_job</a>)</li>
+  <li>resque (<a href="https://github.com/defunkt/resque">https://github.com/defunkt/resque</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>There is one post to introduce resque clearly <a href="https://github.com/blog/542-introducing-resque">here</a>, in that post, github staff mentioned their brief history of doing background jobs, so I think you can understand well the differences between delayed_job and resque solution.</p>
+
+<h4><strong>&raquo; Status Machine</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>workflow (<a href="https://github.com/ryan-allen/workflow">https://github.com/ryan-allen/workflow</a>)</li>
+  <li>state_machine (<a href="https://github.com/pluginaweek/state_machine">https://github.com/pluginaweek/state_machine</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>I like to use workflow a bit more, since it&#8217;s much natural to me, you definitely need one status machine to control your stable flow stuff, such as a registration flow status or a wizard-like features.</p>
+
+<h4><strong>&raquo; Rack API framework</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>grape (<a href="https://github.com/intridea/grape">https://github.com/intridea/grape</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>This gem is for adding API to Rails/Sinatra application. <a href="http://intridea.com/about/people/mbleigh">Michael</a> gave people an awesome <a href="http://confreaks.net/videos/475-rubyconf2010-the-grapes-of-rapid">speech in RubyConf2010</a> on his Grape, here I suggest you should watch it to know more details about GRAPE. I believe you will fall in love with it.</p>
+
+<h4><strong>&raquo; Memcached Client</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>memcache-client (<a href="https://github.com/mperham/memcache-client">https://github.com/mperham/memcache-client</a>)</li>
+  <li>dalli (<a href="https://github.com/mperham/dalli">https://github.com/mperham/dalli</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>These two gems are actually mainly written by one same author <em><a href="https://github.com/mperham">Mike Perham</a></em>, he mentioned that <em>Dalli is a high performance pure Ruby client for accessing memcached servers. It works with memcached 1.4+ only as it uses the newer binary protocol. It should be considered a replacement for the memcache-client gem. The API tries to be mostly compatible with memcache-client with the goal being to make it a drop-in replacement for Rails.</em></p>
+
+<h4><strong>&raquo; Deployment and Monitor</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>capistrano (<a href="https://github.com/capistrano/capistrano">https://github.com/capistrano/capistrano</a>)</li>
+  <li>cap-recipes (<a href="https://github.com/nesquena/cap-recipes">https://github.com/nesquena/cap-recipes</a>)</li>
+  <li>god (<a href="https://github.com/mojombo/god">https://github.com/mojombo/god</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>I am not a system administrator, so every time talking about the regarding aspects will make me feel silly, I just try to describe tools which can help me out on unfamiliar area, that&#8217;s not bad, at least people like me, will do deployment and monitor quickly based on these gems, they do help.</p>
+
+<h4><strong>&raquo; Cron job and Backup as a Pro</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>whenever (<a href="https://github.com/javan/whenever">https://github.com/javan/whenever</a>)</li>
+  <li>backup (<a href="https://github.com/meskyanichi/backup">https://github.com/meskyanichi/backup</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>Above two gems are my favorites, before knowing these two gems, I have to write complex and stupid scripts to do backups that I am not familiar with. Cron job is also a pain in ass if you are not a system administrator. Now time changes, you, as a ruby programmer, can do the corn job and backup in ruby way, surely as a PRO. :)</p>
+
+<h4><strong>&raquo; Testing Gracefully</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>rspec-rails (<a href="https://github.com/dchelimsky/rspec-rails">https://github.com/dchelimsky/rspec-rails</a>)</li>
+  <li>factory_girl_rails (<a href="https://github.com/thoughtbot/factory_girl_rails">https://github.com/thoughtbot/factory_girl_rails</a>)</li>
+  <li>faker (<a href="https://github.com/yyyc514/faker">https://github.com/yyyc514/faker</a>)</li>
+  <li>watchr (<a href="https://github.com/mynyml/watchr">https://github.com/mynyml/watchr</a>)</li>
+  <li>autowatchr (<a href="https://github.com/viking/autowatchr">https://github.com/viking/autowatchr</a>)</li>
+  <li>database_cleaner (<a href="https://github.com/bmabey/database_cleaner">https://github.com/bmabey/database_cleaner</a>)</li>
+  <li>mail_safe (<a href="https://github.com/myronmarston/mail_safe">https://github.com/myronmarston/mail_safe</a>)</li>
+  </ul>
+</blockquote>
+
+
+<p>Testing is always important, I know TDD and BDD are getting more and more popular, that means you have to own your super gun to make it happen. Right, here is a list of gems which can help you out, I didn&#8217;t cover all different levels of testing with these gems. Point is, rspec is my favorite framework for testing, <strong>factory_girl</strong> and <strong>faker</strong> are good supports. Anyway, test by your way.</p>
+
+<h4><strong>&raquo; Toolkit</strong></h4>
+
+
+
+
+<blockquote>
+  <ul>
+  <li>ruby-debug (<a href="https://github.com/mark-moseley/ruby-debug">https://github.com/mark-moseley/ruby-debug</a>)</li>
+  <li>hirb (<a href="https://github.com/cldwalker/hirb">https://github.com/cldwalker/hirb</a>)</li>
+  <li>cheat (<a href="https://github.com/defunkt/cheat">https://github.com/defunkt/cheat</a>)</li>
+  <li>rails-settings-cached (https://github.com/huacnlee/rails-settings-cached)</li>
+  </ul>
+</blockquote>
+
+
+<p>There are many handy gems which will give you convenience and power. Take above four as examples, ruby-debuy gives you a chance to check your running applications&#8217; context at specific program point; hirb display your AR items in table view in console; cheat makes your terminal working as a pool of other gems&#8217; manual; rails-settings-cached is for global configurations in Rails3 application. Yeah, throwing the brick out is to meet your GEMS.</p>
+
+<h3><strong>How to find great gems?</strong></h3>
+
+
+<p>First, you need to follow up Ryan&#8217;s <a href="railscasts.com">railscasts</a>, he is good at introducing new stuff in video. Second, you can go through great open source project&#8217;s <strong>Gemfile</strong>, yeah, it&#8217;s definitely the best way to come across valuable gems. Third, just subscribe <a href="https://github.com/languages/Ruby">github ruby trends</a> to know what&#8217;s going on in Ruby/Rails community. There are also some other involving sites, like <a href="rubygems.org">rubygems</a> and <a href="railsplugins.org">railsplugins</a>, you should take a glance when you free, I bet you will find useful gems.</p>
+
+<p>It&#8217;s nearly the end of this post, this topic was originally shared with all Intridea China Team members during last Friday Teahour. You can find the PPT <a href="http://www.slideshare.net/yorzi/riding-on-rails3-with-full-stack-of-gems">here</a>. To share with more people, I turn it into this blog, I must miss many valuable gems in this list, so please comment your thoughts.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Weekly Updates : Javascript Rocks!]]></title>
+    <link href="http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks/"/>
+    <updated>2011-03-21T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks</id>
+    <content type="html"><![CDATA[<p>After quit from Idapted/Eleutian, I&#8217;d like to have a long term plan for writing blogs. However, as everything starts, it&#8217;s always hard. I thought it around, and finally decided to open my mind, and just try to start with a strong belief : Sharing! Then an idea comes out.</p>
+
+<p>First of all, I think my weekly updates will help to share great things I came across or even I started to use, it has much fun to replay all these stuff, so I will do that in the weekend, that&#8217;s also part of my study review.</p>
+
+<p>Ok, turn to the points:</p>
+
+<ol>
+<li>Now you must know <a href="http://www.javascriptlint.com/index.htm">JSLint</a>. JSlint is a Javascript checker, which can help you ensure your JS&#8217; quality. There are many great open source projects helping you to program in Javascript.</li>
+</ol>
+
+
+<p>Sources:
+Github Proj: <a href="https://github.com/douglascrockford/JSLint">https://github.com/douglascrockford/JSLint</a>
+Add JSLint to you TextMate: <a href="https://github.com/subtleGradient/javascript-tools.tmbundle">https://github.com/subtleGradient/javascript-tools.tmbundle</a></p>
+
+<ol>
+<li><p>Are you familiar with <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a>? You should start to learn it now if you did not have a change to give it a try. Specially, if you are using Ruby/Ruby on Rails, I strongly recommend you try <a href="http://rspec.info/">rSpec</a> for the BDD. Back to the topic, I wanna share with you some similar BDD way in programming Javascript, <a href="https://github.com/visionmedia/jspec">jspec</a> and <a href="http://pivotal.github.com/jasmine/">Jasmine</a>, obviously, they are cool. I just mention this as a reminder people who want to try interesting programming. I didn&#8217;t try them yet, but I guess I will do that in soon.</p></li>
+<li><p>JS in real-time application <a href="http://nodejs.org/">Node.js</a> and <a href="https://github.com/Flotype/now">NowJS</a></p></li>
+<li><p>Books to speed you up!
+•  Javascript: The Good Parts (<a href="http://oreilly.com/catalog/9780596517748">http://oreilly.com/catalog/9780596517748</a>)
+•  JavaScript Patterns (<a href="http://oreilly.com/catalog/9780596806767/">http://oreilly.com/catalog/9780596806767/</a>)
+•  High Performance JavaScript (<a href="http://oreilly.com/catalog/9780596802806/">http://oreilly.com/catalog/9780596802806/</a>)</p></li>
+</ol>
+
+
+<p>Javascript is a long journey, I am just on the start point. Anyway, exciting!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JS note: setTimeout and setInterval]]></title>
+    <link href="http://yorzi.github.com/2011/03/09/settimeout-and-setinterval/"/>
+    <updated>2011-03-09T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/03/09/settimeout-and-setinterval</id>
+    <content type="html"><![CDATA[<p>Yesterday, I discussed a JS issue with <a href="http://www.yakjuly.com/">Blade</a>, that I have to set up an automatic photo-switch effect on an existing page. I don&#8217;t want to change anything except adding a piece of javascript for doing that job because this page is already messy up by another engineer. Blade suggested I should use <strong><a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a></strong> for this effect.</p>
+
+<h4><strong>* Case Study</strong></h4>
+
+
+<p>The basic case is something like below(there are some other effects based on the structure and style, so don&#8217;t affect others):
+<code lang='html'></p>
+
+<div id="tab_ls">
+        <a class="active" id="haikou"></a>
+    <a id="dalian"></a>  
+        <a id="changsha"></a> 
+</div>
+
+
+
+
+<div id="tab_con">
+    <div style="display: block;" id="fk">   
+        <div id="end"></div>
+        <div id="ctt">
+            <img src="http://www.2011roadshow.com/images/haikou.jpg">
+                    <h3>会议城市：海口</h3>
+            <p>时间：8月26日 14：00-18：00</p>
+                    <p>地点：海口鑫源温泉大酒店</p>
+        </div>
+    </div>
+        
+    <div id="fk" style="display:none">
+        <div id="end"></div>
+            <div id="ctt">
+            <img src="http://www.2011roadshow.com/images/dalian.jpg">
+                    <h3>会议城市：大连</h3>
+            <p>时间：9月3日 14：00-18：00</p>
+                    <p>地点：香洲花园酒店 </p>
+        </div>
+    </div>
+
+    <div id="fk" style="display:none">
+        <div id="end"></div>
+            <div id="ctt">
+            <img src="images/changsha.jpg">
+                    <h3>城市：长沙</h3>
+            <p>时间：9月4日 14：00-18：00</p>
+                    <p>地点：长沙潇湘华天大酒店</p>
+        </div>
+    </div>
+</div>
+
+
+<p></code>
+Now the task is to write a js to roll the cities and regarding images, how to make it happen?</p>
+
+<h4>* Solution with <strong>setTimeout</strong></h4>
+
+
+<p><code lang='javascript'></p>
+
+<script type="text/javascript">
+    var cities;
+    var cityImages;
+    var currentCity;
+    var pause = false;
+    var timer1;
+    var timer2 ;
+    
+    function showNextImage()
+    {           
+        if (pause) {
+            // do nothing
+        } else {
+            console.log("show next image");
+            console.log(currentCity);
+            if(cities.last() == currentCity) {
+                currentCity = currentCity.first();
+            } else {
+                currentCity = currentCity.next();
+            }
+            console.log(currentCity);
+            
+            var index = cities.index(currentCity);
+            console.log(index);
+            cityImages.hide();
+            console.log(cityImages.get(index));
+            $(cityImages.get(index)).show();
+            cities.removeClass("active")
+            currentCity.addClass("active");
+        }
+        timer1 = window.setTimeout("showNextImage()", 2000);
+    }
+    
+    function repeatPlay()
+    {   
+        console.log("repeat play");
+        showNextImage();
+        if (timer2 != null){
+            clearTimeout(timer2);
+            timer2 = null;
+        }
+    }
+
+  $(window).load(function(){
+    cities = $("#tab_ls a");
+    cityImages = $("#tab_con div#fk");
+    currentCity = cities.first()
+    console.log(cities);
+    console.log("window load");
+    repeatPlay();
+    $("#tab_ls a").click(function(){
+                clearTimeout(timer1);
+        timer1 = null;
+            timer2 = window.setTimeout("repeatPlay()", 6000);
+    });
+  });
+</script>
+
+
+<p></code>
+Actually, you can figure out this effect with <strong><a href="https://developer.mozilla.org/en/window.setInterval">setInterval</a></strong> as well. The difference between setTimeout and setInterval is how many times you want to run the function which is set as their parameters. setTimeout will execute the function only once when time is out. But setInterval execute the function repeatedly in certain interval which is set as a parameter.</p>
+
+<p>Every time you should remember to clear the Timeout or Interval after finish your job through <strong><a href="https://developer.mozilla.org/en/DOM/window.clearTimeout">clearTimeout</a></strong> and <strong><a href="https://developer.mozilla.org/en/DOM/window.clearInterval">clearInterval</a></strong>.</p>
+
+<p>I have linked the regarding references for the four methods about, you should read the document and related samples to know more details.</p>
+
+<p>More Resources:
+<a href="http://hi.baidu.com/ruhaole/blog/item/af905fefc2dad33aadafd57a.html">如何在jQuery中使用 setInterval，setTimeout</a>
+<a href="http://cn.dydou.cn/wyzz/2010/0710/13733.html">jQuery：Tab切换功能的集合</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Real-Time Application with Rails3]]></title>
+    <link href="http://yorzi.github.com/2011/02/18/real-time-application-with-rails3/"/>
+    <updated>2011-02-18T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/02/18/real-time-application-with-rails3</id>
+    <content type="html"><![CDATA[<p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
+
+<p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>
+
+<p>There are some example use cases of RTAs, including:</p>
+
+<pre>
+   * Videoconference applications
+   * VoIP (voice over Internet Protocol)
+   * Online gaming
+   * Community storage solutions
+   * Chatting
+   * IM (instant messaging)
+</pre>
+
+
+<p>Mainly, I am interested in two solutions, which are <a href="https://github.com/lifo/cramp">Cramp</a> based RTA and a NR2J(<a href="http://nodejs.org/">Node.js</a>+<a href="https://github.com/antirez/redis">Redis</a>+<a href="https://github.com/maccman/juggernaut">Juggernaut</a>+Jquery) solution, both of these two solutions have existing samples, I suggest you should go through all of them to understand RTA well.</p>
+
+<p><strong>Cramp based RTA</strong>
+Cramp is a ruby web framework with asynchronous feature, which is always running inside EventMachine reactor loop, there is a <a href="http://m.onkey.org/introducing-cramp">detailed introduction</a> for it. A sample code is <a href="https://github.com/akitaonrails/cramp_chat_demo">available here</a>.</p>
+
+<p><strong>NR2J solution</strong>
+Introduction is <a href="http://www.golygon.com/2010/12/private-chat-room-in-ruby-on-rails-3-0/">here</a> and sample code is <a href="https://github.com/prabgupt/chatclient">here</a>. I tried Node.js before, it&#8217;s getting popular recently, but I still don&#8217;t be used to implementing server side code with JS. I love Ruby and Rails anyway.</p>
+
+<p><strong>Other RTA resources:</strong>
+Real-Time/WebSocket/Rails3: <a href="http://laktek.com/tag/realie/">http://laktek.com/tag/realie/</a>
+JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Zen Coding for TextMate]]></title>
+    <link href="http://yorzi.github.com/2011/02/12/zen-coding-for-textmate/"/>
+    <updated>2011-02-12T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/02/12/zen-coding-for-textmate</id>
+    <content type="html"><![CDATA[<p>Bundles make <a href="http://macromates.com/">TextMate</a> as a super Editor, so if you love TextMate, you must love colorful bundles based on it.</p>
+
+<p>I just find an interesting bundle to speed up your HTML/CSS coding, which is named as <a href="https://github.com/sergeche/zen-coding">Zen Coding</a>.</p>
+
+<p>The core of this plugin is a powerful abbreviation engine which allows you to expand expressions—similar to CSS selectors—into HTML code. For example:
+<code lang="html">
+div#page>div.logo+ul#navigation>li*5>a
+</code>
+&#8230;can be expanded into:
+<code lang="html"></p>
+
+<div id="page">
+        <div class="logo"></div>
+        <ul id="navigation">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+        </ul>
+</div>
+
+
+<p></code>
+The sytax is simple to understand, there is a sytax list <a href="http://code.google.com/p/zen-coding/wiki/ZenHTMLSelectorsEn">here</a>. You can also get more details about this bundle on <a href="http://code.google.com/p/zen-coding/">its official site.</a></p>
+
+<p>Enjoy it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Dalli on Rails3]]></title>
+    <link href="http://yorzi.github.com/2011/01/22/dalli-on-rails3/"/>
+    <updated>2011-01-22T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/22/dalli-on-rails3</id>
+    <content type="html"><![CDATA[<p>Today I tried a new pure Ruby <a href="http://memcached.org/" target="_blank">memcahed</a> client in one of my Rails3 projects, it&#8217;s named as &#8221;<a href="https://github.com/mperham/dalli" target="_blank">Dalli</a>&#8221;. It&#8217;s an excellent memcached client as <a href="http://www.mikeperham.com/">Mike Perham</a> announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on <a href="http://heroku.com" target="_blank">Heroku</a>.</p>
+
+<p>Make sure you&#8217;ve installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:
+1. add gem in Gemfile
+<code lang="ruby">
+gem 'dalli'
+</code>
+2. Config the underlying cache store as dalli_store in production.rb
+<code lang="ruby"></p>
+
+<h1>Memcached is delaulted on port 11211.</h1>
+
+<p>config.cache_store = :dalli_store, 'localhost:11211'
+</code>
+3. Now you will find the Rails.cache class is changed to Rails.cache.class:
+<code lang="ruby"></p>
+
+<blockquote><blockquote><p>Rails.cache.class
+== ActiveSupport::Cache::DalliStore
+</code>
+4. You can use it easily in you Rails3 application
+<code lang="ruby">
+class Food &lt; ActiveRecord::Base
+   after_save :expire_food_caches</p></blockquote></blockquote>
+
+<p>   def self.all_view_types</p>
+
+<pre><code>  Rails.cache.fetch("food_types") do
+      Food.all.map{|s| s.view_type}.uniq
+  end
+</code></pre>
+
+<p>   end</p>
+
+<p>   protected
+   def expire_food_caches</p>
+
+<pre><code>   unless Food.all_view_types.include?(self.view_type)
+       Rails.cache.delete("food_types")
+   end
+</code></pre>
+
+<p>   end
+end
+</code>
+<em><strong>Note</strong>: Rails.cache.fetch() with a block will return the cached value if it exists, otherwise it will return the value and write cache with the value at the same time.</em></p>
+
+<p>Resource about Cache:
+Scaling Rails : <br /><a href="http://railslab.newrelic.com/scaling-rails">http://railslab.newrelic.com/scaling-rails</a>
+Caching with Rails : <br /><a href="http://guides.rubyonrails.org/caching_with_rails.html">http://guides.rubyonrails.org/caching_with_rails.html</a>
+ActiveSupport::Cache::Store : <br /><a href="http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear">http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear</a>
+ActiveSupport::Memoizable : <br /><a href="http://ilstar.blogbus.com/logs/84754288.html#cmt">http://ilstar.blogbus.com/logs/84754288.html#cmt</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Love Git, Love Coding]]></title>
+    <link href="http://yorzi.github.com/2011/01/21/love-git-love-coding/"/>
+    <updated>2011-01-21T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/21/love-git-love-coding</id>
+    <content type="html"><![CDATA[<blockquote><span style="color: #0000ff;"><strong><span style="color: #0000ff;">“550,000</span> people hosting over <span style="color: #0000ff;">1,620,000</span> git repositories on github.com”</strong></span></blockquote>
+
+
+<p>I&#8217;ve been using Git for a while, I wanna say, I love git and <a href="http://github.com">github</a> very much.</p>
+
+<p>One year ago, I was used to <a href="http://subversion.apache.org/">SVN</a> as a version control approach. Yeah, SVN is great as a version control mechanism. You can quickly setup a svn server for your development because it&#8217;s an opensource project. However, Git/Github is greater to do version control and SNS coding.</p>
+
+<p>Github now is a must-use website for my daily development work, I find interesting opensource projects on it, and I follow up the super stars (such as &#8221;<a href="https://github.com/dhh">DHH</a>&#8221; and &#8221;<a href="https://github.com/ryanb">Ryan Bates</a>&#8221; etc.) and their daily contributions on the brilliant open-sourced projects.</p>
+
+<p>Meanwhile, our <a href="http://developer.idapted.com">Eleutian Tech Team</a> moved to github several months ago, as it&#8217;s supporting team development well, and members in a team can share their updates easily and effectively. Personally, I am loving in the <a href="https://gist.github.com/">Gist</a> recently, it&#8217;s really convenient to store and share any valuable code snippets on it. It&#8217;s also handy with the embed script for displaying it on your blog. (but it seems the gist won&#8217;t display in RSS feed because my last post with a gist didn&#8217;t display in the feed.)</p>
+
+<p>There&#8217;s one more cool feature that is impressive when I first know it. It&#8217;s &#8220;Blame&#8221; mode on a piece of code. Everyone&#8217;s editing history and commit number is on the page, I guess it can be a testify to &#8220;Blame&#8221; the bad code, that&#8217;s funny.</p>
+
+<p>I bet you will love in Git and github if you are an active programmer, or if you like to share code or projects, you&#8217;d better to give github a try. That&#8217;s unbelievable helpful to good programmers.</p>
+
+<p>Resource:
+Pro Git: <a href="http://progit.org/">http://progit.org/</a>
+Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/code/why-you-should-switch-from-subversion-to-git/">http://thinkvitamin.com/code/why-you-should-switch-from-subversion-to-git/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Deploy Rails3 App in Sub-directory]]></title>
+    <link href="http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
+    <updated>2011-01-20T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory</id>
+    <content type="html"><![CDATA[<p>Last weekend, <a href="http://www.dujinfang.com">seven</a> and <a href="http://blog.sonitech.org/">sonic</a> did a great job to move all Idapted servers to a new datacenter, that&#8217;s really a fabulous movement. Seven just wrote it out on <a href="http://www.dujinfang.com/past/2011/1/18/rails-fu-wu-qi-qian-yi-dian-di/">his blog</a>, if you want to know more about this migration, please go through his post. Anyway, in this post I wanna share a simple but valuable tip about deploying Rails3 app in sub directory.</p>
+
+<script src="https://gist.github.com/787610.js"></script>
+
+
+<p>More resources:
+1. Rails 3, Unicorn and RAILS_RELATIVE_URL_ROOT: <br /><a href="http://summit360.co.uk/2010/09/rails_3_unicorn.html">http://summit360.co.uk/2010/09/rails_3_unicorn.html</a>
+2. Enabling Rails 3 for your application: <br /><a href="http://www.nirvaat.com/ruby-on-rails/enabling-rails-3-for-your-application/">http://www.nirvaat.com/ruby-on-rails/enabling-rails-3-for-your-application/</a>
+3. Rails 3 routes in subdirectory: <br /><a href="http://community.webfaction.com/questions/1364/rails-3-routes-in-subdirectory">http://community.webfaction.com/questions/1364/rails-3-routes-in-subdirectory</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[when generating a public website]]></title>
+    <link href="http://yorzi.github.com/2010/12/05/when-generating-a-public-website/"/>
+    <updated>2010-12-05T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/12/05/when-generating-a-public-website</id>
+    <content type="html"><![CDATA[<p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it&#8217;s not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
+
+<p><strong>Interface and User Experience</strong></p>
+
+<ul>
+    <li>Be aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers. At a minimum test against a recent <a rel="nofollow" href="http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29">Gecko</a> engine (<a rel="nofollow" href="http://firefox.com/">Firefox</a>), a Webkit engine (<a rel="nofollow" href="http://www.apple.com/safari/">Safari</a>, <a rel="nofollow" href="http://www.google.com/chrome">Chrome</a>, and some mobile browsers), your supported IE browsers (take advantage of the<a rel="nofollow" href="http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&amp;displaylang=en">Application Compatibility VPC Images</a>), and <a rel="nofollow" href="http://www.opera.com/">Opera</a>. Also consider how <a rel="nofollow" href="http://www.browsershots.org/">browsers render your site</a> in different operating systems.</li>
+    <li>Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. — Some accessibility info: <a rel="nofollow" href="http://www.w3.org/WAI/">WAI</a> and <a rel="nofollow" href="http://www.section508.gov/">Section508</a>, Mobile development:<a rel="nofollow" href="http://mobiforge.com/">MobiForge</a></li>
+    <li>Staging: How to deploy updates without affecting your users. <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas&#8217;s answer</a> has some comments on this.</li>
+    <li>Don&#8217;t display unfriendly errors directly to the user</li>
+    <li>Don&#8217;t put users&#8217; email addresses in plain text as they will get spammed to death</li>
+    <li><a rel="nofollow" href="http://www.codinghorror.com/blog/archives/001228.html">Build well-considered limits into your site</a> - This also belongs under Security.</li>
+    <li>Learn how to do <a rel="nofollow" href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a></li>
+    <li>Always <a rel="nofollow" href="http://en.wikipedia.org/wiki/Post/Redirect/Get">redirect after a POST</a>.</li>
+    <li>Don&#8217;t forget to take accessibility into account. It&#8217;s always a good idea and in certain circumstances it&#8217;s a <a rel="nofollow" href="http://www.section508.gov/">legal requirement</a>. <a rel="nofollow" href="http://www.w3.org/WAI/intro/aria">WAI-ARIA</a> is a good resource in this area.</li>
+</ul>
+
+
+<p><strong>Security</strong></p>
+
+<ul>
+    <li>It&#8217;s a lot to digest but the <a rel="nofollow" href="http://www.owasp.org/index.php/Category%3aOWASP_Guide_Project">OWASP development guide</a> covers Web Site security from top to bottom</li>
+    <li>Know about <a rel="nofollow" href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a> and how to prevent it</li>
+    <li>Never trust user input (cookies are user input too!)</li>
+    <li><span style="text-decoration: line-through;">Encrypt</span> Hash and salt passwords rather than storing them plain-text.</li>
+    <li>Don&#8217;t try to come up with your own fancy authentication system: it&#8217;s such an easy thing to get wrong in subtle and untestable ways and you wouldn&#8217;t even know it until <em>after</em> you&#8217;re hacked.</li>
+    <li>Know the <a rel="nofollow" href="https://www.pcisecuritystandards.org/">rules for processing credit cards</a>. (<a href="http://stackoverflow.com/questions/51094/payment-processors-what-do-i-need-to-know-if-i-want-to-accept-credit-cards-on-m">See this question as well</a>)</li>
+    <li>Use <a rel="nofollow" href="http://www.mozilla.org/projects/security/pki/nss/ssl/draft302.txt">SSL</a>/<a rel="nofollow" href="http://en.wikipedia.org/wiki/Https">HTTPS</a> for login and any pages where sensitive data is entered (like credit card info)</li>
+    <li>How to resist session hijacking</li>
+    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_scripting">cross site scripting</a> (XSS)</li>
+    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">cross site request forgeries</a> (XSRF)</li>
+    <li>Keep your system(s) up to date with the latest patches</li>
+    <li>Make sure your database connection information is secured.</li>
+    <li>Keep yourself informed about the latest attack techniques and vulnerabilities affecting your platform.</li>
+    <li>Read <a rel="nofollow" href="http://code.google.com/p/browsersec/wiki/Main">The Google Browser Security Handbook</a></li>
+    <li>Read <a rel="nofollow" href="http://amzn.com/0470170778">The Web Application Hackers Handbook</a></li>
+</ul>
+
+
+<p><strong>Performance</strong></p>
+
+<ul>
+    <li>Implement caching if necessary, understand and use <a rel="nofollow" href="http://www.mnot.net/cache_docs/">HTTP caching</a> properly as well as <a rel="nofollow" href="http://www.w3.org/TR/html5/offline.html">HTML5 Manifest</a></li>
+    <li>Optimize images - don&#8217;t use a 20 KB image for a repeating background</li>
+    <li>Learn how to <a title="gzip content" rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#gzip">gzip/deflate content</a> (<a href="http://stackoverflow.com/questions/1574168/gzip-vs-deflate-zlib-revisited">deflate is better</a>)</li>
+    <li>Combine/concatenate multiple stylesheets or multiple script files to reduce number of browser connections and improve gzip ability to compress duplications between files</li>
+    <li>Take a look at the <a rel="nofollow" href="http://developer.yahoo.com/performance/">Yahoo Exceptional Performance</a> site, lots of great guidelines including improving front-end performance and their <a rel="nofollow" href="http://developer.yahoo.com/yslow/">YSlow</a> tool. <a rel="nofollow" href="http://code.google.com/speed/page-speed/docs/rules_intro.html">Google page speed</a> is another tool for performance profiling. Both require<a rel="nofollow" href="http://getfirebug.com/">Firebug</a> installed.</li>
+    <li>Use <a rel="nofollow" href="http://alistapart.com/articles/sprites">CSS Image Sprites</a> for small related images like toolbars (see the &#8220;minimize http requests&#8221; point)</li>
+    <li>Busy web sites should consider <a rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#split">splitting components across domains</a>. Specifically&#8230;</li>
+    <li>Static content (ie, images, CSS, JavaScript, and generally content that doesn&#8217;t need access to cookies) should go in a separate domain <em><a rel="nofollow" href="http://blog.stackoverflow.com/2009/08/a-few-speed-improvements/">that does not use cookies</a></em>, because all cookies for a domain and it&#8217;s subdomains are sent with every request to the domain and its subdomains. One good option here is to use a Content Delivery Network (CDN).</li>
+    <li>Minimize the total number of HTTP requests required for a browser to render the page.</li>
+    <li>Utilize <a rel="nofollow" href="http://code.google.com/closure/compiler/">Google Closure Compiler</a> for JavaScript and <a rel="nofollow" href="http://developer.yahoo.com/yui/compressor/">other minification tools</a></li>
+    <li>Make sure there’s a <code>favicon.ico</code> file in the root of the site, i.e. <code>/favicon.ico</code>. <a rel="nofollow" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Browsers will automatically request it</a>, even if the icon isn’t mentioned in the HTML at all. If you don’t have a <code>/favicon.ico</code>, this will result in a lot of 404s, draining your server’s bandwidth.</li>
+</ul>
+
+
+<p><strong>SEO (Search Engine Optimization)</strong></p>
+
+<ul>
+    <li>Use &#8220;search engine friendly&#8221; URL&#8217;s, i.e. use <code>example.com/pages/45-article-title</code> instead of<code>example.com/index.php?page=45</code></li>
+    <li>Don&#8217;t use links that say &#8220;click here&#8221;. You&#8217;re wasting an SEO opportunity and it makes things harder for people with screen readers.</li>
+    <li>Have an <a rel="nofollow" href="http://www.sitemaps.org/">XML sitemap</a>, preferably in the default location <code>/sitemap.xml</code>.</li>
+    <li>Use <a rel="nofollow" href="http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html"><code>&lt;link rel="canonical" ... /&gt;</code></a> when you have multiple URLs that point to the same content</li>
+    <li>Use <a rel="nofollow" href="http://www.google.com/webmasters/">Google Webmaster Tools</a> and <a rel="nofollow" href="http://siteexplorer.search.yahoo.com/">Yahoo Site Explorer</a></li>
+    <li>Install <a rel="nofollow" href="http://www.google.com/analytics/">Google Analytics</a> right at the start (or an open source analysis tool like <a rel="nofollow" href="http://piwik.org/">Piwik</a>)</li>
+    <li>Know how <a rel="nofollow" href="http://en.wikipedia.org/wiki/Robots_exclusion_standard">robots.txt</a> and search engine spiders work</li>
+    <li>Redirect requests (using <code>301 Moved Permanently</code>) asking for <code>www.example.com</code> to <code>example.com</code> (or the other way round) to prevent splitting the google ranking between both sites</li>
+    <li>Know that there can be bad behaving spiders out there</li>
+    <li>If you have non-text content look into Google&#8217;s sitemap extensions for video, etc. There is some good information about this in <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#167608">Tim Farley&#8217;s answer</a>.</li>
+</ul>
+
+
+<p><strong>Technology</strong></p>
+
+<ul>
+    <li>Understand <a rel="nofollow" href="http://www.ietf.org/rfc/rfc2616.txt">HTTP</a> and things like GET, POST, sessions, cookies, and what it means to be &#8220;stateless&#8221;.</li>
+    <li>Write your <a rel="nofollow" href="http://www.w3.org/TR/xhtml1/">XHTML</a>/<a rel="nofollow" href="http://www.w3.org/TR/REC-html40/">HTML</a> and <a rel="nofollow" href="http://www.w3.org/TR/CSS2/">CSS</a> according to the <a rel="nofollow" href="http://www.w3.org/TR/">W3C specifications</a> and make sure they <a rel="nofollow" href="http://validator.w3.org/">validate</a>. The goal here is to avoid browser quirks modes and as a bonus make it much easier to work with non-standard browsers like screen readers and mobile devices.</li>
+    <li>Understand how JavaScript is processed in the browser.</li>
+    <li>Understand how JavaScript, style sheets, and other resources used by your page are loaded and consider their impact on <em>perceived</em> performance. It may be appropriate in some cases to <a rel="nofollow" href="http://developer.yahoo.net/blog/archives/2007/07/high_performanc_5.html">move scripts to the bottom</a>of your pages.</li>
+    <li>Understand how the JavaScript sandbox works, especially if you intend to use iframes.</li>
+    <li>Be aware that JavaScript can and will be disabled, and that Ajax is therefore an extension not a baseline. Even if most normal users leave it on now, remember that NoScript is becoming more popular, mobile devices may not work as expected, and Google won&#8217;t run most of your JavaScript when indexing the site.</li>
+    <li>Learn the <a rel="nofollow" href="http://www.bigoakinc.com/blog/when-to-use-a-301-vs-302-redirect/">difference between 301 and 302 redirects</a> (this is also an SEO issue).</li>
+    <li>Learn as much as you possibly can about your deployment platform</li>
+    <li>Consider using a <a href="http://stackoverflow.com/questions/167531/is-it-ok-to-use-a-css-reset-stylesheet">Reset Style Sheet</a></li>
+    <li>Consider JavaScript frameworks (such as <a rel="nofollow" href="http://jquery.com/">jQuery</a>, <a rel="nofollow" href="http://mootools.net/">MooTools</a>, or <a rel="nofollow" href="http://www.prototypejs.org/">Prototype</a>), which will hide a lot of the browser differences when using JavaScript for DOM manipulation</li>
+</ul>
+
+
+<p><strong>Bug fixing</strong></p>
+
+<ul>
+    <li>Understand you&#8217;ll spend 20% of the time coding and 80% of it maintaining, so code accordingly</li>
+    <li>Set up a good error reporting solution</li>
+    <li>Have some system for people to contact you with suggestions and criticism.</li>
+    <li>Document how the application works for future support staff and people performing maintenance</li>
+    <li>Make frequent backups! (And make sure those backups are functional) <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas&#8217;s answer</a> has some advice. Have a Restore strategy, not just a Backup strategy.</li>
+    <li>Use a version control system to store your files, such as <a rel="nofollow" href="http://subversion.apache.org/">Subversion</a> or <a rel="nofollow" href="http://git-scm.org/">Git</a></li>
+    <li>Don&#8217;t forget to do your Unit Testing. Frameworks like <a rel="nofollow" href="http://seleniumhq.org/">Selenium</a> can help.</li>
+</ul>
+
+
+<p>Lots of stuff omitted not necessarily because they&#8217;re not useful answers, but because they&#8217;re either too detailed, out of scope, or go a bit too far for someone looking to get an overview of the things they should know. If you&#8217;re one of those people you can read the rest of the answers to get more detailed information about the things mentioned in this list. If I get the time I&#8217;ll add links to the various answers that contain the things mentioned in this list if the answers go into detail about these things. Please feel free to edit this as well, I probably missed some stuff or made some mistakes.</p>
+
+<p>Check out its original post thread at <a href="http://stackoverflow.com/questions/72394" target="_blank">http://stackoverflow.com/questions/72394</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[acts_as_favable is handy]]></title>
+    <link href="http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy/"/>
+    <updated>2010-12-01T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy</id>
+    <content type="html"><![CDATA[<p>Yes, it&#8217;s more than two months in which I didn&#8217;t write up any post here. I know I&#8217;d like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I&#8217;ve got many technology things/thoughts and tips that I want to share out.</p>
+
+<p>Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that&#8217;s very easy to do that with acts_as_favable.</p>
+
+<p>Technically, <a href="https://rubygems.org/gems/acts_as_favable">acts_as_favable</a> is very similar with the gem acts_as_commentable or acts_as_votable, they are all about your actions on a specific object, so you can group them easily in user&#8217;s page. Yeah, this gem is simple, I just use it in one of my application, it&#8217;s Rails3 compatible.</p>
+
+<p>Why not just try it out if you want your user to add their favorites of some object(books/CDs etc.), more details is on github at:
+<a href="https://github.com/yorzi/acts_as_favable">https://github.com/yorzi/acts_as_favable</a></p>
+
+<p>Let me know if you have any question about using this gem/plugin in your project.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[perfect backup solution for developers]]></title>
+    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <updated>2010-09-10T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don&#8217;t wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with &#8220;backup&#8221; and &#8220;whenever&#8221;.</p>
+
+<p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
+
+<p>While using Backup, it&#8217;s like a configuration file with easy rule, don&#8217;t worry about the rule, I believe you will understand it in seconds. It also owns many common slots to different DB(or S3), you can also config your customized command and script inside its backup.rb file. Whenever is the Ruby way to manage your <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> jobs, It&#8217;s pretty cool.</p>
+
+<p>Don&#8217;t hesitate to try them out, you will find the inside beauty of backup. Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
+    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <updated>2010-09-02T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve been being confused of this &#8220;conversion&#8221; issue for a while, Today I figured out a clear way to do the function.
+<code lang='ruby'>
+DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
+</code>
+Also, I&#8217;d like to note down the ruby Time format rule:</p>
+
+<pre>
+  %a - The abbreviated weekday name (``Sun'')
+  %A - The  full  weekday  name (``Sunday'')
+  %b - The abbreviated month name (``Jan'')
+  %B - The  full  month  name (``January'')
+  %c - The preferred local date and time representation
+  %d - Day of the month (01..31)
+  %H - Hour of the day, 24-hour clock (00..23)
+  %I - Hour of the day, 12-hour clock (01..12)
+  %j - Day of the year (001..366)
+  %m - Month of the year (01..12)
+  %M - Minute of the hour (00..59)
+  %p - Meridian indicator (``AM''  or  ``PM'')
+  %S - Second of the minute (00..60)
+  %U - Week  number  of the current year,
+          starting with the first Sunday as the first
+          day of the first week (00..53)
+  %W - Week  number  of the current year,
+          starting with the first Monday as the first
+          day of the first week (00..53)
+  %w - Day of the week (Sunday is 0, 0..6)
+  %x - Preferred representation for the date alone, no time
+  %X - Preferred representation for the time alone, no date
+  %y - Year without a century (00..99)
+  %Y - Year with century
+  %Z - Time zone name
+  %% - Literal ``%'' character
+
+   t = Time.now
+   t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
+   t.strftime("at %I:%M%p")            #=> "at 08:56AM"
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Script: Fetch parameter value from url]]></title>
+    <link href="http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url/"/>
+    <updated>2010-09-01T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url</id>
+    <content type="html"><![CDATA[<p>I wanna get the query string value, and set it to specific element, how to do that by javascript?
+Say, http://sample.com?author=andy, how to get author value which can be lately used. see the script below:</p>
+
+<pre><code land='javascript'>
+        function fetch_value(name)
+        {
+          name = name.replace(/[\[]/,'\\\[').replace(/[\]]/,'\\\]');
+          var regexS = '[\\?&]' + name+'=([^&#]*)';
+          var regex = new RegExp( regexS );
+          var results = regex.exec( window.location.href );
+          if( results == null )
+            return '';
+          else
+            return results[1];
+        }
+</code></pre>
+
+
+<p>Then you should use this function as fetch_value(&#8220;author&#8221;), it will return the &#8220;andy&#8221;.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MacPorts is a monster]]></title>
+    <link href="http://yorzi.github.com/2010/09/01/macports-is-a-monster/"/>
+    <updated>2010-09-01T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/01/macports-is-a-monster</id>
+    <content type="html"><![CDATA[<h1>MacPorts is a monster.. see the log I installed ImageMagick. Anyway, it works for me. but the <a href="http://weblogs.manas.com.ar/mverzilli/2010/05/19/install-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in/">brew solution</a> is not working for me.</h1>
+
+<p>andy@Wang-Andys-MacBook-Pro~/proj.workspace:sudo port install ImageMagick
+&#8212;>  Computing dependencies for ImageMagick
+&#8212;>  Fetching p5-locale-gettext
+&#8212;>  Attempting to fetch gettext-1.05.tar.gz from http://distfiles.macports.org/perl5
+&#8212;>  Verifying checksum(s) for p5-locale-gettext
+&#8212;>  Extracting p5-locale-gettext
+&#8212;>  Applying patches to p5-locale-gettext
+&#8212;>  Configuring p5-locale-gettext
+&#8212;>  Building p5-locale-gettext
+&#8212;>  Staging p5-locale-gettext into destroot
+&#8212;>  Installing p5-locale-gettext @1.05_2
+&#8212;>  Activating p5-locale-gettext @1.05_2
+&#8212;>  Cleaning p5-locale-gettext
+&#8212;>  Fetching help2man
+&#8212;>  Attempting to fetch help2man-1.37.1.tar.gz from http://distfiles.macports.org/help2man
+&#8212;>  Verifying checksum(s) for help2man
+&#8212;>  Extracting help2man
+&#8212;>  Configuring help2man
+&#8212;>  Building help2man
+&#8212;>  Staging help2man into destroot
+&#8212;>  Installing help2man @1.37.1_1
+&#8212;>  Activating help2man @1.37.1_1
+&#8212;>  Cleaning help2man
+&#8212;>  Fetching m4
+&#8212;>  Attempting to fetch m4-1.4.14.tar.bz2 from http://distfiles.macports.org/m4
+&#8212;>  Verifying checksum(s) for m4
+&#8212;>  Extracting m4
+&#8212;>  Configuring m4
+&#8212;>  Building m4
+&#8212;>  Staging m4 into destroot
+&#8212;>  Installing m4 @1.4.14_0
+&#8212;>  Activating m4 @1.4.14_0
+&#8212;>  Cleaning m4
+&#8212;>  Fetching autoconf
+&#8212;>  Attempting to fetch autoconf-2.65.tar.bz2 from http://distfiles.macports.org/autoconf
+&#8212;>  Verifying checksum(s) for autoconf
+&#8212;>  Extracting autoconf
+&#8212;>  Applying patches to autoconf
+&#8212;>  Configuring autoconf
+&#8212;>  Building autoconf
+&#8212;>  Staging autoconf into destroot
+&#8212;>  Installing autoconf @2.65_1
+&#8212;>  Activating autoconf @2.65_1
+&#8212;>  Cleaning autoconf
+&#8212;>  Fetching automake
+&#8212;>  Attempting to fetch automake-1.11.1.tar.bz2 from http://distfiles.macports.org/automake
+&#8212;>  Verifying checksum(s) for automake
+&#8212;>  Extracting automake
+&#8212;>  Configuring automake
+&#8212;>  Building automake
+&#8212;>  Staging automake into destroot
+&#8212;>  Installing automake @1.11.1_0
+&#8212;>  Activating automake @1.11.1_0
+&#8212;>  Cleaning automake
+&#8212;>  Fetching bzip2
+&#8212;>  Attempting to fetch bzip2-1.0.5.tar.gz from http://distfiles.macports.org/bzip2
+&#8212;>  Verifying checksum(s) for bzip2
+&#8212;>  Extracting bzip2
+&#8212;>  Applying patches to bzip2
+&#8212;>  Configuring bzip2
+&#8212;>  Building bzip2
+&#8212;>  Staging bzip2 into destroot
+&#8212;>  Installing bzip2 @1.0.5_3+darwin
+&#8212;>  Activating bzip2 @1.0.5_3+darwin
+&#8212;>  Cleaning bzip2
+&#8212;>  Fetching freetype
+&#8212;>  Attempting to fetch freetype-2.3.12.tar.bz2 from http://voxel.dl.sourceforge.net/freetype
+&#8212;>  Attempting to fetch freetype-doc-2.3.12.tar.bz2 from http://voxel.dl.sourceforge.net/freetype
+&#8212;>  Verifying checksum(s) for freetype
+&#8212;>  Extracting freetype
+&#8212;>  Applying patches to freetype
+&#8212;>  Configuring freetype
+&#8212;>  Building freetype
+&#8212;>  Staging freetype into destroot
+&#8212;>  Installing freetype @2.3.12_0+macosx
+&#8212;>  Activating freetype @2.3.12_0+macosx
+&#8212;>  Cleaning freetype
+&#8212;>  Fetching fontconfig
+&#8212;>  Attempting to fetch fontconfig-2.8.0.tar.gz from http://distfiles.macports.org/fontconfig
+&#8212;>  Verifying checksum(s) for fontconfig
+&#8212;>  Extracting fontconfig
+&#8212;>  Applying patches to fontconfig
+&#8212;>  Configuring fontconfig
+&#8212;>  Building fontconfig
+&#8212;>  Staging fontconfig into destroot
+&#8212;>  Installing fontconfig @2.8.0_0+macosx
+&#8212;>  Activating fontconfig @2.8.0_0+macosx
+&#8212;>  Cleaning fontconfig
+&#8212;>  Fetching jpeg
+&#8212;>  Attempting to fetch jpegsrc.v8a.tar.gz from http://distfiles.macports.org/jpeg
+&#8212;>  Verifying checksum(s) for jpeg
+&#8212;>  Extracting jpeg
+&#8212;>  Configuring jpeg
+&#8212;>  Building jpeg
+&#8212;>  Staging jpeg into destroot
+&#8212;>  Installing jpeg @8a_0
+&#8212;>  Activating jpeg @8a_0
+&#8212;>  Cleaning jpeg
+&#8212;>  Fetching tiff
+&#8212;>  Attempting to fetch tiff-3.9.2.tar.gz from ftp://ftp.tw.FreeBSD.org/pub/FreeBSD/ports/distfiles/
+&#8212;>  Verifying checksum(s) for tiff
+&#8212;>  Extracting tiff
+&#8212;>  Applying patches to tiff
+&#8212;>  Configuring tiff
+&#8212;>  Building tiff
+&#8212;>  Staging tiff into destroot
+&#8212;>  Installing tiff @3.9.2_3+macosx
+&#8212;>  Activating tiff @3.9.2_3+macosx
+&#8212;>  Cleaning tiff
+&#8212;>  Fetching lcms
+&#8212;>  Attempting to fetch lcms-1.19.tar.gz from http://voxel.dl.sourceforge.net/lcms
+&#8212;>  Verifying checksum(s) for lcms
+&#8212;>  Extracting lcms
+&#8212;>  Configuring lcms
+&#8212;>  Building lcms
+&#8212;>  Staging lcms into destroot
+&#8212;>  Installing lcms @1.19_2
+&#8212;>  Activating lcms @1.19_2
+&#8212;>  Cleaning lcms
+&#8212;>  Fetching libpng
+&#8212;>  Attempting to fetch libpng-1.2.43.tar.bz2 from http://voxel.dl.sourceforge.net/libpng
+&#8212;>  Verifying checksum(s) for libpng
+&#8212;>  Extracting libpng
+&#8212;>  Configuring libpng
+&#8212;>  Building libpng
+&#8212;>  Staging libpng into destroot
+&#8212;>  Installing libpng @1.2.43_0
+&#8212;>  Activating libpng @1.2.43_0
+&#8212;>  Cleaning libpng
+&#8212;>  Fetching libtool
+&#8212;>  Attempting to fetch libtool-2.2.6b.tar.gz from http://distfiles.macports.org/libtool
+&#8212;>  Verifying checksum(s) for libtool
+&#8212;>  Extracting libtool
+&#8212;>  Configuring libtool
+&#8212;>  Building libtool
+&#8212;>  Staging libtool into destroot
+&#8212;>  Installing libtool @2.2.6b_1+darwin
+&#8212;>  Activating libtool @2.2.6b_1+darwin
+&#8212;>  Cleaning libtool
+&#8212;>  Fetching libxml2
+&#8212;>  Attempting to fetch libxml2-2.7.7.tar.gz from http://distfiles.macports.org/libxml2
+&#8212;>  Verifying checksum(s) for libxml2
+&#8212;>  Extracting libxml2
+&#8212;>  Configuring libxml2
+&#8212;>  Building libxml2
+&#8212;>  Staging libxml2 into destroot
+&#8212;>  Installing libxml2 @2.7.7_0
+&#8212;>  Activating libxml2 @2.7.7_0
+&#8212;>  Cleaning libxml2
+&#8212;>  Fetching p7zip
+&#8212;>  Attempting to fetch p7zip_9.04_src_all.tar.bz2 from http://voxel.dl.sourceforge.net/p7zip
+&#8212;>  Verifying checksum(s) for p7zip
+&#8212;>  Extracting p7zip
+&#8212;>  Applying patches to p7zip
+&#8212;>  Configuring p7zip
+&#8212;>  Building p7zip
+&#8212;>  Staging p7zip into destroot
+&#8212;>  Installing p7zip @9.04_0
+&#8212;>  Activating p7zip @9.04_0
+&#8212;>  Cleaning p7zip
+&#8212;>  Fetching xorg-bigreqsproto
+&#8212;>  Attempting to fetch bigreqsproto-1.1.0.tar.bz2 from http://distfiles.macports.org/xorg-bigreqsproto
+&#8212;>  Verifying checksum(s) for xorg-bigreqsproto
+&#8212;>  Extracting xorg-bigreqsproto
+&#8212;>  Configuring xorg-bigreqsproto
+&#8212;>  Building xorg-bigreqsproto
+&#8212;>  Staging xorg-bigreqsproto into destroot
+&#8212;>  Installing xorg-bigreqsproto @1.1.0_0
+&#8212;>  Activating xorg-bigreqsproto @1.1.0_0
+&#8212;>  Cleaning xorg-bigreqsproto
+&#8212;>  Fetching xorg-inputproto
+&#8212;>  Attempting to fetch inputproto-2.0.tar.bz2 from http://distfiles.macports.org/xorg-inputproto
+&#8212;>  Verifying checksum(s) for xorg-inputproto
+&#8212;>  Extracting xorg-inputproto
+&#8212;>  Configuring xorg-inputproto
+&#8212;>  Building xorg-inputproto
+&#8212;>  Staging xorg-inputproto into destroot
+&#8212;>  Installing xorg-inputproto @2.0_0
+&#8212;>  Activating xorg-inputproto @2.0_0
+&#8212;>  Cleaning xorg-inputproto
+&#8212;>  Fetching xorg-kbproto
+&#8212;>  Attempting to fetch kbproto-1.0.4.tar.bz2 from http://distfiles.macports.org/xorg-kbproto
+&#8212;>  Verifying checksum(s) for xorg-kbproto
+&#8212;>  Extracting xorg-kbproto
+&#8212;>  Configuring xorg-kbproto
+&#8212;>  Building xorg-kbproto
+&#8212;>  Staging xorg-kbproto into destroot
+&#8212;>  Installing xorg-kbproto @1.0.4_0
+&#8212;>  Activating xorg-kbproto @1.0.4_0
+&#8212;>  Cleaning xorg-kbproto
+&#8212;>  Fetching xorg-xproto
+&#8212;>  Attempting to fetch xproto-7.0.16.tar.bz2 from http://distfiles.macports.org/xorg-xproto
+&#8212;>  Verifying checksum(s) for xorg-xproto
+&#8212;>  Extracting xorg-xproto
+&#8212;>  Configuring xorg-xproto
+&#8212;>  Building xorg-xproto
+&#8212;>  Staging xorg-xproto into destroot
+&#8212;>  Installing xorg-xproto @7.0.16_0
+&#8212;>  Activating xorg-xproto @7.0.16_0
+&#8212;>  Cleaning xorg-xproto
+&#8212;>  Fetching xorg-libXau
+&#8212;>  Attempting to fetch libXau-1.0.5.tar.bz2 from http://distfiles.macports.org/xorg-libXau
+&#8212;>  Verifying checksum(s) for xorg-libXau
+&#8212;>  Extracting xorg-libXau
+&#8212;>  Configuring xorg-libXau
+&#8212;>  Building xorg-libXau
+&#8212;>  Staging xorg-libXau into destroot
+&#8212;>  Installing xorg-libXau @1.0.5_0
+&#8212;>  Activating xorg-libXau @1.0.5_0
+&#8212;>  Cleaning xorg-libXau
+&#8212;>  Fetching xorg-libXdmcp
+&#8212;>  Attempting to fetch libXdmcp-1.0.3.tar.bz2 from http://distfiles.macports.org/xorg-libXdmcp
+&#8212;>  Verifying checksum(s) for xorg-libXdmcp
+&#8212;>  Extracting xorg-libXdmcp
+&#8212;>  Configuring xorg-libXdmcp
+&#8212;>  Building xorg-libXdmcp
+&#8212;>  Staging xorg-libXdmcp into destroot
+&#8212;>  Installing xorg-libXdmcp @1.0.3_0
+&#8212;>  Activating xorg-libXdmcp @1.0.3_0
+&#8212;>  Cleaning xorg-libXdmcp
+&#8212;>  Fetching xorg-util-macros
+&#8212;>  Attempting to fetch util-macros-1.7.0.tar.bz2 from http://distfiles.macports.org/xorg-util-macros
+&#8212;>  Verifying checksum(s) for xorg-util-macros
+&#8212;>  Extracting xorg-util-macros
+&#8212;>  Configuring xorg-util-macros
+&#8212;>  Building xorg-util-macros
+&#8212;>  Staging xorg-util-macros into destroot
+&#8212;>  Installing xorg-util-macros @1.7.0_0
+&#8212;>  Activating xorg-util-macros @1.7.0_0
+&#8212;>  Cleaning xorg-util-macros
+&#8212;>  Fetching xorg-xcmiscproto
+&#8212;>  Attempting to fetch xcmiscproto-1.2.0.tar.bz2 from http://distfiles.macports.org/xorg-xcmiscproto
+&#8212;>  Verifying checksum(s) for xorg-xcmiscproto
+&#8212;>  Extracting xorg-xcmiscproto
+&#8212;>  Configuring xorg-xcmiscproto
+&#8212;>  Building xorg-xcmiscproto
+&#8212;>  Staging xorg-xcmiscproto into destroot
+&#8212;>  Installing xorg-xcmiscproto @1.2.0_0
+&#8212;>  Activating xorg-xcmiscproto @1.2.0_0
+&#8212;>  Cleaning xorg-xcmiscproto
+&#8212;>  Fetching xorg-xextproto
+&#8212;>  Attempting to fetch xextproto-7.1.1.tar.bz2 from http://distfiles.macports.org/xorg-xextproto
+&#8212;>  Verifying checksum(s) for xorg-xextproto
+&#8212;>  Extracting xorg-xextproto
+&#8212;>  Configuring xorg-xextproto
+&#8212;>  Building xorg-xextproto
+&#8212;>  Staging xorg-xextproto into destroot
+&#8212;>  Installing xorg-xextproto @7.1.1_0
+&#8212;>  Activating xorg-xextproto @7.1.1_0
+&#8212;>  Cleaning xorg-xextproto
+&#8212;>  Fetching xorg-xf86bigfontproto
+&#8212;>  Attempting to fetch xf86bigfontproto-1.2.0.tar.bz2 from http://distfiles.macports.org/xorg-xf86bigfontproto
+&#8212;>  Verifying checksum(s) for xorg-xf86bigfontproto
+&#8212;>  Extracting xorg-xf86bigfontproto
+&#8212;>  Configuring xorg-xf86bigfontproto
+&#8212;>  Building xorg-xf86bigfontproto
+&#8212;>  Staging xorg-xf86bigfontproto into destroot
+&#8212;>  Installing xorg-xf86bigfontproto @1.2.0_0
+&#8212;>  Activating xorg-xf86bigfontproto @1.2.0_0
+&#8212;>  Cleaning xorg-xf86bigfontproto
+&#8212;>  Fetching xorg-xtrans
+&#8212;>  Attempting to fetch xtrans-1.2.5.tar.bz2 from http://distfiles.macports.org/xorg-xtrans
+&#8212;>  Verifying checksum(s) for xorg-xtrans
+&#8212;>  Extracting xorg-xtrans
+&#8212;>  Configuring xorg-xtrans
+&#8212;>  Building xorg-xtrans
+&#8212;>  Staging xorg-xtrans into destroot
+&#8212;>  Installing xorg-xtrans @1.2.5_0
+&#8212;>  Activating xorg-xtrans @1.2.5_0
+&#8212;>  Cleaning xorg-xtrans
+&#8212;>  Fetching xorg-libX11
+&#8212;>  Attempting to fetch libX11-1.3.3.tar.bz2 from http://distfiles.macports.org/xorg-libX11
+&#8212;>  Verifying checksum(s) for xorg-libX11
+&#8212;>  Extracting xorg-libX11
+&#8212;>  Configuring xorg-libX11
+&#8212;>  Building xorg-libX11
+&#8212;>  Staging xorg-libX11 into destroot
+&#8212;>  Installing xorg-libX11 @1.3.3_0
+&#8212;>  Activating xorg-libX11 @1.3.3_0
+&#8212;>  Cleaning xorg-libX11
+&#8212;>  Fetching xorg-libXext
+&#8212;>  Attempting to fetch libXext-1.1.1.tar.bz2 from http://distfiles.macports.org/xorg-libXext
+&#8212;>  Verifying checksum(s) for xorg-libXext
+&#8212;>  Extracting xorg-libXext
+&#8212;>  Configuring xorg-libXext
+&#8212;>  Building xorg-libXext
+&#8212;>  Staging xorg-libXext into destroot
+&#8212;>  Installing xorg-libXext @1.1.1_0
+&#8212;>  Activating xorg-libXext @1.1.1_0
+&#8212;>  Cleaning xorg-libXext
+&#8212;>  Fetching xorg-libice
+&#8212;>  Attempting to fetch libICE-1.0.6.tar.bz2 from http://distfiles.macports.org/xorg-libice
+&#8212;>  Verifying checksum(s) for xorg-libice
+&#8212;>  Extracting xorg-libice
+&#8212;>  Configuring xorg-libice
+&#8212;>  Building xorg-libice
+&#8212;>  Staging xorg-libice into destroot
+&#8212;>  Installing xorg-libice @1.0.6_0
+&#8212;>  Activating xorg-libice @1.0.6_0
+&#8212;>  Cleaning xorg-libice
+&#8212;>  Fetching xorg-libsm
+&#8212;>  Attempting to fetch libSM-1.1.1.tar.bz2 from http://distfiles.macports.org/xorg-libsm
+&#8212;>  Verifying checksum(s) for xorg-libsm
+&#8212;>  Extracting xorg-libsm
+&#8212;>  Configuring xorg-libsm
+&#8212;>  Building xorg-libsm
+&#8212;>  Staging xorg-libsm into destroot
+&#8212;>  Installing xorg-libsm @1.1.1_0
+&#8212;>  Activating xorg-libsm @1.1.1_0
+&#8212;>  Cleaning xorg-libsm
+&#8212;>  Fetching xorg-libXt
+&#8212;>  Attempting to fetch libXt-1.0.8.tar.bz2 from http://distfiles.macports.org/xorg-libXt
+&#8212;>  Verifying checksum(s) for xorg-libXt
+&#8212;>  Extracting xorg-libXt
+&#8212;>  Configuring xorg-libXt
+&#8212;>  Building xorg-libXt
+&#8212;>  Staging xorg-libXt into destroot
+&#8212;>  Installing xorg-libXt @1.0.8_0
+&#8212;>  Activating xorg-libXt @1.0.8_0
+&#8212;>  Cleaning xorg-libXt
+&#8212;>  Fetching ImageMagick
+&#8212;>  Attempting to fetch ImageMagick-6.6.1-5.7z from http://distfiles.macports.org/ImageMagick
+&#8212;>  Verifying checksum(s) for ImageMagick
+&#8212;>  Extracting ImageMagick
+&#8212;>  Applying patches to ImageMagick
+&#8212;>  Configuring ImageMagick
+&#8212;>  Building ImageMagick
+&#8212;>  Staging ImageMagick into destroot
+&#8212;>  Installing ImageMagick @6.6.1-5_0+q16
+&#8212;>  Activating ImageMagick @6.6.1-5_0+q16
+&#8212;>  Cleaning ImageMagick</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[How to keep a space in your iPhone App name?]]></title>
+    <link href="http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
+    <updated>2010-08-31T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
+    <content type="html"><![CDATA[<p>The answer is, <strong>you can&#8217;t submit your iPhone App with <em>whitespace</em> in its name</strong>. But you do <strong>be able to add space in your App display name</strong> under icon. I guess your purpose is the second one, you only want to display the space under app icon on device, don&#8217;t you?</p>
+
+<p>OK, just name your app as whatever name with space before you setup the distribution package, e.g. &#8220;Example Name.app&#8221;. Then,</p>
+
+<p>1) In Xcode Organizer right click on the build date of the app and select &#8220;Reveal Archived App in Finder&#8221;
+2) Open ArchiveInfo.plist in a text editor, edit the attribute &#8221;<strong><em><string>Example Name.app</string></em></strong>&#8221;
+Change that to ExampleName.app and save the file.
+4) In Finder remove the space in the file names on both the .app and the .app.dSYM files
+5) Once you get back to Xcode Organizer, you should be able to submitting app to itunesconnect successfully.
+PS: Also you might want to remove the previously generated .ipa file with the space. just delete the file, a new one will be created after the above steps automatically</p>
+
+<p>Now you are just submitting an app named &#8220;ExampleName.app&#8221;, and its display name will remain &#8220;Example Name.app&#8221;.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Study Note: Install Git1.7.1 on CentOS5.5]]></title>
+    <link href="http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <updated>2010-08-29T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <content type="html"><![CDATA[<p>Step 1. Install the dependencies</p>
+
+<pre>
+$ sudo yum -y install curl-devel expat-devel \
+gettext-devel openssl-devel zlib-devel  
+$ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz  
+$ tar zxf libiconv-1.13.1.tar.gz  
+$ cd libiconv-1.13.1  
+$ ./configure prefix=/usr/local  
+$ make  
+$ sudo make install
+</pre>
+
+
+<p>Step 2. Install Git1.7.1</p>
+
+<pre>
+$ wget http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz  
+$ tar zxf git-1.7.1.tar.gz  
+$ cd  git-1.7.1  
+$ ./configure prefix=/usr/local
+$ make
+$ sudo make install 
+</pre>
+
+
+<p>Step 3. You might get errors as:</p>
+
+<pre>error while loading shared libraries: libiconv.so.2:\
+cannot open shared object file: No such file or directory</pre>
+
+
+<p>Then, you should do the following:</p>
+
+<pre>
+$ sudo vim /etc/ld.so.conf
+# you should add online as "/usr/local/lib"
+$ sudo /sbin/ldconfig
+</pre>
+
+
+<p>Done, try git &#8211;version, it&#8217;s successfully installed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[First iPhone app : IELTS 31 Formulas]]></title>
+    <link href="http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
+    <updated>2010-08-28T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
+    <content type="html"><![CDATA[<p><a href="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg"><img alt="" src="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg" title="31 Formulas" class="aligncenter" width="688" height="514" /></a>
+In last two month, I worked with our designer(<a href="http://www.lijiapeng.com">buzz</a>) for Idapted first iPhone App. We spent a lot time on releasing this app as Apple&#8217;s process is really awful to a first user. Well, everything was done in the last. Now our first iPhone App is available in Apple Store. It&#8217;s free in current version. you can install it from here: <a href="http://goo.gl/ht4p">http://goo.gl/ht4p</a>. It&#8217;s based on <a href="http://www.appcelerator.com/products/">Titanium 1.4</a>. so a big thanks to the brilliant <a href="http://www.appcelerator.com/company/leadership-team/">Appcelerator Team</a>.</p>
+
+<p>We open sourced this app on our <a href="http://github.com/idapted/eq31formulas">github repos</a>. We also built a website for this app at <a href="http://www.31formulas.com">http://www.31formulas.com</a></p>
+
+<p>Enjoy it and let us know if you have any feedback on it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[where optimization happens]]></title>
+    <link href="http://yorzi.github.com/2010/08/27/where-optimization-happens/"/>
+    <updated>2010-08-27T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/27/where-optimization-happens</id>
+    <content type="html"><![CDATA[<p>Jonathan just mentioned <a href="http://www.idapted.com/blog/2010/08/16/small-details-big-gains/" target="_blank">small details and big gains</a> in his post days ago, I totally agree with him from technology perspective, meanwhile, I found more samples to support his points. Yeah, technology is born for changing people&#8217;s life, I call this kind of changes as Optimization.Optimization is happening everyday to Idapted Platform, as it&#8217;s one of most important way to become perfect.</p>
+
+<p>In last week, our StudyCenter, the front end user interface system, was optimized in its registration flow. Previously, we have many registration channels for different partners. Our marketing department is mainly responsible for these registration channels, and update them frequently. Accordingly, technology team and sales team also need to cooperate. Here problem is, demands change more quickly than tech guys and sales system can follow up.</p>
+
+<p>Now we refactor the control of registration flow, to re-think every departments&#8217; needs, we split the conditions for each department, after this improvement, people in different departments will not affect others, specially to tech guys, this is more flexible and maintainable. They will not messy all the situations up.</p>
+
+<p>Another sample of optimization is that, we iterated many rounds of development to build a CRM system internally before, however, we integrated too many features inside the CRM, which were used by different departments. Because Idapted customers&#8217; accounts are increasing rapidly, the speed of whole system is getting slower and slower. Obviously, the CRM system needs optimization.</p>
+
+<p>We finally split the CRM system in three parts which are used by different people, The independent and small system is well designed for certain users, that&#8217;s the key of this Optimization. It gains us faster system response and clearer business devision.</p>
+
+<p>All in all, to serve learners better user experience, to improve internal working process or to increase system efficiency, all of these optimizations are about making things perfect. This is the belief of <a href="http://www.idapted.com">Idapted</a>.</p>
+]]></content>
+  </entry>
   
 </feed>

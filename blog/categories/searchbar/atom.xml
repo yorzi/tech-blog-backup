@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: searchbar | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/searchbar/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SearchBar in Titanium]]></title>
+    <link href="http://yorzi.github.com/2010/07/16/searchbar-in-titanium/"/>
+    <updated>2010-07-16T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/16/searchbar-in-titanium</id>
+    <content type="html"><![CDATA[<p>In this post, I will guide you to use SearchBar in TableView when your development is based on Titanium.</p>
+
+<p><strong>Keywords</strong>: <em>Titanium, TableView, TableViewRow, SearchBar</em></p>
+
+<p><strong>Step 1</strong>: Create a table view row datas for your content list.
+<code lang="javascript">
+// create the rest of the rows
+var data = [];
+for (var c=0;c&lt;rowCount;c++)
+{</p>
+
+<pre><code>var row = Ti.UI.createTableViewRow();
+row.backgroundImage = '../images/row_bg.png';
+row.selectedBackgroundImage = '../images/row_bg_selected.png';
+row.height = 90;
+row.url = "formulas_show.js";
+row.id = id;
+row.className = 'datarow';
+row.filter = "the data you want to search";  // here you will set the filter content which will be searched.
+row.clickName = 'row';
+
+data.push(row);
+</code></pre>
+
+<p>}
+</code></p>
+
+<p><strong>Step 2</strong>: Create a search bar.
+<code lang="javascript">
+// CREATE SEARCH BAR
+var search = Titanium.UI.createSearchBar({</p>
+
+<pre><code>barColor:'#385292', 
+showCancel:false
+</code></pre>
+
+<p>});</p>
+
+<p>search.addEventListener('change', function(e)
+{
+   e.value; // search string as user types
+});
+search.addEventListener('return', function(e)
+{
+   search.blur();
+});
+search.addEventListener('cancel', function(e)
+{
+   search.blur();
+});
+</code></p>
+
+<p><strong>Step 3</strong>: Create a table view for your content list.
+<code lang="javascript">
+// create table view
+tableView = Titanium.UI.createTableView({</p>
+
+<pre><code>data:data, // here will be the data array
+search:search, //here will set search bar
+filterAttribute:'filter', //here is the search filter which appears in TableViewRow as an attribute(you can define it in other name)
+backgroundColor:'white'
+</code></pre>
+
+<p>});
+</code></p>
+
+<p>Ok, now you can add search bar for table view content list. as a reminder, you should add event listener for the table view object, but the click event should be bundled with the "row", so that you can search and click the search result linking to target window.</p>
+]]></content>
+  </entry>
+  
+</feed>

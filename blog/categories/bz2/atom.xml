@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: bz2 | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/bz2/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[mysql dump]]></title>
+    <link href="http://yorzi.github.com/2009/11/06/mysql-dump/"/>
+    <updated>2009-11-06T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/06/mysql-dump</id>
+    <content type="html"><![CDATA[<p>I'm a little shamed that I ask Sonic for a mysql dump command several times, I rarely dump db myself, that's why I forget the way dealing with it.. Ok, the commands are:</p>
+
+<pre name="code" class="mysql">
+mysqldump -u root user_production > user_production.sql
+bzip2 user_production.sql
+
+scp from server to local.
+
+bunzip2 user_production.sql.bz2
+bzcat user_production.sql.bz2 | mysql -u root user_production
+or extracts the backup files, to create db directly.
+</pre>
+
+
+<p>Thanks Sonic.</p>
+]]></content>
+  </entry>
+  
+</feed>

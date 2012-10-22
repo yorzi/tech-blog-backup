@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Renren | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/renren/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Renren Integration into EQenglish]]></title>
+    <link href="http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish/"/>
+    <updated>2010-06-20T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish</id>
+    <content type="html"><![CDATA[<p><img title="renren logo" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.41.10-AM-300x86.png" alt="" width="270" height="77" /></p>
+
+<p><a href="http://renren.com">The Renren Network</a>, which was formerly named Xiaonei Network is one of most successful Chinese social networking site. Renren is with an interface similar to that of <a href="http://www.facebook.com">Facebook</a>. It's said that there are more than 22 million active users and estimated 40 million users who have registered their real names. Thus, Renren is widely considered to be the most powerful SNS service in Mainland China, especially among college students.</p>
+
+<p>And, <a href="http://www.eqenglish.com">EQEnglish</a> is the fastest growing 1:1 English training service powered by <a href="http://www.idapted.com" target="_blank">Idapted</a> in China. It's delivering thousands of lessons a week to students all over China with its professional foreign teachers. Now, conveniently, all Renren's users can login EQenglish directly without registration again, at the same time, EQenglish is also using Renren site's platform <a href="http://wiki.dev.renren.com/wiki/API" target="_blank">API</a> to share learners' study status with the community. It's obviously a win-win model for both EQenglish and Renren.</p>
+
+<p>Now, in order to introduce you about the integration between EQenglish and Renren SNS, let me take you go through the story.</p>
+
+<p>[caption id="" align="alignright" width="270" caption="Login EQenglish system via Renren account"]<img title="Login EQenglish system via Renren account" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-2.17.12-PM-300x205.png" alt="" width="270" height="185" />[/caption]</p>
+
+<p>To login EQenglish via Renren account, you need to, at least have one Renren account, then on EQenglish portal you will see a login form  as right after you click "Connect via Rreren". After you input your user name and password EQenglish will present you a guide page on which you decide to bundle your exist EQ account with your Renren account or just every time use your Renren account login EQ platform.</p>
+
+<p>What will happen next when you do the login?</p>
+
+<p>On EQenglish website, you will be marked with a Renren icon and you can share EQ learning materials or EQ discussion thread or EQ study status with your Renren friends. For instance, you just discussed an EQ lesson named "EQ IELTS Formula 26: Evaluating Two Different Opinions" with your classmates on EQenglish studycenter, then the system will send this discussion status to your Renren friends, something like "Hey, I am discussing an interesting EQ lesson on their website, come and join in, it's cool..", surely, it's based on your Renren setting on connected websites.</p>
+
+<p>There, on Renren website, is also an <a href="http://page.renren.com/699099142/index" target="_blank">application home page</a> where all the EQ followers can keep talking about their EQ study story or learning experience, At the same time, EQ consultants spread out EQ learning tips with all its fans. In past two weeks, there are more than 300 learners follow EQ application in Renren Site. People rate <a href="http://page.renren.com/699099142/reviews" target="_blank">many 5-stars</a> for this connection application.</p>
+
+<div class="mceTemp"><dl id="attachment_202" class="wp-caption alignright" style="width: 563px;"><dt><img title="EQ application home page on Renren site" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.21.01-AM.png" alt="" width="553" height="285" /></dt><dd>EQ application home page on Renren site</dd></dl></div>
+
+
+<p>So, users conveniently use their Renren accounts to login EQenglish. The user may then grant EQenglish access to their public data including: Real identity information, social graph, etc. Using this information, EQenglish can expand leaner base and strengthen the social aspects of EQ self. What's useful is, Renren users can find all the valuable information on EQenglish message feeds through their friends feeds, People can make content(EQ learning materials), or anything else(lesson discussion thread) available for sharing.</p>
+
+<p>Technically, this integration is still have big room to improve, it depends on Renren's open platform, We are ready to enhance user experience for all EQenglish learners, We always believe in a formula when we development EQenglish learning system, that is:
+Great Technology + Clear Convenience = Comfortable Awesome</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Learn From Renren API]]></title>
+    <link href="http://yorzi.github.com/2010/05/19/learn-from-renren-api/"/>
+    <updated>2010-05-19T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/05/19/learn-from-renren-api</id>
+    <content type="html"><![CDATA[<p>Been working on Renren Connect application for a while, when talking about its API, I think every coin has two sides, so let's see its sides:</p>
+
+<p>A(davantage) side :
+1. Configure cross domain file to resolve JS cross-domain issue between application domain and renren domain. Not sure if a similar solution can solve our ajax load cross domain-issue.. or meet our other future use. The file as below:
+<code lang="html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head></p>
+
+<pre><code>&lt;meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /&gt;
+</code></pre>
+
+<p></head>
+<body></p>
+
+<script src="http://static.connect.renren.com/js/v1.0/XdCommReceiver.jsp" type="text/javascript"></script>
+
+
+<p></body>
+</html>
+</code></p>
+
+<ol>
+<li>Learn from Renren "markable language", it's an clear way to capsule complex code block. It may help us to build standard function/display lib in future, I guess its a good way to reuse component among applications. sample is:
+<code lang="html">
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:xn="http:///www.renren.com/2009/xnml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Renren Connect</title>
+</head>
+<body>
+&lt;xn:login-button autologoutlink="true">&lt;/xn:login-button>
+<script type="text/javascript" src="http://static.connect.renren.com/js/v1.0/FeatureLoader.jsp"></script>
+<script type="text/javascript">
+ XN_RequireFeatures(["EXNML"], function()
+ {
+   XN.Main.init("16356ddc758343a39400837e79f1a18e", "/xd_receiver.html");
+ });
+</script>
+</body>
+</html>
+</code>
+Above two technologies are a bit impressive to me, we may use it in future to organize our platform somehow.</li>
+</ol>
+
+
+<p>D(isadvantage) side:
+1. I think the first "D", which is also bad, is the development document. It's partially out-of-date, that results in many stupid tries for their API. So we should learn the lesson and plan to write handful document in a clear way..</p>
+
+<ol>
+<li>The second "D" is Renren doesn't have convenient sandbox for testing the third party application, we can't easily test or improve it when it's released, cause Renren only has one single configuration for each one application, that also means we have to take risk for further development which may change your application directly when it's released.</li>
+</ol>
+
+
+<p>Summary:
+Great Technology + Clear Convenience = Comfortable Awesome</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Overview of RenRen Connect Application]]></title>
+    <link href="http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application/"/>
+    <updated>2010-04-28T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application</id>
+    <content type="html"><![CDATA[<p>I’ve read <a href="http://wiki.dev.renren.com/wiki/%E9%A6%96%E9%A1%B5">RenRen development Doc</a> and tried some simple feature for a while, its platform is interesting and exciting, but much of its document is out of date(I guess it’s not been maintained for a time). so there are pains to test most of its APIs, here I will roughly introduce what we can do based on RenRen open platform.</p>
+
+<p>First of all, RenRen platform supports <a href="http://wiki.dev.renren.com/wiki/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">five types of APPLICATION</a>, which are:
+– RenRen Canvas. It means application/content is embedded in RenRen’s web container via XNML/IFrame/OpenSocial-Gadget etc.
+– Mobile Wap application.
+– RenRen Connect. It means an external website is connected to RenRen, the two sites can share many different infos according to the channel/bridge API.
+– Desktop Application.
+– Mobile Client Application.</p>
+
+<p>Obviously, RenRen Connect is what developer need upon first step. So the question is how does it work? Follow me, I will go through the imagined application to show what feature developer can build according to RenRen connect API, now go:</p>
+
+<ol>
+<li><p>Tom is a RenRen user, he just find an “application” which tells him he can improve his oral English, that’s interesting, he clicks it in order to add the application to his list.</p></li>
+<li><p>Then he find EQenglish.com, he uses his RenRen account to login EQenglish, He find he can order an speaking evaluation for free on the website, and what’s more, he even can push this message and/or the study status to his RenRen friends.</p></li>
+<li><p>Tom goes through EQenglish website to check EQ learning methods, He can easily share the web page to his RenRen friends.</p></li>
+<li><p>Andy is an EQenglish user, he bundles his EQ account and RenRen account on EQenglish website, so he can push his study status to his RenRen friends.</p></li>
+<li><p>Andy finally buy a course, then all EQ learners who have RenRen accounts can receive an email/notification, in which it broadcasts “Andy buy a course ***” something like that.</p></li>
+<li><p>Once Andy discussed an EQ lesson, his comments is synced to his RenRen status, all of his Friends there can see his status.</p></li>
+<li><p>Tom finds Andy’s EQ profile via the discussion thread, the surprise is Andy’s is his School mate, they have the same IELTS exam time. They connect with each other on RenRen.</p></li>
+<li><p>What’s more, Tom finds a section in EQ website, He can pick up all his Friends list, and suggest them to use EQ service. Also aside the lesson discussion thread, there is a live stream box connecting to RenRen page. so He can easily comment with friend..</p></li>
+</ol>
+
+
+<p>Etc..</p>
+
+<p>Above is a rough introduction of RenRen connect feature developer can build(it is based on RenRen connect’s API, not just my imagination).<a href="http://wiki.dev.renren.com/wiki/%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3">Click here to review RenRen Conncet Production Description.</a></p>
+]]></content>
+  </entry>
+  
+</feed>

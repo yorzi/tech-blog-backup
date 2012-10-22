@@ -1,0 +1,656 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>MacPorts is a monster - @yorzi</title>
+  <meta name="author" content="Andy Wang">
+
+  
+  <meta name="description" content="MacPorts is a monster.. see the log I installed ImageMagick. Anyway, it works for me. but the brew solution is not working for me. andy@Wang-Andys- &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yorzi.github.com/2010/09/01/macports-is-a-monster/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="@yorzi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17239385-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/" style="color:red">@yorzi</a></h1>
+  
+    <h2>great people share knowledge</h2>
+  
+  <a href="https://github.com/yorzi/site_engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme.png" alt="Fork me on GitHub"></a>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="wangyaodi@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yorzi.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://about.me/wangyaodi">About Me</a></li>
+  <li><a href="http://wangyaodi.com">Hire @yorzi</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">MacPorts Is a Monster</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-01T00:00:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2010</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><h1>MacPorts is a monster.. see the log I installed ImageMagick. Anyway, it works for me. but the <a href="http://weblogs.manas.com.ar/mverzilli/2010/05/19/install-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in/">brew solution</a> is not working for me.</h1>
+
+<p>andy@Wang-Andys-MacBook-Pro~/proj.workspace:sudo port install ImageMagick
+&#8212;>  Computing dependencies for ImageMagick
+&#8212;>  Fetching p5-locale-gettext
+&#8212;>  Attempting to fetch gettext-1.05.tar.gz from http://distfiles.macports.org/perl5
+&#8212;>  Verifying checksum(s) for p5-locale-gettext
+&#8212;>  Extracting p5-locale-gettext
+&#8212;>  Applying patches to p5-locale-gettext
+&#8212;>  Configuring p5-locale-gettext
+&#8212;>  Building p5-locale-gettext
+&#8212;>  Staging p5-locale-gettext into destroot
+&#8212;>  Installing p5-locale-gettext @1.05_2
+&#8212;>  Activating p5-locale-gettext @1.05_2
+&#8212;>  Cleaning p5-locale-gettext
+&#8212;>  Fetching help2man
+&#8212;>  Attempting to fetch help2man-1.37.1.tar.gz from http://distfiles.macports.org/help2man
+&#8212;>  Verifying checksum(s) for help2man
+&#8212;>  Extracting help2man
+&#8212;>  Configuring help2man
+&#8212;>  Building help2man
+&#8212;>  Staging help2man into destroot
+&#8212;>  Installing help2man @1.37.1_1
+&#8212;>  Activating help2man @1.37.1_1
+&#8212;>  Cleaning help2man
+&#8212;>  Fetching m4
+&#8212;>  Attempting to fetch m4-1.4.14.tar.bz2 from http://distfiles.macports.org/m4
+&#8212;>  Verifying checksum(s) for m4
+&#8212;>  Extracting m4
+&#8212;>  Configuring m4
+&#8212;>  Building m4
+&#8212;>  Staging m4 into destroot
+&#8212;>  Installing m4 @1.4.14_0
+&#8212;>  Activating m4 @1.4.14_0
+&#8212;>  Cleaning m4
+&#8212;>  Fetching autoconf
+&#8212;>  Attempting to fetch autoconf-2.65.tar.bz2 from http://distfiles.macports.org/autoconf
+&#8212;>  Verifying checksum(s) for autoconf
+&#8212;>  Extracting autoconf
+&#8212;>  Applying patches to autoconf
+&#8212;>  Configuring autoconf
+&#8212;>  Building autoconf
+&#8212;>  Staging autoconf into destroot
+&#8212;>  Installing autoconf @2.65_1
+&#8212;>  Activating autoconf @2.65_1
+&#8212;>  Cleaning autoconf
+&#8212;>  Fetching automake
+&#8212;>  Attempting to fetch automake-1.11.1.tar.bz2 from http://distfiles.macports.org/automake
+&#8212;>  Verifying checksum(s) for automake
+&#8212;>  Extracting automake
+&#8212;>  Configuring automake
+&#8212;>  Building automake
+&#8212;>  Staging automake into destroot
+&#8212;>  Installing automake @1.11.1_0
+&#8212;>  Activating automake @1.11.1_0
+&#8212;>  Cleaning automake
+&#8212;>  Fetching bzip2
+&#8212;>  Attempting to fetch bzip2-1.0.5.tar.gz from http://distfiles.macports.org/bzip2
+&#8212;>  Verifying checksum(s) for bzip2
+&#8212;>  Extracting bzip2
+&#8212;>  Applying patches to bzip2
+&#8212;>  Configuring bzip2
+&#8212;>  Building bzip2
+&#8212;>  Staging bzip2 into destroot
+&#8212;>  Installing bzip2 @1.0.5_3+darwin
+&#8212;>  Activating bzip2 @1.0.5_3+darwin
+&#8212;>  Cleaning bzip2
+&#8212;>  Fetching freetype
+&#8212;>  Attempting to fetch freetype-2.3.12.tar.bz2 from http://voxel.dl.sourceforge.net/freetype
+&#8212;>  Attempting to fetch freetype-doc-2.3.12.tar.bz2 from http://voxel.dl.sourceforge.net/freetype
+&#8212;>  Verifying checksum(s) for freetype
+&#8212;>  Extracting freetype
+&#8212;>  Applying patches to freetype
+&#8212;>  Configuring freetype
+&#8212;>  Building freetype
+&#8212;>  Staging freetype into destroot
+&#8212;>  Installing freetype @2.3.12_0+macosx
+&#8212;>  Activating freetype @2.3.12_0+macosx
+&#8212;>  Cleaning freetype
+&#8212;>  Fetching fontconfig
+&#8212;>  Attempting to fetch fontconfig-2.8.0.tar.gz from http://distfiles.macports.org/fontconfig
+&#8212;>  Verifying checksum(s) for fontconfig
+&#8212;>  Extracting fontconfig
+&#8212;>  Applying patches to fontconfig
+&#8212;>  Configuring fontconfig
+&#8212;>  Building fontconfig
+&#8212;>  Staging fontconfig into destroot
+&#8212;>  Installing fontconfig @2.8.0_0+macosx
+&#8212;>  Activating fontconfig @2.8.0_0+macosx
+&#8212;>  Cleaning fontconfig
+&#8212;>  Fetching jpeg
+&#8212;>  Attempting to fetch jpegsrc.v8a.tar.gz from http://distfiles.macports.org/jpeg
+&#8212;>  Verifying checksum(s) for jpeg
+&#8212;>  Extracting jpeg
+&#8212;>  Configuring jpeg
+&#8212;>  Building jpeg
+&#8212;>  Staging jpeg into destroot
+&#8212;>  Installing jpeg @8a_0
+&#8212;>  Activating jpeg @8a_0
+&#8212;>  Cleaning jpeg
+&#8212;>  Fetching tiff
+&#8212;>  Attempting to fetch tiff-3.9.2.tar.gz from ftp://ftp.tw.FreeBSD.org/pub/FreeBSD/ports/distfiles/
+&#8212;>  Verifying checksum(s) for tiff
+&#8212;>  Extracting tiff
+&#8212;>  Applying patches to tiff
+&#8212;>  Configuring tiff
+&#8212;>  Building tiff
+&#8212;>  Staging tiff into destroot
+&#8212;>  Installing tiff @3.9.2_3+macosx
+&#8212;>  Activating tiff @3.9.2_3+macosx
+&#8212;>  Cleaning tiff
+&#8212;>  Fetching lcms
+&#8212;>  Attempting to fetch lcms-1.19.tar.gz from http://voxel.dl.sourceforge.net/lcms
+&#8212;>  Verifying checksum(s) for lcms
+&#8212;>  Extracting lcms
+&#8212;>  Configuring lcms
+&#8212;>  Building lcms
+&#8212;>  Staging lcms into destroot
+&#8212;>  Installing lcms @1.19_2
+&#8212;>  Activating lcms @1.19_2
+&#8212;>  Cleaning lcms
+&#8212;>  Fetching libpng
+&#8212;>  Attempting to fetch libpng-1.2.43.tar.bz2 from http://voxel.dl.sourceforge.net/libpng
+&#8212;>  Verifying checksum(s) for libpng
+&#8212;>  Extracting libpng
+&#8212;>  Configuring libpng
+&#8212;>  Building libpng
+&#8212;>  Staging libpng into destroot
+&#8212;>  Installing libpng @1.2.43_0
+&#8212;>  Activating libpng @1.2.43_0
+&#8212;>  Cleaning libpng
+&#8212;>  Fetching libtool
+&#8212;>  Attempting to fetch libtool-2.2.6b.tar.gz from http://distfiles.macports.org/libtool
+&#8212;>  Verifying checksum(s) for libtool
+&#8212;>  Extracting libtool
+&#8212;>  Configuring libtool
+&#8212;>  Building libtool
+&#8212;>  Staging libtool into destroot
+&#8212;>  Installing libtool @2.2.6b_1+darwin
+&#8212;>  Activating libtool @2.2.6b_1+darwin
+&#8212;>  Cleaning libtool
+&#8212;>  Fetching libxml2
+&#8212;>  Attempting to fetch libxml2-2.7.7.tar.gz from http://distfiles.macports.org/libxml2
+&#8212;>  Verifying checksum(s) for libxml2
+&#8212;>  Extracting libxml2
+&#8212;>  Configuring libxml2
+&#8212;>  Building libxml2
+&#8212;>  Staging libxml2 into destroot
+&#8212;>  Installing libxml2 @2.7.7_0
+&#8212;>  Activating libxml2 @2.7.7_0
+&#8212;>  Cleaning libxml2
+&#8212;>  Fetching p7zip
+&#8212;>  Attempting to fetch p7zip_9.04_src_all.tar.bz2 from http://voxel.dl.sourceforge.net/p7zip
+&#8212;>  Verifying checksum(s) for p7zip
+&#8212;>  Extracting p7zip
+&#8212;>  Applying patches to p7zip
+&#8212;>  Configuring p7zip
+&#8212;>  Building p7zip
+&#8212;>  Staging p7zip into destroot
+&#8212;>  Installing p7zip @9.04_0
+&#8212;>  Activating p7zip @9.04_0
+&#8212;>  Cleaning p7zip
+&#8212;>  Fetching xorg-bigreqsproto
+&#8212;>  Attempting to fetch bigreqsproto-1.1.0.tar.bz2 from http://distfiles.macports.org/xorg-bigreqsproto
+&#8212;>  Verifying checksum(s) for xorg-bigreqsproto
+&#8212;>  Extracting xorg-bigreqsproto
+&#8212;>  Configuring xorg-bigreqsproto
+&#8212;>  Building xorg-bigreqsproto
+&#8212;>  Staging xorg-bigreqsproto into destroot
+&#8212;>  Installing xorg-bigreqsproto @1.1.0_0
+&#8212;>  Activating xorg-bigreqsproto @1.1.0_0
+&#8212;>  Cleaning xorg-bigreqsproto
+&#8212;>  Fetching xorg-inputproto
+&#8212;>  Attempting to fetch inputproto-2.0.tar.bz2 from http://distfiles.macports.org/xorg-inputproto
+&#8212;>  Verifying checksum(s) for xorg-inputproto
+&#8212;>  Extracting xorg-inputproto
+&#8212;>  Configuring xorg-inputproto
+&#8212;>  Building xorg-inputproto
+&#8212;>  Staging xorg-inputproto into destroot
+&#8212;>  Installing xorg-inputproto @2.0_0
+&#8212;>  Activating xorg-inputproto @2.0_0
+&#8212;>  Cleaning xorg-inputproto
+&#8212;>  Fetching xorg-kbproto
+&#8212;>  Attempting to fetch kbproto-1.0.4.tar.bz2 from http://distfiles.macports.org/xorg-kbproto
+&#8212;>  Verifying checksum(s) for xorg-kbproto
+&#8212;>  Extracting xorg-kbproto
+&#8212;>  Configuring xorg-kbproto
+&#8212;>  Building xorg-kbproto
+&#8212;>  Staging xorg-kbproto into destroot
+&#8212;>  Installing xorg-kbproto @1.0.4_0
+&#8212;>  Activating xorg-kbproto @1.0.4_0
+&#8212;>  Cleaning xorg-kbproto
+&#8212;>  Fetching xorg-xproto
+&#8212;>  Attempting to fetch xproto-7.0.16.tar.bz2 from http://distfiles.macports.org/xorg-xproto
+&#8212;>  Verifying checksum(s) for xorg-xproto
+&#8212;>  Extracting xorg-xproto
+&#8212;>  Configuring xorg-xproto
+&#8212;>  Building xorg-xproto
+&#8212;>  Staging xorg-xproto into destroot
+&#8212;>  Installing xorg-xproto @7.0.16_0
+&#8212;>  Activating xorg-xproto @7.0.16_0
+&#8212;>  Cleaning xorg-xproto
+&#8212;>  Fetching xorg-libXau
+&#8212;>  Attempting to fetch libXau-1.0.5.tar.bz2 from http://distfiles.macports.org/xorg-libXau
+&#8212;>  Verifying checksum(s) for xorg-libXau
+&#8212;>  Extracting xorg-libXau
+&#8212;>  Configuring xorg-libXau
+&#8212;>  Building xorg-libXau
+&#8212;>  Staging xorg-libXau into destroot
+&#8212;>  Installing xorg-libXau @1.0.5_0
+&#8212;>  Activating xorg-libXau @1.0.5_0
+&#8212;>  Cleaning xorg-libXau
+&#8212;>  Fetching xorg-libXdmcp
+&#8212;>  Attempting to fetch libXdmcp-1.0.3.tar.bz2 from http://distfiles.macports.org/xorg-libXdmcp
+&#8212;>  Verifying checksum(s) for xorg-libXdmcp
+&#8212;>  Extracting xorg-libXdmcp
+&#8212;>  Configuring xorg-libXdmcp
+&#8212;>  Building xorg-libXdmcp
+&#8212;>  Staging xorg-libXdmcp into destroot
+&#8212;>  Installing xorg-libXdmcp @1.0.3_0
+&#8212;>  Activating xorg-libXdmcp @1.0.3_0
+&#8212;>  Cleaning xorg-libXdmcp
+&#8212;>  Fetching xorg-util-macros
+&#8212;>  Attempting to fetch util-macros-1.7.0.tar.bz2 from http://distfiles.macports.org/xorg-util-macros
+&#8212;>  Verifying checksum(s) for xorg-util-macros
+&#8212;>  Extracting xorg-util-macros
+&#8212;>  Configuring xorg-util-macros
+&#8212;>  Building xorg-util-macros
+&#8212;>  Staging xorg-util-macros into destroot
+&#8212;>  Installing xorg-util-macros @1.7.0_0
+&#8212;>  Activating xorg-util-macros @1.7.0_0
+&#8212;>  Cleaning xorg-util-macros
+&#8212;>  Fetching xorg-xcmiscproto
+&#8212;>  Attempting to fetch xcmiscproto-1.2.0.tar.bz2 from http://distfiles.macports.org/xorg-xcmiscproto
+&#8212;>  Verifying checksum(s) for xorg-xcmiscproto
+&#8212;>  Extracting xorg-xcmiscproto
+&#8212;>  Configuring xorg-xcmiscproto
+&#8212;>  Building xorg-xcmiscproto
+&#8212;>  Staging xorg-xcmiscproto into destroot
+&#8212;>  Installing xorg-xcmiscproto @1.2.0_0
+&#8212;>  Activating xorg-xcmiscproto @1.2.0_0
+&#8212;>  Cleaning xorg-xcmiscproto
+&#8212;>  Fetching xorg-xextproto
+&#8212;>  Attempting to fetch xextproto-7.1.1.tar.bz2 from http://distfiles.macports.org/xorg-xextproto
+&#8212;>  Verifying checksum(s) for xorg-xextproto
+&#8212;>  Extracting xorg-xextproto
+&#8212;>  Configuring xorg-xextproto
+&#8212;>  Building xorg-xextproto
+&#8212;>  Staging xorg-xextproto into destroot
+&#8212;>  Installing xorg-xextproto @7.1.1_0
+&#8212;>  Activating xorg-xextproto @7.1.1_0
+&#8212;>  Cleaning xorg-xextproto
+&#8212;>  Fetching xorg-xf86bigfontproto
+&#8212;>  Attempting to fetch xf86bigfontproto-1.2.0.tar.bz2 from http://distfiles.macports.org/xorg-xf86bigfontproto
+&#8212;>  Verifying checksum(s) for xorg-xf86bigfontproto
+&#8212;>  Extracting xorg-xf86bigfontproto
+&#8212;>  Configuring xorg-xf86bigfontproto
+&#8212;>  Building xorg-xf86bigfontproto
+&#8212;>  Staging xorg-xf86bigfontproto into destroot
+&#8212;>  Installing xorg-xf86bigfontproto @1.2.0_0
+&#8212;>  Activating xorg-xf86bigfontproto @1.2.0_0
+&#8212;>  Cleaning xorg-xf86bigfontproto
+&#8212;>  Fetching xorg-xtrans
+&#8212;>  Attempting to fetch xtrans-1.2.5.tar.bz2 from http://distfiles.macports.org/xorg-xtrans
+&#8212;>  Verifying checksum(s) for xorg-xtrans
+&#8212;>  Extracting xorg-xtrans
+&#8212;>  Configuring xorg-xtrans
+&#8212;>  Building xorg-xtrans
+&#8212;>  Staging xorg-xtrans into destroot
+&#8212;>  Installing xorg-xtrans @1.2.5_0
+&#8212;>  Activating xorg-xtrans @1.2.5_0
+&#8212;>  Cleaning xorg-xtrans
+&#8212;>  Fetching xorg-libX11
+&#8212;>  Attempting to fetch libX11-1.3.3.tar.bz2 from http://distfiles.macports.org/xorg-libX11
+&#8212;>  Verifying checksum(s) for xorg-libX11
+&#8212;>  Extracting xorg-libX11
+&#8212;>  Configuring xorg-libX11
+&#8212;>  Building xorg-libX11
+&#8212;>  Staging xorg-libX11 into destroot
+&#8212;>  Installing xorg-libX11 @1.3.3_0
+&#8212;>  Activating xorg-libX11 @1.3.3_0
+&#8212;>  Cleaning xorg-libX11
+&#8212;>  Fetching xorg-libXext
+&#8212;>  Attempting to fetch libXext-1.1.1.tar.bz2 from http://distfiles.macports.org/xorg-libXext
+&#8212;>  Verifying checksum(s) for xorg-libXext
+&#8212;>  Extracting xorg-libXext
+&#8212;>  Configuring xorg-libXext
+&#8212;>  Building xorg-libXext
+&#8212;>  Staging xorg-libXext into destroot
+&#8212;>  Installing xorg-libXext @1.1.1_0
+&#8212;>  Activating xorg-libXext @1.1.1_0
+&#8212;>  Cleaning xorg-libXext
+&#8212;>  Fetching xorg-libice
+&#8212;>  Attempting to fetch libICE-1.0.6.tar.bz2 from http://distfiles.macports.org/xorg-libice
+&#8212;>  Verifying checksum(s) for xorg-libice
+&#8212;>  Extracting xorg-libice
+&#8212;>  Configuring xorg-libice
+&#8212;>  Building xorg-libice
+&#8212;>  Staging xorg-libice into destroot
+&#8212;>  Installing xorg-libice @1.0.6_0
+&#8212;>  Activating xorg-libice @1.0.6_0
+&#8212;>  Cleaning xorg-libice
+&#8212;>  Fetching xorg-libsm
+&#8212;>  Attempting to fetch libSM-1.1.1.tar.bz2 from http://distfiles.macports.org/xorg-libsm
+&#8212;>  Verifying checksum(s) for xorg-libsm
+&#8212;>  Extracting xorg-libsm
+&#8212;>  Configuring xorg-libsm
+&#8212;>  Building xorg-libsm
+&#8212;>  Staging xorg-libsm into destroot
+&#8212;>  Installing xorg-libsm @1.1.1_0
+&#8212;>  Activating xorg-libsm @1.1.1_0
+&#8212;>  Cleaning xorg-libsm
+&#8212;>  Fetching xorg-libXt
+&#8212;>  Attempting to fetch libXt-1.0.8.tar.bz2 from http://distfiles.macports.org/xorg-libXt
+&#8212;>  Verifying checksum(s) for xorg-libXt
+&#8212;>  Extracting xorg-libXt
+&#8212;>  Configuring xorg-libXt
+&#8212;>  Building xorg-libXt
+&#8212;>  Staging xorg-libXt into destroot
+&#8212;>  Installing xorg-libXt @1.0.8_0
+&#8212;>  Activating xorg-libXt @1.0.8_0
+&#8212;>  Cleaning xorg-libXt
+&#8212;>  Fetching ImageMagick
+&#8212;>  Attempting to fetch ImageMagick-6.6.1-5.7z from http://distfiles.macports.org/ImageMagick
+&#8212;>  Verifying checksum(s) for ImageMagick
+&#8212;>  Extracting ImageMagick
+&#8212;>  Applying patches to ImageMagick
+&#8212;>  Configuring ImageMagick
+&#8212;>  Building ImageMagick
+&#8212;>  Staging ImageMagick into destroot
+&#8212;>  Installing ImageMagick @6.6.1-5_0+q16
+&#8212;>  Activating ImageMagick @6.6.1-5_0+q16
+&#8212;>  Cleaning ImageMagick</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andy Wang</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-01T00:00:00+08:00" pubdate data-updated="true">Sep 1<span>st</span>, 2010</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://yorzi.github.com/2010/09/01/macports-is-a-monster/" data-via="yorzi" data-counturl="http://yorzi.github.com/2010/09/01/macports-is-a-monster/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/" title="Previous Post: How to keep a space in your iPhone App name?">&laquo; How to keep a space in your iPhone App name?</a>
+      
+      
+        <a class="basic-alignment right" href="/2010/09/01/script-fetch-parameter-value-from-url/" title="Next Post: Script: Fetch parameter value from url">Script: Fetch parameter value from url &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+  <img src="https://img.skitch.com/20110814-rrw7uufrh7wc6eugk6yf4163qb.jpg"></img>
+  <p>Hi, I'm <b style="color:red">Andy Wang</b>.<br />
+     I live in <b style="color:red">Beijing</b>, China. <br />
+     I'm a <b style="color:red">Sr. Ruby/Rails Engineer</b> at <a href="http://intridea.com">Intridea</a>.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/yorzi">@yorzi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'yorzi',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating...</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/wangyaodi@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'andywangshome';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

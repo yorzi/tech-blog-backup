@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: network | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/network/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Set static IP on Ubuntu]]></title>
+    <link href="http://yorzi.github.com/2009/11/11/set-static-ip-on-ubuntu/"/>
+    <updated>2009-11-11T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/11/set-static-ip-on-ubuntu</id>
+    <content type="html"><![CDATA[<p>Edit:
+<code>sudo vim /etc/network/interfaces</code></p>
+
+<p>Then change the content, assuming you want to set your IP as "192.168.1.66"
+<code># The primary network interface
+auto eth0
+iface eth0 inet static</p>
+
+<pre><code>    address 192.168.1.66
+    netmask 255.255.255.0
+    network 192.168.1.0
+    broadcast 192.168.1.255
+    gateway 192.168.1.1
+</code></pre>
+
+<p></code></p>
+
+<p>Then to restart your network.
+<code>sudo /etc/init.d/networking restart</code></p>
+]]></content>
+  </entry>
+  
+</feed>

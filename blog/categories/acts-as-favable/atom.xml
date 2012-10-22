@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: acts_as_favable | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/acts-as-favable/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[acts_as_favable is handy]]></title>
+    <link href="http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy/"/>
+    <updated>2010-12-01T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy</id>
+    <content type="html"><![CDATA[<p>Yes, it's more than two months in which I didn't write up any post here. I know I'd like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I've got many technology things/thoughts and tips that I want to share out.</p>
+
+<p>Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that's very easy to do that with acts_as_favable.</p>
+
+<p>Technically, <a href="https://rubygems.org/gems/acts_as_favable">acts_as_favable</a> is very similar with the gem acts_as_commentable or acts_as_votable, they are all about your actions on a specific object, so you can group them easily in user's page. Yeah, this gem is simple, I just use it in one of my application, it's Rails3 compatible.</p>
+
+<p>Why not just try it out if you want your user to add their favorites of some object(books/CDs etc.), more details is on github at:
+<a href="https://github.com/yorzi/acts_as_favable">https://github.com/yorzi/acts_as_favable</a></p>
+
+<p>Let me know if you have any question about using this gem/plugin in your project.</p>
+]]></content>
+  </entry>
+  
+</feed>

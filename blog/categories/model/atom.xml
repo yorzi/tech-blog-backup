@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: model | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/model/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Law of Demeter]]></title>
+    <link href="http://yorzi.github.com/2009/11/26/law-of-demeter/"/>
+    <updated>2009-11-26T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/26/law-of-demeter</id>
+    <content type="html"><![CDATA[<p>Rails Best Practice Snippet: Model refactor.
+Reference link to the PDF.<a href='http://tech.wangyaodi.com/?attachment_id=125' rel='attachment wp-att-125'>Rails-best-practices.</a></p>
+
+<p>Before:
+<code lang="ruby">
+class Invoice &lt; ActiveRecord::Base
+  belongs_to :user
+end
+&lt;%= @invoice.user.name %>
+&lt;%= @invoice.user.address %>
+&lt;%= @invoice.user.cellphone %>
+</code>
+After:
+<code lang="rails">
+class Invoice &lt; ActiveRecord::Base
+  belongs_to :user
+  delegate :name, :address, :cellphone, :to => :user, :prefix => true
+end
+&lt;%= @invoice.user_name %>
+&lt;%= @invoice.user_address %>
+&lt;%= @invoice.user_cellphone %>
+</code></p>
+
+<p>See more details about <a href="http://api.rubyonrails.org/classes/Module.html#M000110">Delegate</a> in rails doc.</p>
+]]></content>
+  </entry>
+  
+</feed>

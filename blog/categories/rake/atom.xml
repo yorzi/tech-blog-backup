@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rake | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/rake/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[find_in_batches is not working]]></title>
+    <link href="http://yorzi.github.com/2010/03/17/find_in_batches-is-not-working/"/>
+    <updated>2010-03-17T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/03/17/find_in_batches-is-not-working</id>
+    <content type="html"><![CDATA[<p>Days ago, I came across a situation in which <a href="http://api.rubyonrails.org/classes/ActiveRecord/Batches/ClassMethods.html">find_in_batches</a> does not work correctly, the sample code is as below:
+<code lang="ruby"></p>
+
+<h1>NOT WORKING AS EXPECTED.</h1>
+
+<p>namespace :studycenter do
+  desc 'generate item extra items'
+  task :update_extra_items => :environment do</p>
+
+<pre><code>puts "starting at #{@time = Time.now}......"
+Item.find_in_batches(:conditions =&gt; {:content_type =&gt; "Scenario"}) do |items|
+  items.each do |item|
+    begin
+      if item.extra_items.blank?
+        item.related_lessons.each do |extra|
+          @item = ItemExtraItem.create({:item_id =&gt; item.id, :extra_item_id =&gt; extra.id})
+          puts "=============================================#{@item.id}"
+        end
+      end
+      puts "finished item with ID:#{item.id}"
+    rescue Exception =&gt; e
+      puts "something wrong happened!! item with ID:#{item.id}"
+      next
+    end
+  end
+  puts "------------------spent #{(Time.now - @time)/60} minutes!"
+end
+puts "finished at #{Time.now}, totally, spent #{(Time.now - @time)/60} minutes!"
+</code></pre>
+
+<p>  end
+end
+</code>
+Then I refactor this task, so I can migrate data which generated day by day.
+<code lang="ruby"></p>
+
+<h1>WORKING WELL</h1>
+
+<p>namespace :studycenter do
+  desc 'generate item extra items'
+  task :update_extra_items => :environment do</p>
+
+<pre><code>puts "starting at #{@time = Time.now}......"
+(1..300).each do |n|
+  items = Item.all(:conditions =&gt; ["content_type = 'Scenario' and items.created_at &gt;= ? and items.created_at &lt; ?",("2010-03-13".to_date - n.days), ("2010-03-13".to_date - (n-1).days) ])
+  items.each do |item|
+    begin
+      if item.extra_items.blank?
+        item.related_lessons.each do |extra|
+          @item = ItemExtraItem.create({:item_id =&gt; item.id, :extra_item_id =&gt; extra.id})
+          puts "=============================================#{@item.id}"
+        end
+      end
+      puts "finished item with ID:#{item.id}"
+    rescue Exception =&gt; e
+      puts "something wrong happened!! item with ID:#{item.id}"
+      next
+    end
+  end
+  puts "------------------spent #{(Time.now - @time)/60} minutes!"
+end
+puts "finished at #{Time.now}, totally, spent #{(Time.now - @time)/60} minutes!"
+</code></pre>
+
+<p>  end
+end
+</code>
+Do you know why find_in_batches is not working here?
+PS:  item.related_lessons is an item array, so the item and its related lesson are all the same class.</p>
+
+<p><strong>Answer</strong>: In find_in_batches loop, the specific Class only has a range of its instances(e.g. 1~1000), so item.related_lessons can not find the item(e.g. 1001) out of the range..</p>
+]]></content>
+  </entry>
+  
+</feed>

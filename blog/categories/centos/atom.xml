@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: CentOS | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/centos/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Study Note: Install Git1.7.1 on CentOS5.5]]></title>
+    <link href="http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <updated>2010-08-29T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <content type="html"><![CDATA[<p>Step 1. Install the dependencies</p>
+
+<pre>
+$ sudo yum -y install curl-devel expat-devel \
+gettext-devel openssl-devel zlib-devel  
+$ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz  
+$ tar zxf libiconv-1.13.1.tar.gz  
+$ cd libiconv-1.13.1  
+$ ./configure prefix=/usr/local  
+$ make  
+$ sudo make install
+</pre>
+
+
+<p>Step 2. Install Git1.7.1</p>
+
+<pre>
+$ wget http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz  
+$ tar zxf git-1.7.1.tar.gz  
+$ cd  git-1.7.1  
+$ ./configure prefix=/usr/local
+$ make
+$ sudo make install 
+</pre>
+
+
+<p>Step 3. You might get errors as:</p>
+
+<pre>error while loading shared libraries: libiconv.so.2:\
+cannot open shared object file: No such file or directory</pre>
+
+
+<p>Then, you should do the following:</p>
+
+<pre>
+$ sudo vim /etc/ld.so.conf
+# you should add online as "/usr/local/lib"
+$ sudo /sbin/ldconfig
+</pre>
+
+
+<p>Done, try git --version, it's successfully installed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[install sqlite3-ruby on CentOS]]></title>
+    <link href="http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos/"/>
+    <updated>2010-08-26T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos</id>
+    <content type="html"><![CDATA[<p>Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here’s the solution to get it running:</p>
+
+<p>Go to sqlite.org and get the amalgamation package or wget directly (below is my way):</p>
+
+<pre>
+# cd into my source tarball folder
+cd /usr/src
+# get the amalgation package
+wget http://sqlite.org/sqlite-amalgamation-3.6.23.1.tar.gz
+# unpack it
+tar xvzf sqlite-amalgamation-3.6.23.1.tar.gz
+# cd into the created folder
+cd sqlite-amalgamation-3.6.23.1
+# run configuration
+./configure
+# make and intall the package
+make && sudo make install
+</pre>
+
+
+<p>After successfully install the installer will tell where the library files have been stored in. In my case this was “/usr/local/lib”.</p>
+
+<p>So I can install the gem now with:</p>
+
+<pre>
+gem install sqlite3-ruby — –with-sqlite3-include=/usr/local/include \
+–with-sqlite3-lib=/usr/local/lib
+</pre>
+
+
+<h1>getting this as a result</h1>
+
+<p>Building native extensions. This could take a while…
+Successfully installed sqlite3-ruby-1.3.1
+1 gem installed</p>
+
+<p>Ok, done.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[create new user on CentOS]]></title>
+    <link href="http://yorzi.github.com/2010/07/18/create-new-user-on-centos/"/>
+    <updated>2010-07-18T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/18/create-new-user-on-centos</id>
+    <content type="html"><![CDATA[<p><strong>STUDY NOTES:</strong></p>
+
+<p><strong>syntax:</strong>
+useradd -s /bin/bash -d [folder_name]  -c “[name]” [userid]</p>
+
+<p><strong>sample:</strong>
+useradd -s /bin/bash -d /home/andy -c "Andy Wang" andy</p>
+
+<p><strong>chagne password:</strong>
+passwd andy</p>
+]]></content>
+  </entry>
+  
+</feed>

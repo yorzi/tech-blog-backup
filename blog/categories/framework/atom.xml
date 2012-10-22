@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: framework | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/framework/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[UI Framework]]></title>
+    <link href="http://yorzi.github.com/2009/11/17/ui-framework/"/>
+    <updated>2009-11-17T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/17/ui-framework</id>
+    <content type="html"><![CDATA[<p>最近发现了几个UI framework，接下来我要把他们和RoR优美的结合起来，这样以来，在做什么应用的时候，就不愁没有Style了。</p>
+
+<ol>
+<li><p>一个依赖于JQuery的UI库，很喜欢。<a href="http://jqueryui.com/">http://jqueryui.com/</a></p></li>
+<li><p>一个依赖于<a title="prototype.js official website" href="http://prototypejs.org/">Prototype</a> 和 <a title="Script.aculo.us official website" href="http://script.aculo.us/">Script.aculo.us</a>的库，也很不错。<a href="http://scripteka.com/">http://scripteka.com/</a></p></li>
+<li><p>还是一个基于Prototype的UI库<a href="http://livepipe.net/">http://livepipe.net/</a></p></li>
+<li><p>YUI, Google搜索“<a href="http://www.google.com/search?hl=en&client=firefox-a&rls=com.ubuntu%3Aen-US%3Aunofficial&hs=96C&q=UI+framework&btnG=Search&aq=f&oq=&aqi=g-p1g-c3g1g-c5">UI Framework</a>”得到的第一个链接。</p></li>
+</ol>
+
+]]></content>
+  </entry>
+  
+</feed>

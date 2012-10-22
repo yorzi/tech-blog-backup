@@ -1,0 +1,1240 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>@yorzi</title>
+  <meta name="author" content="Andy Wang">
+
+  
+  <meta name="description" content="Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here &hellip;">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://yorzi.github.com/blog/page/3/">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="/javascripts/ender.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="@yorzi" type="application/atom+xml">
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17239385-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/" style="color:red">@yorzi</a></h1>
+  
+    <h2>great people share knowledge</h2>
+  
+  <a href="https://github.com/yorzi/site_engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme.png" alt="Fork me on GitHub"></a>
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="wangyaodi@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:yorzi.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://about.me/wangyaodi">About Me</a></li>
+  <li><a href="http://wangyaodi.com">Hire @yorzi</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+  
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/08/26/install-sqlite3-ruby-on-centos/">Install Sqlite3-ruby on CentOS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-26T00:00:00+08:00" pubdate data-updated="true">Aug 26<span>th</span>, 2010</time>
+        
+         | <a href="/2010/08/26/install-sqlite3-ruby-on-centos/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here’s the solution to get it running:</p>
+
+<p>Go to sqlite.org and get the amalgamation package or wget directly (below is my way):</p>
+
+<pre>
+# cd into my source tarball folder
+cd /usr/src
+# get the amalgation package
+wget http://sqlite.org/sqlite-amalgamation-3.6.23.1.tar.gz
+# unpack it
+tar xvzf sqlite-amalgamation-3.6.23.1.tar.gz
+# cd into the created folder
+cd sqlite-amalgamation-3.6.23.1
+# run configuration
+./configure
+# make and intall the package
+make && sudo make install
+</pre>
+
+
+<p>After successfully install the installer will tell where the library files have been stored in. In my case this was “/usr/local/lib”.</p>
+
+<p>So I can install the gem now with:</p>
+
+<pre>
+gem install sqlite3-ruby — –with-sqlite3-include=/usr/local/include \
+–with-sqlite3-lib=/usr/local/lib
+</pre>
+
+
+<h1>getting this as a result</h1>
+
+<p>Building native extensions. This could take a while…
+Successfully installed sqlite3-ruby-1.3.1
+1 gem installed</p>
+
+<p>Ok, done.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/08/25/iphone-app-debug-and-release-via-titanium/">iPhone App : Debug and Release Through Titanium</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-25T00:00:00+08:00" pubdate data-updated="true">Aug 25<span>th</span>, 2010</time>
+        
+         | <a href="/2010/08/25/iphone-app-debug-and-release-via-titanium/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Once people develop an iPhone App using <a href="http://www.appcelerator.com/">Titanium1.4</a>, they must be very happy when the App is running on iPhone simulator. They feel great until they decide to debug their app on their devices or even release their app to AppleAppStore. This happens specially to these who firstly do this. Why? There are many reasons that you will hate Apple during the debug or release process. I bat you are like me then.</p>
+
+<p>Assume that: You&#8217;ve already finished coding an iPhone app in Titanium 1.4 framework. Now you want to install your app on your device. If you do this first time, guess what will happen to you? Let me tell you my story.</p>
+
+<p>You will be blocked by Titanium certificates detections when you want to install your app to your device. see below image:</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dut81/mail-1320x770"><img src="http://img.skitch.com/20100825-fuf9q1dac5ir21f5g4im2h93gi.jpg" alt="mail (1320շ70)" /></a><br /></div>
+
+
+<br />
+
+
+<p>Well, in order to become an iPhone developer, you should pay Apple for an iPhone Program Permission. My boss paid Apple for an iPhone Program Team permission, it cost him about one month to pass Apple&#8217;s approval. After that, he, as an admin agent iPhone developer, invited me as an iPhone developer member with admin permission. Here we had been running into issue for two days. Finally, we found that he only can invite my exist Apple ID as an iPhone developer, because I can&#8217;t finish a registration process after he invite me with a non-exist Apple ID. The evil is Apple indicates that, we should invite non-exist accounts as team members.</p>
+
+<p>Now have I got the permission to debug my app on my iphone? Wait a moment. Actually I should be invited twice separately, one is for <a href="https://itunesconnect.apple.com/">iTunesconnect</a>. another one is for <a href="http://developer.apple.com/iphone/index.action">Provisioning Portal</a>(Dev Center). These two sites are different, only in Dev Center, I can config my provisioning profile, which is a main concept for releasing iPhone App or allowing to install App on certain devices. But in iTunesconnect, I need to release my app to iTunes/Apple App Store.</p>
+
+<p>So far, I&#8217;ve got enough permission to debug the App on my own iPhone. But I am still unable to distribute my App to others&#8217; devices. How that happens? As an iPhone developer, I need to pass Titanium&#8217;s detection of several certificates. only after that, I can install app on my iPhone. (PS: if you want to test your app on Android, the only need is to connect your device.)</p>
+
+<p>In following images, I will show you the steps through which you can pass all the Titanium detection of certificates.</p>
+
+<div><a href="http://skitch.com/yorzi/dutdc/preparation-iphone-provisioning-portal-apple-developer"><img src="http://img.skitch.com/20100825-b8ne3uxkfenjthcgnscecb89t.jpg" alt="Preparation - iPhone Provisioning Portal - Apple Developer" /></a><br /></div>
+
+
+<br />
+
+
+<p>Then you will get the following files after your above configuration.</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dutrp/users-andy-desktop-apple-developer-app"><img src="http://img.skitch.com/20100825-ds2k13epf4b7grcmabr89yk11r.jpg" alt="/Users/andy/Desktop/apple_developer/app" /></a><br /></div>
+
+
+<br />
+
+
+<p>After you import the above certificates to your keychain, you should see something similar in your Keychian.</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dutds/keychain-access"><img src="http://img.skitch.com/20100825-ra2mqhmcu94pk7kuxcpa7c6i2g.jpg" alt="Keychain Access" /></a><br /></div>
+
+
+<br />
+
+
+<p>Finally, your Titanium will be the &#8220;ready status&#8221; for your debug and release on real device.</p>
+
+<div class="thumbnail"><a href="http://skitch.com/yorzi/dutfb/titanium-developer-1.2.1"><img src="http://img.skitch.com/20100825-m5b6ugwjywb66qggswbsumsmfk.jpg" alt="Titanium Developer (1.2.1)" /></a><br /></div>
+
+
+<br />
+
+
+<p>The whole process might be painful unless you understand every concepts that Apple creates. I encounter problems when creating distribution provisioning profile. Only admin agent developer has permission to do so. Thus, you should ask admin agent for this provisioning profile, he can share this profile with a private key file, you import this key file to your Keychian, then you can distribute the app to whatever devices which is bundled into specific provisioning profile.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/08/04/serialize-object-in-activerecord/">Study Note : Serialize Object in ActiveRecord</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-04T00:00:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2010</time>
+        
+         | <a href="/2010/08/04/serialize-object-in-activerecord/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2><span style="color: #444444; line-height: 24px; font-size: 16px;">Copied from <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M001799" target="_blank">Ruby on Rails API doc</a>. Store here as a study notes for myself.
+
+Active Record can <a href="Base.html#M001799">serialize</a> any object in text <a href="Base.html#M001809">columns</a> using YAML. To do so, you must specify this with a call to the class method <tt><a href="Base.html#M001799">serialize</a></tt>. This makes it possible to store arrays, hashes, and other non-mappable objects without doing any additional work. Example:</span></h2>
+
+
+<pre>  class User &lt; ActiveRecord::Base
+    serialize :preferences
+  end
+
+  user = User.create(:preferences =&gt; { "background" =&gt; "black", "display" =&gt; large })
+  User.find(user.id).preferences # =&gt; { "background" =&gt; "black", "display" =&gt; large }</pre>
+
+
+<p>You can also specify a class option as the second parameter that‘ll raise an exception if a serialized object is retrieved as a descendant of a class not in the hierarchy. Example:</p>
+
+<pre>  class User &lt; ActiveRecord::Base
+    serialize :preferences, Hash
+  end
+
+  user = User.create(:preferences =&gt; %w( one two three ))
+  User.find(user.id).preferences    # raises SerializationTypeMismatch</pre>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/08/04/calculate-results-vs-store-result-sets/">Calculate Results vs. Store Result Sets</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-04T00:00:00+08:00" pubdate data-updated="true">Aug 4<span>th</span>, 2010</time>
+        
+         | <a href="/2010/08/04/calculate-results-vs-store-result-sets/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Firstly, what&#8217;s the results in title? For example, the results may be learners who will be alive in coming two weeks, or the results may be study times of one learner, etc. Generally, results should be some data coming from analyzing other data.</p>
+
+<p>Here my question is, how can we get certain results much faster and easily?</p>
+
+<p><strong>Case 1:</strong>
+We want to pick up a name list, all people in the list should be under certain condition, say, condition A, condition B, condition C, so normally, we just select the results which obey the rule(condition). Right? It depends.</p>
+
+<p>If name list is always dynamically different in condition A,B,C, it&#8217;s really hard to store the results set, we have to calculate instantly to make sure the results is accurate.</p>
+
+<p>If name list is very difficult to figure out in condition A,B,C, we should store the stable part of the result set, so that we will not get stuck when calculate tons of data very time.</p>
+
+<p><strong>Case 2.</strong>
+We want to show study times of a learner, how can we do that? Should we store the study times as one attributor of study record or should we just make one study record as one-time study? Obviously, it depends on the complication of study record and the definition of one-time study.</p>
+
+<p>In our case, one study record is instantly changed when it&#8217;s in different status, so storing study times in study record is not a good idea because the results might be locked when status changes. But if we calculate study times based on its status, it will be more reliable and accurate. and also it will not be locked when status is with exception.</p>
+
+<p><strong>Conclusion:</strong>
+To store result set, is a way to cache results, but some times it&#8217;s not easy to maintain the result sets, for instance, if there are too many conditions when getting a results set, it&#8217;s always in heavy load to update result sets, you have to listen to every condition level changes. If the situation is complex, remember to cache your result set and maintain it carefully.</p>
+
+<p>To calculate results instantly lets you ignore the real data, you just need to use the rule carefully, that will be more accurate, because you very time select what the rule defines. However the disadvantage is, when the data sets is large, you have to pay more to do that instantly, so you want to do a cron job or just cache the stable part of previous result sets.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/">Study Notes: Passenger + Capistrano + Nginx + Rails 2.3.4 + Ubuntu 9.04 (10 Steps)</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-30T00:00:00+08:00" pubdate data-updated="true">Jul 30<span>th</span>, 2010</time>
+        
+         | <a href="/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong><em>This post is just copied from </em></strong><a href="http://rustammamedov.wordpress.com/2009/12/27/capistrano-nginx-mongrel-deployment/"><strong><em>this page</em></strong></a><strong><em>. As a study notes, I re-share this manual here. Please check out original one if you wanna have a whole view of other involving topics. Thanks to the </em></strong><a href="http://rustammamedov.wordpress.com/"><strong><em>author</em></strong></a><strong><em> :)</em></strong></p>
+
+<div>
+<div>
+<ol>
+    <li>Install capistrano gem. if you use <a href="http://yehudakatz.com/2009/11/03/using-the-new-gem-bundler-today">bundler</a> you need to add just one line to Gemfile
+<code>
+gem "capistrano"
+</code>
+and then run
+<code>gem bundle
+</code></li>
+    <li>after capistrano installed you need to make Capfile and default deploy.rb, run such from the root of your application
+<code>capify .</code></li>
+    <li>create user for deployments in remote machine (let’s say ‘deploy’ user)
+<code>adduser deploy</code></li>
+    <li>add sudo privileges to this user. add one line in your /etc/sudoers file
+<code>deploy ALL=(ALL) NOPASSWD: ALL</code></li>
+    <li>adjust deploy.rb for you. I used example from this <a href="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/">link</a>
+<code lang="ruby">
+# Application
+set :application, "test"
+set :deploy_to, "/var/www/#{application}"
+#   Settings
+default_run_options[:pty] = true
+set :use_sudo, true
+#   Servers
+set :user, "deploy"
+set :domain, "rustam.example.com"
+server domain, :app, :web
+role :db, domain, :primary =&gt; true
+#   Subversion
+set :repository, "http://www.rustam.example.com"
+set :svn_username, "rustam"
+set :svn_password, "password"
+set :checkout, "export"
+#   Passenger
+namespace :passenger do
+desc "Restart Application"
+task :restart do
+run "touch #{current_path}/tmp/restart.txt"
+end
+end
+after :deploy, "passenger:restart"
+</code>
+to understand how it works – read <a href="http://www.capify.org/index.php/Capistrano">this link</a></li>
+    <li>if you don’t use bundler, skip it. Otherwise, it will be usefull to add such piece of code to your deploy.rb file (from <a href="http://gist.github.com/244420">Richie’s post</a>)
+<code lang="ruby">
+# bundler
+namespace :bundler do
+  task :install do
+    run("gem install bundler --source=http://gemcutter.org")
+  end
+  
+  task :symlink_vendor do
+  shared_gems = File.join(shared_path, 'vendor/bundler_gems')
+  release_gems = "#{release_path}/vendor/bundler_gems/"
+    %w(cache gems specifications).each do |sub_dir|
+      shared_sub_dir = File.join(shared_gems, sub_dir)
+      run("mkdir -p #{shared_sub_dir} && mkdir -p #{release_gems} && ln -s #{shared_sub_dir} #{release_gems}/#{sub_dir}")
+    end
+  end
+
+  task :bundle_new_release do
+    bundler.symlink_vendor
+    rails_env = variables[:rails_env] || 'production'
+    run("cd #{release_path} && gem bundle --only #{rails_env}")
+  end
+end
+
+after 'deploy:update_code', 'bundler:bundle_new_release'
+</code>
+it will bundle all production gems to your bundler_gems path</li>
+    <li>ask Capistrano to create set of folders for deployments in the remote machine
+<code>cap deploy:setup</code></li>
+    <li>ask capistrano to check all remote folders:
+<code>cap deploy:check</code>
+it will return to you all problems that you have with both locale/remote machines – structure of folders/permissions etc. you can get something like this:
+<code>
+The following dependencies failed. Please check them and try again:
+--&gt; You do not have permissions to write to `/var/www'. (rustam.example.com)
+--&gt; You do not have permissions to write to `/var/www/releases'. (rustam.example.com)
+</code>
+When you’ll fix everything, you’ll get such:
+<code>You appear to have all necessary dependencies installed</code>
+it means that you’re finished with capistrano configs</li>
+    <li>you need to install passenger and nginx module for passenger in your remote machine according to <a href="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/">this</a>
+<code>
+sudo gem install passenger
+sudo passenger-install-nginx-module</code>
+the second command will tell you how to configure Nginx and to deploy rails application.
+it will create Nginx configuration file for you:
+<code>/opt/nginx/conf/nginx.conf)</code>
+you need to change server block there
+<code>
+server {
+listen 80;
+server_name rustam.example.com;
+root /var/www/current/public; # &lt;--- notice the 'public' part
+passenger_enabled on; # &lt;--- don't forget this!li
+}</code>
+everything is finished for passenger and nginx!</li>
+    <li>you can start deploy you app!
+<code>cap deploy:update</code> – copies your project to remote machine and updates symlinks
+<code>cap passenger-restart</code> – will start application</li>
+FYI <code>sudo /opt/nginx/sbin/nginx</code> starts nginx in the remote machine
+    <li><strong>Extra step</strong>: if you’re using bundler and used <a href="http://yehudakatz.com/2009/11/03/using-the-new-gem-bundler-today/">Yehuda’s link to run it</a>(like me <img src="http://s.wordpress.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" /> ), you’ll have a problem with preinitializer. I used <a href="http://tomafro.net/2009/11/a-rails-template-for-gem-bundler">Tom Ward’s solution</a> to fix it
+i.e. put only such line to preinitializer.rb
+<code>require File.expand_path(File.join(File.dirname(__FILE__), "..", "gems", "environment"))</code>
+and add such piece of code just after loading boot
+<code>
+# Hijack rails initializer to load the bundler gem
+#environment before loading the rails environment.
+Rails::Initializer.module_eval do
+alias load_environment_without_bundler load_environment
+def load_environment
+Bundler.require_env configuration.environment
+load_environment_without_bundler
+end
+end
+</code></li>
+</ol>
+Links with detailed description:
+<ul>
+    <li><a title="http://wiki.zhekov.net/nginx" href="http://wiki.zhekov.net/nginx">nginx</a></li>
+    <li><a title="http://gautamrege.wordpress.com/2009/11/10/capistrano-nginx-thin-deployment-on-linode" href="http://gautamrege.wordpress.com/2009/11/10/capistrano-nginx-thin-deployment-on-linode">capistrano-nginx-thin-deployment-on-linode</a></li>
+    <li><a title="http://74.125.95.132/search?q=cache:NyrJDYo75rAJ:www.capify.org/index.php/From_The_Beginning+capistrano+from+the+beginning&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us&amp;client=firefox-a" href="http://74.125.95.132/search?q=cache:NyrJDYo75rAJ:www.capify.org/index.php/From_The_Beginning+capistrano+from+the+beginning&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us&amp;client=firefox-a">Capistrano from the beginning</a></li>
+    <li><a title="http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/" href="http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/">capistrano + passenger</a></li>
+    <li><a title="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/" href="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/">capistrano + passenger + mod_rails</a></li>
+    <li><a title="http://www.rubyinside.com/28_mod_rails_and_passenger_resources-899.html" href="http://www.rubyinside.com/28_mod_rails_and_passenger_resources-899.html">28 links howto passenger + capistrano</a></li>
+    <li><a title="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/" href="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/">passenger + nginx</a></li>
+    <li><a title="http://www.modrails.com/documentation/Users%20guide%20Nginx.html" href="http://www.modrails.com/documentation/Users%20guide%20Nginx.html">nginx guide for passenger</a></li>
+</ul>
+</div>
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/07/30/start-working-on-titanium/">Start Working on Titanium</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-30T00:00:00+08:00" pubdate data-updated="true">Jul 30<span>th</span>, 2010</time>
+        
+         | <a href="/2010/07/30/start-working-on-titanium/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Been working on Titanium for a while, I find a must read PPT to guide you smoothly getting start on <a href="http://developer.appcelerator.com/get_started">Titanium Mobile Development</a>.</p>
+
+<div style="width:425px" id="__ss_4793534"><strong style="display:block;margin:12px 0 4px"><a href="http://www.slideshare.net/kwhinnery/oscon-titanium-tutorial" title="OSCON Titanium Tutorial">OSCON Titanium Tutorial</a></strong><object id="__sse4793534" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=titaniumtutorial-100719215658-phpapp02&stripped_title=oscon-titanium-tutorial" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed name="__sse4793534" src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=titaniumtutorial-100719215658-phpapp02&stripped_title=oscon-titanium-tutorial" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="padding:5px 0 12px">View more <a href="http://www.slideshare.net/">presentations</a> from <a href="http://www.slideshare.net/kwhinnery">Kevin Whinnery</a>.</div></div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/07/28/rails3-app-gem-stack/">Rails3 App Gem Stack</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-28T00:00:00+08:00" pubdate data-updated="true">Jul 28<span>th</span>, 2010</time>
+        
+         | <a href="/2010/07/28/rails3-app-gem-stack/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Rails3 RC1 was released yesterday, that&#8217;s really awesome, I can&#8217;t help experimenting a sample of Rails3 new features. I want to share my Gemfile to list all application gem stack, which may be useful for those who don&#8217;t wanna create wheels themselves. Below is the list:
+<code lang='ruby'></p>
+
+<h1>Bundle edge Rails instead:</h1>
+
+<p>gem 'rails', :git => 'git://github.com/rails/rails.git'</p>
+
+<p>gem 'mysql'</p>
+
+<h1>devise for auth</h1>
+
+<p>gem 'devise', '1.1.rc2'</p>
+
+<h1>show_for is a helper for showing objects</h1>
+
+<p>gem 'show_for'</p>
+
+<h1>pageinate</h1>
+
+<p>gem 'will_paginate', '3.0.pre'</p>
+
+<h1>A set of responders modules to dry up your Rails 3 app</h1>
+
+<p>gem 'responders'</p>
+
+<h1>Cron job in Rails</h1>
+
+<p>gem 'whenever', :git => 'git://github.com/javan/whenever.git'</p>
+
+<h1>for creating navigations</h1>
+
+<p>gem 'simple-navigation', '2.6.0'</p>
+
+<h1>for backup db to s3/remote server</h1>
+
+<p>gem 'backup', '2.3.2.pre3'</p>
+
+<h1>Editor plugin</h1>
+
+<p>gem 'tiny_mce', '0.1.4'</p>
+
+<h1>background job</h1>
+
+<p>gem "delayed_job","1.8.4"</p>
+
+<h1>role based access control</h1>
+
+<p>gem "cancan"</p>
+
+<h1>simple search on models</h1>
+
+<p>gem "searchlogic"</p>
+
+<h1>full-text search solution</h1>
+
+<p>gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'</p>
+
+<h1>Use unicorn as the web server</h1>
+
+<p>gem 'unicorn'</p>
+
+<h1>Deploy with Capistrano</h1>
+
+<p>gem 'capistrano'</p>
+
+<h1>To use debugger</h1>
+
+<p>gem 'ruby-debug'</p>
+
+<h1>Bundle the extra gems:</h1>
+
+<h1>gem 'bj'</h1>
+
+<p>gem 'nokogiri', '1.4.1'</p>
+
+<h1>gem 'sqlite3-ruby', :require => 'sqlite3'</h1>
+
+<p>gem 'aws-s3', :require => 'aws/s3'</p>
+
+<h1>Bundle gems for certain environments:</h1>
+
+<p>gem 'rspec', :group => :test
+group :test do
+  gem 'webrat'
+end
+</code></p>
+
+<p>If you wanna know whether a plugin/gem is available for Rails3, just check out this site: <a href="http://www.railsplugins.org/">http://www.railsplugins.org/</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/07/27/beta-salon-rails-developer-meetup/">Beta Salon - Rails Developer Meetup</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-27T00:00:00+08:00" pubdate data-updated="true">Jul 27<span>th</span>, 2010</time>
+        
+         | <a href="/2010/07/27/beta-salon-rails-developer-meetup/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>
+
+<a href="http://developer.idapted.com/about/">Engineers at Idapted</a> are famous and cool. They are eager to join the technical activities. At the very beginning of this June, <a href="http://jonathonpalley.com">Jonathon Palley</a> and Guolei went to US to attend the <a href="http://en.oreilly.com/rails2010">Railsconf2010</a>, which is the top level and the largest official Ruby on Rails conference, where the most successful Rails experts and companies share their experience and skill.
+
+Yeah, Jonathon and Guolei did a great job to present Idapted technology to the Rails community and gained a big success to introduce Idapted platform to the world. Since they came back to Beijing, they&#8217;ve been preparing for a similar local presentation for Chinese Rails community. Finally, with <a href="http://club.blogbeta.com/" target="_blank">Beta Salon</a>&#8217;s help, in last Saturday evening, Idapted technology team organized a Ruby on Rails activity in <a href="http://storygarden.me/" target="_blank">Story Garden</a>, which is a famous Cafe House where different people in different community open different salons.
+
+<a href="http://github.com/idapted/"><img class="alignright" title="Idapted Open Source" src="http://www.idapted.com/blog/wp-content/uploads/2010/07/Screen-shot-2010-07-27-at-11.32.07-AM.png" alt="" width="324" height="113" /></a>
+
+Rails community in Beijing is not very active, however there are many Rails developers in this city, they are always willing to share knowledge and skills with other engineers. Thus, Idapted salon activity gathered more than 50 engineers, and most of them are senior, experienced Rails engineers. Idapted team talked to people about Idapted platform and its involving technology. Specially, A mobile project which we start recently got people&#8217;s attention after the Rails presentation. People in this salon asked for more shares then, well, Idapted team now is working on <a href="http://github.com/idapted/" target="_blank">open sourcing more code</a> with the community, including Rails/Mobile/VoIP stuff.
+
+Engineers in salon lived an interesting two-hours. &#8220;We will organize more technology involved activities like this, we have best engineers and best experience on using new technologies, we&#8217;d love to share more with people.&#8221; Jonathan said. Yes, we Idapted technology team will interact more with whole tech community in China in future, obviously, salon activity is good way to do so.
+
+Related articles:
+<a href="http://club.blogbeta.com/2010/07/14-rails/" target="_blank">http://club.blogbeta.com/2010/07/14-rails/</a>
+<a href="http://www.slideshare.net/fiyuer/how-to-disassemble-one-monster-app-into-an-ecosystem-of-30-4836729" target="_blank">http://www.slideshare.net/fiyuer/how-to-disassemble-one-monster-app-into-an-ecosystem-of-30-4836729
+</a><a href="http://yanhua.javaeye.com/blog/720802" target="_blank">http://yanhua.javaeye.com/blog/720802</a>
+
+</div>
+
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/">A Great Survey Solution Based on Ruby on Rails</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-27T00:00:00+08:00" pubdate data-updated="true">Jul 27<span>th</span>, 2010</time>
+        
+         | <a href="/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I&#8217;ve been always looking for a powerful and flexible survey solution for a while, now I find it : <a href="http://github.com/breakpointer/surveyor">Surveyor</a>.</p>
+
+<p><strong>What&#8217;s a Survey? </strong>
+Here is a brief look at the similarities and differences between forms, surveys, questionnaires and quizzes.</p>
+
+<p>Forms are a series of fields to be filled out by a user. Some forms are highly structured (such as a User form, or an Address form). Those highly structured forms can be created beforehand by a developer because they can map directly to models in the database. Other forms are highly unstructured, such as a questionnaire about your favorite types of food which are volatile. So form is simple structured format.</p>
+
+<p>A Survey is a type of Form. Surveys are semi-structured data, in that we want to formulate the questions so they have “mineable” data, but they are not so structured as to be directly mappable to database tables (unless we desired to have one table per survey, do we?). Also If a survey field is not appropriately filled out (such as a misformatting), the user should be prompted to correct his/her answer. According to this needs, surveys should not prevent the user from completing them if they miss an answer, however. A Questionnaire is a type of Survey and meanwhile, a Quiz is also a type of Survey.</p>
+
+<p><strong>How To Set Up Surveys Via Surveyor?</strong>
+There is already a clear manual for helping people to use Surveyor <a href="http://github.com/breakpointer/surveyor">here</a>. You can find most of what you want directly in <a href="http://wiki.github.com/breakpointer/surveyor/">Surveyor&#8217;s official wiki</a>. However, I still want to share my experience on using Surveyor.</p>
+
+<p><strong>Install Surveyor.</strong>
+As a plugin:</p>
+
+<pre>gem install haml
+gem install fastercsv
+script/plugin install git://github.com/breakpointer/surveyor.git -r 'tag v0.11.0'
+</pre>
+
+
+<p>Or as a gem:</p>
+
+<pre># in environment.rb
+config.gem "surveyor", :version => '~> 0.11.0', :source => 'http://gemcutter.org'
+---
+rake gems:install</pre>
+
+
+<p>Surveyor is relied on haml and fastercsv(this is for supporting export csv survey results)
+Generate assets, run migrations:</p>
+
+<pre>script/generate surveyor
+rake db:migrate</pre>
+
+
+<p>Try out the &#8220;kitchen sink&#8221; survey:
+<code>rake surveyor FILE=surveys/kitchen_sink_survey.rb FIXTURES=surveys/fixtures
+</code>
+The rake surveyor task overwrites previous surveys by default, but can append instead:
+<code>rake surveyor FILE=surveys/kitchen_sink_survey.rb FIXTURES=surveys/fixtures APPEND=true</code></p>
+
+<p>Now start your Rails server, you will see the demo survey &#8220;kitchen sink&#8221; on localhost:3000/surveys. This demo is pretty useful for you when you generate your own survey pattern. Because in kitchen sink demo, most of &#8220;Survey API&#8221; are there.</p>
+
+<p><strong>Survey Sample</strong>
+Well, let&#8217;s create our first survey. I paste my first as below, we can take a look at the way Surveyor support.
+<code lang='ruby'></p>
+
+<h1>/surveys/salon_survey.rb</h1>
+
+<p>survey "欢迎您访问Idapted技术沙龙活动调查问卷！" do</p>
+
+<p>  section "[Rails系统重构最佳实践]@beta-salon 2010/07/24" do</p>
+
+<pre><code># A label is a question that accepts no answers
+label "&lt;b&gt;希望您填写自己的个人信息，我们会为您提供最快速和专业的Ruby on Rails技术活动资讯！&lt;/b&gt;"
+
+# When :pick isn't specified, the default is :none (no checkbox or radio button)
+q_1 "请填写您的姓名(中英文名均可)"
+a_1 :string
+
+q_3 "请填写您的电话(如果我们有更多后续的技术交流活动，我们会发短信通知您:))"
+a_3 :string
+
+q_3 "请填写您的邮箱(如果我们有更多后续的技术交流活动，我们也会发邮件通知您:))"
+a_3 :string
+
+# A basic question with checkboxes
+# "question" and "answer" may be abbreviated as "q" and "a"
+q_2 "我们公司(Idapted)的产品涉及到以下几种技术，请选择您喜欢的主题，我们的研发团队会根据大家的反馈继续开展相关技术交流活动！", :pick =&gt; :any
+a_1 "Ruby on Rails"
+a_2 "Flex/Flash"
+a_3 "VoIP/FreeSwitch"
+a_4 "Erlang"
+a_5 "Titanium/iPhone/iTouch/iPad Development"
+
+# A dependent question, with conditions and rule to logically join them  
+# the question's reference identifier is "2a", and the answer's reference_identifier is "1"
+# question reference identifiers used in conditions need to be unique on a survey for the lookups to work
+q_2a "请简单说明为什么您对所选择的技术感兴趣:)"
+a_1 "说明：", :text
+dependency :rule =&gt; "A or B or C or D"
+condition_A :q_2, "==", :a_1
+condition_B :q_2, "==", :a_2
+condition_C :q_2, "==", :a_3
+condition_D :q_2, "==", :a_4
+condition_E :q_2, "==", :a_5
+
+q_4 "您使用Ruby on Rails开发有多长时间了？", :pick =&gt; :one, :display_type =&gt; :slider
+["刚开始", "半年", "一年", "两年", "两年以上"].each{|level| a level}
+
+# Surveys, sections, questions, groups, and answers also take a custom css class for covenience in custom styling
+q_6 "请介绍一下您自己的工作和感兴趣的技术", :custom_class =&gt; 'address'
+a :text, :custom_class =&gt; 'mapper'
+# validations can use regexp values
+validation :rule =&gt; "A"
+condition_A "=~", :regexp =&gt; /[0-9a-zA-z\. #]/
+</code></pre>
+
+<p>  end
+end
+</code>
+In above sample, I create a &#8220;survey&#8221;, then I also create a &#8220;section&#8221; inside a survey. Yeah, you can define many section for a survey to make the whole survey being like a wizard, that&#8217;s pretty interesting. In on survey, there are more than 15 types of question, you can define a survey as using plain English, what you should obey is to refer to Kitchen Sink sample, it means you can only define a question type according to the certain rule, don&#8217;t worry, the rule is simple.</p>
+
+<p>Once you finished defining the survey, it means you now have a ruby file, say salon_survey.rb, you should run the following commend in your terminal to migrate all your survey items into your application, remember the append command, it will let you not to delete previous survey which stored in the same application.</p>
+
+<pre>rake surveyor FILE=surveys/salon_survey.rb FIXTURES=surveys/fixtures APPEND=true</pre>
+
+
+<p>Wow, you now have your new survey list in the Survey root path after you restart your server. I guess you will like it.</p>
+
+<p><strong>Customize Survey</strong>
+All go well so far, But, there is a big weakness of this survey solution if you only use it as above. Because the Surveyor doesn&#8217;t support any easy way to manage the survey results. You should add the administration side in your application by yourself. I will also give you some hints on doing this.</p>
+
+<p>Before your create management part for survey results, I remind you take a look at the survey configure file where you can do some really simple config for specific survey, such as define welcome page and finish page, or the survey title you want to customize. It&#8217;s something as below:
+<code lang='ruby'></p>
+
+<h1>Initializers/surveyor.rb</h1>
+
+<h1>Loaded once. Restart your app (even in development) to apply changes made here</h1>
+
+<p>Surveyor::Config.run do |config|
+  config['default.relative_url_root'] = "surveys" #nil # "surveys"
+  config['default.title'] = "EQ英语(Idapted) 技术沙龙调查问卷" #nil # "You can take these surveys:"
+  config['default.layout'] = "surveyor_custom" # "surveyor_default"
+  config['default.index'] = nil#:welcome_pages_path #:welcome_pages_path # "/surveys" # or :index_path_method
+  config['default.finish'] =  :thankyou_pages_path # "/surveys" # or :finish_path_method
+  config['use_restful_authentication'] = false # set to true to use restful authentication
+  config['extend'] = %w(survey surveyor_helper surveyor_controller) #%w()
+end
+</code></p>
+
+<p><strong>Survey Results Statistics</strong>
+OK, last hints about adding management part of survey, here we should know clearly what&#8217;s the survey&#8217;s structure. So what&#8217;s Survey&#8217;s data structure? It&#8217;s like this:</p>
+
+<pre>
+# Survey structure
+Survey-------Section1---------Question1---------Many Answers(From different user)
+                                      ---------Q2
+                                      ---------Q3
+                                      ---------More Question
+          -------Section2
+          -------More Sections
+
+#Response Structure. Each User Has one unique <strong>ResponseSet</strong>
+ResponseSet---------Response1
+                    ---------Response2
+                    ---------More Responses
+</pre>
+
+
+<p>So you can display all results as you need. I do it as below:
+<code lang='ruby'></p>
+
+<h1>results_controller.rb</h1>
+
+<p>class Admin::ResultsController &lt; Admin::BaseController
+  layout "results"</p>
+
+<p>  def index</p>
+
+<pre><code>@surveys = Survey.all
+</code></pre>
+
+<p>  end</p>
+
+<p>  def show</p>
+
+<pre><code>@survey = Survey.find(params[:id])
+@response_sets = @survey.response_sets
+@questions = SurveySection.find_by_survey_id(params[:id]).questions
+</code></pre>
+
+<p>  end
+end</p>
+
+<h1>View show.html.erb</h1>
+
+<table class="list_table">
+  <tr>
+    <th>ID</th>
+    <th>Code</th>
+    <% @questions.each do |question| %>
+        <% next if question.display_order == 1 %>
+        <th><%= "[" +question.display_order.to_s + "]" + question.text  %></th>
+    <% end %>
+  </tr>
+
+<% @response_sets.each do |r_set| %>
+  <tr>
+    <td><%=h r_set.id %></td>
+    <td><%=h r_set.access_code %></td>
+    <% @questions.each do |question| %>
+        <% next if question.display_order == 1 %>
+        <td><%= display_response(r_set,question) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+
+<h1>results_helper.rb</h1>
+
+<p>module Admin::ResultsHelper
+  def display_response(r_set,question)</p>
+
+<pre><code>sets = r_set.responses.select{|r| r.question.display_order == question.display_order}
+    if sets.size == 0
+        return "-"
+    elsif sets.size == 1
+        return (sets.first.string_value || sets.first.text_value || show_answer(sets.first))
+    else
+      txt = ""
+    sets.each do |set|
+      txt &lt;&lt; show_answer(set) + "&lt;br/&gt;"
+    end
+    return txt
+ end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def show_answer(set)</p>
+
+<pre><code> set.answer.text
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p>God, I really make a long post, hope you can find something useful, feel free to contact me if you have any confusion.</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/07/18/create-new-user-on-centos/">Create New User on CentOS</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-18T00:00:00+08:00" pubdate data-updated="true">Jul 18<span>th</span>, 2010</time>
+        
+         | <a href="/2010/07/18/create-new-user-on-centos/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>STUDY NOTES:</strong></p>
+
+<p><strong>syntax:</strong>
+useradd -s /bin/bash -d [folder_name]  -c “[name]” [userid]</p>
+
+<p><strong>sample:</strong>
+useradd -s /bin/bash -d /home/andy -c &#8220;Andy Wang&#8221; andy</p>
+
+<p><strong>chagne password:</strong>
+passwd andy</p>
+</div>
+  
+  
+
+
+    </article>
+  
+  <div class="pagination">
+    
+      <a class="prev" href="/blog/page/4/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+    <a class="next" href="/blog/page/2/">Newer &rarr;</a>
+    
+  </div>
+</div>
+<aside class="sidebar">
+  
+    <section>
+  <img src="https://img.skitch.com/20110814-rrw7uufrh7wc6eugk6yf4163qb.jpg"></img>
+  <p>Hi, I&#8217;m <b style="color:red">Andy Wang</b>.<br />
+     I live in <b style="color:red">Beijing</b>, China. <br />
+     I&#8217;m a <b style="color:red">Sr. Ruby/Rails Engineer</b> at <a href="http://intridea.com">Intridea</a>.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/yorzi">@yorzi</a> on GitHub
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'yorzi',
+            count: 4,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section class="googleplus">
+  <h1>
+    <a href="https://plus.google.com/wangyaodi@gmail.com?rel=author">
+      <img src="http://www.google.com/images/icons/ui/gprofile_button-32.png" width="32" height="32">
+      Google+
+    </a>
+  </h1>
+</section>
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2012 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'andywangshome';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

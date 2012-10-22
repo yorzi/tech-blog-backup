@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: a/b-test | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/a-b-test/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[an A/B test solution in ROR]]></title>
+    <link href="http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror/"/>
+    <updated>2010-01-14T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror</id>
+    <content type="html"><![CDATA[<p>Last few days, I worked for a mission to add more flexible control to <a href="http://www.eqenglish.com">our website</a> landing pages. What I did is to add a "a/b" test feature for new landing pages, that means, if people have two designs and want to compare the results, they only release two versions of landing page, and then only get one url for the two versions of pages, after that the url will automatically redirect to different versions evenly, so that through Google analytics marketing people can easily decide which landing page is much better.</p>
+
+<p><strong>Landing pages A/B test solution:</strong>
+<code lang="ruby">
+class LandingsController &lt; ApplicationController
+  layout "layouts/blank"
+  caches_page "ielts","ab_test"</p>
+
+<p>  def ielts</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first
+if @landing_page.ab_test?
+  if not params[:channel].blank?
+    redirect_to landing_ab_test_with_channel_path(["a","b"].rand,params[:url_slug],params[:channel])
+  else
+    redirect_to landing_ab_test_path(["a","b"].rand,params[:url_slug])
+  end
+else
+  render :layout =&gt; "layouts/landing_page"
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def ab_test</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:type].to_s + "/" + params[:url_slug].to_s)
+(@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first) if @landing_page.nil?
+render :layout =&gt; "layouts/landing_page"
+</code></pre>
+
+<p>  end
+end
+</code>
+<strong>Routing:</strong>
+<code lang="ruby">
+   map.landing_trunk "ielts/:url_slug", :controller => "landings", :action => "ielts"
+   map.landing_trunk_with_channel "ielts/:url_slug/:channel", :controller => "landings", :action => "ielts"
+   map.landing_ab_test "ielts/sub/:type/:url_slug/", :controller => "landings", :action => "ab_test"
+   map.landing_ab_test_with_channel "ielts/sub/:type/:url_slug/:channel", :controller => "landings", :action => "ab_test"
+</code></p>
+
+<p><strong>A/B test Sample:</strong>
+<em>Suppose</em>:</p>
+
+<pre><code>          We release a type of landing page called : university
+          And we have two kinds of different designs : called "a/university" and "b/university"
+          Then we may release the landing page to many universities, such as "beida", "renda", "qinghua" etc.. they are different channels.
+</code></pre>
+
+<p><em>Then we can</em>:</p>
+
+<pre><code>         Only release the url as "http://www.eqenglish.com/ielts/university" to any universities by following "/beida", "/renda", "/qinghua" etc...
+         It should be like this "http://www.eqenglish.com/ielts/university/beida",  "http://www.eqenglish.com/ielts/university/renda"... etc.. (For client use)
+         But in google analytics, you will see : "http://www.eqenglish.com/ielts/sub/a/university/beida"
+                                                              and : "http://www.eqenglish.com/ielts/sub/b/university/beida"  (For our analysis)
+</code></pre>
+
+<p> It means, different landing page and different channel and ("a" or "b") will be in a unique URL for certain purpose. but for our client, they don't need to care about "a/b" test, system will redirect pages automatically.</p>
+
+<p>Any involving comments are welcomed.</p>
+]]></content>
+  </entry>
+  
+</feed>

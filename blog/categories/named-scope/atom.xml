@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: named_scope | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/named-scope/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Love named_scope]]></title>
+    <link href="http://yorzi.github.com/2009/12/07/love-named_scope/"/>
+    <updated>2009-12-07T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/12/07/love-named_scope</id>
+    <content type="html"><![CDATA[<p>Rails Best Practice Snippet: About named_scope.
+Reference link to the PDF. <a rel="attachment wp-att-125" href="http://tech.wangyaodi.com/?attachment_id=125">Rails-best-practices.</a></p>
+
+<p>named_scope is a Rails 2.x feature which can simplify your rails code, move your finders into their own Model, and compact the code logically and gracefully. Below code refactoring is a named_scope sample to show the tricky.</p>
+
+<p><strong>BEFORE</strong>
+<code lang="ruby">
+class PostController &lt; ApplicationController
+  def search</p>
+
+<pre><code>conditions = { :title =&gt; "%#{params[:title]}%" } if params[:title]
+conditions.merge!{ :content =&gt; "%#{params[:content]}%" } if params[:content]
+case params[:order]
+  when "title" : order = "title desc"
+  when "created_at" : order = "created_at"
+end
+if params[:is_published]
+  conditions.merge!{ :is_published =&gt; true }
+end
+@posts = Post.find(:all, :conditions =&gt; conditions, :order =&gt; order,
+                         :limit =&gt; params[:limit])
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p><strong>AFTER</strong>
+<code lang="ruby">
+class Post &lt; ActiveRecord::Base
+  named_scope :matching, lambda { |column, value|</p>
+
+<pre><code>return {} if value.blank?
+{ :conditions =&gt; ["#{column} like ?", "%#{value}%"] }
+</code></pre>
+
+<p>  }
+  named_scope :order, lambda { |order|
+  { :order => case order</p>
+
+<pre><code>  when "title" : "title desc"
+  when "created_at" : "created_at"
+end }
+</code></pre>
+
+<p>  }
+end
+</code>
+<code lang="ruby">
+class PostController &lt; ApplicationController
+  def search</p>
+
+<pre><code>@posts = Post.matching(:title, params[:title])
+             .matching(:content, params[:content])
+             .order(params[:order])
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p>More references :
+<a href="http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality">http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality</a>
+<a href="http://railscasts.com/episodes/108-named-scope">http://railscasts.com/episodes/108-named-scope</a></p>
+]]></content>
+  </entry>
+  
+</feed>

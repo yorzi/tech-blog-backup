@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: github | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/github/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Love Git, Love Coding]]></title>
+    <link href="http://yorzi.github.com/2011/01/21/love-git-love-coding/"/>
+    <updated>2011-01-21T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/21/love-git-love-coding</id>
+    <content type="html"><![CDATA[<blockquote><span style="color: #0000ff;"><strong><span style="color: #0000ff;">“550,000</span> people hosting over <span style="color: #0000ff;">1,620,000</span> git repositories on github.com”</strong></span></blockquote>
+
+
+<p>I've been using Git for a while, I wanna say, I love git and <a href="http://github.com">github</a> very much.</p>
+
+<p>One year ago, I was used to <a href="http://subversion.apache.org/">SVN</a> as a version control approach. Yeah, SVN is great as a version control mechanism. You can quickly setup a svn server for your development because it's an opensource project. However, Git/Github is greater to do version control and SNS coding.</p>
+
+<p>Github now is a must-use website for my daily development work, I find interesting opensource projects on it, and I follow up the super stars (such as "<a href="https://github.com/dhh">DHH</a>" and "<a href="https://github.com/ryanb">Ryan Bates</a>" etc.) and their daily contributions on the brilliant open-sourced projects.</p>
+
+<p>Meanwhile, our <a href="http://developer.idapted.com">Eleutian Tech Team</a> moved to github several months ago, as it's supporting team development well, and members in a team can share their updates easily and effectively. Personally, I am loving in the <a href="https://gist.github.com/">Gist</a> recently, it's really convenient to store and share any valuable code snippets on it. It's also handy with the embed script for displaying it on your blog. (but it seems the gist won't display in RSS feed because my last post with a gist didn't display in the feed.)</p>
+
+<p>There's one more cool feature that is impressive when I first know it. It's "Blame" mode on a piece of code. Everyone's editing history and commit number is on the page, I guess it can be a testify to "Blame" the bad code, that's funny.</p>
+
+<p>I bet you will love in Git and github if you are an active programmer, or if you like to share code or projects, you'd better to give github a try. That's unbelievable helpful to good programmers.</p>
+
+<p>Resource:
+Pro Git: <a href="http://progit.org/">http://progit.org/</a>
+Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/code/why-you-should-switch-from-subversion-to-git/">http://thinkvitamin.com/code/why-you-should-switch-from-subversion-to-git/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

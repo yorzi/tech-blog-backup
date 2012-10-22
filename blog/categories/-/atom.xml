@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: === | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/-/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Comparing Equality (==, eql?, equal?) and Case Equality (===) in Ruby]]></title>
+    <link href="http://yorzi.github.com/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby/"/>
+    <updated>2009-12-09T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby</id>
+    <content type="html"><![CDATA[<p>In weekly code review, GL mentioned a weird issues :
+<code lang="ruby">
+def self.test(obj)</p>
+
+<pre><code>case obj.class
+when Student, TrialPlan
+  puts "1"
+when Call
+  puts "2"
+else
+  puts "3"
+end
+</code></pre>
+
+<p>end
+</code>
+This doesn't behave as expected. When we run test(Student.first), it prints out "3"!</p>
+
+<p>but this works fine.
+<code lang="ruby">
+def self.test(obj)</p>
+
+<pre><code>case obj.class.to_s
+when "Student", "TrialPlan"
+  puts "1"
+when "Call"
+  puts "2"
+else
+  puts "3"
+end
+</code></pre>
+
+<p>end
+</code></p>
+
+<p>Then I searched around for explaining this, I found the <em>case statement</em> in Ruby is very different with what in other languages. Ruby implements the Case statement according to its special operator "===", which is not the same as "==".</p>
+
+<p>what's difference? See below explainations:
+<a href="http://www.skorks.com/2009/08/how-a-ruby-case-statement-works-and-what-you-can-do-with-it/">how-a-ruby-case-statement-works-and-what-you-can-do-with-it/</a>
+<a href="http://blog.mustmodify.com/2008/11/ruby-case-statement-comparison-feature.html">ruby-case-statement-comparison-feature.html</a></p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: factory girl | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/factory-girl/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Polymorphic association in factory_girl]]></title>
+    <link href="http://yorzi.github.com/2009/11/03/polymorphic-association-in-factory_girl/"/>
+    <updated>2009-11-03T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/03/polymorphic-association-in-factory_girl</id>
+    <content type="html"><![CDATA[<p>I tried factroy_girl yesterday to work with rspec framework, It's excellent way to support testing, however, the polymorphic association in factroy_girl almost defeated me.
+The factory definition in my code is as:</p>
+
+<pre name='code' class='ruby'>
+Factory.define :item do |i|
+    i.status 0
+    i.related_with_id 1
+    i.association :unit
+end
+
+Factory.define :study_record do |sr|
+    sr.association :content, :factory => :item
+    sr.add_attribute :interaction_id
+    sr.add_attribute :finished_at
+end
+</pre>
+
+
+<p>Then I did this:</p>
+
+<pre name="code" class="ruby">
+
+    @item = Factory(:item)
+    @study_record = Factory(:study_record)
+    @item.study_records << @study_record
+
+</pre>
+
+
+<p>But actually, this does not work to associate @study_record with @item, the problem is that @study_record.content is totally a new instance of Item rather than @item. It seems that "&lt;&lt;" doesn't work in this case.
+The right way to do so:</p>
+
+<pre name="code" class="ruby">
+
+     @item = Factory(:item)
+    @study_record = Factory(:study_record, :content => @item)
+
+</pre>
+
+
+<p>Polymorphic association works, and it's better than the fixtures solution indeed.</p>
+]]></content>
+  </entry>
+  
+</feed>

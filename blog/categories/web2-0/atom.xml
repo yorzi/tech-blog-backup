@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Web2.0 | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/web2-0/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Love Git, Love Coding]]></title>
+    <link href="http://yorzi.github.com/2011/01/21/love-git-love-coding/"/>
+    <updated>2011-01-21T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/21/love-git-love-coding</id>
+    <content type="html"><![CDATA[<blockquote><span style="color: #0000ff;"><strong><span style="color: #0000ff;">“550,000</span> people hosting over <span style="color: #0000ff;">1,620,000</span> git repositories on github.com”</strong></span></blockquote>
+
+
+<p>I've been using Git for a while, I wanna say, I love git and <a href="http://github.com">github</a> very much.</p>
+
+<p>One year ago, I was used to <a href="http://subversion.apache.org/">SVN</a> as a version control approach. Yeah, SVN is great as a version control mechanism. You can quickly setup a svn server for your development because it's an opensource project. However, Git/Github is greater to do version control and SNS coding.</p>
+
+<p>Github now is a must-use website for my daily development work, I find interesting opensource projects on it, and I follow up the super stars (such as "<a href="https://github.com/dhh">DHH</a>" and "<a href="https://github.com/ryanb">Ryan Bates</a>" etc.) and their daily contributions on the brilliant open-sourced projects.</p>
+
+<p>Meanwhile, our <a href="http://developer.idapted.com">Eleutian Tech Team</a> moved to github several months ago, as it's supporting team development well, and members in a team can share their updates easily and effectively. Personally, I am loving in the <a href="https://gist.github.com/">Gist</a> recently, it's really convenient to store and share any valuable code snippets on it. It's also handy with the embed script for displaying it on your blog. (but it seems the gist won't display in RSS feed because my last post with a gist didn't display in the feed.)</p>
+
+<p>There's one more cool feature that is impressive when I first know it. It's "Blame" mode on a piece of code. Everyone's editing history and commit number is on the page, I guess it can be a testify to "Blame" the bad code, that's funny.</p>
+
+<p>I bet you will love in Git and github if you are an active programmer, or if you like to share code or projects, you'd better to give github a try. That's unbelievable helpful to good programmers.</p>
+
+<p>Resource:
+Pro Git: <a href="http://progit.org/">http://progit.org/</a>
+Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/code/why-you-should-switch-from-subversion-to-git/">http://thinkvitamin.com/code/why-you-should-switch-from-subversion-to-git/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[when generating a public website]]></title>
+    <link href="http://yorzi.github.com/2010/12/05/when-generating-a-public-website/"/>
+    <updated>2010-12-05T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/12/05/when-generating-a-public-website</id>
+    <content type="html"><![CDATA[<p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it's not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
+
+<p><strong>Interface and User Experience</strong></p>
+
+<ul>
+    <li>Be aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers. At a minimum test against a recent <a rel="nofollow" href="http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29">Gecko</a> engine (<a rel="nofollow" href="http://firefox.com/">Firefox</a>), a Webkit engine (<a rel="nofollow" href="http://www.apple.com/safari/">Safari</a>, <a rel="nofollow" href="http://www.google.com/chrome">Chrome</a>, and some mobile browsers), your supported IE browsers (take advantage of the<a rel="nofollow" href="http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&amp;displaylang=en">Application Compatibility VPC Images</a>), and <a rel="nofollow" href="http://www.opera.com/">Opera</a>. Also consider how <a rel="nofollow" href="http://www.browsershots.org/">browsers render your site</a> in different operating systems.</li>
+    <li>Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. — Some accessibility info: <a rel="nofollow" href="http://www.w3.org/WAI/">WAI</a> and <a rel="nofollow" href="http://www.section508.gov/">Section508</a>, Mobile development:<a rel="nofollow" href="http://mobiforge.com/">MobiForge</a></li>
+    <li>Staging: How to deploy updates without affecting your users. <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas's answer</a> has some comments on this.</li>
+    <li>Don't display unfriendly errors directly to the user</li>
+    <li>Don't put users' email addresses in plain text as they will get spammed to death</li>
+    <li><a rel="nofollow" href="http://www.codinghorror.com/blog/archives/001228.html">Build well-considered limits into your site</a> - This also belongs under Security.</li>
+    <li>Learn how to do <a rel="nofollow" href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a></li>
+    <li>Always <a rel="nofollow" href="http://en.wikipedia.org/wiki/Post/Redirect/Get">redirect after a POST</a>.</li>
+    <li>Don't forget to take accessibility into account. It's always a good idea and in certain circumstances it's a <a rel="nofollow" href="http://www.section508.gov/">legal requirement</a>. <a rel="nofollow" href="http://www.w3.org/WAI/intro/aria">WAI-ARIA</a> is a good resource in this area.</li>
+</ul>
+
+
+<p><strong>Security</strong></p>
+
+<ul>
+    <li>It's a lot to digest but the <a rel="nofollow" href="http://www.owasp.org/index.php/Category%3aOWASP_Guide_Project">OWASP development guide</a> covers Web Site security from top to bottom</li>
+    <li>Know about <a rel="nofollow" href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a> and how to prevent it</li>
+    <li>Never trust user input (cookies are user input too!)</li>
+    <li><span style="text-decoration: line-through;">Encrypt</span> Hash and salt passwords rather than storing them plain-text.</li>
+    <li>Don't try to come up with your own fancy authentication system: it's such an easy thing to get wrong in subtle and untestable ways and you wouldn't even know it until <em>after</em> you're hacked.</li>
+    <li>Know the <a rel="nofollow" href="https://www.pcisecuritystandards.org/">rules for processing credit cards</a>. (<a href="http://stackoverflow.com/questions/51094/payment-processors-what-do-i-need-to-know-if-i-want-to-accept-credit-cards-on-m">See this question as well</a>)</li>
+    <li>Use <a rel="nofollow" href="http://www.mozilla.org/projects/security/pki/nss/ssl/draft302.txt">SSL</a>/<a rel="nofollow" href="http://en.wikipedia.org/wiki/Https">HTTPS</a> for login and any pages where sensitive data is entered (like credit card info)</li>
+    <li>How to resist session hijacking</li>
+    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_scripting">cross site scripting</a> (XSS)</li>
+    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">cross site request forgeries</a> (XSRF)</li>
+    <li>Keep your system(s) up to date with the latest patches</li>
+    <li>Make sure your database connection information is secured.</li>
+    <li>Keep yourself informed about the latest attack techniques and vulnerabilities affecting your platform.</li>
+    <li>Read <a rel="nofollow" href="http://code.google.com/p/browsersec/wiki/Main">The Google Browser Security Handbook</a></li>
+    <li>Read <a rel="nofollow" href="http://amzn.com/0470170778">The Web Application Hackers Handbook</a></li>
+</ul>
+
+
+<p><strong>Performance</strong></p>
+
+<ul>
+    <li>Implement caching if necessary, understand and use <a rel="nofollow" href="http://www.mnot.net/cache_docs/">HTTP caching</a> properly as well as <a rel="nofollow" href="http://www.w3.org/TR/html5/offline.html">HTML5 Manifest</a></li>
+    <li>Optimize images - don't use a 20 KB image for a repeating background</li>
+    <li>Learn how to <a title="gzip content" rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#gzip">gzip/deflate content</a> (<a href="http://stackoverflow.com/questions/1574168/gzip-vs-deflate-zlib-revisited">deflate is better</a>)</li>
+    <li>Combine/concatenate multiple stylesheets or multiple script files to reduce number of browser connections and improve gzip ability to compress duplications between files</li>
+    <li>Take a look at the <a rel="nofollow" href="http://developer.yahoo.com/performance/">Yahoo Exceptional Performance</a> site, lots of great guidelines including improving front-end performance and their <a rel="nofollow" href="http://developer.yahoo.com/yslow/">YSlow</a> tool. <a rel="nofollow" href="http://code.google.com/speed/page-speed/docs/rules_intro.html">Google page speed</a> is another tool for performance profiling. Both require<a rel="nofollow" href="http://getfirebug.com/">Firebug</a> installed.</li>
+    <li>Use <a rel="nofollow" href="http://alistapart.com/articles/sprites">CSS Image Sprites</a> for small related images like toolbars (see the "minimize http requests" point)</li>
+    <li>Busy web sites should consider <a rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#split">splitting components across domains</a>. Specifically...</li>
+    <li>Static content (ie, images, CSS, JavaScript, and generally content that doesn't need access to cookies) should go in a separate domain <em><a rel="nofollow" href="http://blog.stackoverflow.com/2009/08/a-few-speed-improvements/">that does not use cookies</a></em>, because all cookies for a domain and it's subdomains are sent with every request to the domain and its subdomains. One good option here is to use a Content Delivery Network (CDN).</li>
+    <li>Minimize the total number of HTTP requests required for a browser to render the page.</li>
+    <li>Utilize <a rel="nofollow" href="http://code.google.com/closure/compiler/">Google Closure Compiler</a> for JavaScript and <a rel="nofollow" href="http://developer.yahoo.com/yui/compressor/">other minification tools</a></li>
+    <li>Make sure there’s a <code>favicon.ico</code> file in the root of the site, i.e. <code>/favicon.ico</code>. <a rel="nofollow" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Browsers will automatically request it</a>, even if the icon isn’t mentioned in the HTML at all. If you don’t have a <code>/favicon.ico</code>, this will result in a lot of 404s, draining your server’s bandwidth.</li>
+</ul>
+
+
+<p><strong>SEO (Search Engine Optimization)</strong></p>
+
+<ul>
+    <li>Use "search engine friendly" URL's, i.e. use <code>example.com/pages/45-article-title</code> instead of<code>example.com/index.php?page=45</code></li>
+    <li>Don't use links that say "click here". You're wasting an SEO opportunity and it makes things harder for people with screen readers.</li>
+    <li>Have an <a rel="nofollow" href="http://www.sitemaps.org/">XML sitemap</a>, preferably in the default location <code>/sitemap.xml</code>.</li>
+    <li>Use <a rel="nofollow" href="http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html"><code>&lt;link rel="canonical" ... /&gt;</code></a> when you have multiple URLs that point to the same content</li>
+    <li>Use <a rel="nofollow" href="http://www.google.com/webmasters/">Google Webmaster Tools</a> and <a rel="nofollow" href="http://siteexplorer.search.yahoo.com/">Yahoo Site Explorer</a></li>
+    <li>Install <a rel="nofollow" href="http://www.google.com/analytics/">Google Analytics</a> right at the start (or an open source analysis tool like <a rel="nofollow" href="http://piwik.org/">Piwik</a>)</li>
+    <li>Know how <a rel="nofollow" href="http://en.wikipedia.org/wiki/Robots_exclusion_standard">robots.txt</a> and search engine spiders work</li>
+    <li>Redirect requests (using <code>301 Moved Permanently</code>) asking for <code>www.example.com</code> to <code>example.com</code> (or the other way round) to prevent splitting the google ranking between both sites</li>
+    <li>Know that there can be bad behaving spiders out there</li>
+    <li>If you have non-text content look into Google's sitemap extensions for video, etc. There is some good information about this in <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#167608">Tim Farley's answer</a>.</li>
+</ul>
+
+
+<p><strong>Technology</strong></p>
+
+<ul>
+    <li>Understand <a rel="nofollow" href="http://www.ietf.org/rfc/rfc2616.txt">HTTP</a> and things like GET, POST, sessions, cookies, and what it means to be "stateless".</li>
+    <li>Write your <a rel="nofollow" href="http://www.w3.org/TR/xhtml1/">XHTML</a>/<a rel="nofollow" href="http://www.w3.org/TR/REC-html40/">HTML</a> and <a rel="nofollow" href="http://www.w3.org/TR/CSS2/">CSS</a> according to the <a rel="nofollow" href="http://www.w3.org/TR/">W3C specifications</a> and make sure they <a rel="nofollow" href="http://validator.w3.org/">validate</a>. The goal here is to avoid browser quirks modes and as a bonus make it much easier to work with non-standard browsers like screen readers and mobile devices.</li>
+    <li>Understand how JavaScript is processed in the browser.</li>
+    <li>Understand how JavaScript, style sheets, and other resources used by your page are loaded and consider their impact on <em>perceived</em> performance. It may be appropriate in some cases to <a rel="nofollow" href="http://developer.yahoo.net/blog/archives/2007/07/high_performanc_5.html">move scripts to the bottom</a>of your pages.</li>
+    <li>Understand how the JavaScript sandbox works, especially if you intend to use iframes.</li>
+    <li>Be aware that JavaScript can and will be disabled, and that Ajax is therefore an extension not a baseline. Even if most normal users leave it on now, remember that NoScript is becoming more popular, mobile devices may not work as expected, and Google won't run most of your JavaScript when indexing the site.</li>
+    <li>Learn the <a rel="nofollow" href="http://www.bigoakinc.com/blog/when-to-use-a-301-vs-302-redirect/">difference between 301 and 302 redirects</a> (this is also an SEO issue).</li>
+    <li>Learn as much as you possibly can about your deployment platform</li>
+    <li>Consider using a <a href="http://stackoverflow.com/questions/167531/is-it-ok-to-use-a-css-reset-stylesheet">Reset Style Sheet</a></li>
+    <li>Consider JavaScript frameworks (such as <a rel="nofollow" href="http://jquery.com/">jQuery</a>, <a rel="nofollow" href="http://mootools.net/">MooTools</a>, or <a rel="nofollow" href="http://www.prototypejs.org/">Prototype</a>), which will hide a lot of the browser differences when using JavaScript for DOM manipulation</li>
+</ul>
+
+
+<p><strong>Bug fixing</strong></p>
+
+<ul>
+    <li>Understand you'll spend 20% of the time coding and 80% of it maintaining, so code accordingly</li>
+    <li>Set up a good error reporting solution</li>
+    <li>Have some system for people to contact you with suggestions and criticism.</li>
+    <li>Document how the application works for future support staff and people performing maintenance</li>
+    <li>Make frequent backups! (And make sure those backups are functional) <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas's answer</a> has some advice. Have a Restore strategy, not just a Backup strategy.</li>
+    <li>Use a version control system to store your files, such as <a rel="nofollow" href="http://subversion.apache.org/">Subversion</a> or <a rel="nofollow" href="http://git-scm.org/">Git</a></li>
+    <li>Don't forget to do your Unit Testing. Frameworks like <a rel="nofollow" href="http://seleniumhq.org/">Selenium</a> can help.</li>
+</ul>
+
+
+<p>Lots of stuff omitted not necessarily because they're not useful answers, but because they're either too detailed, out of scope, or go a bit too far for someone looking to get an overview of the things they should know. If you're one of those people you can read the rest of the answers to get more detailed information about the things mentioned in this list. If I get the time I'll add links to the various answers that contain the things mentioned in this list if the answers go into detail about these things. Please feel free to edit this as well, I probably missed some stuff or made some mistakes.</p>
+
+<p>Check out its original post thread at <a href="http://stackoverflow.com/questions/72394" target="_blank">http://stackoverflow.com/questions/72394</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Great Survey Solution Based On Ruby on Rails]]></title>
+    <link href="http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
+    <updated>2010-07-27T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>I've been always looking for a powerful and flexible survey solution for a while, now I find it : <a href="http://github.com/breakpointer/surveyor">Surveyor</a>.</p>
+
+<p><strong>What's a Survey? </strong>
+Here is a brief look at the similarities and differences between forms, surveys, questionnaires and quizzes.</p>
+
+<p>Forms are a series of fields to be filled out by a user. Some forms are highly structured (such as a User form, or an Address form). Those highly structured forms can be created beforehand by a developer because they can map directly to models in the database. Other forms are highly unstructured, such as a questionnaire about your favorite types of food which are volatile. So form is simple structured format.</p>
+
+<p>A Survey is a type of Form. Surveys are semi-structured data, in that we want to formulate the questions so they have “mineable” data, but they are not so structured as to be directly mappable to database tables (unless we desired to have one table per survey, do we?). Also If a survey field is not appropriately filled out (such as a misformatting), the user should be prompted to correct his/her answer. According to this needs, surveys should not prevent the user from completing them if they miss an answer, however. A Questionnaire is a type of Survey and meanwhile, a Quiz is also a type of Survey.</p>
+
+<p><strong>How To Set Up Surveys Via Surveyor?</strong>
+There is already a clear manual for helping people to use Surveyor <a href="http://github.com/breakpointer/surveyor">here</a>. You can find most of what you want directly in <a href="http://wiki.github.com/breakpointer/surveyor/">Surveyor's official wiki</a>. However, I still want to share my experience on using Surveyor.</p>
+
+<p><strong>Install Surveyor.</strong>
+As a plugin:</p>
+
+<pre>gem install haml
+gem install fastercsv
+script/plugin install git://github.com/breakpointer/surveyor.git -r 'tag v0.11.0'
+</pre>
+
+
+<p>Or as a gem:</p>
+
+<pre># in environment.rb
+config.gem "surveyor", :version => '~> 0.11.0', :source => 'http://gemcutter.org'
+---
+rake gems:install</pre>
+
+
+<p>Surveyor is relied on haml and fastercsv(this is for supporting export csv survey results)
+Generate assets, run migrations:</p>
+
+<pre>script/generate surveyor
+rake db:migrate</pre>
+
+
+<p>Try out the "kitchen sink" survey:
+<code>rake surveyor FILE=surveys/kitchen_sink_survey.rb FIXTURES=surveys/fixtures
+</code>
+The rake surveyor task overwrites previous surveys by default, but can append instead:
+<code>rake surveyor FILE=surveys/kitchen_sink_survey.rb FIXTURES=surveys/fixtures APPEND=true</code></p>
+
+<p>Now start your Rails server, you will see the demo survey "kitchen sink" on localhost:3000/surveys. This demo is pretty useful for you when you generate your own survey pattern. Because in kitchen sink demo, most of "Survey API" are there.</p>
+
+<p><strong>Survey Sample</strong>
+Well, let's create our first survey. I paste my first as below, we can take a look at the way Surveyor support.
+<code lang='ruby'></p>
+
+<h1>/surveys/salon_survey.rb</h1>
+
+<p>survey "欢迎您访问Idapted技术沙龙活动调查问卷！" do</p>
+
+<p>  section "[Rails系统重构最佳实践]@beta-salon 2010/07/24" do</p>
+
+<pre><code># A label is a question that accepts no answers
+label "&lt;b&gt;希望您填写自己的个人信息，我们会为您提供最快速和专业的Ruby on Rails技术活动资讯！&lt;/b&gt;"
+
+# When :pick isn't specified, the default is :none (no checkbox or radio button)
+q_1 "请填写您的姓名(中英文名均可)"
+a_1 :string
+
+q_3 "请填写您的电话(如果我们有更多后续的技术交流活动，我们会发短信通知您:))"
+a_3 :string
+
+q_3 "请填写您的邮箱(如果我们有更多后续的技术交流活动，我们也会发邮件通知您:))"
+a_3 :string
+
+# A basic question with checkboxes
+# "question" and "answer" may be abbreviated as "q" and "a"
+q_2 "我们公司(Idapted)的产品涉及到以下几种技术，请选择您喜欢的主题，我们的研发团队会根据大家的反馈继续开展相关技术交流活动！", :pick =&gt; :any
+a_1 "Ruby on Rails"
+a_2 "Flex/Flash"
+a_3 "VoIP/FreeSwitch"
+a_4 "Erlang"
+a_5 "Titanium/iPhone/iTouch/iPad Development"
+
+# A dependent question, with conditions and rule to logically join them  
+# the question's reference identifier is "2a", and the answer's reference_identifier is "1"
+# question reference identifiers used in conditions need to be unique on a survey for the lookups to work
+q_2a "请简单说明为什么您对所选择的技术感兴趣:)"
+a_1 "说明：", :text
+dependency :rule =&gt; "A or B or C or D"
+condition_A :q_2, "==", :a_1
+condition_B :q_2, "==", :a_2
+condition_C :q_2, "==", :a_3
+condition_D :q_2, "==", :a_4
+condition_E :q_2, "==", :a_5
+
+q_4 "您使用Ruby on Rails开发有多长时间了？", :pick =&gt; :one, :display_type =&gt; :slider
+["刚开始", "半年", "一年", "两年", "两年以上"].each{|level| a level}
+
+# Surveys, sections, questions, groups, and answers also take a custom css class for covenience in custom styling
+q_6 "请介绍一下您自己的工作和感兴趣的技术", :custom_class =&gt; 'address'
+a :text, :custom_class =&gt; 'mapper'
+# validations can use regexp values
+validation :rule =&gt; "A"
+condition_A "=~", :regexp =&gt; /[0-9a-zA-z\. #]/
+</code></pre>
+
+<p>  end
+end
+</code>
+In above sample, I create a "survey", then I also create a "section" inside a survey. Yeah, you can define many section for a survey to make the whole survey being like a wizard, that's pretty interesting. In on survey, there are more than 15 types of question, you can define a survey as using plain English, what you should obey is to refer to Kitchen Sink sample, it means you can only define a question type according to the certain rule, don't worry, the rule is simple.</p>
+
+<p>Once you finished defining the survey, it means you now have a ruby file, say salon_survey.rb, you should run the following commend in your terminal to migrate all your survey items into your application, remember the append command, it will let you not to delete previous survey which stored in the same application.</p>
+
+<pre>rake surveyor FILE=surveys/salon_survey.rb FIXTURES=surveys/fixtures APPEND=true</pre>
+
+
+<p>Wow, you now have your new survey list in the Survey root path after you restart your server. I guess you will like it.</p>
+
+<p><strong>Customize Survey</strong>
+All go well so far, But, there is a big weakness of this survey solution if you only use it as above. Because the Surveyor doesn't support any easy way to manage the survey results. You should add the administration side in your application by yourself. I will also give you some hints on doing this.</p>
+
+<p>Before your create management part for survey results, I remind you take a look at the survey configure file where you can do some really simple config for specific survey, such as define welcome page and finish page, or the survey title you want to customize. It's something as below:
+<code lang='ruby'></p>
+
+<h1>Initializers/surveyor.rb</h1>
+
+<h1>Loaded once. Restart your app (even in development) to apply changes made here</h1>
+
+<p>Surveyor::Config.run do |config|
+  config['default.relative_url_root'] = "surveys" #nil # "surveys"
+  config['default.title'] = "EQ英语(Idapted) 技术沙龙调查问卷" #nil # "You can take these surveys:"
+  config['default.layout'] = "surveyor_custom" # "surveyor_default"
+  config['default.index'] = nil#:welcome_pages_path #:welcome_pages_path # "/surveys" # or :index_path_method
+  config['default.finish'] =  :thankyou_pages_path # "/surveys" # or :finish_path_method
+  config['use_restful_authentication'] = false # set to true to use restful authentication
+  config['extend'] = %w(survey surveyor_helper surveyor_controller) #%w()
+end
+</code></p>
+
+<p><strong>Survey Results Statistics</strong>
+OK, last hints about adding management part of survey, here we should know clearly what's the survey's structure. So what's Survey's data structure? It's like this:</p>
+
+<pre>
+# Survey structure
+Survey-------Section1---------Question1---------Many Answers(From different user)
+                                      ---------Q2
+                                      ---------Q3
+                                      ---------More Question
+          -------Section2
+          -------More Sections
+
+#Response Structure. Each User Has one unique <strong>ResponseSet</strong>
+ResponseSet---------Response1
+                    ---------Response2
+                    ---------More Responses
+</pre>
+
+
+<p>So you can display all results as you need. I do it as below:
+<code lang='ruby'></p>
+
+<h1>results_controller.rb</h1>
+
+<p>class Admin::ResultsController &lt; Admin::BaseController
+  layout "results"</p>
+
+<p>  def index</p>
+
+<pre><code>@surveys = Survey.all
+</code></pre>
+
+<p>  end</p>
+
+<p>  def show</p>
+
+<pre><code>@survey = Survey.find(params[:id])
+@response_sets = @survey.response_sets
+@questions = SurveySection.find_by_survey_id(params[:id]).questions
+</code></pre>
+
+<p>  end
+end</p>
+
+<h1>View show.html.erb</h1>
+
+<table class="list_table">
+  <tr>
+    <th>ID</th>
+    <th>Code</th>
+    <% @questions.each do |question| %>
+        <% next if question.display_order == 1 %>
+        <th><%= "[" +question.display_order.to_s + "]" + question.text  %></th>
+    <% end %>
+  </tr>
+
+<% @response_sets.each do |r_set| %>
+  <tr>
+    <td><%=h r_set.id %></td>
+    <td><%=h r_set.access_code %></td>
+    <% @questions.each do |question| %>
+        <% next if question.display_order == 1 %>
+        <td><%= display_response(r_set,question) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+
+<h1>results_helper.rb</h1>
+
+<p>module Admin::ResultsHelper
+  def display_response(r_set,question)</p>
+
+<pre><code>sets = r_set.responses.select{|r| r.question.display_order == question.display_order}
+    if sets.size == 0
+        return "-"
+    elsif sets.size == 1
+        return (sets.first.string_value || sets.first.text_value || show_answer(sets.first))
+    else
+      txt = ""
+    sets.each do |set|
+      txt &lt;&lt; show_answer(set) + "&lt;br/&gt;"
+    end
+    return txt
+ end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def show_answer(set)</p>
+
+<pre><code> set.answer.text
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p>God, I really make a long post, hope you can find something useful, feel free to contact me if you have any confusion.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Renren Integration into EQenglish]]></title>
+    <link href="http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish/"/>
+    <updated>2010-06-20T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish</id>
+    <content type="html"><![CDATA[<p><img title="renren logo" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.41.10-AM-300x86.png" alt="" width="270" height="77" /></p>
+
+<p><a href="http://renren.com">The Renren Network</a>, which was formerly named Xiaonei Network is one of most successful Chinese social networking site. Renren is with an interface similar to that of <a href="http://www.facebook.com">Facebook</a>. It's said that there are more than 22 million active users and estimated 40 million users who have registered their real names. Thus, Renren is widely considered to be the most powerful SNS service in Mainland China, especially among college students.</p>
+
+<p>And, <a href="http://www.eqenglish.com">EQEnglish</a> is the fastest growing 1:1 English training service powered by <a href="http://www.idapted.com" target="_blank">Idapted</a> in China. It's delivering thousands of lessons a week to students all over China with its professional foreign teachers. Now, conveniently, all Renren's users can login EQenglish directly without registration again, at the same time, EQenglish is also using Renren site's platform <a href="http://wiki.dev.renren.com/wiki/API" target="_blank">API</a> to share learners' study status with the community. It's obviously a win-win model for both EQenglish and Renren.</p>
+
+<p>Now, in order to introduce you about the integration between EQenglish and Renren SNS, let me take you go through the story.</p>
+
+<p>[caption id="" align="alignright" width="270" caption="Login EQenglish system via Renren account"]<img title="Login EQenglish system via Renren account" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-2.17.12-PM-300x205.png" alt="" width="270" height="185" />[/caption]</p>
+
+<p>To login EQenglish via Renren account, you need to, at least have one Renren account, then on EQenglish portal you will see a login form  as right after you click "Connect via Rreren". After you input your user name and password EQenglish will present you a guide page on which you decide to bundle your exist EQ account with your Renren account or just every time use your Renren account login EQ platform.</p>
+
+<p>What will happen next when you do the login?</p>
+
+<p>On EQenglish website, you will be marked with a Renren icon and you can share EQ learning materials or EQ discussion thread or EQ study status with your Renren friends. For instance, you just discussed an EQ lesson named "EQ IELTS Formula 26: Evaluating Two Different Opinions" with your classmates on EQenglish studycenter, then the system will send this discussion status to your Renren friends, something like "Hey, I am discussing an interesting EQ lesson on their website, come and join in, it's cool..", surely, it's based on your Renren setting on connected websites.</p>
+
+<p>There, on Renren website, is also an <a href="http://page.renren.com/699099142/index" target="_blank">application home page</a> where all the EQ followers can keep talking about their EQ study story or learning experience, At the same time, EQ consultants spread out EQ learning tips with all its fans. In past two weeks, there are more than 300 learners follow EQ application in Renren Site. People rate <a href="http://page.renren.com/699099142/reviews" target="_blank">many 5-stars</a> for this connection application.</p>
+
+<div class="mceTemp"><dl id="attachment_202" class="wp-caption alignright" style="width: 563px;"><dt><img title="EQ application home page on Renren site" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.21.01-AM.png" alt="" width="553" height="285" /></dt><dd>EQ application home page on Renren site</dd></dl></div>
+
+
+<p>So, users conveniently use their Renren accounts to login EQenglish. The user may then grant EQenglish access to their public data including: Real identity information, social graph, etc. Using this information, EQenglish can expand leaner base and strengthen the social aspects of EQ self. What's useful is, Renren users can find all the valuable information on EQenglish message feeds through their friends feeds, People can make content(EQ learning materials), or anything else(lesson discussion thread) available for sharing.</p>
+
+<p>Technically, this integration is still have big room to improve, it depends on Renren's open platform, We are ready to enhance user experience for all EQenglish learners, We always believe in a formula when we development EQenglish learning system, that is:
+Great Technology + Clear Convenience = Comfortable Awesome</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Overview of RenRen Connect Application]]></title>
+    <link href="http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application/"/>
+    <updated>2010-04-28T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application</id>
+    <content type="html"><![CDATA[<p>I’ve read <a href="http://wiki.dev.renren.com/wiki/%E9%A6%96%E9%A1%B5">RenRen development Doc</a> and tried some simple feature for a while, its platform is interesting and exciting, but much of its document is out of date(I guess it’s not been maintained for a time). so there are pains to test most of its APIs, here I will roughly introduce what we can do based on RenRen open platform.</p>
+
+<p>First of all, RenRen platform supports <a href="http://wiki.dev.renren.com/wiki/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">five types of APPLICATION</a>, which are:
+– RenRen Canvas. It means application/content is embedded in RenRen’s web container via XNML/IFrame/OpenSocial-Gadget etc.
+– Mobile Wap application.
+– RenRen Connect. It means an external website is connected to RenRen, the two sites can share many different infos according to the channel/bridge API.
+– Desktop Application.
+– Mobile Client Application.</p>
+
+<p>Obviously, RenRen Connect is what developer need upon first step. So the question is how does it work? Follow me, I will go through the imagined application to show what feature developer can build according to RenRen connect API, now go:</p>
+
+<ol>
+<li><p>Tom is a RenRen user, he just find an “application” which tells him he can improve his oral English, that’s interesting, he clicks it in order to add the application to his list.</p></li>
+<li><p>Then he find EQenglish.com, he uses his RenRen account to login EQenglish, He find he can order an speaking evaluation for free on the website, and what’s more, he even can push this message and/or the study status to his RenRen friends.</p></li>
+<li><p>Tom goes through EQenglish website to check EQ learning methods, He can easily share the web page to his RenRen friends.</p></li>
+<li><p>Andy is an EQenglish user, he bundles his EQ account and RenRen account on EQenglish website, so he can push his study status to his RenRen friends.</p></li>
+<li><p>Andy finally buy a course, then all EQ learners who have RenRen accounts can receive an email/notification, in which it broadcasts “Andy buy a course ***” something like that.</p></li>
+<li><p>Once Andy discussed an EQ lesson, his comments is synced to his RenRen status, all of his Friends there can see his status.</p></li>
+<li><p>Tom finds Andy’s EQ profile via the discussion thread, the surprise is Andy’s is his School mate, they have the same IELTS exam time. They connect with each other on RenRen.</p></li>
+<li><p>What’s more, Tom finds a section in EQ website, He can pick up all his Friends list, and suggest them to use EQ service. Also aside the lesson discussion thread, there is a live stream box connecting to RenRen page. so He can easily comment with friend..</p></li>
+</ol>
+
+
+<p>Etc..</p>
+
+<p>Above is a rough introduction of RenRen connect feature developer can build(it is based on RenRen connect’s API, not just my imagination).<a href="http://wiki.dev.renren.com/wiki/%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3">Click here to review RenRen Conncet Production Description.</a></p>
+]]></content>
+  </entry>
+  
+</feed>

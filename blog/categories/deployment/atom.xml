@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: deployment | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/deployment/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Deploy Rails3 App in Sub-directory]]></title>
+    <link href="http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
+    <updated>2011-01-20T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory</id>
+    <content type="html"><![CDATA[<p>Last weekend, <a href="http://www.dujinfang.com">seven</a> and <a href="http://blog.sonitech.org/">sonic</a> did a great job to move all Idapted servers to a new datacenter, that's really a fabulous movement. Seven just wrote it out on <a href="http://www.dujinfang.com/past/2011/1/18/rails-fu-wu-qi-qian-yi-dian-di/">his blog</a>, if you want to know more about this migration, please go through his post. Anyway, in this post I wanna share a simple but valuable tip about deploying Rails3 app in sub directory.</p>
+
+<script src="https://gist.github.com/787610.js"></script>
+
+
+<p>More resources:
+1. Rails 3, Unicorn and RAILS_RELATIVE_URL_ROOT: <br /><a href="http://summit360.co.uk/2010/09/rails_3_unicorn.html">http://summit360.co.uk/2010/09/rails_3_unicorn.html</a>
+2. Enabling Rails 3 for your application: <br /><a href="http://www.nirvaat.com/ruby-on-rails/enabling-rails-3-for-your-application/">http://www.nirvaat.com/ruby-on-rails/enabling-rails-3-for-your-application/</a>
+3. Rails 3 routes in subdirectory: <br /><a href="http://community.webfaction.com/questions/1364/rails-3-routes-in-subdirectory">http://community.webfaction.com/questions/1364/rails-3-routes-in-subdirectory</a></p>
+]]></content>
+  </entry>
+  
+</feed>

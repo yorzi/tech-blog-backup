@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: javascript | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/javascript/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Weekly Updates : Javascript Rocks!]]></title>
+    <link href="http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks/"/>
+    <updated>2011-03-21T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks</id>
+    <content type="html"><![CDATA[<p>After quit from Idapted/Eleutian, I'd like to have a long term plan for writing blogs. However, as everything starts, it's always hard. I thought it around, and finally decided to open my mind, and just try to start with a strong belief : Sharing! Then an idea comes out.</p>
+
+<p>First of all, I think my weekly updates will help to share great things I came across or even I started to use, it has much fun to replay all these stuff, so I will do that in the weekend, that's also part of my study review.</p>
+
+<p>Ok, turn to the points:</p>
+
+<ol>
+<li>Now you must know <a href="http://www.javascriptlint.com/index.htm">JSLint</a>. JSlint is a Javascript checker, which can help you ensure your JS' quality. There are many great open source projects helping you to program in Javascript.</li>
+</ol>
+
+
+<p>Sources:
+Github Proj: <a href="https://github.com/douglascrockford/JSLint">https://github.com/douglascrockford/JSLint</a>
+Add JSLint to you TextMate: <a href="https://github.com/subtleGradient/javascript-tools.tmbundle">https://github.com/subtleGradient/javascript-tools.tmbundle</a></p>
+
+<ol>
+<li><p>Are you familiar with <a href="http://en.wikipedia.org/wiki/Behavior_Driven_Development">BDD</a>? You should start to learn it now if you did not have a change to give it a try. Specially, if you are using Ruby/Ruby on Rails, I strongly recommend you try <a href="http://rspec.info/">rSpec</a> for the BDD. Back to the topic, I wanna share with you some similar BDD way in programming Javascript, <a href="https://github.com/visionmedia/jspec">jspec</a> and <a href="http://pivotal.github.com/jasmine/">Jasmine</a>, obviously, they are cool. I just mention this as a reminder people who want to try interesting programming. I didn't try them yet, but I guess I will do that in soon.</p></li>
+<li><p>JS in real-time application <a href="http://nodejs.org/">Node.js</a> and <a href="https://github.com/Flotype/now">NowJS</a></p></li>
+<li><p>Books to speed you up!
+•  Javascript: The Good Parts (<a href="http://oreilly.com/catalog/9780596517748">http://oreilly.com/catalog/9780596517748</a>)
+•  JavaScript Patterns (<a href="http://oreilly.com/catalog/9780596806767/">http://oreilly.com/catalog/9780596806767/</a>)
+•  High Performance JavaScript (<a href="http://oreilly.com/catalog/9780596802806/">http://oreilly.com/catalog/9780596802806/</a>)</p></li>
+</ol>
+
+
+<p>Javascript is a long journey, I am just on the start point. Anyway, exciting!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[JS note: setTimeout and setInterval]]></title>
+    <link href="http://yorzi.github.com/2011/03/09/settimeout-and-setinterval/"/>
+    <updated>2011-03-09T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/03/09/settimeout-and-setinterval</id>
+    <content type="html"><![CDATA[<p>Yesterday, I discussed a JS issue with <a href="http://www.yakjuly.com/">Blade</a>, that I have to set up an automatic photo-switch effect on an existing page. I don't want to change anything except adding a piece of javascript for doing that job because this page is already messy up by another engineer. Blade suggested I should use <strong><a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a></strong> for this effect.</p>
+
+<h4><strong>* Case Study</strong></h4>
+
+
+<p>The basic case is something like below(there are some other effects based on the structure and style, so don't affect others):
+<code lang='html'></p>
+
+<div id="tab_ls">
+        <a class="active" id="haikou"></a>
+    <a id="dalian"></a>  
+        <a id="changsha"></a> 
+</div>
+
+
+
+
+<div id="tab_con">
+    <div style="display: block;" id="fk">   
+        <div id="end"></div>
+        <div id="ctt">
+            <img src="http://www.2011roadshow.com/images/haikou.jpg">
+                    <h3>会议城市：海口</h3>
+            <p>时间：8月26日 14：00-18：00</p>
+                    <p>地点：海口鑫源温泉大酒店</p>
+        </div>
+    </div>
+        
+    <div id="fk" style="display:none">
+        <div id="end"></div>
+            <div id="ctt">
+            <img src="http://www.2011roadshow.com/images/dalian.jpg">
+                    <h3>会议城市：大连</h3>
+            <p>时间：9月3日 14：00-18：00</p>
+                    <p>地点：香洲花园酒店 </p>
+        </div>
+    </div>
+
+    <div id="fk" style="display:none">
+        <div id="end"></div>
+            <div id="ctt">
+            <img src="images/changsha.jpg">
+                    <h3>城市：长沙</h3>
+            <p>时间：9月4日 14：00-18：00</p>
+                    <p>地点：长沙潇湘华天大酒店</p>
+        </div>
+    </div>
+</div>
+
+
+<p></code>
+Now the task is to write a js to roll the cities and regarding images, how to make it happen?</p>
+
+<h4>* Solution with <strong>setTimeout</strong></h4>
+
+
+<p><code lang='javascript'></p>
+
+<script type="text/javascript">
+    var cities;
+    var cityImages;
+    var currentCity;
+    var pause = false;
+    var timer1;
+    var timer2 ;
+    
+    function showNextImage()
+    {           
+        if (pause) {
+            // do nothing
+        } else {
+            console.log("show next image");
+            console.log(currentCity);
+            if(cities.last() == currentCity) {
+                currentCity = currentCity.first();
+            } else {
+                currentCity = currentCity.next();
+            }
+            console.log(currentCity);
+            
+            var index = cities.index(currentCity);
+            console.log(index);
+            cityImages.hide();
+            console.log(cityImages.get(index));
+            $(cityImages.get(index)).show();
+            cities.removeClass("active")
+            currentCity.addClass("active");
+        }
+        timer1 = window.setTimeout("showNextImage()", 2000);
+    }
+    
+    function repeatPlay()
+    {   
+        console.log("repeat play");
+        showNextImage();
+        if (timer2 != null){
+            clearTimeout(timer2);
+            timer2 = null;
+        }
+    }
+
+  $(window).load(function(){
+    cities = $("#tab_ls a");
+    cityImages = $("#tab_con div#fk");
+    currentCity = cities.first()
+    console.log(cities);
+    console.log("window load");
+    repeatPlay();
+    $("#tab_ls a").click(function(){
+                clearTimeout(timer1);
+        timer1 = null;
+            timer2 = window.setTimeout("repeatPlay()", 6000);
+    });
+  });
+</script>
+
+
+<p></code>
+Actually, you can figure out this effect with <strong><a href="https://developer.mozilla.org/en/window.setInterval">setInterval</a></strong> as well. The difference between setTimeout and setInterval is how many times you want to run the function which is set as their parameters. setTimeout will execute the function only once when time is out. But setInterval execute the function repeatedly in certain interval which is set as a parameter.</p>
+
+<p>Every time you should remember to clear the Timeout or Interval after finish your job through <strong><a href="https://developer.mozilla.org/en/DOM/window.clearTimeout">clearTimeout</a></strong> and <strong><a href="https://developer.mozilla.org/en/DOM/window.clearInterval">clearInterval</a></strong>.</p>
+
+<p>I have linked the regarding references for the four methods about, you should read the document and related samples to know more details.</p>
+
+<p>More Resources:
+<a href="http://hi.baidu.com/ruhaole/blog/item/af905fefc2dad33aadafd57a.html">如何在jQuery中使用 setInterval，setTimeout</a>
+<a href="http://cn.dydou.cn/wyzz/2010/0710/13733.html">jQuery：Tab切换功能的集合</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[when generating a public website]]></title>
+    <link href="http://yorzi.github.com/2010/12/05/when-generating-a-public-website/"/>
+    <updated>2010-12-05T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/12/05/when-generating-a-public-website</id>
+    <content type="html"><![CDATA[<p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it's not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
+
+<p><strong>Interface and User Experience</strong></p>
+
+<ul>
+    <li>Be aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers. At a minimum test against a recent <a rel="nofollow" href="http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29">Gecko</a> engine (<a rel="nofollow" href="http://firefox.com/">Firefox</a>), a Webkit engine (<a rel="nofollow" href="http://www.apple.com/safari/">Safari</a>, <a rel="nofollow" href="http://www.google.com/chrome">Chrome</a>, and some mobile browsers), your supported IE browsers (take advantage of the<a rel="nofollow" href="http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&amp;displaylang=en">Application Compatibility VPC Images</a>), and <a rel="nofollow" href="http://www.opera.com/">Opera</a>. Also consider how <a rel="nofollow" href="http://www.browsershots.org/">browsers render your site</a> in different operating systems.</li>
+    <li>Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. — Some accessibility info: <a rel="nofollow" href="http://www.w3.org/WAI/">WAI</a> and <a rel="nofollow" href="http://www.section508.gov/">Section508</a>, Mobile development:<a rel="nofollow" href="http://mobiforge.com/">MobiForge</a></li>
+    <li>Staging: How to deploy updates without affecting your users. <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas's answer</a> has some comments on this.</li>
+    <li>Don't display unfriendly errors directly to the user</li>
+    <li>Don't put users' email addresses in plain text as they will get spammed to death</li>
+    <li><a rel="nofollow" href="http://www.codinghorror.com/blog/archives/001228.html">Build well-considered limits into your site</a> - This also belongs under Security.</li>
+    <li>Learn how to do <a rel="nofollow" href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a></li>
+    <li>Always <a rel="nofollow" href="http://en.wikipedia.org/wiki/Post/Redirect/Get">redirect after a POST</a>.</li>
+    <li>Don't forget to take accessibility into account. It's always a good idea and in certain circumstances it's a <a rel="nofollow" href="http://www.section508.gov/">legal requirement</a>. <a rel="nofollow" href="http://www.w3.org/WAI/intro/aria">WAI-ARIA</a> is a good resource in this area.</li>
+</ul>
+
+
+<p><strong>Security</strong></p>
+
+<ul>
+    <li>It's a lot to digest but the <a rel="nofollow" href="http://www.owasp.org/index.php/Category%3aOWASP_Guide_Project">OWASP development guide</a> covers Web Site security from top to bottom</li>
+    <li>Know about <a rel="nofollow" href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a> and how to prevent it</li>
+    <li>Never trust user input (cookies are user input too!)</li>
+    <li><span style="text-decoration: line-through;">Encrypt</span> Hash and salt passwords rather than storing them plain-text.</li>
+    <li>Don't try to come up with your own fancy authentication system: it's such an easy thing to get wrong in subtle and untestable ways and you wouldn't even know it until <em>after</em> you're hacked.</li>
+    <li>Know the <a rel="nofollow" href="https://www.pcisecuritystandards.org/">rules for processing credit cards</a>. (<a href="http://stackoverflow.com/questions/51094/payment-processors-what-do-i-need-to-know-if-i-want-to-accept-credit-cards-on-m">See this question as well</a>)</li>
+    <li>Use <a rel="nofollow" href="http://www.mozilla.org/projects/security/pki/nss/ssl/draft302.txt">SSL</a>/<a rel="nofollow" href="http://en.wikipedia.org/wiki/Https">HTTPS</a> for login and any pages where sensitive data is entered (like credit card info)</li>
+    <li>How to resist session hijacking</li>
+    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_scripting">cross site scripting</a> (XSS)</li>
+    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">cross site request forgeries</a> (XSRF)</li>
+    <li>Keep your system(s) up to date with the latest patches</li>
+    <li>Make sure your database connection information is secured.</li>
+    <li>Keep yourself informed about the latest attack techniques and vulnerabilities affecting your platform.</li>
+    <li>Read <a rel="nofollow" href="http://code.google.com/p/browsersec/wiki/Main">The Google Browser Security Handbook</a></li>
+    <li>Read <a rel="nofollow" href="http://amzn.com/0470170778">The Web Application Hackers Handbook</a></li>
+</ul>
+
+
+<p><strong>Performance</strong></p>
+
+<ul>
+    <li>Implement caching if necessary, understand and use <a rel="nofollow" href="http://www.mnot.net/cache_docs/">HTTP caching</a> properly as well as <a rel="nofollow" href="http://www.w3.org/TR/html5/offline.html">HTML5 Manifest</a></li>
+    <li>Optimize images - don't use a 20 KB image for a repeating background</li>
+    <li>Learn how to <a title="gzip content" rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#gzip">gzip/deflate content</a> (<a href="http://stackoverflow.com/questions/1574168/gzip-vs-deflate-zlib-revisited">deflate is better</a>)</li>
+    <li>Combine/concatenate multiple stylesheets or multiple script files to reduce number of browser connections and improve gzip ability to compress duplications between files</li>
+    <li>Take a look at the <a rel="nofollow" href="http://developer.yahoo.com/performance/">Yahoo Exceptional Performance</a> site, lots of great guidelines including improving front-end performance and their <a rel="nofollow" href="http://developer.yahoo.com/yslow/">YSlow</a> tool. <a rel="nofollow" href="http://code.google.com/speed/page-speed/docs/rules_intro.html">Google page speed</a> is another tool for performance profiling. Both require<a rel="nofollow" href="http://getfirebug.com/">Firebug</a> installed.</li>
+    <li>Use <a rel="nofollow" href="http://alistapart.com/articles/sprites">CSS Image Sprites</a> for small related images like toolbars (see the "minimize http requests" point)</li>
+    <li>Busy web sites should consider <a rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#split">splitting components across domains</a>. Specifically...</li>
+    <li>Static content (ie, images, CSS, JavaScript, and generally content that doesn't need access to cookies) should go in a separate domain <em><a rel="nofollow" href="http://blog.stackoverflow.com/2009/08/a-few-speed-improvements/">that does not use cookies</a></em>, because all cookies for a domain and it's subdomains are sent with every request to the domain and its subdomains. One good option here is to use a Content Delivery Network (CDN).</li>
+    <li>Minimize the total number of HTTP requests required for a browser to render the page.</li>
+    <li>Utilize <a rel="nofollow" href="http://code.google.com/closure/compiler/">Google Closure Compiler</a> for JavaScript and <a rel="nofollow" href="http://developer.yahoo.com/yui/compressor/">other minification tools</a></li>
+    <li>Make sure there’s a <code>favicon.ico</code> file in the root of the site, i.e. <code>/favicon.ico</code>. <a rel="nofollow" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Browsers will automatically request it</a>, even if the icon isn’t mentioned in the HTML at all. If you don’t have a <code>/favicon.ico</code>, this will result in a lot of 404s, draining your server’s bandwidth.</li>
+</ul>
+
+
+<p><strong>SEO (Search Engine Optimization)</strong></p>
+
+<ul>
+    <li>Use "search engine friendly" URL's, i.e. use <code>example.com/pages/45-article-title</code> instead of<code>example.com/index.php?page=45</code></li>
+    <li>Don't use links that say "click here". You're wasting an SEO opportunity and it makes things harder for people with screen readers.</li>
+    <li>Have an <a rel="nofollow" href="http://www.sitemaps.org/">XML sitemap</a>, preferably in the default location <code>/sitemap.xml</code>.</li>
+    <li>Use <a rel="nofollow" href="http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html"><code>&lt;link rel="canonical" ... /&gt;</code></a> when you have multiple URLs that point to the same content</li>
+    <li>Use <a rel="nofollow" href="http://www.google.com/webmasters/">Google Webmaster Tools</a> and <a rel="nofollow" href="http://siteexplorer.search.yahoo.com/">Yahoo Site Explorer</a></li>
+    <li>Install <a rel="nofollow" href="http://www.google.com/analytics/">Google Analytics</a> right at the start (or an open source analysis tool like <a rel="nofollow" href="http://piwik.org/">Piwik</a>)</li>
+    <li>Know how <a rel="nofollow" href="http://en.wikipedia.org/wiki/Robots_exclusion_standard">robots.txt</a> and search engine spiders work</li>
+    <li>Redirect requests (using <code>301 Moved Permanently</code>) asking for <code>www.example.com</code> to <code>example.com</code> (or the other way round) to prevent splitting the google ranking between both sites</li>
+    <li>Know that there can be bad behaving spiders out there</li>
+    <li>If you have non-text content look into Google's sitemap extensions for video, etc. There is some good information about this in <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#167608">Tim Farley's answer</a>.</li>
+</ul>
+
+
+<p><strong>Technology</strong></p>
+
+<ul>
+    <li>Understand <a rel="nofollow" href="http://www.ietf.org/rfc/rfc2616.txt">HTTP</a> and things like GET, POST, sessions, cookies, and what it means to be "stateless".</li>
+    <li>Write your <a rel="nofollow" href="http://www.w3.org/TR/xhtml1/">XHTML</a>/<a rel="nofollow" href="http://www.w3.org/TR/REC-html40/">HTML</a> and <a rel="nofollow" href="http://www.w3.org/TR/CSS2/">CSS</a> according to the <a rel="nofollow" href="http://www.w3.org/TR/">W3C specifications</a> and make sure they <a rel="nofollow" href="http://validator.w3.org/">validate</a>. The goal here is to avoid browser quirks modes and as a bonus make it much easier to work with non-standard browsers like screen readers and mobile devices.</li>
+    <li>Understand how JavaScript is processed in the browser.</li>
+    <li>Understand how JavaScript, style sheets, and other resources used by your page are loaded and consider their impact on <em>perceived</em> performance. It may be appropriate in some cases to <a rel="nofollow" href="http://developer.yahoo.net/blog/archives/2007/07/high_performanc_5.html">move scripts to the bottom</a>of your pages.</li>
+    <li>Understand how the JavaScript sandbox works, especially if you intend to use iframes.</li>
+    <li>Be aware that JavaScript can and will be disabled, and that Ajax is therefore an extension not a baseline. Even if most normal users leave it on now, remember that NoScript is becoming more popular, mobile devices may not work as expected, and Google won't run most of your JavaScript when indexing the site.</li>
+    <li>Learn the <a rel="nofollow" href="http://www.bigoakinc.com/blog/when-to-use-a-301-vs-302-redirect/">difference between 301 and 302 redirects</a> (this is also an SEO issue).</li>
+    <li>Learn as much as you possibly can about your deployment platform</li>
+    <li>Consider using a <a href="http://stackoverflow.com/questions/167531/is-it-ok-to-use-a-css-reset-stylesheet">Reset Style Sheet</a></li>
+    <li>Consider JavaScript frameworks (such as <a rel="nofollow" href="http://jquery.com/">jQuery</a>, <a rel="nofollow" href="http://mootools.net/">MooTools</a>, or <a rel="nofollow" href="http://www.prototypejs.org/">Prototype</a>), which will hide a lot of the browser differences when using JavaScript for DOM manipulation</li>
+</ul>
+
+
+<p><strong>Bug fixing</strong></p>
+
+<ul>
+    <li>Understand you'll spend 20% of the time coding and 80% of it maintaining, so code accordingly</li>
+    <li>Set up a good error reporting solution</li>
+    <li>Have some system for people to contact you with suggestions and criticism.</li>
+    <li>Document how the application works for future support staff and people performing maintenance</li>
+    <li>Make frequent backups! (And make sure those backups are functional) <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas's answer</a> has some advice. Have a Restore strategy, not just a Backup strategy.</li>
+    <li>Use a version control system to store your files, such as <a rel="nofollow" href="http://subversion.apache.org/">Subversion</a> or <a rel="nofollow" href="http://git-scm.org/">Git</a></li>
+    <li>Don't forget to do your Unit Testing. Frameworks like <a rel="nofollow" href="http://seleniumhq.org/">Selenium</a> can help.</li>
+</ul>
+
+
+<p>Lots of stuff omitted not necessarily because they're not useful answers, but because they're either too detailed, out of scope, or go a bit too far for someone looking to get an overview of the things they should know. If you're one of those people you can read the rest of the answers to get more detailed information about the things mentioned in this list. If I get the time I'll add links to the various answers that contain the things mentioned in this list if the answers go into detail about these things. Please feel free to edit this as well, I probably missed some stuff or made some mistakes.</p>
+
+<p>Check out its original post thread at <a href="http://stackoverflow.com/questions/72394" target="_blank">http://stackoverflow.com/questions/72394</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ajax Support in Rails]]></title>
+    <link href="http://yorzi.github.com/2009/11/26/ajax-support-in-rails/"/>
+    <updated>2009-11-26T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/26/ajax-support-in-rails</id>
+    <content type="html"><![CDATA[<p><strong>Topics</strong>
+  Ajax/JavaScript libraries in Rails
+  PrototypeHelper
+  ScriptaculousHelper
+  JavaScriptMacrosHelper
+  JavaScript related utility methods
+  Ruby JavaScript template</p>
+
+<p><strong>Ajax/JavaScript Libraries in Rails</strong>
+• Prototype - used mainly for Ajax</p>
+
+<blockquote><p>ActionView::Helpers::PrototypeHelper
+• Scriptaculous - used mainly for visual effects, drag and drop, auto-completion
+ActionView::Helpers::ScriptaculousHelper
+• JavaScript related utility methods
+ActionView::Helpers::JavaScriptHelper
+• Others can be easily added</p></blockquote>
+
+<p><strong>How to Include Ajax?JavaScript Libraries</strong>
+• Option 1: Use &lt;%= javascript_include_tag :defaults %> in the HEAD section of your page (recommended):</p>
+
+<blockquote><p>Return references to the JavaScript files in your public/javascripts directory.
+Recommended as the browser can then cache the libraries instead of fetching all the functions anew on every request.
+• Option 2: Use &lt;%= javascript_include_tag ‘prototype’ %>
+Will only include the Prototype core library
+• Option 3: Use &lt;%= define_javascript_functions %>
+Will copy all the JavaScript support functions within a single script block. Not recommended.</p></blockquote>
+
+<p>SEE MORE DETAILS VIA <a href='http://tech.wangyaodi.com/?attachment_id=136' rel='attachment wp-att-136'>Download the PDF</a> stuff.</p>
+]]></content>
+  </entry>
+  
+</feed>

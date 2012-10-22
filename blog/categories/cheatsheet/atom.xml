@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: cheatsheet | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/cheatsheet/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Cheat sheet in terminal]]></title>
+    <link href="http://yorzi.github.com/2009/11/11/cheat-sheet-in-terminal/"/>
+    <updated>2009-11-11T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/11/11/cheat-sheet-in-terminal</id>
+    <content type="html"><![CDATA[<p>I found a cool gem called "cheat", it's pretty handy and convenient when you wanna see a brief help/introduction of some "stuff" in command line, cheat out the website for more <a href="http://cheat.errtheblog.com/b">wiki-versioned cheat sheet</a>.</p>
+
+<blockquote>
+Get started:
+<i style="color:yellow">$ sudo gem install cheat
+$ cheat strftime</i>
+
+A magnificent cheat sheet for Ruby's strftime method will be printed to your terminal.
+
+To get some help on cheat itself:
+<i style="color:yellow">$ cheat cheat</i>
+
+How meta.
+
+Cheat sheets are basically wiki pages accessible from the command line. You can browse, add, or edit cheat sheets. Try to keep them concise. For a style guide, check out the cheat cheat sheet.
+
+To access a cheat sheet, simply pass the program the desired sheet's name:
+<i style="color:yellow">$ cheat <sheet name></i>
+</blockquote>
+
+
+<p>Reference : <a href="http://cheat.errtheblog.com/">CLICK HERE</a>!</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Environment | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/environment/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Zen Coding for TextMate]]></title>
+    <link href="http://yorzi.github.com/2011/02/12/zen-coding-for-textmate/"/>
+    <updated>2011-02-12T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/02/12/zen-coding-for-textmate</id>
+    <content type="html"><![CDATA[<p>Bundles make <a href="http://macromates.com/">TextMate</a> as a super Editor, so if you love TextMate, you must love colorful bundles based on it.</p>
+
+<p>I just find an interesting bundle to speed up your HTML/CSS coding, which is named as <a href="https://github.com/sergeche/zen-coding">Zen Coding</a>.</p>
+
+<p>The core of this plugin is a powerful abbreviation engine which allows you to expand expressions—similar to CSS selectors—into HTML code. For example:
+<code lang="html">
+div#page>div.logo+ul#navigation>li*5>a
+</code>
+...can be expanded into:
+<code lang="html"></p>
+
+<div id="page">
+        <div class="logo"></div>
+        <ul id="navigation">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+        </ul>
+</div>
+
+
+<p></code>
+The sytax is simple to understand, there is a sytax list <a href="http://code.google.com/p/zen-coding/wiki/ZenHTMLSelectorsEn">here</a>. You can also get more details about this bundle on <a href="http://code.google.com/p/zen-coding/">its official site.</a></p>
+
+<p>Enjoy it.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Study Note: Install Git1.7.1 on CentOS5.5]]></title>
+    <link href="http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <updated>2010-08-29T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <content type="html"><![CDATA[<p>Step 1. Install the dependencies</p>
+
+<pre>
+$ sudo yum -y install curl-devel expat-devel \
+gettext-devel openssl-devel zlib-devel  
+$ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz  
+$ tar zxf libiconv-1.13.1.tar.gz  
+$ cd libiconv-1.13.1  
+$ ./configure prefix=/usr/local  
+$ make  
+$ sudo make install
+</pre>
+
+
+<p>Step 2. Install Git1.7.1</p>
+
+<pre>
+$ wget http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz  
+$ tar zxf git-1.7.1.tar.gz  
+$ cd  git-1.7.1  
+$ ./configure prefix=/usr/local
+$ make
+$ sudo make install 
+</pre>
+
+
+<p>Step 3. You might get errors as:</p>
+
+<pre>error while loading shared libraries: libiconv.so.2:\
+cannot open shared object file: No such file or directory</pre>
+
+
+<p>Then, you should do the following:</p>
+
+<pre>
+$ sudo vim /etc/ld.so.conf
+# you should add online as "/usr/local/lib"
+$ sudo /sbin/ldconfig
+</pre>
+
+
+<p>Done, try git --version, it's successfully installed.</p>
+]]></content>
+  </entry>
+  
+</feed>

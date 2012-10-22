@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rails | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dalli on Rails3]]></title>
+    <link href="http://yorzi.github.com/2011/01/22/dalli-on-rails3/"/>
+    <updated>2011-01-22T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/22/dalli-on-rails3</id>
+    <content type="html"><![CDATA[<p>Today I tried a new pure Ruby <a href="http://memcached.org/" target="_blank">memcahed</a> client in one of my Rails3 projects, it's named as "<a href="https://github.com/mperham/dalli" target="_blank">Dalli</a>". It's an excellent memcached client as <a href="http://www.mikeperham.com/">Mike Perham</a> announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on <a href="http://heroku.com" target="_blank">Heroku</a>.</p>
+
+<p>Make sure you've installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:
+1. add gem in Gemfile
+<code lang="ruby">
+gem 'dalli'
+</code>
+2. Config the underlying cache store as dalli_store in production.rb
+<code lang="ruby"></p>
+
+<h1>Memcached is delaulted on port 11211.</h1>
+
+<p>config.cache_store = :dalli_store, 'localhost:11211'
+</code>
+3. Now you will find the Rails.cache class is changed to Rails.cache.class:
+<code lang="ruby"></p>
+
+<blockquote><blockquote><p>Rails.cache.class
+== ActiveSupport::Cache::DalliStore
+</code>
+4. You can use it easily in you Rails3 application
+<code lang="ruby">
+class Food &lt; ActiveRecord::Base
+   after_save :expire_food_caches</p></blockquote></blockquote>
+
+<p>   def self.all_view_types</p>
+
+<pre><code>  Rails.cache.fetch("food_types") do
+      Food.all.map{|s| s.view_type}.uniq
+  end
+</code></pre>
+
+<p>   end</p>
+
+<p>   protected
+   def expire_food_caches</p>
+
+<pre><code>   unless Food.all_view_types.include?(self.view_type)
+       Rails.cache.delete("food_types")
+   end
+</code></pre>
+
+<p>   end
+end
+</code>
+<em><strong>Note</strong>: Rails.cache.fetch() with a block will return the cached value if it exists, otherwise it will return the value and write cache with the value at the same time.</em></p>
+
+<p>Resource about Cache:
+Scaling Rails : <br /><a href="http://railslab.newrelic.com/scaling-rails">http://railslab.newrelic.com/scaling-rails</a>
+Caching with Rails : <br /><a href="http://guides.rubyonrails.org/caching_with_rails.html">http://guides.rubyonrails.org/caching_with_rails.html</a>
+ActiveSupport::Cache::Store : <br /><a href="http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear">http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear</a>
+ActiveSupport::Memoizable : <br /><a href="http://ilstar.blogbus.com/logs/84754288.html#cmt">http://ilstar.blogbus.com/logs/84754288.html#cmt</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[perfect backup solution for developers]]></title>
+    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <updated>2010-09-10T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with "backup" and "whenever".</p>
+
+<p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
+
+<p>While using Backup, it's like a configuration file with easy rule, don't worry about the rule, I believe you will understand it in seconds. It also owns many common slots to different DB(or S3), you can also config your customized command and script inside its backup.rb file. Whenever is the Ruby way to manage your <a href="http://en.wikipedia.org/wiki/Cron">Cron</a> jobs, It's pretty cool.</p>
+
+<p>Don't hesitate to try them out, you will find the inside beauty of backup. Enjoy!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
+    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <updated>2010-09-02T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <content type="html"><![CDATA[<p>I've been being confused of this "conversion" issue for a while, Today I figured out a clear way to do the function.
+<code lang='ruby'>
+DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
+</code>
+Also, I'd like to note down the ruby Time format rule:</p>
+
+<pre>
+  %a - The abbreviated weekday name (``Sun'')
+  %A - The  full  weekday  name (``Sunday'')
+  %b - The abbreviated month name (``Jan'')
+  %B - The  full  month  name (``January'')
+  %c - The preferred local date and time representation
+  %d - Day of the month (01..31)
+  %H - Hour of the day, 24-hour clock (00..23)
+  %I - Hour of the day, 12-hour clock (01..12)
+  %j - Day of the year (001..366)
+  %m - Month of the year (01..12)
+  %M - Minute of the hour (00..59)
+  %p - Meridian indicator (``AM''  or  ``PM'')
+  %S - Second of the minute (00..60)
+  %U - Week  number  of the current year,
+          starting with the first Sunday as the first
+          day of the first week (00..53)
+  %W - Week  number  of the current year,
+          starting with the first Monday as the first
+          day of the first week (00..53)
+  %w - Day of the week (Sunday is 0, 0..6)
+  %x - Preferred representation for the date alone, no time
+  %X - Preferred representation for the time alone, no date
+  %y - Year without a century (00..99)
+  %Y - Year with century
+  %Z - Time zone name
+  %% - Literal ``%'' character
+
+   t = Time.now
+   t.strftime("Printed on %m/%d/%Y")   #=> "Printed on 04/09/2003"
+   t.strftime("at %I:%M%p")            #=> "at 08:56AM"
+</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Study Notes: Passenger + Capistrano + Nginx + Rails 2.3.4 + Ubuntu 9.04 (10 steps)]]></title>
+    <link href="http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
+    <updated>2010-07-30T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
+    <content type="html"><![CDATA[<p><strong><em>This post is just copied from </em></strong><a href="http://rustammamedov.wordpress.com/2009/12/27/capistrano-nginx-mongrel-deployment/"><strong><em>this page</em></strong></a><strong><em>. As a study notes, I re-share this manual here. Please check out original one if you wanna have a whole view of other involving topics. Thanks to the </em></strong><a href="http://rustammamedov.wordpress.com/"><strong><em>author</em></strong></a><strong><em> :)</em></strong></p>
+
+<div>
+<div>
+<ol>
+    <li>Install capistrano gem. if you use <a href="http://yehudakatz.com/2009/11/03/using-the-new-gem-bundler-today">bundler</a> you need to add just one line to Gemfile
+<code>
+gem "capistrano"
+</code>
+and then run
+<code>gem bundle
+</code></li>
+    <li>after capistrano installed you need to make Capfile and default deploy.rb, run such from the root of your application
+<code>capify .</code></li>
+    <li>create user for deployments in remote machine (let’s say ‘deploy’ user)
+<code>adduser deploy</code></li>
+    <li>add sudo privileges to this user. add one line in your /etc/sudoers file
+<code>deploy ALL=(ALL) NOPASSWD: ALL</code></li>
+    <li>adjust deploy.rb for you. I used example from this <a href="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/">link</a>
+<code lang="ruby">
+# Application
+set :application, "test"
+set :deploy_to, "/var/www/#{application}"
+#   Settings
+default_run_options[:pty] = true
+set :use_sudo, true
+#   Servers
+set :user, "deploy"
+set :domain, "rustam.example.com"
+server domain, :app, :web
+role :db, domain, :primary =&gt; true
+#   Subversion
+set :repository, "http://www.rustam.example.com"
+set :svn_username, "rustam"
+set :svn_password, "password"
+set :checkout, "export"
+#   Passenger
+namespace :passenger do
+desc "Restart Application"
+task :restart do
+run "touch #{current_path}/tmp/restart.txt"
+end
+end
+after :deploy, "passenger:restart"
+</code>
+to understand how it works – read <a href="http://www.capify.org/index.php/Capistrano">this link</a></li>
+    <li>if you don’t use bundler, skip it. Otherwise, it will be usefull to add such piece of code to your deploy.rb file (from <a href="http://gist.github.com/244420">Richie’s post</a>)
+<code lang="ruby">
+# bundler
+namespace :bundler do
+  task :install do
+    run("gem install bundler --source=http://gemcutter.org")
+  end
+  
+  task :symlink_vendor do
+  shared_gems = File.join(shared_path, 'vendor/bundler_gems')
+  release_gems = "#{release_path}/vendor/bundler_gems/"
+    %w(cache gems specifications).each do |sub_dir|
+      shared_sub_dir = File.join(shared_gems, sub_dir)
+      run("mkdir -p #{shared_sub_dir} && mkdir -p #{release_gems} && ln -s #{shared_sub_dir} #{release_gems}/#{sub_dir}")
+    end
+  end
+
+  task :bundle_new_release do
+    bundler.symlink_vendor
+    rails_env = variables[:rails_env] || 'production'
+    run("cd #{release_path} && gem bundle --only #{rails_env}")
+  end
+end
+
+after 'deploy:update_code', 'bundler:bundle_new_release'
+</code>
+it will bundle all production gems to your bundler_gems path</li>
+    <li>ask Capistrano to create set of folders for deployments in the remote machine
+<code>cap deploy:setup</code></li>
+    <li>ask capistrano to check all remote folders:
+<code>cap deploy:check</code>
+it will return to you all problems that you have with both locale/remote machines – structure of folders/permissions etc. you can get something like this:
+<code>
+The following dependencies failed. Please check them and try again:
+--&gt; You do not have permissions to write to `/var/www'. (rustam.example.com)
+--&gt; You do not have permissions to write to `/var/www/releases'. (rustam.example.com)
+</code>
+When you’ll fix everything, you’ll get such:
+<code>You appear to have all necessary dependencies installed</code>
+it means that you’re finished with capistrano configs</li>
+    <li>you need to install passenger and nginx module for passenger in your remote machine according to <a href="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/">this</a>
+<code>
+sudo gem install passenger
+sudo passenger-install-nginx-module</code>
+the second command will tell you how to configure Nginx and to deploy rails application.
+it will create Nginx configuration file for you:
+<code>/opt/nginx/conf/nginx.conf)</code>
+you need to change server block there
+<code>
+server {
+listen 80;
+server_name rustam.example.com;
+root /var/www/current/public; # &lt;--- notice the 'public' part
+passenger_enabled on; # &lt;--- don't forget this!li
+}</code>
+everything is finished for passenger and nginx!</li>
+    <li>you can start deploy you app!
+<code>cap deploy:update</code> – copies your project to remote machine and updates symlinks
+<code>cap passenger-restart</code> – will start application</li>
+FYI <code>sudo /opt/nginx/sbin/nginx</code> starts nginx in the remote machine
+    <li><strong>Extra step</strong>: if you’re using bundler and used <a href="http://yehudakatz.com/2009/11/03/using-the-new-gem-bundler-today/">Yehuda’s link to run it</a>(like me <img src="http://s.wordpress.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" /> ), you’ll have a problem with preinitializer. I used <a href="http://tomafro.net/2009/11/a-rails-template-for-gem-bundler">Tom Ward’s solution</a> to fix it
+i.e. put only such line to preinitializer.rb
+<code>require File.expand_path(File.join(File.dirname(__FILE__), "..", "gems", "environment"))</code>
+and add such piece of code just after loading boot
+<code>
+# Hijack rails initializer to load the bundler gem
+#environment before loading the rails environment.
+Rails::Initializer.module_eval do
+alias load_environment_without_bundler load_environment
+def load_environment
+Bundler.require_env configuration.environment
+load_environment_without_bundler
+end
+end
+</code></li>
+</ol>
+Links with detailed description:
+<ul>
+    <li><a title="http://wiki.zhekov.net/nginx" href="http://wiki.zhekov.net/nginx">nginx</a></li>
+    <li><a title="http://gautamrege.wordpress.com/2009/11/10/capistrano-nginx-thin-deployment-on-linode" href="http://gautamrege.wordpress.com/2009/11/10/capistrano-nginx-thin-deployment-on-linode">capistrano-nginx-thin-deployment-on-linode</a></li>
+    <li><a title="http://74.125.95.132/search?q=cache:NyrJDYo75rAJ:www.capify.org/index.php/From_The_Beginning+capistrano+from+the+beginning&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us&amp;client=firefox-a" href="http://74.125.95.132/search?q=cache:NyrJDYo75rAJ:www.capify.org/index.php/From_The_Beginning+capistrano+from+the+beginning&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us&amp;client=firefox-a">Capistrano from the beginning</a></li>
+    <li><a title="http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/" href="http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/">capistrano + passenger</a></li>
+    <li><a title="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/" href="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/">capistrano + passenger + mod_rails</a></li>
+    <li><a title="http://www.rubyinside.com/28_mod_rails_and_passenger_resources-899.html" href="http://www.rubyinside.com/28_mod_rails_and_passenger_resources-899.html">28 links howto passenger + capistrano</a></li>
+    <li><a title="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/" href="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/">passenger + nginx</a></li>
+    <li><a title="http://www.modrails.com/documentation/Users%20guide%20Nginx.html" href="http://www.modrails.com/documentation/Users%20guide%20Nginx.html">nginx guide for passenger</a></li>
+</ul>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rails3 App Gem Stack]]></title>
+    <link href="http://yorzi.github.com/2010/07/28/rails3-app-gem-stack/"/>
+    <updated>2010-07-28T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/28/rails3-app-gem-stack</id>
+    <content type="html"><![CDATA[<p>Rails3 RC1 was released yesterday, that's really awesome, I can't help experimenting a sample of Rails3 new features. I want to share my Gemfile to list all application gem stack, which may be useful for those who don't wanna create wheels themselves. Below is the list:
+<code lang='ruby'></p>
+
+<h1>Bundle edge Rails instead:</h1>
+
+<p>gem 'rails', :git => 'git://github.com/rails/rails.git'</p>
+
+<p>gem 'mysql'</p>
+
+<h1>devise for auth</h1>
+
+<p>gem 'devise', '1.1.rc2'</p>
+
+<h1>show_for is a helper for showing objects</h1>
+
+<p>gem 'show_for'</p>
+
+<h1>pageinate</h1>
+
+<p>gem 'will_paginate', '3.0.pre'</p>
+
+<h1>A set of responders modules to dry up your Rails 3 app</h1>
+
+<p>gem 'responders'</p>
+
+<h1>Cron job in Rails</h1>
+
+<p>gem 'whenever', :git => 'git://github.com/javan/whenever.git'</p>
+
+<h1>for creating navigations</h1>
+
+<p>gem 'simple-navigation', '2.6.0'</p>
+
+<h1>for backup db to s3/remote server</h1>
+
+<p>gem 'backup', '2.3.2.pre3'</p>
+
+<h1>Editor plugin</h1>
+
+<p>gem 'tiny_mce', '0.1.4'</p>
+
+<h1>background job</h1>
+
+<p>gem "delayed_job","1.8.4"</p>
+
+<h1>role based access control</h1>
+
+<p>gem "cancan"</p>
+
+<h1>simple search on models</h1>
+
+<p>gem "searchlogic"</p>
+
+<h1>full-text search solution</h1>
+
+<p>gem 'thinking-sphinx', '2.0.0.rc1', :require => 'thinking_sphinx'</p>
+
+<h1>Use unicorn as the web server</h1>
+
+<p>gem 'unicorn'</p>
+
+<h1>Deploy with Capistrano</h1>
+
+<p>gem 'capistrano'</p>
+
+<h1>To use debugger</h1>
+
+<p>gem 'ruby-debug'</p>
+
+<h1>Bundle the extra gems:</h1>
+
+<h1>gem 'bj'</h1>
+
+<p>gem 'nokogiri', '1.4.1'</p>
+
+<h1>gem 'sqlite3-ruby', :require => 'sqlite3'</h1>
+
+<p>gem 'aws-s3', :require => 'aws/s3'</p>
+
+<h1>Bundle gems for certain environments:</h1>
+
+<p>gem 'rspec', :group => :test
+group :test do
+  gem 'webrat'
+end
+</code></p>
+
+<p>If you wanna know whether a plugin/gem is available for Rails3, just check out this site: <a href="http://www.railsplugins.org/">http://www.railsplugins.org/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

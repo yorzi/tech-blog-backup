@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: memcached | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/memcached/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Dalli on Rails3]]></title>
+    <link href="http://yorzi.github.com/2011/01/22/dalli-on-rails3/"/>
+    <updated>2011-01-22T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/01/22/dalli-on-rails3</id>
+    <content type="html"><![CDATA[<p>Today I tried a new pure Ruby <a href="http://memcached.org/" target="_blank">memcahed</a> client in one of my Rails3 projects, it's named as "<a href="https://github.com/mperham/dalli" target="_blank">Dalli</a>". It's an excellent memcached client as <a href="http://www.mikeperham.com/">Mike Perham</a> announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on <a href="http://heroku.com" target="_blank">Heroku</a>.</p>
+
+<p>Make sure you've installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:
+1. add gem in Gemfile
+<code lang="ruby">
+gem 'dalli'
+</code>
+2. Config the underlying cache store as dalli_store in production.rb
+<code lang="ruby"></p>
+
+<h1>Memcached is delaulted on port 11211.</h1>
+
+<p>config.cache_store = :dalli_store, 'localhost:11211'
+</code>
+3. Now you will find the Rails.cache class is changed to Rails.cache.class:
+<code lang="ruby"></p>
+
+<blockquote><blockquote><p>Rails.cache.class
+== ActiveSupport::Cache::DalliStore
+</code>
+4. You can use it easily in you Rails3 application
+<code lang="ruby">
+class Food &lt; ActiveRecord::Base
+   after_save :expire_food_caches</p></blockquote></blockquote>
+
+<p>   def self.all_view_types</p>
+
+<pre><code>  Rails.cache.fetch("food_types") do
+      Food.all.map{|s| s.view_type}.uniq
+  end
+</code></pre>
+
+<p>   end</p>
+
+<p>   protected
+   def expire_food_caches</p>
+
+<pre><code>   unless Food.all_view_types.include?(self.view_type)
+       Rails.cache.delete("food_types")
+   end
+</code></pre>
+
+<p>   end
+end
+</code>
+<em><strong>Note</strong>: Rails.cache.fetch() with a block will return the cached value if it exists, otherwise it will return the value and write cache with the value at the same time.</em></p>
+
+<p>Resource about Cache:
+Scaling Rails : <br /><a href="http://railslab.newrelic.com/scaling-rails">http://railslab.newrelic.com/scaling-rails</a>
+Caching with Rails : <br /><a href="http://guides.rubyonrails.org/caching_with_rails.html">http://guides.rubyonrails.org/caching_with_rails.html</a>
+ActiveSupport::Cache::Store : <br /><a href="http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear">http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear</a>
+ActiveSupport::Memoizable : <br /><a href="http://ilstar.blogbus.com/logs/84754288.html#cmt">http://ilstar.blogbus.com/logs/84754288.html#cmt</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Performance Practice On Rails]]></title>
+    <link href="http://yorzi.github.com/2010/03/14/performance-practice-on-rails/"/>
+    <updated>2010-03-14T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/03/14/performance-practice-on-rails</id>
+    <content type="html"><![CDATA[<p>﻿﻿﻿﻿Last few days, I've been mainly struggling with performance issue which was sent to me on Monday. On Rails side, I didn't add enough necessary cache before I was told about the performance issue. Then I spent two days to improve it by adding cache every where I missed to do that before.</p>
+
+<p>Some shares and confusions as below:</p>
+
+<p>Shares:
+1> A very useful educational website about scaling Rails where there are <a href="http://railslab.newrelic.com/2009/01/22/introduction">Scaling Rails Screencast Series</a> produced by Gregg Pollack and supported by New Relic.
+2> Fragment cache.</p>
+
+<pre><code>  If you add many fragment cache in view, it's really a pain when you expire your cache, so I found there is a better way to expire your cache: if the cached block involves a model, for example, learner's sidebar involves "User" model's change, so I just name the cache with User model's "updated_at", so I don't need to expire this cache, it will be done automatically.
+</code></pre>
+
+<p><code lang="ruby">
+  &lt;% cache("sidebar-profile-avatar-#{current_user.id}-#{current_user.updated_at.to_i}") do -%></p>
+
+<pre><code>&lt;div class="sbb_title"&gt;&lt;%= t :my_profile %&gt;&lt;/div&gt;
+&lt;div class="sbb_content"&gt;
+  &lt;table border="0" cellspacing="0" cellpadding="0" class="profile_table"&gt;
+    &lt;tr&gt;
+      &lt;td width="100" rowspan="2" align="center" valign="top"&gt;
+        &lt;img src="&lt;%= current_user.avatar_url || "/assets/images/portrait_demo.gif" %&gt;" width="90" height="90" /&gt;
+      &lt;/td&gt;
+      &lt;td width="110" height="24"&gt;&lt;%= display_learner([current_user], nil) %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td valign="top"&gt;&lt;strong&gt;&lt;%= t :my_goal %&gt;&lt;/strong&gt;&lt;%= display_oral_score(current_user.try(:study_info).try(:target_score)) %&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/table&gt;
+&lt;% end -%&gt;
+</code></pre>
+
+<p></code>
+3> Memcached. Cache whatever you want:
+<code lang="ruby">
+  def related_lessons</p>
+
+<pre><code>cache_key = "related_lessons_for_item#{self.id}"
+return Rails.cache.read(cache_key) unless Rails.cache.read(cache_key).nil?
+if content_type == "Scenario"
+  lessons = unit.extra_items.all(:conditions =&gt; {:content_id =&gt; content.extra_lessons.map(&amp;:id)})
+elsif content_type == "ExtraLesson"
+  lessons = [content.scenario.try(:item)]
+end
+Rails.cache.write(cache_key, lessons)
+return lessons
+</code></pre>
+
+<p>  end
+</code></p>
+
+<p>Confusions:
+1> It takes much time to render a partial view. that's pretty confusing to me. Some logs as below:
+<code lang="ruby">
+Cached fragment hit: views/sidebar-profile-roadmap-1268271150 (0.9ms)
+Rendered shared/_sidebar_profile (109.8ms)
+</code>
+It seems like even the cached fragment is found, there still needs much time to render the partial..</p>
+
+<p>2> From the log, I saw every request to "roadmap" index action will do the following stuff first, It's slow. But what that?
+<code lang="ruby">
+&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#&lt;actionView::Base:0xb5a0e348>#
+</code></p>
+
+<p>Any ideas on my confusions? All the involving clues are warmly welcomed.</p>
+]]></content>
+  </entry>
+  
+</feed>

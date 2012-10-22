@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: textmate | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/textmate/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Zen Coding for TextMate]]></title>
+    <link href="http://yorzi.github.com/2011/02/12/zen-coding-for-textmate/"/>
+    <updated>2011-02-12T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/02/12/zen-coding-for-textmate</id>
+    <content type="html"><![CDATA[<p>Bundles make <a href="http://macromates.com/">TextMate</a> as a super Editor, so if you love TextMate, you must love colorful bundles based on it.</p>
+
+<p>I just find an interesting bundle to speed up your HTML/CSS coding, which is named as <a href="https://github.com/sergeche/zen-coding">Zen Coding</a>.</p>
+
+<p>The core of this plugin is a powerful abbreviation engine which allows you to expand expressions—similar to CSS selectors—into HTML code. For example:
+<code lang="html">
+div#page>div.logo+ul#navigation>li*5>a
+</code>
+...can be expanded into:
+<code lang="html"></p>
+
+<div id="page">
+        <div class="logo"></div>
+        <ul id="navigation">
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+                <li><a href=""></a></li>
+        </ul>
+</div>
+
+
+<p></code>
+The sytax is simple to understand, there is a sytax list <a href="http://code.google.com/p/zen-coding/wiki/ZenHTMLSelectorsEn">here</a>. You can also get more details about this bundle on <a href="http://code.google.com/p/zen-coding/">its official site.</a></p>
+
+<p>Enjoy it.</p>
+]]></content>
+  </entry>
+  
+</feed>

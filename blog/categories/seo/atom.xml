@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: SEO | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/seo/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[SEO Web Developer Cheat Sheet]]></title>
+    <link href="http://yorzi.github.com/2009/12/28/seo-web-developer-cheat-sheet/"/>
+    <updated>2009-12-28T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/12/28/seo-web-developer-cheat-sheet</id>
+    <content type="html"><![CDATA[<p>发现好东西不敢独享，拿出来分享一下：<a href='http://blog.wangyaodi.com/wp-content/uploads/2009/12/SEO_Web_Developer_Cheat_Sheet.pdf'>SEO Web Developer Cheat Sheet</a></p>
+
+<p>Cheat Sheet是一种流行的手册文化，如果能把常用的东西凑到一块，简明扼要的排版出来，用的时候方便不少。以前写过一个介绍<a href="http://blog.wangyaodi.com/2009/11/11/cheat-sheet-in-terminal/">Cheat命令</a>的帖子，如果你是搞技术的，不妨试试。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SEO Tools]]></title>
+    <link href="http://yorzi.github.com/2009/12/16/seo-tools/"/>
+    <updated>2009-12-16T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/12/16/seo-tools</id>
+    <content type="html"><![CDATA[<p>友情链接检测工具：<a href="http://link.chinaz.com/">http://link.chinaz.com/</a></p>
+
+<p>关键词排名查询工具：<a href="http://tool.chinaz.com/KeyWords/">http://tool.chinaz.com/KeyWords/</a></p>
+
+<p>关键词密度查询：<a href="http://tool.chinaz.com/Tools/Density.aspx">http://tool.chinaz.com/Tools/Density.aspx</a></p>
+
+<p>模拟搜索引擎抓取工具：<a href="http://tool.chinaz.com/Tools/Robot.aspx">http://tool.chinaz.com/Tools/Robot.aspx</a></p>
+
+<p>网页MATA信息检测：<a href="http://tool.chinaz.com/Tools/MetaCheck.aspx">http://tool.chinaz.com/Tools/MetaCheck.aspx</a></p>
+
+<p>百度近日收录查询：<a href="http://tool.chinaz.com/baidu/">http://tool.chinaz.com/baidu/</a></p>
+
+<p>Google网站管理员工具：<a href="http://www.google.com/webmasters/tools/?hl=zh_CN">http://www.google.com/webmasters/tools/?hl=zh_CN</a></p>
+
+<p>雅虎站长工具：<a href="http://sitemap.cn.yahoo.com/">http://sitemap.cn.yahoo.com/</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[SEO on Rails]]></title>
+    <link href="http://yorzi.github.com/2009/12/15/seo-on-rails/"/>
+    <updated>2009-12-15T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2009/12/15/seo-on-rails</id>
+    <content type="html"><![CDATA[<div>This post is a copy of my work stuff, but I want to archive all the links below, they are all about SEO on Rails application, as well as a useful post about jQuery on Rails.
+<div>
+
+Finally, we decided to create a Rails App for the EQV2 New Website, so I did several homework for this mission. They are:
+
+1. SEO on Rails.
+Several rules/good points for seo according to the following websites:
+1&gt; <a href="http://www.elctech.com/articles/rails-seo-starter-guide">http://www.elctech.com/articles/rails-seo-starter-guide</a>
+2&gt; <a href="http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/">http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/</a>
+3&gt; <a href="http://www.seoonrails.com/">http://www.seoonrails.com/</a>
+4&gt; <a href="http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx">http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx</a>
+
+2. Maybe use JQuery more in EQV2.
+1&gt; <a href="http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/">http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/</a>
+2&gt; <a href="http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063">http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063</a>
+
+3. Cache Views.
+
+MORE IDEAS?
+
+But, first version should be structured well and make sure it's been done before the "deadline", so this app will be according to the recommendation but not totally implemented in the best way, in all, it still needs your suggestion.</div>
+</div>
+
+]]></content>
+  </entry>
+  
+</feed>

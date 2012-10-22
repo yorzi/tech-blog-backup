@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: juggernaut | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/juggernaut/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Real-Time Application with Rails3]]></title>
+    <link href="http://yorzi.github.com/2011/02/18/real-time-application-with-rails3/"/>
+    <updated>2011-02-18T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2011/02/18/real-time-application-with-rails3</id>
+    <content type="html"><![CDATA[<p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
+
+<p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>
+
+<p>There are some example use cases of RTAs, including:</p>
+
+<pre>
+   * Videoconference applications
+   * VoIP (voice over Internet Protocol)
+   * Online gaming
+   * Community storage solutions
+   * Chatting
+   * IM (instant messaging)
+</pre>
+
+
+<p>Mainly, I am interested in two solutions, which are <a href="https://github.com/lifo/cramp">Cramp</a> based RTA and a NR2J(<a href="http://nodejs.org/">Node.js</a>+<a href="https://github.com/antirez/redis">Redis</a>+<a href="https://github.com/maccman/juggernaut">Juggernaut</a>+Jquery) solution, both of these two solutions have existing samples, I suggest you should go through all of them to understand RTA well.</p>
+
+<p><strong>Cramp based RTA</strong>
+Cramp is a ruby web framework with asynchronous feature, which is always running inside EventMachine reactor loop, there is a <a href="http://m.onkey.org/introducing-cramp">detailed introduction</a> for it. A sample code is <a href="https://github.com/akitaonrails/cramp_chat_demo">available here</a>.</p>
+
+<p><strong>NR2J solution</strong>
+Introduction is <a href="http://www.golygon.com/2010/12/private-chat-room-in-ruby-on-rails-3-0/">here</a> and sample code is <a href="https://github.com/prabgupt/chatclient">here</a>. I tried Node.js before, it's getting popular recently, but I still don't be used to implementing server side code with JS. I love Ruby and Rails anyway.</p>
+
+<p><strong>Other RTA resources:</strong>
+Real-Time/WebSocket/Rails3: <a href="http://laktek.com/tag/realie/">http://laktek.com/tag/realie/</a>
+JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
+]]></content>
+  </entry>
+  
+</feed>

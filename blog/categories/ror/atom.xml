@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: ror | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/ror/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Overview of RenRen Connect Application]]></title>
+    <link href="http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application/"/>
+    <updated>2010-04-28T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application</id>
+    <content type="html"><![CDATA[<p>I’ve read <a href="http://wiki.dev.renren.com/wiki/%E9%A6%96%E9%A1%B5">RenRen development Doc</a> and tried some simple feature for a while, its platform is interesting and exciting, but much of its document is out of date(I guess it’s not been maintained for a time). so there are pains to test most of its APIs, here I will roughly introduce what we can do based on RenRen open platform.</p>
+
+<p>First of all, RenRen platform supports <a href="http://wiki.dev.renren.com/wiki/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">five types of APPLICATION</a>, which are:
+– RenRen Canvas. It means application/content is embedded in RenRen’s web container via XNML/IFrame/OpenSocial-Gadget etc.
+– Mobile Wap application.
+– RenRen Connect. It means an external website is connected to RenRen, the two sites can share many different infos according to the channel/bridge API.
+– Desktop Application.
+– Mobile Client Application.</p>
+
+<p>Obviously, RenRen Connect is what developer need upon first step. So the question is how does it work? Follow me, I will go through the imagined application to show what feature developer can build according to RenRen connect API, now go:</p>
+
+<ol>
+<li><p>Tom is a RenRen user, he just find an “application” which tells him he can improve his oral English, that’s interesting, he clicks it in order to add the application to his list.</p></li>
+<li><p>Then he find EQenglish.com, he uses his RenRen account to login EQenglish, He find he can order an speaking evaluation for free on the website, and what’s more, he even can push this message and/or the study status to his RenRen friends.</p></li>
+<li><p>Tom goes through EQenglish website to check EQ learning methods, He can easily share the web page to his RenRen friends.</p></li>
+<li><p>Andy is an EQenglish user, he bundles his EQ account and RenRen account on EQenglish website, so he can push his study status to his RenRen friends.</p></li>
+<li><p>Andy finally buy a course, then all EQ learners who have RenRen accounts can receive an email/notification, in which it broadcasts “Andy buy a course ***” something like that.</p></li>
+<li><p>Once Andy discussed an EQ lesson, his comments is synced to his RenRen status, all of his Friends there can see his status.</p></li>
+<li><p>Tom finds Andy’s EQ profile via the discussion thread, the surprise is Andy’s is his School mate, they have the same IELTS exam time. They connect with each other on RenRen.</p></li>
+<li><p>What’s more, Tom finds a section in EQ website, He can pick up all his Friends list, and suggest them to use EQ service. Also aside the lesson discussion thread, there is a live stream box connecting to RenRen page. so He can easily comment with friend..</p></li>
+</ol>
+
+
+<p>Etc..</p>
+
+<p>Above is a rough introduction of RenRen connect feature developer can build(it is based on RenRen connect’s API, not just my imagination).<a href="http://wiki.dev.renren.com/wiki/%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3">Click here to review RenRen Conncet Production Description.</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[valuable ruby on rails materials]]></title>
+    <link href="http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials/"/>
+    <updated>2010-03-26T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials</id>
+    <content type="html"><![CDATA[<p>一直关注<a href="http://blog.xdite.net/">XDite的blog</a>，他写的关于Rails的文章总是能让我从中受益。看见他写的Ruby on Rails的入门书单与练习作业，感觉非常的精炼，这个post很适合当作Rails新手的入门指导，鉴于此，我也把它推荐给Team，用来培训新入职的Rails developer. 在这里谢谢XDite老师 :)</p>
+
+<p>以下为全文转载，<a href="http://blog.xdite.net/?p=1754&amp;utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+xxddite+(Blog.XDite.net)">原文链接请点击此处</a>。</p>
+
+<p>==================================================</p>
+
+<p>學習 Ruby on Rails 最快的途徑無非是直接使用 Rails 撰寫產品。而這個過程中若有 mentor 指導以及 code review，學習進度也會加速不少。</p>
+
+<p>但現實生活中並非如此理想，</p>
+
+<p>第一，並不是每個人都有每天必須要以 Rails 撰寫產品的壓力（not a Rails Developer）。</p>
+
+<p>第二，沒有循序漸進的入門途徑以及沒有 mentor。（Framework 進展太快，導致現有書籍版本跟不上進度，另外具有經驗的 mentor 太少，有的話也沒興趣回答過於初階的問題）</p>
+
+<p>最近幾個月都在訓練 Rails Developer，零碎的東西講了不少遍。懶得一次次重講基礎的東西和開訓練菜單，乾脆整理成文字，以後新人就直接看這篇…</p>
+
+<p>新人需要具備的「一般」基礎技能：</p>
+
+<ol>
+    <li>對 Git 的觀念與技巧掌握。</li>
+    <li>對 VIM / Textmate 的基本開發技巧掌握。</li>
+    <li>熟悉 Linux Command Line 的操作。</li>
+</ol>
+
+
+<ul>
+<li>Git</li>
+</ul>
+
+
+<p>書單</p>
+
+<p>Peepcode 的 <a href="http://peepcode.com/products/git" target="_blank">Git</a> 與 <a href="http://progit.org/book/" target="_blank">Pro Git</a></p>
+
+<p>練習</p>
+
+<p>上 Github 開啟一個專案，練習 git commit , git push , git pull, git branch , git checkout , git merge</p>
+
+<ul>
+<li>Editor</li>
+</ul>
+
+
+<p>書單</p>
+
+<p>c9s 的 <a href="http://c9s.blogspot.com/2009/08/vim-hacks-coscup.html" target="_blank">VIM Hacks</a> 與 Oreilly 的 <a href="http://tlsj.tenlong.com.tw/WebModule/BookSearch/bookSearchViewAction.do?isbn=9789866840326&amp;sid=48676&amp;aid=69e42ffb" target="_blank">精通 vi 與 vim</a> 與 Pragmatic 的 <a href="http://www.pragprog.com/titles/textmate/textmate" target="_blank">TextMate: Power Editing for the Mac</a></p>
+
+<p>練習</p>
+
+<p>vgod 的 <a href="http://blog.vgod.tw/2009/12/08/vim-cheat-sheet-for-programmers/" target="_blank">給程式設計師的Vim入門圖解說明</a> 全部練習一遍</p>
+
+<ul>
+<li>Linux CLI</li>
+</ul>
+
+
+<p>書單與練習：</p>
+
+<p>Peepcode 的 <a href="http://peepcode.com/products/meet-the-command-line" target="_blank">Meet the Command Line</a> 、<a href="http://peepcode.com/products/advanced-command-line" target="_blank">Advanced Command Line </a> 全部練過一遍</p>
+
+<p>=====</p>
+
+<p>新人需要具備的 Rails 基礎技能：</p>
+
+<ol>
+    <li>可手刻 CRUD ( Create / Read / Update / Delete ) 並且理解 CRUD 中的 params 傳遞方法</li>
+    <li>route 中 resources 觀念配合 model 裡 has_many 的設計，理解並熟悉 RESTful 觀念。</li>
+    <li>route 的優先順序與 routes 中 resource / namespace 的實作。</li>
+    <li>named_scope 、 counter_cache、before_filter</li>
+    <li>plugin 的使用：<a href="http://github.com/technoweenie/restful-authentication" target="_blank">restful-authentication</a>、<a href="http://wiki.github.com/mislav/will_paginate/" target="_blank">will_paginate</a>、<a href="http://github.com/thoughtbot/paperclip" target="_blank">paperclip</a></li>
+    <li>rake 原理以及撰寫 task</li>
+    <li>ruby on rails 的 production setup 與撰寫 <a href="http://www.capify.org/" target="_blank">capistrano</a> recipes</li>
+</ol>
+
+
+<p>書單：（案頭必備）</p>
+
+<p><a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010350699" target="_blank">Ruby Programming — 向 Ruby 之父學程式設計</a>
+<a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010400655" target="_blank">Ruby for Rails - Rails 開發者必備的 Ruby 學習手冊</a> （英文新版： <a href="http://www.manning.com/black2/" target="_blank">The Well-Grounded Rubyist</a> )
+<a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010374225" target="_blank">碼上就會：Rails敏捷開發網站</a> （英文新版: <a href="http://www.pragprog.com/titles/rails3/agile-web-development-with-rails-third-edition" target="_blank">Agile Web Development with Rails, Third Edition</a> )
+<a href="http://my.safaribooksonline.com/9780321445612" target="_blank">The Rails Way</a>
+<a href="http://oreilly.com/catalog/9780596514815" target="_blank">Ruby Pocket Reference</a>
+<a href="http://www.pragprog.com/titles/fr_rr/rails-recipes" target="_blank">Rails Recipes</a>
+<a href="http://www.pragprog.com/titles/fr_arr/advanced-rails-recipes" target="_blank">Advanced Rails Recipes: 84 New Ways to Build Stunning Rails Apps</a></p>
+
+<p>線上工具：（必加書籤）</p>
+
+<p>Ruby API : <a href="http://www.ruby-doc.org/core/classes/String.html" target="_blank">String</a>、<a href="http://www.ruby-doc.org/core/classes/Array.html" target="_blank">Array</a>、<a href="http://www.ruby-doc.org/core/classes/Hash.html" target="_blank">Hash</a>
+APIDock : <a href="http://apidock.com/rails" target="_blank">Ruby on Rails</a></p>
+
+<p>練習作業：</p>
+
+<p>（1）開發一個簡易論壇系統。系統要有 Forum 與 Post 兩個 model，寫出 CRUD 介面，並且文章網址是使用 <a href="http://example.org/forum/1/post/2" target="_blank">http://example.org/forum/1/post/2</a> 這種表示。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>CRUD &amp; migration</li>
+<li>has_many 與 belongs_to</li>
+<li>resources 與雙層 resources</li>
+<li>before_filter : find_event</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://rails.pixnet.net/blog/post/22956704" target="_blank">深入淺出 RoR (4-3) - RESTful 與 CRUD action</a></li>
+<li><a href="http://ihower.tw/training/rails-tutoral.html" target="_blank">ihower training : Ruby on Rails 入門</a></li>
+</ul>
+
+
+<p>( 2）使用者必須能夠 註冊 / 登入，登入後才可以發表 Post，不然只能瀏覽。只有自己的 Post 才能進行修改與刪除。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>routes 優先權與 route alias</li>
+<li>plugin 安裝與使用</li>
+<li>before_filter : login_required</li>
+<li>session : current_user</li>
+<li><a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002281" target="_blank">attr_accessible</a> / <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002280" target="_blank">attr_protected</a></li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/technoweenie/restful-authentication" target="_blank">restful-authentication</a></li>
+</ul>
+
+
+<p>( 3）論壇的文章要能夠分頁，每一頁 20 筆，每一個論壇要秀出現在論壇裡有多少 post 數量。可用 params 配合 named_scope 在文章列表排序。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>pagination</li>
+<li>counter_cache</li>
+<li>named_scope :recent</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://wiki.github.com/mislav/will_paginate/" target="_blank">will_paginate</a></li>
+<li><a href="http://railscasts.com/episodes/23-counter-cache-column" target="_blank">Railscast : Counter Cache Column</a></li>
+<li><a href="http://railscasts.com/episodes/108-named-scope" target="_blank">Railscast : named_scope</a></li>
+</ul>
+
+
+<p>( 4）每篇文章可以上傳附件</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>form_for  multipart</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/thoughtbot/paperclip" target="_blank">paperclip</a></li>
+</ul>
+
+
+<p>( 5）Admin 可以刪改所有文章，建立一個後台做這件事。網址是 <a href="http://example.org/admin/" target="_blank">http://example.org/admin/</a>。只有身分是 admin 的人可以進後台。admin 的判別方是 column 裡加一個 boolean，判斷是否 admin。這個 attribute 必須用 <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002281" target="_blank">attr_accessible</a> / <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002280" target="_blank">attr_protected</a> 保護。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>route : namespace</li>
+<li>before_filter : require_is_admin</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://railstips.org/blog/archives/2007/04/28/namespaces-added-to-routes/" target="_blank">Namespaces added to routes</a></li>
+</ul>
+
+
+<p>( 6）用 Rake 撰寫自動化步驟，生假資料。寫一個 rake 可以達成以下步驟：「砍 db =&gt; 建 db =&gt; 跑 migration =&gt; 生種子資料」，另一個 rake 是生假文章與假論壇。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>rake -T</li>
+<li>rake db:drop ; rake db:create ; rake db:migrate ; rake db:seed</li>
+<li>rake dev:fake ( 自己寫 namespace : dev, 裡面放一個 task 叫做 fake，fake 資料用 <a href="http://github.com/ryanb/populator" target="_blank">Populator</a> 生）</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://railsenvy.com/2007/6/11/ruby-on-rails-rake-tutorial" target="_blank">Ruby on Rails Rake Tutorial (aka. How rake turned me into an alcoholic)</a></li>
+<li><a href="http://ryandaigle.com/articles/2009/5/13/what-s-new-in-edge-rails-database-seeding" target="_blank">What’s New in Edge Rails: Database Seeding</a></li>
+</ul>
+
+
+<p>( 7）在租來的 VPS 上面建置 Ruby on Rails production 環境，使用 Ruby Enterprise 與 mod_rails。使用 capistrano 佈署 application。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>cap deploy:setup , cap deploy , cap deploy:rollback , cap deploy:restart</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/jnstq/rails-nginx-passenger-ubuntu" target="_blank">rails-nginx-passenger-ubuntu </a></li>
+<li>AWDR3 的 deploy 章節 , <a href="http://oreilly.com/catalog/9780596514815" target="_blank">Ruby Pocket Reference</a> 的 capistrano 章節</li>
+</ul>
+
+
+<p>===</p>
+
+<p>PS. 實際測試的結果是，完全不懂 Ruby on Rails 的新人，從頭帶過大概兩週可以練完這一份作業。</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[jRails means jQuery on Rails]]></title>
+    <link href="http://yorzi.github.com/2010/01/19/jrails-means-jquery-on-rails/"/>
+    <updated>2010-01-19T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/01/19/jrails-means-jquery-on-rails</id>
+    <content type="html"><![CDATA[<p><em><strong>Note: This introduction post to jRails is copied(mirrored) form <a href="http://mirror.ozdiy.com/assets/b8/2f96a12bc919b37e09d303b86ea1b9_1251811910.html#install">this link</a>, so that I can bakeup this for advanced learning.</strong></em></p>
+
+<div>
+<h2>Intro</h2>
+jRails is a drop-in <a href="http://jquery.com/">jQuery</a> replacement for <a href="http://www.prototypejs.org/">Prototype</a>/<a href="http://script.aculo.us/">script.aculo.us</a> on Rails.         Using jRails, you can get all of the same default Rails helpers for javascript functionality using the lighter jQuery library.</div>
+
+
+<p><a name="news"></a></p>
+
+<div>
+<h2>News</h2>
+<h3>jRails 0.4 : jQuery 1.5!</h3>
+jQuery-UI has just gotten a major update to version 1.5 which stabilizes most of the controls and incorporates the Enchant effects library. jRails follows suit with a single js file for jquery-ui that includes both the modules and effects. The default jRails installation includes a compressed jquery-ui js file that includes the basic modules and effects supported by Prototype/Scriptaculous. There are no modifications to this file, so if you'd like to generate your own with additional modules or effects, just pop on over to the jQuery UI site and <a href="http://ui.jquery.com/download_builder/">customize your own</a>.
+
+This release of jRails also adds support for jQuery.noConflict(). Just uncomment the line in the init.rb file and set it to whatever you like. Now you can use jRails with other libraries without causing problems.</div>
+
+
+<p><a name="features"></a></p>
+
+<div>
+<h2>Features</h2>
+jRails provides drop-in functionality for these existing Rails methods.
+<ul>
+    <li>
+<ul>
+    <li><strong>Prototype</strong></li>
+    <li>form_remote_for</li>
+    <li>form_remote_tag</li>
+    <li>link_to_remote</li>
+    <li>observe_field</li>
+    <li>observe_form</li>
+    <li>periodically_call_remote</li>
+    <li>remote_form_for</li>
+    <li>submit_to_remote</li>
+</ul>
+</li>
+    <li>
+<ul>
+    <li><strong>Scriptaculous</strong></li>
+    <li>draggable_element</li>
+    <li>drop_receiving_element</li>
+    <li>sortable_element</li>
+    <li>visual_effect</li>
+</ul>
+</li>
+    <li>
+<ul>
+    <li><strong>RJS</strong></li>
+    <li>hide</li>
+    <li>insert_html</li>
+    <li>remove</li>
+    <li>replace</li>
+    <li>replace_html</li>
+    <li>show</li>
+    <li>toggle</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<p><a name="effects"></a></p>
+
+<div>
+<h2>Visual Effects</h2>
+These are the current effects that are included by default in jRails.
+<div>
+<div style="display: block;" onclick="$(this).hide().appear()">
+
+Appear</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).fade().pause(1500).appear()">
+
+Fade</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).puff().pause(1500).appear()">
+
+Puff</div>
+</div>
+<div>
+<div onclick="$(this).blindDown()">
+
+BlindDown</div>
+</div>
+<div>
+<div onclick="$(this).blindUp().pause(1500).appear()">
+
+BlindUp</div>
+</div>
+<div>
+<div onclick="$(this).blindRight()">
+
+BlindRight</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).blindLeft().pause(1500).appear()">
+
+BlindLeft</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).switchOff().pause(1500).appear()">
+
+SwitchOff</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).switchOn()">
+
+SwitchOn</div>
+</div>
+<div>
+<div onclick="$(this).slideDown()">
+
+SlideDown</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).slideUp().pause(1500).appear()">
+
+SlideUp</div>
+</div>
+<div>
+<div onclick="$(this).dropIn()">
+
+DropIn</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).dropOut().pause(1500).appear()">
+
+DropOut</div>
+</div>
+<div>
+<div onclick="$(this).shake()">
+
+Shake</div>
+</div>
+<div>
+<div style="opacity: 1;" onclick="$(this).pulsate()">
+
+Pulsate</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).squish().pause(1500).appear()">
+
+Squish</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).fold().pause(1500).appear()">
+
+Fold</div>
+</div>
+<div>
+<div onclick="$(this).foldOut()">
+
+FoldOut</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).grow()">
+
+Grow</div>
+</div>
+<div>
+<div style="display: block;" onclick="$(this).shrink().pause(1500).appear()">
+
+Shrink</div>
+</div>
+<div>
+<div onclick="$(this).highlight()">
+
+Highlight</div>
+</div>
+</div>
+
+
+<p><a name="howto"></a></p>
+
+<h2>How to use</h2>
+
+
+<p>Just install and go!        Once installed, the previous Prototype/script.aculo.us helpers will be replaced by jQuery ones.         In order for them to function correctly, just include the appropriate javascript files in the head of your page.</p>
+
+<div>
+<pre>&lt;script src="http://yorzi.github.com/javascripts/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://yorzi.github.com/javascripts/jquery-ui.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://yorzi.github.com/javascripts/jrails.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+</div>
+
+
+<p>You can also use the Rails javascript_include_tag helper with :default to load them automagically.</p>
+
+<div>
+<pre>&lt;%= javascript_include_tag :defaults %&gt;</pre>
+</div>
+
+
+<p><a name="installation"></a></p>
+
+<div>
+<h2>Install</h2>
+To install the jRails plugin:
+<div>
+<pre>./script/plugin install git://github.com/aaronchi/jrails.git</pre>
+</div>
+Then copy the javascript files in the plugin folder to your javascripts directory.</div>
+
+
+<p><a name="changelog"></a></p>
+
+<div>
+<h2>Changelog</h2>
+<ul>
+    <li><label>0.1.0 </label>: Initial Release</li>
+    <li><label>0.2.0 </label>: Major Effects Updates</li>
+    <li><label>0.3.0 </label>: jQuery Enchant</li>
+    <li><label>0.4.0 </label>: jQuery-ui 1.5 and jQuery.noConflict support</li>
+</ul>
+</div>
+
+
+<p><a name="contact"></a></p>
+
+<div>
+<h2>Contact</h2>
+You can post to the <a href="http://groups.google.com/group/jrails">jRails group forum</a> and I'll get back to you as soon as I can
+
+Comments, bug reports and feedback are welcomed.        I'm also considering developing a similar library for <a href="http://mootools.net/">MooTools</a> so if you are interested, please let me know.</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[an A/B test solution in ROR]]></title>
+    <link href="http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror/"/>
+    <updated>2010-01-14T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror</id>
+    <content type="html"><![CDATA[<p>Last few days, I worked for a mission to add more flexible control to <a href="http://www.eqenglish.com">our website</a> landing pages. What I did is to add a "a/b" test feature for new landing pages, that means, if people have two designs and want to compare the results, they only release two versions of landing page, and then only get one url for the two versions of pages, after that the url will automatically redirect to different versions evenly, so that through Google analytics marketing people can easily decide which landing page is much better.</p>
+
+<p><strong>Landing pages A/B test solution:</strong>
+<code lang="ruby">
+class LandingsController &lt; ApplicationController
+  layout "layouts/blank"
+  caches_page "ielts","ab_test"</p>
+
+<p>  def ielts</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first
+if @landing_page.ab_test?
+  if not params[:channel].blank?
+    redirect_to landing_ab_test_with_channel_path(["a","b"].rand,params[:url_slug],params[:channel])
+  else
+    redirect_to landing_ab_test_path(["a","b"].rand,params[:url_slug])
+  end
+else
+  render :layout =&gt; "layouts/landing_page"
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def ab_test</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:type].to_s + "/" + params[:url_slug].to_s)
+(@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first) if @landing_page.nil?
+render :layout =&gt; "layouts/landing_page"
+</code></pre>
+
+<p>  end
+end
+</code>
+<strong>Routing:</strong>
+<code lang="ruby">
+   map.landing_trunk "ielts/:url_slug", :controller => "landings", :action => "ielts"
+   map.landing_trunk_with_channel "ielts/:url_slug/:channel", :controller => "landings", :action => "ielts"
+   map.landing_ab_test "ielts/sub/:type/:url_slug/", :controller => "landings", :action => "ab_test"
+   map.landing_ab_test_with_channel "ielts/sub/:type/:url_slug/:channel", :controller => "landings", :action => "ab_test"
+</code></p>
+
+<p><strong>A/B test Sample:</strong>
+<em>Suppose</em>:</p>
+
+<pre><code>          We release a type of landing page called : university
+          And we have two kinds of different designs : called "a/university" and "b/university"
+          Then we may release the landing page to many universities, such as "beida", "renda", "qinghua" etc.. they are different channels.
+</code></pre>
+
+<p><em>Then we can</em>:</p>
+
+<pre><code>         Only release the url as "http://www.eqenglish.com/ielts/university" to any universities by following "/beida", "/renda", "/qinghua" etc...
+         It should be like this "http://www.eqenglish.com/ielts/university/beida",  "http://www.eqenglish.com/ielts/university/renda"... etc.. (For client use)
+         But in google analytics, you will see : "http://www.eqenglish.com/ielts/sub/a/university/beida"
+                                                              and : "http://www.eqenglish.com/ielts/sub/b/university/beida"  (For our analysis)
+</code></pre>
+
+<p> It means, different landing page and different channel and ("a" or "b") will be in a unique URL for certain purpose. but for our client, they don't need to care about "a/b" test, system will redirect pages automatically.</p>
+
+<p>Any involving comments are welcomed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Again about Formtastic]]></title>
+    <link href="http://yorzi.github.com/2010/01/07/formtastic/"/>
+    <updated>2010-01-07T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/01/07/formtastic</id>
+    <content type="html"><![CDATA[<p>Actually,
+I don't know how fantastic Formtastic is before this afternoon, I used it to refactor my form and it's pretty cool for me to wrap up all the massive code which I hate as always. Now every form is becoming nice.</p>
+
+<p>Some relevant and useful additions about Formtastic:</p>
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong><span style="line-height: 1.4em; padding: 0px; margin: 0px;">SASS</span>-stylesheets</strong> – for even more pretty styled forms in all browsers (mixins for different form layouts, etc.)<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/activestylus/formtastic-sass">http://github.com/activestylus/formtastic-sass</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>TextMate-bundle</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/formtastic_tmbundle">http://github.com/grimen/formtastic_tmbundle</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>In-place editor</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/rubymood/jintastic">http://github.com/rubymood/jintastic</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>Client-side validations</strong> that is compatible with Formtastic markup:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/validatious-on-rails">http://github.com/grimen/validatious-on-rails</a></p>
+
+]]></content>
+  </entry>
+  
+</feed>

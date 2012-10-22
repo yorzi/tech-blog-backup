@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: query string | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/query-string/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Script: Fetch parameter value from url]]></title>
+    <link href="http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url/"/>
+    <updated>2010-09-01T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url</id>
+    <content type="html"><![CDATA[<p>I wanna get the query string value, and set it to specific element, how to do that by javascript?
+Say, http://sample.com?author=andy, how to get author value which can be lately used. see the script below:</p>
+
+<pre><code land='javascript'>
+        function fetch_value(name)
+        {
+          name = name.replace(/[\[]/,'\\\[').replace(/[\]]/,'\\\]');
+          var regexS = '[\\?&]' + name+'=([^&#]*)';
+          var regex = new RegExp( regexS );
+          var results = regex.exec( window.location.href );
+          if( results == null )
+            return '';
+          else
+            return results[1];
+        }
+</code></pre>
+
+
+<p>Then you should use this function as fetch_value("author"), it will return the "andy".</p>
+]]></content>
+  </entry>
+  
+</feed>

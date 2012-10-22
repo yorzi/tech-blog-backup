@@ -1,0 +1,680 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Ruby On Rails | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-22T22:42:40+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[acts_as_favable is handy]]></title>
+    <link href="http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy/"/>
+    <updated>2010-12-01T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy</id>
+    <content type="html"><![CDATA[<p>Yes, it's more than two months in which I didn't write up any post here. I know I'd like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I've got many technology things/thoughts and tips that I want to share out.</p>
+
+<p>Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that's very easy to do that with acts_as_favable.</p>
+
+<p>Technically, <a href="https://rubygems.org/gems/acts_as_favable">acts_as_favable</a> is very similar with the gem acts_as_commentable or acts_as_votable, they are all about your actions on a specific object, so you can group them easily in user's page. Yeah, this gem is simple, I just use it in one of my application, it's Rails3 compatible.</p>
+
+<p>Why not just try it out if you want your user to add their favorites of some object(books/CDs etc.), more details is on github at:
+<a href="https://github.com/yorzi/acts_as_favable">https://github.com/yorzi/acts_as_favable</a></p>
+
+<p>Let me know if you have any question about using this gem/plugin in your project.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Study Note : serialize object in ActiveRecord]]></title>
+    <link href="http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord/"/>
+    <updated>2010-08-04T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord</id>
+    <content type="html"><![CDATA[<h2><span style="color: #444444; line-height: 24px; font-size: 16px;">Copied from <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M001799" target="_blank">Ruby on Rails API doc</a>. Store here as a study notes for myself.
+
+Active Record can <a href="Base.html#M001799">serialize</a> any object in text <a href="Base.html#M001809">columns</a> using YAML. To do so, you must specify this with a call to the class method <tt><a href="Base.html#M001799">serialize</a></tt>. This makes it possible to store arrays, hashes, and other non-mappable objects without doing any additional work. Example:</span></h2>
+
+
+<pre>  class User &lt; ActiveRecord::Base
+    serialize :preferences
+  end
+
+  user = User.create(:preferences =&gt; { "background" =&gt; "black", "display" =&gt; large })
+  User.find(user.id).preferences # =&gt; { "background" =&gt; "black", "display" =&gt; large }</pre>
+
+
+<p>You can also specify a class option as the second parameter that‘ll raise an exception if a serialized object is retrieved as a descendant of a class not in the hierarchy. Example:</p>
+
+<pre>  class User &lt; ActiveRecord::Base
+    serialize :preferences, Hash
+  end
+
+  user = User.create(:preferences =&gt; %w( one two three ))
+  User.find(user.id).preferences    # raises SerializationTypeMismatch</pre>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Study Notes: Passenger + Capistrano + Nginx + Rails 2.3.4 + Ubuntu 9.04 (10 steps)]]></title>
+    <link href="http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
+    <updated>2010-07-30T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
+    <content type="html"><![CDATA[<p><strong><em>This post is just copied from </em></strong><a href="http://rustammamedov.wordpress.com/2009/12/27/capistrano-nginx-mongrel-deployment/"><strong><em>this page</em></strong></a><strong><em>. As a study notes, I re-share this manual here. Please check out original one if you wanna have a whole view of other involving topics. Thanks to the </em></strong><a href="http://rustammamedov.wordpress.com/"><strong><em>author</em></strong></a><strong><em> :)</em></strong></p>
+
+<div>
+<div>
+<ol>
+    <li>Install capistrano gem. if you use <a href="http://yehudakatz.com/2009/11/03/using-the-new-gem-bundler-today">bundler</a> you need to add just one line to Gemfile
+<code>
+gem "capistrano"
+</code>
+and then run
+<code>gem bundle
+</code></li>
+    <li>after capistrano installed you need to make Capfile and default deploy.rb, run such from the root of your application
+<code>capify .</code></li>
+    <li>create user for deployments in remote machine (let’s say ‘deploy’ user)
+<code>adduser deploy</code></li>
+    <li>add sudo privileges to this user. add one line in your /etc/sudoers file
+<code>deploy ALL=(ALL) NOPASSWD: ALL</code></li>
+    <li>adjust deploy.rb for you. I used example from this <a href="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/">link</a>
+<code lang="ruby">
+# Application
+set :application, "test"
+set :deploy_to, "/var/www/#{application}"
+#   Settings
+default_run_options[:pty] = true
+set :use_sudo, true
+#   Servers
+set :user, "deploy"
+set :domain, "rustam.example.com"
+server domain, :app, :web
+role :db, domain, :primary =&gt; true
+#   Subversion
+set :repository, "http://www.rustam.example.com"
+set :svn_username, "rustam"
+set :svn_password, "password"
+set :checkout, "export"
+#   Passenger
+namespace :passenger do
+desc "Restart Application"
+task :restart do
+run "touch #{current_path}/tmp/restart.txt"
+end
+end
+after :deploy, "passenger:restart"
+</code>
+to understand how it works – read <a href="http://www.capify.org/index.php/Capistrano">this link</a></li>
+    <li>if you don’t use bundler, skip it. Otherwise, it will be usefull to add such piece of code to your deploy.rb file (from <a href="http://gist.github.com/244420">Richie’s post</a>)
+<code lang="ruby">
+# bundler
+namespace :bundler do
+  task :install do
+    run("gem install bundler --source=http://gemcutter.org")
+  end
+  
+  task :symlink_vendor do
+  shared_gems = File.join(shared_path, 'vendor/bundler_gems')
+  release_gems = "#{release_path}/vendor/bundler_gems/"
+    %w(cache gems specifications).each do |sub_dir|
+      shared_sub_dir = File.join(shared_gems, sub_dir)
+      run("mkdir -p #{shared_sub_dir} && mkdir -p #{release_gems} && ln -s #{shared_sub_dir} #{release_gems}/#{sub_dir}")
+    end
+  end
+
+  task :bundle_new_release do
+    bundler.symlink_vendor
+    rails_env = variables[:rails_env] || 'production'
+    run("cd #{release_path} && gem bundle --only #{rails_env}")
+  end
+end
+
+after 'deploy:update_code', 'bundler:bundle_new_release'
+</code>
+it will bundle all production gems to your bundler_gems path</li>
+    <li>ask Capistrano to create set of folders for deployments in the remote machine
+<code>cap deploy:setup</code></li>
+    <li>ask capistrano to check all remote folders:
+<code>cap deploy:check</code>
+it will return to you all problems that you have with both locale/remote machines – structure of folders/permissions etc. you can get something like this:
+<code>
+The following dependencies failed. Please check them and try again:
+--&gt; You do not have permissions to write to `/var/www'. (rustam.example.com)
+--&gt; You do not have permissions to write to `/var/www/releases'. (rustam.example.com)
+</code>
+When you’ll fix everything, you’ll get such:
+<code>You appear to have all necessary dependencies installed</code>
+it means that you’re finished with capistrano configs</li>
+    <li>you need to install passenger and nginx module for passenger in your remote machine according to <a href="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/">this</a>
+<code>
+sudo gem install passenger
+sudo passenger-install-nginx-module</code>
+the second command will tell you how to configure Nginx and to deploy rails application.
+it will create Nginx configuration file for you:
+<code>/opt/nginx/conf/nginx.conf)</code>
+you need to change server block there
+<code>
+server {
+listen 80;
+server_name rustam.example.com;
+root /var/www/current/public; # &lt;--- notice the 'public' part
+passenger_enabled on; # &lt;--- don't forget this!li
+}</code>
+everything is finished for passenger and nginx!</li>
+    <li>you can start deploy you app!
+<code>cap deploy:update</code> – copies your project to remote machine and updates symlinks
+<code>cap passenger-restart</code> – will start application</li>
+FYI <code>sudo /opt/nginx/sbin/nginx</code> starts nginx in the remote machine
+    <li><strong>Extra step</strong>: if you’re using bundler and used <a href="http://yehudakatz.com/2009/11/03/using-the-new-gem-bundler-today/">Yehuda’s link to run it</a>(like me <img src="http://s.wordpress.com/wp-includes/images/smilies/icon_smile.gif" alt=":)" /> ), you’ll have a problem with preinitializer. I used <a href="http://tomafro.net/2009/11/a-rails-template-for-gem-bundler">Tom Ward’s solution</a> to fix it
+i.e. put only such line to preinitializer.rb
+<code>require File.expand_path(File.join(File.dirname(__FILE__), "..", "gems", "environment"))</code>
+and add such piece of code just after loading boot
+<code>
+# Hijack rails initializer to load the bundler gem
+#environment before loading the rails environment.
+Rails::Initializer.module_eval do
+alias load_environment_without_bundler load_environment
+def load_environment
+Bundler.require_env configuration.environment
+load_environment_without_bundler
+end
+end
+</code></li>
+</ol>
+Links with detailed description:
+<ul>
+    <li><a title="http://wiki.zhekov.net/nginx" href="http://wiki.zhekov.net/nginx">nginx</a></li>
+    <li><a title="http://gautamrege.wordpress.com/2009/11/10/capistrano-nginx-thin-deployment-on-linode" href="http://gautamrege.wordpress.com/2009/11/10/capistrano-nginx-thin-deployment-on-linode">capistrano-nginx-thin-deployment-on-linode</a></li>
+    <li><a title="http://74.125.95.132/search?q=cache:NyrJDYo75rAJ:www.capify.org/index.php/From_The_Beginning+capistrano+from+the+beginning&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us&amp;client=firefox-a" href="http://74.125.95.132/search?q=cache:NyrJDYo75rAJ:www.capify.org/index.php/From_The_Beginning+capistrano+from+the+beginning&amp;cd=2&amp;hl=en&amp;ct=clnk&amp;gl=us&amp;client=firefox-a">Capistrano from the beginning</a></li>
+    <li><a title="http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/" href="http://www.viget.com/extend/building-an-environment-from-scratch-with-capistrano-2/">capistrano + passenger</a></li>
+    <li><a title="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/" href="http://jimneath.org/2008/05/10/using-capistrano-with-passenger-mod_rails/">capistrano + passenger + mod_rails</a></li>
+    <li><a title="http://www.rubyinside.com/28_mod_rails_and_passenger_resources-899.html" href="http://www.rubyinside.com/28_mod_rails_and_passenger_resources-899.html">28 links howto passenger + capistrano</a></li>
+    <li><a title="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/" href="http://blog.phusion.nl/2009/04/16/phusions-one-year-anniversary-gift-phusion-passenger-220/">passenger + nginx</a></li>
+    <li><a title="http://www.modrails.com/documentation/Users%20guide%20Nginx.html" href="http://www.modrails.com/documentation/Users%20guide%20Nginx.html">nginx guide for passenger</a></li>
+</ul>
+</div>
+</div>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Great Survey Solution Based On Ruby on Rails]]></title>
+    <link href="http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
+    <updated>2010-07-27T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
+    <content type="html"><![CDATA[<p>I've been always looking for a powerful and flexible survey solution for a while, now I find it : <a href="http://github.com/breakpointer/surveyor">Surveyor</a>.</p>
+
+<p><strong>What's a Survey? </strong>
+Here is a brief look at the similarities and differences between forms, surveys, questionnaires and quizzes.</p>
+
+<p>Forms are a series of fields to be filled out by a user. Some forms are highly structured (such as a User form, or an Address form). Those highly structured forms can be created beforehand by a developer because they can map directly to models in the database. Other forms are highly unstructured, such as a questionnaire about your favorite types of food which are volatile. So form is simple structured format.</p>
+
+<p>A Survey is a type of Form. Surveys are semi-structured data, in that we want to formulate the questions so they have “mineable” data, but they are not so structured as to be directly mappable to database tables (unless we desired to have one table per survey, do we?). Also If a survey field is not appropriately filled out (such as a misformatting), the user should be prompted to correct his/her answer. According to this needs, surveys should not prevent the user from completing them if they miss an answer, however. A Questionnaire is a type of Survey and meanwhile, a Quiz is also a type of Survey.</p>
+
+<p><strong>How To Set Up Surveys Via Surveyor?</strong>
+There is already a clear manual for helping people to use Surveyor <a href="http://github.com/breakpointer/surveyor">here</a>. You can find most of what you want directly in <a href="http://wiki.github.com/breakpointer/surveyor/">Surveyor's official wiki</a>. However, I still want to share my experience on using Surveyor.</p>
+
+<p><strong>Install Surveyor.</strong>
+As a plugin:</p>
+
+<pre>gem install haml
+gem install fastercsv
+script/plugin install git://github.com/breakpointer/surveyor.git -r 'tag v0.11.0'
+</pre>
+
+
+<p>Or as a gem:</p>
+
+<pre># in environment.rb
+config.gem "surveyor", :version => '~> 0.11.0', :source => 'http://gemcutter.org'
+---
+rake gems:install</pre>
+
+
+<p>Surveyor is relied on haml and fastercsv(this is for supporting export csv survey results)
+Generate assets, run migrations:</p>
+
+<pre>script/generate surveyor
+rake db:migrate</pre>
+
+
+<p>Try out the "kitchen sink" survey:
+<code>rake surveyor FILE=surveys/kitchen_sink_survey.rb FIXTURES=surveys/fixtures
+</code>
+The rake surveyor task overwrites previous surveys by default, but can append instead:
+<code>rake surveyor FILE=surveys/kitchen_sink_survey.rb FIXTURES=surveys/fixtures APPEND=true</code></p>
+
+<p>Now start your Rails server, you will see the demo survey "kitchen sink" on localhost:3000/surveys. This demo is pretty useful for you when you generate your own survey pattern. Because in kitchen sink demo, most of "Survey API" are there.</p>
+
+<p><strong>Survey Sample</strong>
+Well, let's create our first survey. I paste my first as below, we can take a look at the way Surveyor support.
+<code lang='ruby'></p>
+
+<h1>/surveys/salon_survey.rb</h1>
+
+<p>survey "欢迎您访问Idapted技术沙龙活动调查问卷！" do</p>
+
+<p>  section "[Rails系统重构最佳实践]@beta-salon 2010/07/24" do</p>
+
+<pre><code># A label is a question that accepts no answers
+label "&lt;b&gt;希望您填写自己的个人信息，我们会为您提供最快速和专业的Ruby on Rails技术活动资讯！&lt;/b&gt;"
+
+# When :pick isn't specified, the default is :none (no checkbox or radio button)
+q_1 "请填写您的姓名(中英文名均可)"
+a_1 :string
+
+q_3 "请填写您的电话(如果我们有更多后续的技术交流活动，我们会发短信通知您:))"
+a_3 :string
+
+q_3 "请填写您的邮箱(如果我们有更多后续的技术交流活动，我们也会发邮件通知您:))"
+a_3 :string
+
+# A basic question with checkboxes
+# "question" and "answer" may be abbreviated as "q" and "a"
+q_2 "我们公司(Idapted)的产品涉及到以下几种技术，请选择您喜欢的主题，我们的研发团队会根据大家的反馈继续开展相关技术交流活动！", :pick =&gt; :any
+a_1 "Ruby on Rails"
+a_2 "Flex/Flash"
+a_3 "VoIP/FreeSwitch"
+a_4 "Erlang"
+a_5 "Titanium/iPhone/iTouch/iPad Development"
+
+# A dependent question, with conditions and rule to logically join them  
+# the question's reference identifier is "2a", and the answer's reference_identifier is "1"
+# question reference identifiers used in conditions need to be unique on a survey for the lookups to work
+q_2a "请简单说明为什么您对所选择的技术感兴趣:)"
+a_1 "说明：", :text
+dependency :rule =&gt; "A or B or C or D"
+condition_A :q_2, "==", :a_1
+condition_B :q_2, "==", :a_2
+condition_C :q_2, "==", :a_3
+condition_D :q_2, "==", :a_4
+condition_E :q_2, "==", :a_5
+
+q_4 "您使用Ruby on Rails开发有多长时间了？", :pick =&gt; :one, :display_type =&gt; :slider
+["刚开始", "半年", "一年", "两年", "两年以上"].each{|level| a level}
+
+# Surveys, sections, questions, groups, and answers also take a custom css class for covenience in custom styling
+q_6 "请介绍一下您自己的工作和感兴趣的技术", :custom_class =&gt; 'address'
+a :text, :custom_class =&gt; 'mapper'
+# validations can use regexp values
+validation :rule =&gt; "A"
+condition_A "=~", :regexp =&gt; /[0-9a-zA-z\. #]/
+</code></pre>
+
+<p>  end
+end
+</code>
+In above sample, I create a "survey", then I also create a "section" inside a survey. Yeah, you can define many section for a survey to make the whole survey being like a wizard, that's pretty interesting. In on survey, there are more than 15 types of question, you can define a survey as using plain English, what you should obey is to refer to Kitchen Sink sample, it means you can only define a question type according to the certain rule, don't worry, the rule is simple.</p>
+
+<p>Once you finished defining the survey, it means you now have a ruby file, say salon_survey.rb, you should run the following commend in your terminal to migrate all your survey items into your application, remember the append command, it will let you not to delete previous survey which stored in the same application.</p>
+
+<pre>rake surveyor FILE=surveys/salon_survey.rb FIXTURES=surveys/fixtures APPEND=true</pre>
+
+
+<p>Wow, you now have your new survey list in the Survey root path after you restart your server. I guess you will like it.</p>
+
+<p><strong>Customize Survey</strong>
+All go well so far, But, there is a big weakness of this survey solution if you only use it as above. Because the Surveyor doesn't support any easy way to manage the survey results. You should add the administration side in your application by yourself. I will also give you some hints on doing this.</p>
+
+<p>Before your create management part for survey results, I remind you take a look at the survey configure file where you can do some really simple config for specific survey, such as define welcome page and finish page, or the survey title you want to customize. It's something as below:
+<code lang='ruby'></p>
+
+<h1>Initializers/surveyor.rb</h1>
+
+<h1>Loaded once. Restart your app (even in development) to apply changes made here</h1>
+
+<p>Surveyor::Config.run do |config|
+  config['default.relative_url_root'] = "surveys" #nil # "surveys"
+  config['default.title'] = "EQ英语(Idapted) 技术沙龙调查问卷" #nil # "You can take these surveys:"
+  config['default.layout'] = "surveyor_custom" # "surveyor_default"
+  config['default.index'] = nil#:welcome_pages_path #:welcome_pages_path # "/surveys" # or :index_path_method
+  config['default.finish'] =  :thankyou_pages_path # "/surveys" # or :finish_path_method
+  config['use_restful_authentication'] = false # set to true to use restful authentication
+  config['extend'] = %w(survey surveyor_helper surveyor_controller) #%w()
+end
+</code></p>
+
+<p><strong>Survey Results Statistics</strong>
+OK, last hints about adding management part of survey, here we should know clearly what's the survey's structure. So what's Survey's data structure? It's like this:</p>
+
+<pre>
+# Survey structure
+Survey-------Section1---------Question1---------Many Answers(From different user)
+                                      ---------Q2
+                                      ---------Q3
+                                      ---------More Question
+          -------Section2
+          -------More Sections
+
+#Response Structure. Each User Has one unique <strong>ResponseSet</strong>
+ResponseSet---------Response1
+                    ---------Response2
+                    ---------More Responses
+</pre>
+
+
+<p>So you can display all results as you need. I do it as below:
+<code lang='ruby'></p>
+
+<h1>results_controller.rb</h1>
+
+<p>class Admin::ResultsController &lt; Admin::BaseController
+  layout "results"</p>
+
+<p>  def index</p>
+
+<pre><code>@surveys = Survey.all
+</code></pre>
+
+<p>  end</p>
+
+<p>  def show</p>
+
+<pre><code>@survey = Survey.find(params[:id])
+@response_sets = @survey.response_sets
+@questions = SurveySection.find_by_survey_id(params[:id]).questions
+</code></pre>
+
+<p>  end
+end</p>
+
+<h1>View show.html.erb</h1>
+
+<table class="list_table">
+  <tr>
+    <th>ID</th>
+    <th>Code</th>
+    <% @questions.each do |question| %>
+        <% next if question.display_order == 1 %>
+        <th><%= "[" +question.display_order.to_s + "]" + question.text  %></th>
+    <% end %>
+  </tr>
+
+<% @response_sets.each do |r_set| %>
+  <tr>
+    <td><%=h r_set.id %></td>
+    <td><%=h r_set.access_code %></td>
+    <% @questions.each do |question| %>
+        <% next if question.display_order == 1 %>
+        <td><%= display_response(r_set,question) %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+
+
+<h1>results_helper.rb</h1>
+
+<p>module Admin::ResultsHelper
+  def display_response(r_set,question)</p>
+
+<pre><code>sets = r_set.responses.select{|r| r.question.display_order == question.display_order}
+    if sets.size == 0
+        return "-"
+    elsif sets.size == 1
+        return (sets.first.string_value || sets.first.text_value || show_answer(sets.first))
+    else
+      txt = ""
+    sets.each do |set|
+      txt &lt;&lt; show_answer(set) + "&lt;br/&gt;"
+    end
+    return txt
+ end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def show_answer(set)</p>
+
+<pre><code> set.answer.text
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p>God, I really make a long post, hope you can find something useful, feel free to contact me if you have any confusion.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[valuable ruby on rails materials]]></title>
+    <link href="http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials/"/>
+    <updated>2010-03-26T00:00:00+08:00</updated>
+    <id>http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials</id>
+    <content type="html"><![CDATA[<p>一直关注<a href="http://blog.xdite.net/">XDite的blog</a>，他写的关于Rails的文章总是能让我从中受益。看见他写的Ruby on Rails的入门书单与练习作业，感觉非常的精炼，这个post很适合当作Rails新手的入门指导，鉴于此，我也把它推荐给Team，用来培训新入职的Rails developer. 在这里谢谢XDite老师 :)</p>
+
+<p>以下为全文转载，<a href="http://blog.xdite.net/?p=1754&amp;utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+xxddite+(Blog.XDite.net)">原文链接请点击此处</a>。</p>
+
+<p>==================================================</p>
+
+<p>學習 Ruby on Rails 最快的途徑無非是直接使用 Rails 撰寫產品。而這個過程中若有 mentor 指導以及 code review，學習進度也會加速不少。</p>
+
+<p>但現實生活中並非如此理想，</p>
+
+<p>第一，並不是每個人都有每天必須要以 Rails 撰寫產品的壓力（not a Rails Developer）。</p>
+
+<p>第二，沒有循序漸進的入門途徑以及沒有 mentor。（Framework 進展太快，導致現有書籍版本跟不上進度，另外具有經驗的 mentor 太少，有的話也沒興趣回答過於初階的問題）</p>
+
+<p>最近幾個月都在訓練 Rails Developer，零碎的東西講了不少遍。懶得一次次重講基礎的東西和開訓練菜單，乾脆整理成文字，以後新人就直接看這篇…</p>
+
+<p>新人需要具備的「一般」基礎技能：</p>
+
+<ol>
+    <li>對 Git 的觀念與技巧掌握。</li>
+    <li>對 VIM / Textmate 的基本開發技巧掌握。</li>
+    <li>熟悉 Linux Command Line 的操作。</li>
+</ol>
+
+
+<ul>
+<li>Git</li>
+</ul>
+
+
+<p>書單</p>
+
+<p>Peepcode 的 <a href="http://peepcode.com/products/git" target="_blank">Git</a> 與 <a href="http://progit.org/book/" target="_blank">Pro Git</a></p>
+
+<p>練習</p>
+
+<p>上 Github 開啟一個專案，練習 git commit , git push , git pull, git branch , git checkout , git merge</p>
+
+<ul>
+<li>Editor</li>
+</ul>
+
+
+<p>書單</p>
+
+<p>c9s 的 <a href="http://c9s.blogspot.com/2009/08/vim-hacks-coscup.html" target="_blank">VIM Hacks</a> 與 Oreilly 的 <a href="http://tlsj.tenlong.com.tw/WebModule/BookSearch/bookSearchViewAction.do?isbn=9789866840326&amp;sid=48676&amp;aid=69e42ffb" target="_blank">精通 vi 與 vim</a> 與 Pragmatic 的 <a href="http://www.pragprog.com/titles/textmate/textmate" target="_blank">TextMate: Power Editing for the Mac</a></p>
+
+<p>練習</p>
+
+<p>vgod 的 <a href="http://blog.vgod.tw/2009/12/08/vim-cheat-sheet-for-programmers/" target="_blank">給程式設計師的Vim入門圖解說明</a> 全部練習一遍</p>
+
+<ul>
+<li>Linux CLI</li>
+</ul>
+
+
+<p>書單與練習：</p>
+
+<p>Peepcode 的 <a href="http://peepcode.com/products/meet-the-command-line" target="_blank">Meet the Command Line</a> 、<a href="http://peepcode.com/products/advanced-command-line" target="_blank">Advanced Command Line </a> 全部練過一遍</p>
+
+<p>=====</p>
+
+<p>新人需要具備的 Rails 基礎技能：</p>
+
+<ol>
+    <li>可手刻 CRUD ( Create / Read / Update / Delete ) 並且理解 CRUD 中的 params 傳遞方法</li>
+    <li>route 中 resources 觀念配合 model 裡 has_many 的設計，理解並熟悉 RESTful 觀念。</li>
+    <li>route 的優先順序與 routes 中 resource / namespace 的實作。</li>
+    <li>named_scope 、 counter_cache、before_filter</li>
+    <li>plugin 的使用：<a href="http://github.com/technoweenie/restful-authentication" target="_blank">restful-authentication</a>、<a href="http://wiki.github.com/mislav/will_paginate/" target="_blank">will_paginate</a>、<a href="http://github.com/thoughtbot/paperclip" target="_blank">paperclip</a></li>
+    <li>rake 原理以及撰寫 task</li>
+    <li>ruby on rails 的 production setup 與撰寫 <a href="http://www.capify.org/" target="_blank">capistrano</a> recipes</li>
+</ol>
+
+
+<p>書單：（案頭必備）</p>
+
+<p><a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010350699" target="_blank">Ruby Programming — 向 Ruby 之父學程式設計</a>
+<a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010400655" target="_blank">Ruby for Rails - Rails 開發者必備的 Ruby 學習手冊</a> （英文新版： <a href="http://www.manning.com/black2/" target="_blank">The Well-Grounded Rubyist</a> )
+<a href="http://www.books.com.tw/exep/prod/booksfile.php?item=0010374225" target="_blank">碼上就會：Rails敏捷開發網站</a> （英文新版: <a href="http://www.pragprog.com/titles/rails3/agile-web-development-with-rails-third-edition" target="_blank">Agile Web Development with Rails, Third Edition</a> )
+<a href="http://my.safaribooksonline.com/9780321445612" target="_blank">The Rails Way</a>
+<a href="http://oreilly.com/catalog/9780596514815" target="_blank">Ruby Pocket Reference</a>
+<a href="http://www.pragprog.com/titles/fr_rr/rails-recipes" target="_blank">Rails Recipes</a>
+<a href="http://www.pragprog.com/titles/fr_arr/advanced-rails-recipes" target="_blank">Advanced Rails Recipes: 84 New Ways to Build Stunning Rails Apps</a></p>
+
+<p>線上工具：（必加書籤）</p>
+
+<p>Ruby API : <a href="http://www.ruby-doc.org/core/classes/String.html" target="_blank">String</a>、<a href="http://www.ruby-doc.org/core/classes/Array.html" target="_blank">Array</a>、<a href="http://www.ruby-doc.org/core/classes/Hash.html" target="_blank">Hash</a>
+APIDock : <a href="http://apidock.com/rails" target="_blank">Ruby on Rails</a></p>
+
+<p>練習作業：</p>
+
+<p>（1）開發一個簡易論壇系統。系統要有 Forum 與 Post 兩個 model，寫出 CRUD 介面，並且文章網址是使用 <a href="http://example.org/forum/1/post/2" target="_blank">http://example.org/forum/1/post/2</a> 這種表示。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>CRUD &amp; migration</li>
+<li>has_many 與 belongs_to</li>
+<li>resources 與雙層 resources</li>
+<li>before_filter : find_event</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://rails.pixnet.net/blog/post/22956704" target="_blank">深入淺出 RoR (4-3) - RESTful 與 CRUD action</a></li>
+<li><a href="http://ihower.tw/training/rails-tutoral.html" target="_blank">ihower training : Ruby on Rails 入門</a></li>
+</ul>
+
+
+<p>( 2）使用者必須能夠 註冊 / 登入，登入後才可以發表 Post，不然只能瀏覽。只有自己的 Post 才能進行修改與刪除。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>routes 優先權與 route alias</li>
+<li>plugin 安裝與使用</li>
+<li>before_filter : login_required</li>
+<li>session : current_user</li>
+<li><a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002281" target="_blank">attr_accessible</a> / <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002280" target="_blank">attr_protected</a></li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/technoweenie/restful-authentication" target="_blank">restful-authentication</a></li>
+</ul>
+
+
+<p>( 3）論壇的文章要能夠分頁，每一頁 20 筆，每一個論壇要秀出現在論壇裡有多少 post 數量。可用 params 配合 named_scope 在文章列表排序。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>pagination</li>
+<li>counter_cache</li>
+<li>named_scope :recent</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://wiki.github.com/mislav/will_paginate/" target="_blank">will_paginate</a></li>
+<li><a href="http://railscasts.com/episodes/23-counter-cache-column" target="_blank">Railscast : Counter Cache Column</a></li>
+<li><a href="http://railscasts.com/episodes/108-named-scope" target="_blank">Railscast : named_scope</a></li>
+</ul>
+
+
+<p>( 4）每篇文章可以上傳附件</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>form_for  multipart</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/thoughtbot/paperclip" target="_blank">paperclip</a></li>
+</ul>
+
+
+<p>( 5）Admin 可以刪改所有文章，建立一個後台做這件事。網址是 <a href="http://example.org/admin/" target="_blank">http://example.org/admin/</a>。只有身分是 admin 的人可以進後台。admin 的判別方是 column 裡加一個 boolean，判斷是否 admin。這個 attribute 必須用 <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002281" target="_blank">attr_accessible</a> / <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M002280" target="_blank">attr_protected</a> 保護。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>route : namespace</li>
+<li>before_filter : require_is_admin</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://railstips.org/blog/archives/2007/04/28/namespaces-added-to-routes/" target="_blank">Namespaces added to routes</a></li>
+</ul>
+
+
+<p>( 6）用 Rake 撰寫自動化步驟，生假資料。寫一個 rake 可以達成以下步驟：「砍 db =&gt; 建 db =&gt; 跑 migration =&gt; 生種子資料」，另一個 rake 是生假文章與假論壇。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>rake -T</li>
+<li>rake db:drop ; rake db:create ; rake db:migrate ; rake db:seed</li>
+<li>rake dev:fake ( 自己寫 namespace : dev, 裡面放一個 task 叫做 fake，fake 資料用 <a href="http://github.com/ryanb/populator" target="_blank">Populator</a> 生）</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://railsenvy.com/2007/6/11/ruby-on-rails-rake-tutorial" target="_blank">Ruby on Rails Rake Tutorial (aka. How rake turned me into an alcoholic)</a></li>
+<li><a href="http://ryandaigle.com/articles/2009/5/13/what-s-new-in-edge-rails-database-seeding" target="_blank">What’s New in Edge Rails: Database Seeding</a></li>
+</ul>
+
+
+<p>( 7）在租來的 VPS 上面建置 Ruby on Rails production 環境，使用 Ruby Enterprise 與 mod_rails。使用 capistrano 佈署 application。</p>
+
+<p>吸收觀念：</p>
+
+<ul>
+<li>cap deploy:setup , cap deploy , cap deploy:rollback , cap deploy:restart</li>
+</ul>
+
+
+<p>參考資料：</p>
+
+<ul>
+<li><a href="http://github.com/jnstq/rails-nginx-passenger-ubuntu" target="_blank">rails-nginx-passenger-ubuntu </a></li>
+<li>AWDR3 的 deploy 章節 , <a href="http://oreilly.com/catalog/9780596514815" target="_blank">Ruby Pocket Reference</a> 的 capistrano 章節</li>
+</ul>
+
+
+<p>===</p>
+
+<p>PS. 實際測試的結果是，完全不懂 Ruby on Rails 的新人，從頭帶過大概兩週可以練完這一份作業。</p>
+]]></content>
+  </entry>
+  
+</feed>
