@@ -9,7 +9,7 @@
   <meta name="author" content="Andy Wang">
 
   
-  <meta name="description" content="TIPS: function SetAllCheckBoxes(FormName, FieldName, CheckValue) { if(!document.forms[FormName]) return; var objCheckBoxes = document.forms[FormName &hellip;">
+  <meta name="description" content="一直关注XDite的blog，他写的关于Rails的文章总是能让我从中受益。看见他写的Ruby on Rails的入门书单与练习作业，感觉非常的精炼，这个post很适合当作Rails新手的入门指导，鉴于此，我也把它推荐给Team，用来培训新入职的Rails developer. &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -80,75 +80,6 @@
     <div id="content">
       <div class="blog-index">
   
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/">JS: Select All Checkbox and Submit Form via Js</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-04-12T00:00:00+08:00" pubdate data-updated="true">Apr 12<span>th</span>, 2010</time>
-        
-         | <a href="/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><strong>TIPS:</strong>
-
-<code lang='js'>
-<script type="text/javascript">
-  function SetAllCheckBoxes(FormName, FieldName, CheckValue)
-  {
-    if(!document.forms[FormName])
-      return;
-    var objCheckBoxes = document.forms[FormName].elements[FieldName];
-    if(!objCheckBoxes)
-      return;
-    var countCheckBoxes = objCheckBoxes.length;
-    if(!countCheckBoxes)
-      objCheckBoxes.checked = CheckValue;
-    else
-    // set the check value for all check boxes
-      for(var i = 0; i < countCheckBoxes; i++)
-        objCheckBoxes[i].checked = CheckValue;
-  }
-
-  function SendForm(FormName, ActionName)
-  {
-    if(!document.forms[FormName])
-      return;
-    if(ActionName == 'unread')
-      document.forms[FormName].action = '<%= batch_update_notifications_path(:type => "unread") %>';
-    if(ActionName == 'remove')
-      document.forms[FormName].action = '<%= batch_update_notifications_path(:type => "remove") %>';
-    document.forms[FormName].submit();
-  }
-</script>
-</code>
-</div>
-  
-  
-
-
-    </article>
   
   
     <article>
@@ -1202,6 +1133,52 @@ feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可
 
     </article>
   
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/12/28/funny-pictures/">Funny Pictures</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-28T00:00:00+08:00" pubdate data-updated="true">Dec 28<span>th</span>, 2009</time>
+        
+         | <a href="/2009/12/28/funny-pictures/#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近看见两张图，很有意思，废话少说，直接上图：</p>
+
+<p>关于编程语言
+<a href="http://blog.wangyaodi.com/wp-content/uploads/2009/12/lang.jpg"><img src="http://blog.wangyaodi.com/wp-content/uploads/2009/12/lang-300x196.jpg" alt="language fighting" title="language fighting" width="300" height="196" class="aligncenter size-medium wp-image-270" /></a></p>
+
+<p>关于操作系统
+<a href="http://blog.wangyaodi.com/wp-content/uploads/2009/12/os.jpg"><img src="http://blog.wangyaodi.com/wp-content/uploads/2009/12/os-300x219.jpg" alt="OS fighting" title="OS fighting" width="300" height="219" class="aligncenter size-medium wp-image-271" /></a></p>
+
+<p>haha, I am playing with <a href="http://www.ruby-lang.org/en/">Ruby</a> on <a href="http://www.ubuntu.com/">Linux</a>!</p>
+</div>
+  
+  
+
+
+    </article>
+  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/6/">&larr; Older</a>
@@ -1225,10 +1202,6 @@ feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
-      </li>
-    
-      <li class="post">
         <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
       </li>
     
@@ -1242,6 +1215,10 @@ feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>
