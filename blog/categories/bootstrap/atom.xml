@@ -4,7 +4,7 @@
   <title><![CDATA[Category: BootStrap | @yorzi]]></title>
   <link href="http://tech.wangyaodi.com/blog/categories/bootstrap/atom.xml" rel="self"/>
   <link href="http://tech.wangyaodi.com/"/>
-  <updated>2012-10-23T16:11:35+08:00</updated>
+  <updated>2012-10-23T16:13:35+08:00</updated>
   <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
@@ -67,8 +67,12 @@ File.open('index.html', File::RDONLY)
 
 <p>  ]
 }
-<code>``
-- Add</code>Procfile` in root folder to config the heroku web server and worker(if there is any).</p>
+```</p>
+
+<ul>
+<li>Add <code>Procfile</code> in root folder to config the heroku web server and worker(if there is any).</li>
+</ul>
+
 
 <p><code>
 web: bundle exec rackup -p $PORT

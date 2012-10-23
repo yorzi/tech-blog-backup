@@ -4,7 +4,7 @@
   <title><![CDATA[@yorzi]]></title>
   <link href="http://tech.wangyaodi.com/atom.xml" rel="self"/>
   <link href="http://tech.wangyaodi.com/"/>
-  <updated>2012-10-23T16:11:35+08:00</updated>
+  <updated>2012-10-23T16:13:35+08:00</updated>
   <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
@@ -82,8 +82,10 @@
 </span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
 
 
-<p>
-- Add <code>Procfile</code> in root folder to config the heroku web server and worker(if there is any).</p>
+<ul>
+<li>Add <code>Procfile</code> in root folder to config the heroku web server and worker(if there is any).</li>
+</ul>
+
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>web: bundle exec rackup -p $PORT</span></code></pre></td></tr></table></div></figure>
