@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Static | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/static/atom.xml" rel="self"/>
+  <title><![CDATA[Category: BootStrap | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/bootstrap/atom.xml" rel="self"/>
   <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T13:28:00+08:00</updated>
+  <updated>2012-10-23T13:29:22+08:00</updated>
   <id>http://yorzi.github.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
