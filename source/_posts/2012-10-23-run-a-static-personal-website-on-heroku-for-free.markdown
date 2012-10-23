@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "Run a static personal website on Heroku for Free"
+title: "Run static website on Heroku for Free"
 date: 2012-10-23 13:19
 comments: true
-categories: Heroku, BootStrap, Resume, Static Website, Free
+categories: Heroku BootStrap Resume 'Static Website' Free
 ---
 
-<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a><br /><span>Uploaded with <a href="http://skitch.com">Skitch</a>!</span></div>
+<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a></div>
 
 Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.
 
