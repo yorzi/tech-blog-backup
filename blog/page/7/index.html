@@ -9,8 +9,8 @@
   <meta name="author" content="Andy Wang">
 
   
-  <meta name="description" content="Rails Best Practice Snippet: Model refactor.
-Reference link to the PDF.Rails-best-practices. Before: class Invoice &lt; ActiveRecord::Base belongs_to &hellip;">
+  <meta name="description" content="Rails Best Practice Snippet: About named_scope.
+Reference link to the PDF. Rails-best-practices. named_scope is a Rails 2.x feature which can &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -87,6 +87,105 @@ Reference link to the PDF.Rails-best-practices. Before: class Invoice &lt; Activ
       
   <header>
     
+      <h1 class="entry-title"><a href="/2009/12/07/love-named_scope/">Love Named_scope</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-07T00:00:00+08:00" pubdate data-updated="true">Dec 7<span>th</span>, 2009</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Rails Best Practice Snippet: About named_scope.
+Reference link to the PDF. <a rel="attachment wp-att-125" href="http://tech.wangyaodi.com/?attachment_id=125">Rails-best-practices.</a></p>
+
+<p>named_scope is a Rails 2.x feature which can simplify your rails code, move your finders into their own Model, and compact the code logically and gracefully. Below code refactoring is a named_scope sample to show the tricky.</p>
+
+<p><strong>BEFORE</strong>
+<code lang="ruby">
+class PostController &lt; ApplicationController
+  def search</p>
+
+<pre><code>conditions = { :title =&gt; "%#{params[:title]}%" } if params[:title]
+conditions.merge!{ :content =&gt; "%#{params[:content]}%" } if params[:content]
+case params[:order]
+  when "title" : order = "title desc"
+  when "created_at" : order = "created_at"
+end
+if params[:is_published]
+  conditions.merge!{ :is_published =&gt; true }
+end
+@posts = Post.find(:all, :conditions =&gt; conditions, :order =&gt; order,
+                         :limit =&gt; params[:limit])
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p><strong>AFTER</strong>
+<code lang="ruby">
+class Post &lt; ActiveRecord::Base
+  named_scope :matching, lambda { |column, value|</p>
+
+<pre><code>return {} if value.blank?
+{ :conditions =&gt; ["#{column} like ?", "%#{value}%"] }
+</code></pre>
+
+<p>  }
+  named_scope :order, lambda { |order|
+  { :order => case order</p>
+
+<pre><code>  when "title" : "title desc"
+  when "created_at" : "created_at"
+end }
+</code></pre>
+
+<p>  }
+end
+</code>
+<code lang="ruby">
+class PostController &lt; ApplicationController
+  def search</p>
+
+<pre><code>@posts = Post.matching(:title, params[:title])
+             .matching(:content, params[:content])
+             .order(params[:order])
+</code></pre>
+
+<p>  end
+end
+</code></p>
+
+<p>More references :
+<a href="http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality">http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality</a>
+<a href="http://railscasts.com/episodes/108-named-scope">http://railscasts.com/episodes/108-named-scope</a></p>
+</div>
+  
+  
+
+
+    </article>
+  
+  
+    <article>
+      
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/11/26/law-of-demeter/">Law of Demeter</a></h1>
     
     
@@ -104,8 +203,6 @@ Reference link to the PDF.Rails-best-practices. Before: class Invoice &lt; Activ
 
 
 <time datetime="2009-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2009</time>
-        
-         | <a href="/2009/11/26/law-of-demeter/#disqus_thread">Comments</a>
         
       </p>
     
@@ -165,8 +262,6 @@ end
 
 
 <time datetime="2009-11-26T00:00:00+08:00" pubdate data-updated="true">Nov 26<span>th</span>, 2009</time>
-        
-         | <a href="/2009/11/26/ajax-support-in-rails/#disqus_thread">Comments</a>
         
       </p>
     
@@ -231,8 +326,6 @@ Will copy all the JavaScript support functions within a single script block. Not
 
 
 <time datetime="2009-11-19T00:00:00+08:00" pubdate data-updated="true">Nov 19<span>th</span>, 2009</time>
-        
-         | <a href="/2009/11/19/erlang/#disqus_thread">Comments</a>
         
       </p>
     
@@ -459,8 +552,6 @@ Response:write_chunk(io_lib:format(&#8220;The time is: ~p~n&#8221;,
 
 <time datetime="2009-11-17T00:00:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2009</time>
         
-         | <a href="/2009/11/17/ui-framework/#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -505,8 +596,6 @@ Response:write_chunk(io_lib:format(&#8220;The time is: ~p~n&#8221;,
 
 <time datetime="2009-11-17T00:00:00+08:00" pubdate data-updated="true">Nov 17<span>th</span>, 2009</time>
         
-         | <a href="/2009/11/17/jquery-for-rails-developer/#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -543,8 +632,6 @@ Response:write_chunk(io_lib:format(&#8220;The time is: ~p~n&#8221;,
 
 
 <time datetime="2009-11-13T00:00:00+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
-        
-         | <a href="/2009/11/13/run-corn-job-in-ruby-way/#disqus_thread">Comments</a>
         
       </p>
     
@@ -596,8 +683,6 @@ Response:write_chunk(io_lib:format(&#8220;The time is: ~p~n&#8221;,
 
 
 <time datetime="2009-11-13T00:00:00+08:00" pubdate data-updated="true">Nov 13<span>th</span>, 2009</time>
-        
-         | <a href="/2009/11/13/feed-parser-in-ruby/#disqus_thread">Comments</a>
         
       </p>
     
@@ -684,8 +769,6 @@ end
 
 <time datetime="2009-11-12T00:00:00+08:00" pubdate data-updated="true">Nov 12<span>th</span>, 2009</time>
         
-         | <a href="/2009/11/12/primary_key-and-foreign_key-in-rails-association/#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -743,8 +826,6 @@ end
 
 <time datetime="2009-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time>
         
-         | <a href="/2009/11/11/set-static-ip-on-ubuntu/#disqus_thread">Comments</a>
-        
       </p>
     
   </header>
@@ -776,65 +857,6 @@ iface eth0 inet static</p>
 
     </article>
   
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/11/11/cheat-sheet-in-terminal/">Cheat Sheet in Terminal</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-11-11T00:00:00+08:00" pubdate data-updated="true">Nov 11<span>th</span>, 2009</time>
-        
-         | <a href="/2009/11/11/cheat-sheet-in-terminal/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I found a cool gem called &#8220;cheat&#8221;, it&#8217;s pretty handy and convenient when you wanna see a brief help/introduction of some &#8220;stuff&#8221; in command line, cheat out the website for more <a href="http://cheat.errtheblog.com/b">wiki-versioned cheat sheet</a>.</p>
-
-<blockquote>
-Get started:
-<i style="color:yellow">$ sudo gem install cheat
-$ cheat strftime</i>
-
-A magnificent cheat sheet for Ruby&#8217;s strftime method will be printed to your terminal.
-
-To get some help on cheat itself:
-<i style="color:yellow">$ cheat cheat</i>
-
-How meta.
-
-Cheat sheets are basically wiki pages accessible from the command line. You can browse, add, or edit cheat sheets. Try to keep them concise. For a style guide, check out the cheat cheat sheet.
-
-To access a cheat sheet, simply pass the program the desired sheet&#8217;s name:
-<i style="color:yellow">$ cheat <sheet name></i>
-</blockquote>
-
-
-<p>Reference : <a href="http://cheat.errtheblog.com/">CLICK HERE</a>!</p>
-</div>
-  
-  
-
-
-    </article>
-  
   <div class="pagination">
     
       <a class="prev" href="/blog/page/8/">&larr; Older</a>
@@ -858,6 +880,10 @@ To access a cheat sheet, simply pass the program the desired sheet&#8217;s name:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2012/10/23/run-a-static-personal-website-on-heroku-for-free/">Run a static personal website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
         <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
       </li>
     
@@ -871,10 +897,6 @@ To access a cheat sheet, simply pass the program the desired sheet&#8217;s name:
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>

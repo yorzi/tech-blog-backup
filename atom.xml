@@ -4,7 +4,7 @@
   <title><![CDATA[@yorzi]]></title>
   <link href="http://yorzi.github.com/atom.xml" rel="self"/>
   <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-22T23:11:49+08:00</updated>
+  <updated>2012-10-23T13:23:59+08:00</updated>
   <id>http://yorzi.github.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
@@ -12,6 +12,85 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Run a static personal website on Heroku for Free]]></title>
+    <link href="http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free/"/>
+    <updated>2012-10-23T13:19:00+08:00</updated>
+    <id>http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free</id>
+    <content type="html"><![CDATA[<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a><br /><span>Uploaded with <a href="http://skitch.com">Skitch</a>!</span></div>
+
+
+<p>Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.</p>
+
+<p>Well, first of all, I bought an awesome template on <a href="https://wrapbootstrap.com/">wrapbootstrap</a>, where all pretty templates are built on <a href="http://twitter.github.com/bootstrap/">Twitter&#8217;s BootStrap</a>, I guess everyone loves BootStrap, who doesn&#8217;t?</p>
+
+<p>Once I get the simple static HTML template for website, I am going to deploy it to Heroku for free. We know <a href="http://heroku.com">Heroku</a> deliveries their popular cloud hosting for <a href="http://rubyonrails.org/">Ruby on Rails</a>, <a href="http://nodejs.org/">Node.js</a> and other framework. How does it work for static HTML website hosting?</p>
+
+<p>I found that, we actually can build s simple Rack application to <code>run</code> the static website on heroku. But how? See below:</p>
+
+<ul>
+<li>Add <code>Gemfile</code> to require the <code>rack</code> gem for the website.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>source 'http://rubygems.org'
+</span><span class='line'>gem 'rack'</span></code></pre></td></tr></table></div></figure>
+
+
+<ul>
+<li>Add <code>config.ru</code> file in root folder of the website, this will enable the Rack handlings.</li>
+</ul>
+
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$stdout.sync = true
+</span><span class='line'>
+</span><span class='line'>use Rack::Static,
+</span><span class='line'>  :urls =&gt; ["/font-awesome", "/js", "/img", "/style"],
+</span><span class='line'>  :root =&gt; "."
+</span><span class='line'>
+</span><span class='line'>run lambda { |env|
+</span><span class='line'>  [
+</span><span class='line'>    200,
+</span><span class='line'>    {
+</span><span class='line'>      'Content-Type'  =&gt; 'text/html',
+</span><span class='line'>      'Cache-Control' =&gt; 'public, max-age=86400'
+</span><span class='line'>    },
+</span><span class='line'>    File.open('index.html', File::RDONLY)
+</span><span class='line'>  ]
+</span><span class='line'>}</span></code></pre></td></tr></table></div></figure>
+
+
+<p>
+- Add <code>Procfile</code> in root folder to config the heroku web server and worker(if there is any).</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>web: bundle exec rackup -p $PORT</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Ok, now it&#8217;s ready to deploy the whole website to Heroku, <a href="https://devcenter.heroku.com/articles/git">here</a> is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, <a href="https://devcenter.heroku.com/articles/custom-domains">here</a> is also a docment for this purpose on heroku help center.</p>
+
+<p>Easy, right? I&#8217;ve run my awesome personal website on <a href="wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Now My Blog Is Running on Octopress]]></title>
@@ -1299,51 +1378,6 @@ In last two month, I worked with our designer(<a href="http://www.lijiapeng.com"
 <p>We finally split the CRM system in three parts which are used by different people, The independent and small system is well designed for certain users, that&#8217;s the key of this Optimization. It gains us faster system response and clearer business devision.</p>
 
 <p>All in all, to serve learners better user experience, to improve internal working process or to increase system efficiency, all of these optimizations are about making things perfect. This is the belief of <a href="http://www.idapted.com">Idapted</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[install sqlite3-ruby on CentOS]]></title>
-    <link href="http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos/"/>
-    <updated>2010-08-26T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos</id>
-    <content type="html"><![CDATA[<p>Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here’s the solution to get it running:</p>
-
-<p>Go to sqlite.org and get the amalgamation package or wget directly (below is my way):</p>
-
-<pre>
-# cd into my source tarball folder
-cd /usr/src
-# get the amalgation package
-wget http://sqlite.org/sqlite-amalgamation-3.6.23.1.tar.gz
-# unpack it
-tar xvzf sqlite-amalgamation-3.6.23.1.tar.gz
-# cd into the created folder
-cd sqlite-amalgamation-3.6.23.1
-# run configuration
-./configure
-# make and intall the package
-make && sudo make install
-</pre>
-
-
-<p>After successfully install the installer will tell where the library files have been stored in. In my case this was “/usr/local/lib”.</p>
-
-<p>So I can install the gem now with:</p>
-
-<pre>
-gem install sqlite3-ruby — –with-sqlite3-include=/usr/local/include \
-–with-sqlite3-lib=/usr/local/lib
-</pre>
-
-
-<h1>getting this as a result</h1>
-
-<p>Building native extensions. This could take a while…
-Successfully installed sqlite3-ruby-1.3.1
-1 gem installed</p>
-
-<p>Ok, done.</p>
 ]]></content>
   </entry>
   

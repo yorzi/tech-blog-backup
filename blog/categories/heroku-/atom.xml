@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Heroku, | @yorzi]]></title>
+  <link href="http://yorzi.github.com/blog/categories/heroku-/atom.xml" rel="self"/>
+  <link href="http://yorzi.github.com/"/>
+  <updated>2012-10-23T13:23:59+08:00</updated>
+  <id>http://yorzi.github.com/</id>
+  <author>
+    <name><![CDATA[Andy Wang]]></name>
+    <email><![CDATA[wangyaodi@gmail.com]]></email>
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Run a static personal website on Heroku for Free]]></title>
+    <link href="http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free/"/>
+    <updated>2012-10-23T13:19:00+08:00</updated>
+    <id>http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free</id>
+    <content type="html"><![CDATA[<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a><br /><span>Uploaded with <a href="http://skitch.com">Skitch</a>!</span></div>
+
+
+<p>Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.</p>
+
+<p>Well, first of all, I bought an awesome template on <a href="https://wrapbootstrap.com/">wrapbootstrap</a>, where all pretty templates are built on <a href="http://twitter.github.com/bootstrap/">Twitter's BootStrap</a>, I guess everyone loves BootStrap, who doesn't?</p>
+
+<p>Once I get the simple static HTML template for website, I am going to deploy it to Heroku for free. We know <a href="http://heroku.com">Heroku</a> deliveries their popular cloud hosting for <a href="http://rubyonrails.org/">Ruby on Rails</a>, <a href="http://nodejs.org/">Node.js</a> and other framework. How does it work for static HTML website hosting?</p>
+
+<p>I found that, we actually can build s simple Rack application to <code>run</code> the static website on heroku. But how? See below:</p>
+
+<ul>
+<li>Add <code>Gemfile</code> to require the <code>rack</code> gem for the website.</li>
+</ul>
+
+
+<p><code>
+source 'http://rubygems.org'
+gem 'rack'
+</code></p>
+
+<ul>
+<li>Add <code>config.ru</code> file in root folder of the website, this will enable the Rack handlings.</li>
+</ul>
+
+
+<p>```
+$stdout.sync = true</p>
+
+<p>use Rack::Static,
+  :urls => ["/font-awesome", "/js", "/img", "/style"],
+  :root => "."</p>
+
+<p>run lambda { |env|
+  [</p>
+
+<pre><code>200,
+{
+  'Content-Type'  =&gt; 'text/html',
+  'Cache-Control' =&gt; 'public, max-age=86400'
+},
+File.open('index.html', File::RDONLY)
+</code></pre>
+
+<p>  ]
+}
+<code>``
+- Add</code>Procfile` in root folder to config the heroku web server and worker(if there is any).</p>
+
+<p><code>
+web: bundle exec rackup -p $PORT
+</code></p>
+
+<p>Ok, now it's ready to deploy the whole website to Heroku, <a href="https://devcenter.heroku.com/articles/git">here</a> is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, <a href="https://devcenter.heroku.com/articles/custom-domains">here</a> is also a docment for this purpose on heroku help center.</p>
+
+<p>Easy, right? I've run my awesome personal website on <a href="wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
+]]></content>
+  </entry>
+  
+</feed>
