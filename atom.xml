@@ -4,7 +4,7 @@
   <title><![CDATA[@yorzi]]></title>
   <link href="http://yorzi.github.com/atom.xml" rel="self"/>
   <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T13:23:59+08:00</updated>
+  <updated>2012-10-23T13:28:00+08:00</updated>
   <id>http://yorzi.github.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
@@ -14,11 +14,11 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Run a static personal website on Heroku for Free]]></title>
+    <title type="html"><![CDATA[Run static website on Heroku for Free]]></title>
     <link href="http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free/"/>
     <updated>2012-10-23T13:19:00+08:00</updated>
     <id>http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free</id>
-    <content type="html"><![CDATA[<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a><br /><span>Uploaded with <a href="http://skitch.com">Skitch</a>!</span></div>
+    <content type="html"><![CDATA[<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a></div>
 
 
 <p>Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.</p>
