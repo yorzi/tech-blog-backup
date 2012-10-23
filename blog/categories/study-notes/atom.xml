@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: study notes | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/study-notes/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/study-notes/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
-    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime/"/>
     <updated>2010-09-02T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <id>http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime</id>
     <content type="html"><![CDATA[<p>I've been being confused of this "conversion" issue for a while, Today I figured out a clear way to do the function.
 <code lang='ruby'>
 DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
@@ -62,9 +62,9 @@ Also, I'd like to note down the ruby Time format rule:</p>
   
   <entry>
     <title type="html"><![CDATA[Study Note: Install Git1.7.1 on CentOS5.5]]></title>
-    <link href="http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
     <updated>2010-08-29T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <id>http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
     <content type="html"><![CDATA[<p>Step 1. Install the dependencies</p>
 
 <pre>
@@ -112,9 +112,9 @@ $ sudo /sbin/ldconfig
   
   <entry>
     <title type="html"><![CDATA[Study Note : serialize object in ActiveRecord]]></title>
-    <link href="http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/04/serialize-object-in-activerecord/"/>
     <updated>2010-08-04T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord</id>
+    <id>http://tech.wangyaodi.com/2010/08/04/serialize-object-in-activerecord</id>
     <content type="html"><![CDATA[<h2><span style="color: #444444; line-height: 24px; font-size: 16px;">Copied from <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M001799" target="_blank">Ruby on Rails API doc</a>. Store here as a study notes for myself.
 
 Active Record can <a href="Base.html#M001799">serialize</a> any object in text <a href="Base.html#M001809">columns</a> using YAML. To do so, you must specify this with a call to the class method <tt><a href="Base.html#M001799">serialize</a></tt>. This makes it possible to store arrays, hashes, and other non-mappable objects without doing any additional work. Example:</span></h2>

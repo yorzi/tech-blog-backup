@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Web Application | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/web-application/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/web-application/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[when generating a public website]]></title>
-    <link href="http://yorzi.github.com/2010/12/05/when-generating-a-public-website/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website/"/>
     <updated>2010-12-05T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/05/when-generating-a-public-website</id>
+    <id>http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website</id>
     <content type="html"><![CDATA[<p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it's not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
 
 <p><strong>Interface and User Experience</strong></p>
@@ -126,9 +126,9 @@
   
   <entry>
     <title type="html"><![CDATA[First iPhone app : IELTS 31 Formulas]]></title>
-    <link href="http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
     <updated>2010-08-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
+    <id>http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
     <content type="html"><![CDATA[<p><a href="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg"><img alt="" src="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg" title="31 Formulas" class="aligncenter" width="688" height="514" /></a>
 In last two month, I worked with our designer(<a href="http://www.lijiapeng.com">buzz</a>) for Idapted first iPhone App. We spent a lot time on releasing this app as Apple's process is really awful to a first user. Well, everything was done in the last. Now our first iPhone App is available in Apple Store. It's free in current version. you can install it from here: <a href="http://goo.gl/ht4p">http://goo.gl/ht4p</a>. It's based on <a href="http://www.appcelerator.com/products/">Titanium 1.4</a>. so a big thanks to the brilliant <a href="http://www.appcelerator.com/company/leadership-team/">Appcelerator Team</a>.</p>
 
@@ -140,9 +140,9 @@ In last two month, I worked with our designer(<a href="http://www.lijiapeng.com"
   
   <entry>
     <title type="html"><![CDATA[A Great Survey Solution Based On Ruby on Rails]]></title>
-    <link href="http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
     <updated>2010-07-27T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
+    <id>http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>I've been always looking for a powerful and flexible survey solution for a while, now I find it : <a href="http://github.com/breakpointer/surveyor">Surveyor</a>.</p>
 
 <p><strong>What's a Survey? </strong>
@@ -380,9 +380,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Why you should use Dropbox]]></title>
-    <link href="http://yorzi.github.com/2010/04/19/why-you-should-use-dropbox/"/>
+    <link href="http://tech.wangyaodi.com/2010/04/19/why-you-should-use-dropbox/"/>
     <updated>2010-04-19T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/04/19/why-you-should-use-dropbox</id>
+    <id>http://tech.wangyaodi.com/2010/04/19/why-you-should-use-dropbox</id>
     <content type="html"><![CDATA[<p>点击下面的连接注册Dropbox：
 <a href="https://www.dropbox.com/referrals/NTQ4OTQyNjk5" target="_blank">https://www.dropbox.com/referrals/NTQ4OTQyNjk5</a></p>
 
@@ -396,9 +396,9 @@ end
   
   <entry>
     <title type="html"><![CDATA['yorzi' in search]]></title>
-    <link href="http://yorzi.github.com/2009/12/15/yorzi-in-search/"/>
+    <link href="http://tech.wangyaodi.com/2009/12/15/yorzi-in-search/"/>
     <updated>2009-12-15T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/12/15/yorzi-in-search</id>
+    <id>http://tech.wangyaodi.com/2009/12/15/yorzi-in-search</id>
     <content type="html"><![CDATA[<p>今天无意间search了一下“yorzi”，结果令我大吃一惊....</p>
 
 <p>Google.cn : <a href="http://www.google.cn/search?hl=zh-CN&newwindow=1&q=yorzi&btnG=Google+%E6%90%9C%E7%B4%A2&aq=f&oq=">5030条记录</a>

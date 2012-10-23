@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ruby | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/ruby/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/ruby/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Real-Time Application with Rails3]]></title>
-    <link href="http://yorzi.github.com/2011/02/18/real-time-application-with-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3/"/>
     <updated>2011-02-18T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/02/18/real-time-application-with-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3</id>
     <content type="html"><![CDATA[<p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
 
 <p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>
@@ -50,9 +50,9 @@ JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
   
   <entry>
     <title type="html"><![CDATA[perfect backup solution for developers]]></title>
-    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers/"/>
     <updated>2010-09-10T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <id>http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers</id>
     <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with "backup" and "whenever".</p>
 
 <p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
@@ -65,9 +65,9 @@ JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
   
   <entry>
     <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
-    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime/"/>
     <updated>2010-09-02T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <id>http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime</id>
     <content type="html"><![CDATA[<p>I've been being confused of this "conversion" issue for a while, Today I figured out a clear way to do the function.
 <code lang='ruby'>
 DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
@@ -112,9 +112,9 @@ Also, I'd like to note down the ruby Time format rule:</p>
   
   <entry>
     <title type="html"><![CDATA[install sqlite3-ruby on CentOS]]></title>
-    <link href="http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/26/install-sqlite3-ruby-on-centos/"/>
     <updated>2010-08-26T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/26/install-sqlite3-ruby-on-centos</id>
+    <id>http://tech.wangyaodi.com/2010/08/26/install-sqlite3-ruby-on-centos</id>
     <content type="html"><![CDATA[<p>Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here’s the solution to get it running:</p>
 
 <p>Go to sqlite.org and get the amalgamation package or wget directly (below is my way):</p>
@@ -157,9 +157,9 @@ Successfully installed sqlite3-ruby-1.3.1
   
   <entry>
     <title type="html"><![CDATA[Experiment Bowline]]></title>
-    <link href="http://yorzi.github.com/2010/06/16/experiment-bowline/"/>
+    <link href="http://tech.wangyaodi.com/2010/06/16/experiment-bowline/"/>
     <updated>2010-06-16T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/06/16/experiment-bowline</id>
+    <id>http://tech.wangyaodi.com/2010/06/16/experiment-bowline</id>
     <content type="html"><![CDATA[<blockquote>Bowline is a framework for making cross platform desktop applications in Ruby, HTML and JavaScript.
 
 If you've ever wished creating a desktop application was as simple as creating a Rails website, Bowline's for you.

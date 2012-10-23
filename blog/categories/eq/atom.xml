@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: eq | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/eq/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/eq/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Overview of RenRen Connect Application]]></title>
-    <link href="http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application/"/>
+    <link href="http://tech.wangyaodi.com/2010/04/28/overview-of-renren-connect-application/"/>
     <updated>2010-04-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application</id>
+    <id>http://tech.wangyaodi.com/2010/04/28/overview-of-renren-connect-application</id>
     <content type="html"><![CDATA[<p>I’ve read <a href="http://wiki.dev.renren.com/wiki/%E9%A6%96%E9%A1%B5">RenRen development Doc</a> and tried some simple feature for a while, its platform is interesting and exciting, but much of its document is out of date(I guess it’s not been maintained for a time). so there are pains to test most of its APIs, here I will roughly introduce what we can do based on RenRen open platform.</p>
 
 <p>First of all, RenRen platform supports <a href="http://wiki.dev.renren.com/wiki/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">five types of APPLICATION</a>, which are:

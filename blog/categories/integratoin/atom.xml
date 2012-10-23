@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Integratoin | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/integratoin/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/integratoin/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Renren Integration into EQenglish]]></title>
-    <link href="http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish/"/>
+    <link href="http://tech.wangyaodi.com/2010/06/20/renren-integration-into-eqenglish/"/>
     <updated>2010-06-20T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish</id>
+    <id>http://tech.wangyaodi.com/2010/06/20/renren-integration-into-eqenglish</id>
     <content type="html"><![CDATA[<p><img title="renren logo" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.41.10-AM-300x86.png" alt="" width="270" height="77" /></p>
 
 <p><a href="http://renren.com">The Renren Network</a>, which was formerly named Xiaonei Network is one of most successful Chinese social networking site. Renren is with an interface similar to that of <a href="http://www.facebook.com">Facebook</a>. It's said that there are more than 22 million active users and estimated 40 million users who have registered their real names. Thus, Renren is widely considered to be the most powerful SNS service in Mainland China, especially among college students.</p>

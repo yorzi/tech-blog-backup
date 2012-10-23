@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: js | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/js/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/js/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JS note: setTimeout and setInterval]]></title>
-    <link href="http://yorzi.github.com/2011/03/09/settimeout-and-setinterval/"/>
+    <link href="http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/"/>
     <updated>2011-03-09T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/03/09/settimeout-and-setinterval</id>
+    <id>http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval</id>
     <content type="html"><![CDATA[<p>Yesterday, I discussed a JS issue with <a href="http://www.yakjuly.com/">Blade</a>, that I have to set up an automatic photo-switch effect on an existing page. I don't want to change anything except adding a piece of javascript for doing that job because this page is already messy up by another engineer. Blade suggested I should use <strong><a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a></strong> for this effect.</p>
 
 <h4><strong>* Case Study</strong></h4>
@@ -150,9 +150,9 @@ Actually, you can figure out this effect with <strong><a href="https://developer
   
   <entry>
     <title type="html"><![CDATA[Script: Fetch parameter value from url]]></title>
-    <link href="http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/01/script-fetch-parameter-value-from-url/"/>
     <updated>2010-09-01T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url</id>
+    <id>http://tech.wangyaodi.com/2010/09/01/script-fetch-parameter-value-from-url</id>
     <content type="html"><![CDATA[<p>I wanna get the query string value, and set it to specific element, how to do that by javascript?
 Say, http://sample.com?author=andy, how to get author value which can be lately used. see the script below:</p>
 
@@ -177,9 +177,9 @@ Say, http://sample.com?author=andy, how to get author value which can be lately 
   
   <entry>
     <title type="html"><![CDATA[JS: select all checkbox and submit form via js]]></title>
-    <link href="http://yorzi.github.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/"/>
+    <link href="http://tech.wangyaodi.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/"/>
     <updated>2010-04-12T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js</id>
+    <id>http://tech.wangyaodi.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js</id>
     <content type="html"><![CDATA[<p><strong>TIPS:</strong></p>
 
 <p><code lang='js'></p>

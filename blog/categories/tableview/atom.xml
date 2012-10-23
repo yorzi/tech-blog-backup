@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tableview | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/tableview/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/tableview/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SearchBar in Titanium]]></title>
-    <link href="http://yorzi.github.com/2010/07/16/searchbar-in-titanium/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/16/searchbar-in-titanium/"/>
     <updated>2010-07-16T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/16/searchbar-in-titanium</id>
+    <id>http://tech.wangyaodi.com/2010/07/16/searchbar-in-titanium</id>
     <content type="html"><![CDATA[<p>In this post, I will guide you to use SearchBar in TableView when your development is based on Titanium.</p>
 
 <p><strong>Keywords</strong>: <em>Titanium, TableView, TableViewRow, SearchBar</em></p>

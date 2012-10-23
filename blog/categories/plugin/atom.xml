@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: plugin | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/plugin/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/plugin/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[acts_as_favable is handy]]></title>
-    <link href="http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy/"/>
     <updated>2010-12-01T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy</id>
+    <id>http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy</id>
     <content type="html"><![CDATA[<p>Yes, it's more than two months in which I didn't write up any post here. I know I'd like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I've got many technology things/thoughts and tips that I want to share out.</p>
 
 <p>Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that's very easy to do that with acts_as_favable.</p>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rails3 App Gem Stack]]></title>
-    <link href="http://yorzi.github.com/2010/07/28/rails3-app-gem-stack/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/28/rails3-app-gem-stack/"/>
     <updated>2010-07-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/28/rails3-app-gem-stack</id>
+    <id>http://tech.wangyaodi.com/2010/07/28/rails3-app-gem-stack</id>
     <content type="html"><![CDATA[<p>Rails3 RC1 was released yesterday, that's really awesome, I can't help experimenting a sample of Rails3 new features. I want to share my Gemfile to list all application gem stack, which may be useful for those who don't wanna create wheels themselves. Below is the list:
 <code lang='ruby'></p>
 
@@ -129,9 +129,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[A Great Survey Solution Based On Ruby on Rails]]></title>
-    <link href="http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
     <updated>2010-07-27T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
+    <id>http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>I've been always looking for a powerful and flexible survey solution for a while, now I find it : <a href="http://github.com/breakpointer/surveyor">Surveyor</a>.</p>
 
 <p><strong>What's a Survey? </strong>

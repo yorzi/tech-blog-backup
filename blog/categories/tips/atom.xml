@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tips | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/tips/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/tips/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Deploy Rails3 App in Sub-directory]]></title>
-    <link href="http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
     <updated>2011-01-20T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory</id>
+    <id>http://tech.wangyaodi.com/2011/01/20/deploy-rails3-app-in-sub-directory</id>
     <content type="html"><![CDATA[<p>Last weekend, <a href="http://www.dujinfang.com">seven</a> and <a href="http://blog.sonitech.org/">sonic</a> did a great job to move all Idapted servers to a new datacenter, that's really a fabulous movement. Seven just wrote it out on <a href="http://www.dujinfang.com/past/2011/1/18/rails-fu-wu-qi-qian-yi-dian-di/">his blog</a>, if you want to know more about this migration, please go through his post. Anyway, in this post I wanna share a simple but valuable tip about deploying Rails3 app in sub directory.</p>
 
 <script src="https://gist.github.com/787610.js"></script>
@@ -32,9 +32,9 @@
   
   <entry>
     <title type="html"><![CDATA[Study Note: Install Git1.7.1 on CentOS5.5]]></title>
-    <link href="http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
     <updated>2010-08-29T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <id>http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
     <content type="html"><![CDATA[<p>Step 1. Install the dependencies</p>
 
 <pre>
@@ -82,9 +82,9 @@ $ sudo /sbin/ldconfig
   
   <entry>
     <title type="html"><![CDATA[update iPhone to 3.1.2]]></title>
-    <link href="http://yorzi.github.com/2010/04/12/update-iphone-to-3.1.2/"/>
+    <link href="http://tech.wangyaodi.com/2010/04/12/update-iphone-to-3.1.2/"/>
     <updated>2010-04-12T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/04/12/update-iphone-to-3.1.2</id>
+    <id>http://tech.wangyaodi.com/2010/04/12/update-iphone-to-3.1.2</id>
     <content type="html"><![CDATA[<p>我的一代小i从08年挺到现在，昨天刷机至3.1.2OS以后焕然一新，随后爱不释手，一直玩到深夜。不管是从性能还是整体的感觉，这个版本的一代iphone真是帅到极致。</p>
 
 <p>两年前夏天的一个下午，我从两点到凌晨两点，一直再研究刷机，即使到现在我也一直弄不明白破解和越狱有什么区别，那次我花了12个小时，开始对复杂的刷机过程心生惧怕。随后过了大概一年，就是现在的一年之前，很好奇iphone能不能在ubuntu上面同步itunes，结果机子就横在哪里，不得已，花了大概三个小时刷机并且试图回复所有的联系人和照片，即便那次更新成功，心里仍然留下了不小的伤痕，这叫一个麻烦。更要命的是后来的机子一直不稳定，经常crash。</p>
@@ -98,9 +98,9 @@ $ sudo /sbin/ldconfig
   
   <entry>
     <title type="html"><![CDATA[JS: select all checkbox and submit form via js]]></title>
-    <link href="http://yorzi.github.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/"/>
+    <link href="http://tech.wangyaodi.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/"/>
     <updated>2010-04-12T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js</id>
+    <id>http://tech.wangyaodi.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js</id>
     <content type="html"><![CDATA[<p><strong>TIPS:</strong></p>
 
 <p><code lang='js'></p>

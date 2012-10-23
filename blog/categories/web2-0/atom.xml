@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Web2.0 | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/web2-0/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/web2-0/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Love Git, Love Coding]]></title>
-    <link href="http://yorzi.github.com/2011/01/21/love-git-love-coding/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/21/love-git-love-coding/"/>
     <updated>2011-01-21T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/21/love-git-love-coding</id>
+    <id>http://tech.wangyaodi.com/2011/01/21/love-git-love-coding</id>
     <content type="html"><![CDATA[<blockquote><span style="color: #0000ff;"><strong><span style="color: #0000ff;">“550,000</span> people hosting over <span style="color: #0000ff;">1,620,000</span> git repositories on github.com”</strong></span></blockquote>
 
 
@@ -41,9 +41,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[when generating a public website]]></title>
-    <link href="http://yorzi.github.com/2010/12/05/when-generating-a-public-website/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website/"/>
     <updated>2010-12-05T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/05/when-generating-a-public-website</id>
+    <id>http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website</id>
     <content type="html"><![CDATA[<p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it's not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
 
 <p><strong>Interface and User Experience</strong></p>
@@ -152,9 +152,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[A Great Survey Solution Based On Ruby on Rails]]></title>
-    <link href="http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
     <updated>2010-07-27T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
+    <id>http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>I've been always looking for a powerful and flexible survey solution for a while, now I find it : <a href="http://github.com/breakpointer/surveyor">Surveyor</a>.</p>
 
 <p><strong>What's a Survey? </strong>
@@ -392,9 +392,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[Renren Integration into EQenglish]]></title>
-    <link href="http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish/"/>
+    <link href="http://tech.wangyaodi.com/2010/06/20/renren-integration-into-eqenglish/"/>
     <updated>2010-06-20T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/06/20/renren-integration-into-eqenglish</id>
+    <id>http://tech.wangyaodi.com/2010/06/20/renren-integration-into-eqenglish</id>
     <content type="html"><![CDATA[<p><img title="renren logo" src="http://www.idapted.com/blog/wp-content/uploads/2010/06/Screen-shot-2010-06-24-at-11.41.10-AM-300x86.png" alt="" width="270" height="77" /></p>
 
 <p><a href="http://renren.com">The Renren Network</a>, which was formerly named Xiaonei Network is one of most successful Chinese social networking site. Renren is with an interface similar to that of <a href="http://www.facebook.com">Facebook</a>. It's said that there are more than 22 million active users and estimated 40 million users who have registered their real names. Thus, Renren is widely considered to be the most powerful SNS service in Mainland China, especially among college students.</p>
@@ -425,9 +425,9 @@ Great Technology + Clear Convenience = Comfortable Awesome</p>
   
   <entry>
     <title type="html"><![CDATA[Overview of RenRen Connect Application]]></title>
-    <link href="http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application/"/>
+    <link href="http://tech.wangyaodi.com/2010/04/28/overview-of-renren-connect-application/"/>
     <updated>2010-04-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/04/28/overview-of-renren-connect-application</id>
+    <id>http://tech.wangyaodi.com/2010/04/28/overview-of-renren-connect-application</id>
     <content type="html"><![CDATA[<p>I’ve read <a href="http://wiki.dev.renren.com/wiki/%E9%A6%96%E9%A1%B5">RenRen development Doc</a> and tried some simple feature for a while, its platform is interesting and exciting, but much of its document is out of date(I guess it’s not been maintained for a time). so there are pains to test most of its APIs, here I will roughly introduce what we can do based on RenRen open platform.</p>
 
 <p>First of all, RenRen platform supports <a href="http://wiki.dev.renren.com/wiki/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">five types of APPLICATION</a>, which are:

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: visual-effects | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/visual-effects/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/visual-effects/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[jRails means jQuery on Rails]]></title>
-    <link href="http://yorzi.github.com/2010/01/19/jrails-means-jquery-on-rails/"/>
+    <link href="http://tech.wangyaodi.com/2010/01/19/jrails-means-jquery-on-rails/"/>
     <updated>2010-01-19T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/01/19/jrails-means-jquery-on-rails</id>
+    <id>http://tech.wangyaodi.com/2010/01/19/jrails-means-jquery-on-rails</id>
     <content type="html"><![CDATA[<p><em><strong>Note: This introduction post to jRails is copied(mirrored) form <a href="http://mirror.ozdiy.com/assets/b8/2f96a12bc919b37e09d303b86ea1b9_1251811910.html#install">this link</a>, so that I can bakeup this for advanced learning.</strong></em></p>
 
 <div>
@@ -200,9 +200,9 @@ Highlight</div>
 <p>Just install and go!        Once installed, the previous Prototype/script.aculo.us helpers will be replaced by jQuery ones.         In order for them to function correctly, just include the appropriate javascript files in the head of your page.</p>
 
 <div>
-<pre>&lt;script src="http://yorzi.github.com/javascripts/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="http://yorzi.github.com/javascripts/jquery-ui.js" type="text/javascript"&gt;&lt;/script&gt;
-&lt;script src="http://yorzi.github.com/javascripts/jrails.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
+<pre>&lt;script src="http://tech.wangyaodi.com/javascripts/jquery.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://tech.wangyaodi.com/javascripts/jquery-ui.js" type="text/javascript"&gt;&lt;/script&gt;
+&lt;script src="http://tech.wangyaodi.com/javascripts/jrails.js" type="text/javascript"&gt;&lt;/script&gt;</pre>
 </div>
 
 

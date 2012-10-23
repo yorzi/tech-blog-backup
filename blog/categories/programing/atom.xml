@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Programing | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/programing/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/programing/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Weekly Updates : Javascript Rocks!]]></title>
-    <link href="http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks/"/>
+    <link href="http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks/"/>
     <updated>2011-03-21T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks</id>
+    <id>http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks</id>
     <content type="html"><![CDATA[<p>After quit from Idapted/Eleutian, I'd like to have a long term plan for writing blogs. However, as everything starts, it's always hard. I thought it around, and finally decided to open my mind, and just try to start with a strong belief : Sharing! Then an idea comes out.</p>
 
 <p>First of all, I think my weekly updates will help to share great things I came across or even I started to use, it has much fun to replay all these stuff, so I will do that in the weekend, that's also part of my study review.</p>
@@ -49,9 +49,9 @@ Add JSLint to you TextMate: <a href="https://github.com/subtleGradient/javascrip
   
   <entry>
     <title type="html"><![CDATA[Real-Time Application with Rails3]]></title>
-    <link href="http://yorzi.github.com/2011/02/18/real-time-application-with-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3/"/>
     <updated>2011-02-18T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/02/18/real-time-application-with-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3</id>
     <content type="html"><![CDATA[<p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
 
 <p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>
@@ -84,9 +84,9 @@ JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
   
   <entry>
     <title type="html"><![CDATA[Zen Coding for TextMate]]></title>
-    <link href="http://yorzi.github.com/2011/02/12/zen-coding-for-textmate/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/12/zen-coding-for-textmate/"/>
     <updated>2011-02-12T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/02/12/zen-coding-for-textmate</id>
+    <id>http://tech.wangyaodi.com/2011/02/12/zen-coding-for-textmate</id>
     <content type="html"><![CDATA[<p>Bundles make <a href="http://macromates.com/">TextMate</a> as a super Editor, so if you love TextMate, you must love colorful bundles based on it.</p>
 
 <p>I just find an interesting bundle to speed up your HTML/CSS coding, which is named as <a href="https://github.com/sergeche/zen-coding">Zen Coding</a>.</p>
@@ -119,9 +119,9 @@ The sytax is simple to understand, there is a sytax list <a href="http://code.go
   
   <entry>
     <title type="html"><![CDATA[Love Git, Love Coding]]></title>
-    <link href="http://yorzi.github.com/2011/01/21/love-git-love-coding/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/21/love-git-love-coding/"/>
     <updated>2011-01-21T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/21/love-git-love-coding</id>
+    <id>http://tech.wangyaodi.com/2011/01/21/love-git-love-coding</id>
     <content type="html"><![CDATA[<blockquote><span style="color: #0000ff;"><strong><span style="color: #0000ff;">“550,000</span> people hosting over <span style="color: #0000ff;">1,620,000</span> git repositories on github.com”</strong></span></blockquote>
 
 
@@ -145,9 +145,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[when generating a public website]]></title>
-    <link href="http://yorzi.github.com/2010/12/05/when-generating-a-public-website/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website/"/>
     <updated>2010-12-05T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/05/when-generating-a-public-website</id>
+    <id>http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website</id>
     <content type="html"><![CDATA[<p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it's not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
 
 <p><strong>Interface and User Experience</strong></p>

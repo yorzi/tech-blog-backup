@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tunnel | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/tunnel/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/tunnel/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SSH tunnel script]]></title>
-    <link href="http://yorzi.github.com/2009/11/03/ssh-turnl-script/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/03/ssh-turnl-script/"/>
     <updated>2009-11-03T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/03/ssh-turnl-script</id>
+    <id>http://tech.wangyaodi.com/2009/11/03/ssh-turnl-script</id>
     <content type="html"><![CDATA[<p>Why SSH tunneling?</p>
 
 <p>Obviously, if you live in Chxna or some other place where you are restricted to access free network, and if you luckily own a ssh accessible account on a server that is hosted in a free country, congratulations, you can use ssh tunnel to fuck the wall.</p>

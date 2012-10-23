@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: yorzi | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/yorzi/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/yorzi/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA['yorzi' in search]]></title>
-    <link href="http://yorzi.github.com/2009/12/15/yorzi-in-search/"/>
+    <link href="http://tech.wangyaodi.com/2009/12/15/yorzi-in-search/"/>
     <updated>2009-12-15T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/12/15/yorzi-in-search</id>
+    <id>http://tech.wangyaodi.com/2009/12/15/yorzi-in-search</id>
     <content type="html"><![CDATA[<p>今天无意间search了一下“yorzi”，结果令我大吃一惊....</p>
 
 <p>Google.cn : <a href="http://www.google.cn/search?hl=zh-CN&newwindow=1&q=yorzi&btnG=Google+%E6%90%9C%E7%B4%A2&aq=f&oq=">5030条记录</a>

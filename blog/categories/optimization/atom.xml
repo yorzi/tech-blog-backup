@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: optimization | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/optimization/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/optimization/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[where optimization happens]]></title>
-    <link href="http://yorzi.github.com/2010/08/27/where-optimization-happens/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/27/where-optimization-happens/"/>
     <updated>2010-08-27T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/27/where-optimization-happens</id>
+    <id>http://tech.wangyaodi.com/2010/08/27/where-optimization-happens</id>
     <content type="html"><![CDATA[<p>Jonathan just mentioned <a href="http://www.idapted.com/blog/2010/08/16/small-details-big-gains/" target="_blank">small details and big gains</a> in his post days ago, I totally agree with him from technology perspective, meanwhile, I found more samples to support his points. Yeah, technology is born for changing people's life, I call this kind of changes as Optimization.Optimization is happening everyday to Idapted Platform, as it's one of most important way to become perfect.</p>
 
 <p>In last week, our StudyCenter, the front end user interface system, was optimized in its registration flow. Previously, we have many registration channels for different partners. Our marketing department is mainly responsible for these registration channels, and update them frequently. Accordingly, technology team and sales team also need to cooperate. Here problem is, demands change more quickly than tech guys and sales system can follow up.</p>

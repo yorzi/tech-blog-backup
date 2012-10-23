@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: iPhone app | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/iphone-app/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/iphone-app/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to keep a space in your iPhone App name?]]></title>
-    <link href="http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
     <updated>2010-08-31T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
+    <id>http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
     <content type="html"><![CDATA[<p>The answer is, <strong>you can't submit your iPhone App with <em>whitespace</em> in its name</strong>. But you do <strong>be able to add space in your App display name</strong> under icon. I guess your purpose is the second one, you only want to display the space under app icon on device, don't you?</p>
 
 <p>OK, just name your app as whatever name with space before you setup the distribution package, e.g. "Example Name.app". Then,</p>
@@ -35,9 +35,9 @@ PS: Also you might want to remove the previously generated .ipa file with the sp
   
   <entry>
     <title type="html"><![CDATA[First iPhone app : IELTS 31 Formulas]]></title>
-    <link href="http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
     <updated>2010-08-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
+    <id>http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
     <content type="html"><![CDATA[<p><a href="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg"><img alt="" src="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg" title="31 Formulas" class="aligncenter" width="688" height="514" /></a>
 In last two month, I worked with our designer(<a href="http://www.lijiapeng.com">buzz</a>) for Idapted first iPhone App. We spent a lot time on releasing this app as Apple's process is really awful to a first user. Well, everything was done in the last. Now our first iPhone App is available in Apple Store. It's free in current version. you can install it from here: <a href="http://goo.gl/ht4p">http://goo.gl/ht4p</a>. It's based on <a href="http://www.appcelerator.com/products/">Titanium 1.4</a>. so a big thanks to the brilliant <a href="http://www.appcelerator.com/company/leadership-team/">Appcelerator Team</a>.</p>
 
@@ -49,9 +49,9 @@ In last two month, I worked with our designer(<a href="http://www.lijiapeng.com"
   
   <entry>
     <title type="html"><![CDATA[iPhone App : Debug and Release through Titanium]]></title>
-    <link href="http://yorzi.github.com/2010/08/25/iphone-app-debug-and-release-via-titanium/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/25/iphone-app-debug-and-release-via-titanium/"/>
     <updated>2010-08-25T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/25/iphone-app-debug-and-release-via-titanium</id>
+    <id>http://tech.wangyaodi.com/2010/08/25/iphone-app-debug-and-release-via-titanium</id>
     <content type="html"><![CDATA[<p>Once people develop an iPhone App using <a href="http://www.appcelerator.com/">Titanium1.4</a>, they must be very happy when the App is running on iPhone simulator. They feel great until they decide to debug their app on their devices or even release their app to AppleAppStore. This happens specially to these who firstly do this. Why? There are many reasons that you will hate Apple during the debug or release process. I bat you are like me then.</p>
 
 <p>Assume that: You've already finished coding an iPhone app in Titanium 1.4 framework. Now you want to install your app on your device. If you do this first time, guess what will happen to you? Let me tell you my story.</p>

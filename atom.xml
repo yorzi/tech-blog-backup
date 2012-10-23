@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[@yorzi]]></title>
-  <link href="http://yorzi.github.com/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,10 +15,13 @@
   
   <entry>
     <title type="html"><![CDATA[Run static website on Heroku for Free]]></title>
-    <link href="http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free/"/>
+    <link href="http://tech.wangyaodi.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free/"/>
     <updated>2012-10-23T13:19:00+08:00</updated>
-    <id>http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free</id>
+    <id>http://tech.wangyaodi.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free</id>
     <content type="html"><![CDATA[<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a></div>
+
+
+<br />
 
 
 <p>Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.</p>
@@ -88,15 +91,15 @@
 
 <p>Ok, now it&#8217;s ready to deploy the whole website to Heroku, <a href="https://devcenter.heroku.com/articles/git">here</a> is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, <a href="https://devcenter.heroku.com/articles/custom-domains">here</a> is also a docment for this purpose on heroku help center.</p>
 
-<p>Easy, right? I&#8217;ve run my awesome personal website on <a href="wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
+<p>Easy, right? I&#8217;ve run my awesome personal website on <a href="http://wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Now My Blog Is Running on Octopress]]></title>
-    <link href="http://yorzi.github.com/2011/08/14/now-my-blog-is-running-on-octopress/"/>
+    <link href="http://tech.wangyaodi.com/2011/08/14/now-my-blog-is-running-on-octopress/"/>
     <updated>2011-08-14T19:39:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/08/14/now-my-blog-is-running-on-octopress</id>
+    <id>http://tech.wangyaodi.com/2011/08/14/now-my-blog-is-running-on-octopress</id>
     <content type="html"><![CDATA[<p><img src="https://img.skitch.com/20110814-m6jxiyu37ygd2pgxwfejamf95g.jpg" alt="Octopress" /></p>
 
 <p>Octopress is owesome!</p>
@@ -111,9 +114,9 @@
   
   <entry>
     <title type="html"><![CDATA[Riding on Rails3 with full stack of Gems]]></title>
-    <link href="http://yorzi.github.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems/"/>
+    <link href="http://tech.wangyaodi.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems/"/>
     <updated>2011-06-14T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems</id>
+    <id>http://tech.wangyaodi.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems</id>
     <content type="html"><![CDATA[<p><strong>NOTICE:</strong> Below post was released a month ago on <a href="http://intridea.com/2011/5/13/rails3-gems">Intridea Company Blog</a>, also post here as a backup.</p>
 
 <p>It&#8217;s been close to a year since Rails3 came out. Luckily, I&#8217;ve worked on several Rails3 projects after it&#8217;s released, so I&#8217;d like to share a stack of gems that I used in my previous projects. I guess they will give people a bit help while developing a new Rails3 app.</p>
@@ -379,9 +382,9 @@
   
   <entry>
     <title type="html"><![CDATA[Weekly Updates : Javascript Rocks!]]></title>
-    <link href="http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks/"/>
+    <link href="http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks/"/>
     <updated>2011-03-21T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks</id>
+    <id>http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks</id>
     <content type="html"><![CDATA[<p>After quit from Idapted/Eleutian, I&#8217;d like to have a long term plan for writing blogs. However, as everything starts, it&#8217;s always hard. I thought it around, and finally decided to open my mind, and just try to start with a strong belief : Sharing! Then an idea comes out.</p>
 
 <p>First of all, I think my weekly updates will help to share great things I came across or even I started to use, it has much fun to replay all these stuff, so I will do that in the weekend, that&#8217;s also part of my study review.</p>
@@ -413,9 +416,9 @@ Add JSLint to you TextMate: <a href="https://github.com/subtleGradient/javascrip
   
   <entry>
     <title type="html"><![CDATA[JS note: setTimeout and setInterval]]></title>
-    <link href="http://yorzi.github.com/2011/03/09/settimeout-and-setinterval/"/>
+    <link href="http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/"/>
     <updated>2011-03-09T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/03/09/settimeout-and-setinterval</id>
+    <id>http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval</id>
     <content type="html"><![CDATA[<p>Yesterday, I discussed a JS issue with <a href="http://www.yakjuly.com/">Blade</a>, that I have to set up an automatic photo-switch effect on an existing page. I don&#8217;t want to change anything except adding a piece of javascript for doing that job because this page is already messy up by another engineer. Blade suggested I should use <strong><a href="https://developer.mozilla.org/en/DOM/window.setTimeout">setTimeout</a></strong> for this effect.</p>
 
 <h4><strong>* Case Study</strong></h4>
@@ -548,9 +551,9 @@ Actually, you can figure out this effect with <strong><a href="https://developer
   
   <entry>
     <title type="html"><![CDATA[Real-Time Application with Rails3]]></title>
-    <link href="http://yorzi.github.com/2011/02/18/real-time-application-with-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3/"/>
     <updated>2011-02-18T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/02/18/real-time-application-with-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3</id>
     <content type="html"><![CDATA[<p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
 
 <p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>
@@ -583,9 +586,9 @@ JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
   
   <entry>
     <title type="html"><![CDATA[Zen Coding for TextMate]]></title>
-    <link href="http://yorzi.github.com/2011/02/12/zen-coding-for-textmate/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/12/zen-coding-for-textmate/"/>
     <updated>2011-02-12T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/02/12/zen-coding-for-textmate</id>
+    <id>http://tech.wangyaodi.com/2011/02/12/zen-coding-for-textmate</id>
     <content type="html"><![CDATA[<p>Bundles make <a href="http://macromates.com/">TextMate</a> as a super Editor, so if you love TextMate, you must love colorful bundles based on it.</p>
 
 <p>I just find an interesting bundle to speed up your HTML/CSS coding, which is named as <a href="https://github.com/sergeche/zen-coding">Zen Coding</a>.</p>
@@ -618,9 +621,9 @@ The sytax is simple to understand, there is a sytax list <a href="http://code.go
   
   <entry>
     <title type="html"><![CDATA[Dalli on Rails3]]></title>
-    <link href="http://yorzi.github.com/2011/01/22/dalli-on-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3/"/>
     <updated>2011-01-22T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/22/dalli-on-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3</id>
     <content type="html"><![CDATA[<p>Today I tried a new pure Ruby <a href="http://memcached.org/" target="_blank">memcahed</a> client in one of my Rails3 projects, it&#8217;s named as &#8221;<a href="https://github.com/mperham/dalli" target="_blank">Dalli</a>&#8221;. It&#8217;s an excellent memcached client as <a href="http://www.mikeperham.com/">Mike Perham</a> announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on <a href="http://heroku.com" target="_blank">Heroku</a>.</p>
 
 <p>Make sure you&#8217;ve installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:
@@ -678,9 +681,9 @@ ActiveSupport::Memoizable : <br /><a href="http://ilstar.blogbus.com/logs/847542
   
   <entry>
     <title type="html"><![CDATA[Love Git, Love Coding]]></title>
-    <link href="http://yorzi.github.com/2011/01/21/love-git-love-coding/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/21/love-git-love-coding/"/>
     <updated>2011-01-21T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/21/love-git-love-coding</id>
+    <id>http://tech.wangyaodi.com/2011/01/21/love-git-love-coding</id>
     <content type="html"><![CDATA[<blockquote><span style="color: #0000ff;"><strong><span style="color: #0000ff;">“550,000</span> people hosting over <span style="color: #0000ff;">1,620,000</span> git repositories on github.com”</strong></span></blockquote>
 
 
@@ -704,9 +707,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[Deploy Rails3 App in Sub-directory]]></title>
-    <link href="http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/20/deploy-rails3-app-in-sub-directory/"/>
     <updated>2011-01-20T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/20/deploy-rails3-app-in-sub-directory</id>
+    <id>http://tech.wangyaodi.com/2011/01/20/deploy-rails3-app-in-sub-directory</id>
     <content type="html"><![CDATA[<p>Last weekend, <a href="http://www.dujinfang.com">seven</a> and <a href="http://blog.sonitech.org/">sonic</a> did a great job to move all Idapted servers to a new datacenter, that&#8217;s really a fabulous movement. Seven just wrote it out on <a href="http://www.dujinfang.com/past/2011/1/18/rails-fu-wu-qi-qian-yi-dian-di/">his blog</a>, if you want to know more about this migration, please go through his post. Anyway, in this post I wanna share a simple but valuable tip about deploying Rails3 app in sub directory.</p>
 
 <script src="https://gist.github.com/787610.js"></script>
@@ -721,9 +724,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[when generating a public website]]></title>
-    <link href="http://yorzi.github.com/2010/12/05/when-generating-a-public-website/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website/"/>
     <updated>2010-12-05T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/05/when-generating-a-public-website</id>
+    <id>http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website</id>
     <content type="html"><![CDATA[<p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it&#8217;s not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
 
 <p><strong>Interface and User Experience</strong></p>
@@ -832,9 +835,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[acts_as_favable is handy]]></title>
-    <link href="http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy/"/>
     <updated>2010-12-01T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy</id>
+    <id>http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy</id>
     <content type="html"><![CDATA[<p>Yes, it&#8217;s more than two months in which I didn&#8217;t write up any post here. I know I&#8217;d like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I&#8217;ve got many technology things/thoughts and tips that I want to share out.</p>
 
 <p>Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that&#8217;s very easy to do that with acts_as_favable.</p>
@@ -850,9 +853,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[perfect backup solution for developers]]></title>
-    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers/"/>
     <updated>2010-09-10T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <id>http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers</id>
     <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don&#8217;t wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with &#8220;backup&#8221; and &#8220;whenever&#8221;.</p>
 
 <p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
@@ -865,9 +868,9 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   
   <entry>
     <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
-    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime/"/>
     <updated>2010-09-02T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <id>http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime</id>
     <content type="html"><![CDATA[<p>I&#8217;ve been being confused of this &#8220;conversion&#8221; issue for a while, Today I figured out a clear way to do the function.
 <code lang='ruby'>
 DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
@@ -912,9 +915,9 @@ Also, I&#8217;d like to note down the ruby Time format rule:</p>
   
   <entry>
     <title type="html"><![CDATA[Script: Fetch parameter value from url]]></title>
-    <link href="http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/01/script-fetch-parameter-value-from-url/"/>
     <updated>2010-09-01T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/01/script-fetch-parameter-value-from-url</id>
+    <id>http://tech.wangyaodi.com/2010/09/01/script-fetch-parameter-value-from-url</id>
     <content type="html"><![CDATA[<p>I wanna get the query string value, and set it to specific element, how to do that by javascript?
 Say, http://sample.com?author=andy, how to get author value which can be lately used. see the script below:</p>
 
@@ -939,9 +942,9 @@ Say, http://sample.com?author=andy, how to get author value which can be lately 
   
   <entry>
     <title type="html"><![CDATA[MacPorts is a monster]]></title>
-    <link href="http://yorzi.github.com/2010/09/01/macports-is-a-monster/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/01/macports-is-a-monster/"/>
     <updated>2010-09-01T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/01/macports-is-a-monster</id>
+    <id>http://tech.wangyaodi.com/2010/09/01/macports-is-a-monster</id>
     <content type="html"><![CDATA[<h1>MacPorts is a monster.. see the log I installed ImageMagick. Anyway, it works for me. but the <a href="http://weblogs.manas.com.ar/mverzilli/2010/05/19/install-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in/">brew solution</a> is not working for me.</h1>
 
 <p>andy@Wang-Andys-MacBook-Pro~/proj.workspace:sudo port install ImageMagick
@@ -1280,9 +1283,9 @@ Say, http://sample.com?author=andy, how to get author value which can be lately 
   
   <entry>
     <title type="html"><![CDATA[How to keep a space in your iPhone App name?]]></title>
-    <link href="http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
     <updated>2010-08-31T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
+    <id>http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
     <content type="html"><![CDATA[<p>The answer is, <strong>you can&#8217;t submit your iPhone App with <em>whitespace</em> in its name</strong>. But you do <strong>be able to add space in your App display name</strong> under icon. I guess your purpose is the second one, you only want to display the space under app icon on device, don&#8217;t you?</p>
 
 <p>OK, just name your app as whatever name with space before you setup the distribution package, e.g. &#8220;Example Name.app&#8221;. Then,</p>
@@ -1300,9 +1303,9 @@ PS: Also you might want to remove the previously generated .ipa file with the sp
   
   <entry>
     <title type="html"><![CDATA[Study Note: Install Git1.7.1 on CentOS5.5]]></title>
-    <link href="http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
     <updated>2010-08-29T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
+    <id>http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
     <content type="html"><![CDATA[<p>Step 1. Install the dependencies</p>
 
 <pre>
@@ -1350,9 +1353,9 @@ $ sudo /sbin/ldconfig
   
   <entry>
     <title type="html"><![CDATA[First iPhone app : IELTS 31 Formulas]]></title>
-    <link href="http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
     <updated>2010-08-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
+    <id>http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
     <content type="html"><![CDATA[<p><a href="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg"><img alt="" src="http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg" title="31 Formulas" class="aligncenter" width="688" height="514" /></a>
 In last two month, I worked with our designer(<a href="http://www.lijiapeng.com">buzz</a>) for Idapted first iPhone App. We spent a lot time on releasing this app as Apple&#8217;s process is really awful to a first user. Well, everything was done in the last. Now our first iPhone App is available in Apple Store. It&#8217;s free in current version. you can install it from here: <a href="http://goo.gl/ht4p">http://goo.gl/ht4p</a>. It&#8217;s based on <a href="http://www.appcelerator.com/products/">Titanium 1.4</a>. so a big thanks to the brilliant <a href="http://www.appcelerator.com/company/leadership-team/">Appcelerator Team</a>.</p>
 
@@ -1364,9 +1367,9 @@ In last two month, I worked with our designer(<a href="http://www.lijiapeng.com"
   
   <entry>
     <title type="html"><![CDATA[where optimization happens]]></title>
-    <link href="http://yorzi.github.com/2010/08/27/where-optimization-happens/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/27/where-optimization-happens/"/>
     <updated>2010-08-27T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/27/where-optimization-happens</id>
+    <id>http://tech.wangyaodi.com/2010/08/27/where-optimization-happens</id>
     <content type="html"><![CDATA[<p>Jonathan just mentioned <a href="http://www.idapted.com/blog/2010/08/16/small-details-big-gains/" target="_blank">small details and big gains</a> in his post days ago, I totally agree with him from technology perspective, meanwhile, I found more samples to support his points. Yeah, technology is born for changing people&#8217;s life, I call this kind of changes as Optimization.Optimization is happening everyday to Idapted Platform, as it&#8217;s one of most important way to become perfect.</p>
 
 <p>In last week, our StudyCenter, the front end user interface system, was optimized in its registration flow. Previously, we have many registration channels for different partners. Our marketing department is mainly responsible for these registration channels, and update them frequently. Accordingly, technology team and sales team also need to cooperate. Here problem is, demands change more quickly than tech guys and sales system can follow up.</p>

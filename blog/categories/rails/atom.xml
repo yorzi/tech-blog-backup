@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rails | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/rails/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dalli on Rails3]]></title>
-    <link href="http://yorzi.github.com/2011/01/22/dalli-on-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3/"/>
     <updated>2011-01-22T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/22/dalli-on-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3</id>
     <content type="html"><![CDATA[<p>Today I tried a new pure Ruby <a href="http://memcached.org/" target="_blank">memcahed</a> client in one of my Rails3 projects, it's named as "<a href="https://github.com/mperham/dalli" target="_blank">Dalli</a>". It's an excellent memcached client as <a href="http://www.mikeperham.com/">Mike Perham</a> announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on <a href="http://heroku.com" target="_blank">Heroku</a>.</p>
 
 <p>Make sure you've installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:
@@ -75,9 +75,9 @@ ActiveSupport::Memoizable : <br /><a href="http://ilstar.blogbus.com/logs/847542
   
   <entry>
     <title type="html"><![CDATA[perfect backup solution for developers]]></title>
-    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers/"/>
     <updated>2010-09-10T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <id>http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers</id>
     <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with "backup" and "whenever".</p>
 
 <p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
@@ -90,9 +90,9 @@ ActiveSupport::Memoizable : <br /><a href="http://ilstar.blogbus.com/logs/847542
   
   <entry>
     <title type="html"><![CDATA[StudyNote: convert string to DateTime]]></title>
-    <link href="http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime/"/>
     <updated>2010-09-02T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/02/studynote-convert-string-to-datetime</id>
+    <id>http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime</id>
     <content type="html"><![CDATA[<p>I've been being confused of this "conversion" issue for a while, Today I figured out a clear way to do the function.
 <code lang='ruby'>
 DateTime.strptime("2009/04/16 19:52:30", "%Y/%m/%d %H:%M:%S").to_time
@@ -137,9 +137,9 @@ Also, I'd like to note down the ruby Time format rule:</p>
   
   <entry>
     <title type="html"><![CDATA[Study Notes: Passenger + Capistrano + Nginx + Rails 2.3.4 + Ubuntu 9.04 (10 steps)]]></title>
-    <link href="http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
     <updated>2010-07-30T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
+    <id>http://tech.wangyaodi.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
     <content type="html"><![CDATA[<p><strong><em>This post is just copied from </em></strong><a href="http://rustammamedov.wordpress.com/2009/12/27/capistrano-nginx-mongrel-deployment/"><strong><em>this page</em></strong></a><strong><em>. As a study notes, I re-share this manual here. Please check out original one if you wanna have a whole view of other involving topics. Thanks to the </em></strong><a href="http://rustammamedov.wordpress.com/"><strong><em>author</em></strong></a><strong><em> :)</em></strong></p>
 
 <div>
@@ -281,9 +281,9 @@ Links with detailed description:
   
   <entry>
     <title type="html"><![CDATA[Rails3 App Gem Stack]]></title>
-    <link href="http://yorzi.github.com/2010/07/28/rails3-app-gem-stack/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/28/rails3-app-gem-stack/"/>
     <updated>2010-07-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/28/rails3-app-gem-stack</id>
+    <id>http://tech.wangyaodi.com/2010/07/28/rails3-app-gem-stack</id>
     <content type="html"><![CDATA[<p>Rails3 RC1 was released yesterday, that's really awesome, I can't help experimenting a sample of Rails3 new features. I want to share my Gemfile to list all application gem stack, which may be useful for those who don't wanna create wheels themselves. Below is the list:
 <code lang='ruby'></p>
 

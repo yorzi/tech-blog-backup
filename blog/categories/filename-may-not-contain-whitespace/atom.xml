@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Filename may not contain whitespace | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/filename-may-not-contain-whitespace/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/filename-may-not-contain-whitespace/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[How to keep a space in your iPhone App name?]]></title>
-    <link href="http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
     <updated>2010-08-31T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
+    <id>http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
     <content type="html"><![CDATA[<p>The answer is, <strong>you can't submit your iPhone App with <em>whitespace</em> in its name</strong>. But you do <strong>be able to add space in your App display name</strong> under icon. I guess your purpose is the second one, you only want to display the space under app icon on device, don't you?</p>
 
 <p>OK, just name your app as whatever name with space before you setup the distribution package, e.g. "Example Name.app". Then,</p>

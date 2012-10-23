@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: nginx | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/nginx/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/nginx/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Study Notes: Passenger + Capistrano + Nginx + Rails 2.3.4 + Ubuntu 9.04 (10 steps)]]></title>
-    <link href="http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
     <updated>2010-07-30T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
+    <id>http://tech.wangyaodi.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
     <content type="html"><![CDATA[<p><strong><em>This post is just copied from </em></strong><a href="http://rustammamedov.wordpress.com/2009/12/27/capistrano-nginx-mongrel-deployment/"><strong><em>this page</em></strong></a><strong><em>. As a study notes, I re-share this manual here. Please check out original one if you wanna have a whole view of other involving topics. Thanks to the </em></strong><a href="http://rustammamedov.wordpress.com/"><strong><em>author</em></strong></a><strong><em> :)</em></strong></p>
 
 <div>

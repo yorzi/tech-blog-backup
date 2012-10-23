@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: sass | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/sass/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/sass/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Again about Formtastic]]></title>
-    <link href="http://yorzi.github.com/2010/01/07/formtastic/"/>
+    <link href="http://tech.wangyaodi.com/2010/01/07/formtastic/"/>
     <updated>2010-01-07T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/01/07/formtastic</id>
+    <id>http://tech.wangyaodi.com/2010/01/07/formtastic</id>
     <content type="html"><![CDATA[<p>Actually,
 I don't know how fantastic Formtastic is before this afternoon, I used it to refactor my form and it's pretty cool for me to wrap up all the massive code which I hate as always. Now every form is becoming nice.</p>
 

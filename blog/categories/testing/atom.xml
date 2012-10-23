@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: testing | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/testing/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/testing/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[A discussion on testing]]></title>
-    <link href="http://yorzi.github.com/2009/11/04/a-discussion-on-testing/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing/"/>
     <updated>2009-11-04T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/04/a-discussion-on-testing</id>
+    <id>http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing</id>
     <content type="html"><![CDATA[<p>In this week code review meeting, I open a discussion about testing code of Ruby on Rails. Actually I think the test for a complex system is not that easy if you wanna do it gracefully, but it's still worth starting in small steps, that's what's important. I'd like to share the ideas people contributed, and the included contents are as following:
 Andy:</p>
 
@@ -124,9 +124,9 @@ I think I got what I want from above discussion, thanks to all for sharing your 
   
   <entry>
     <title type="html"><![CDATA[Polymorphic association in factory_girl]]></title>
-    <link href="http://yorzi.github.com/2009/11/03/polymorphic-association-in-factory_girl/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/03/polymorphic-association-in-factory_girl/"/>
     <updated>2009-11-03T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/03/polymorphic-association-in-factory_girl</id>
+    <id>http://tech.wangyaodi.com/2009/11/03/polymorphic-association-in-factory_girl</id>
     <content type="html"><![CDATA[<p>I tried factroy_girl yesterday to work with rspec framework, It's excellent way to support testing, however, the polymorphic association in factroy_girl almost defeated me.
 The factory definition in my code is as:</p>
 

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: activity | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/activity/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/activity/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Beta Salon - Rails Developer Meetup]]></title>
-    <link href="http://yorzi.github.com/2010/07/27/beta-salon-rails-developer-meetup/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/27/beta-salon-rails-developer-meetup/"/>
     <updated>2010-07-27T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/27/beta-salon-rails-developer-meetup</id>
+    <id>http://tech.wangyaodi.com/2010/07/27/beta-salon-rails-developer-meetup</id>
     <content type="html"><![CDATA[<div>
 
 <a href="http://developer.idapted.com/about/">Engineers at Idapted</a> are famous and cool. They are eager to join the technical activities. At the very beginning of this June, <a href="http://jonathonpalley.com">Jonathon Palley</a> and Guolei went to US to attend the <a href="http://en.oreilly.com/rails2010">Railsconf2010</a>, which is the top level and the largest official Ruby on Rails conference, where the most successful Rails experts and companies share their experience and skill.

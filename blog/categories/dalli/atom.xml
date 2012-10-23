@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: dalli | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/dalli/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/dalli/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Dalli on Rails3]]></title>
-    <link href="http://yorzi.github.com/2011/01/22/dalli-on-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3/"/>
     <updated>2011-01-22T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/01/22/dalli-on-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3</id>
     <content type="html"><![CDATA[<p>Today I tried a new pure Ruby <a href="http://memcached.org/" target="_blank">memcahed</a> client in one of my Rails3 projects, it's named as "<a href="https://github.com/mperham/dalli" target="_blank">Dalli</a>". It's an excellent memcached client as <a href="http://www.mikeperham.com/">Mike Perham</a> announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on <a href="http://heroku.com" target="_blank">Heroku</a>.</p>
 
 <p>Make sure you've installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:

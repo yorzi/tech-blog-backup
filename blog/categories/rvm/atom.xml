@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: rvm | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/rvm/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/rvm/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Experiment Bowline]]></title>
-    <link href="http://yorzi.github.com/2010/06/16/experiment-bowline/"/>
+    <link href="http://tech.wangyaodi.com/2010/06/16/experiment-bowline/"/>
     <updated>2010-06-16T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/06/16/experiment-bowline</id>
+    <id>http://tech.wangyaodi.com/2010/06/16/experiment-bowline</id>
     <content type="html"><![CDATA[<blockquote>Bowline is a framework for making cross platform desktop applications in Ruby, HTML and JavaScript.
 
 If you've ever wished creating a desktop application was as simple as creating a Rails website, Bowline's for you.

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: juggernaut | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/juggernaut/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/juggernaut/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Real-Time Application with Rails3]]></title>
-    <link href="http://yorzi.github.com/2011/02/18/real-time-application-with-rails3/"/>
+    <link href="http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3/"/>
     <updated>2011-02-18T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/02/18/real-time-application-with-rails3</id>
+    <id>http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3</id>
     <content type="html"><![CDATA[<p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
 
 <p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>

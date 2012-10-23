@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: erlang | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/erlang/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/erlang/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Erlang]]></title>
-    <link href="http://yorzi.github.com/2009/11/19/erlang/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/19/erlang/"/>
     <updated>2009-11-19T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/19/erlang</id>
+    <id>http://tech.wangyaodi.com/2009/11/19/erlang</id>
     <content type="html"><![CDATA[<p>本篇是完全转载的一篇文章，<a href="http://www.dujingfang.com">7哥</a>昨天利用这个例子给team讲了一下erlang，在这里做个备份，免得以后要用时候找不到了。<a href="http://erlang-china.org/start/mochiweb_intro.html">原文链接</a></p>
 
 <hr />

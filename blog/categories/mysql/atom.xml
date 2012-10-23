@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Mysql | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/mysql/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[calculate results VS. store result sets]]></title>
-    <link href="http://yorzi.github.com/2010/08/04/calculate-results-vs-store-result-sets/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets/"/>
     <updated>2010-08-04T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/04/calculate-results-vs-store-result-sets</id>
+    <id>http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets</id>
     <content type="html"><![CDATA[<p>Firstly, what's the results in title? For example, the results may be learners who will be alive in coming two weeks, or the results may be study times of one learner, etc. Generally, results should be some data coming from analyzing other data.</p>
 
 <p>Here my question is, how can we get certain results much faster and easily?</p>
@@ -43,9 +43,9 @@ To store result set, is a way to cache results, but some times it's not easy to 
   
   <entry>
     <title type="html"><![CDATA[Install mysql on centOS5.5]]></title>
-    <link href="http://yorzi.github.com/2010/07/17/install-mysql-on-centos5-5/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/17/install-mysql-on-centos5-5/"/>
     <updated>2010-07-17T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/17/install-mysql-on-centos5-5</id>
+    <id>http://tech.wangyaodi.com/2010/07/17/install-mysql-on-centos5-5</id>
     <content type="html"><![CDATA[<p><strong>STUDY NOTES(<a href="http://library.linode.com/databases/mysql/centos-5" target="_blank">Linode VPS Doc Copy</a></strong><strong>):</strong></p>
 
 <div id="installing-mysql">
@@ -133,9 +133,9 @@ Last, restart MySQL by issuing:
   
   <entry>
     <title type="html"><![CDATA[mysql dump]]></title>
-    <link href="http://yorzi.github.com/2009/11/06/mysql-dump/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/06/mysql-dump/"/>
     <updated>2009-11-06T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/06/mysql-dump</id>
+    <id>http://tech.wangyaodi.com/2009/11/06/mysql-dump</id>
     <content type="html"><![CDATA[<p>I'm a little shamed that I ask Sonic for a mysql dump command several times, I rarely dump db myself, that's why I forget the way dealing with it.. Ok, the commands are:</p>
 
 <pre name="code" class="mysql">

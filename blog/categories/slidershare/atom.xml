@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: slidershare | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/slidershare/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/slidershare/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[JQuery for Rails developer]]></title>
-    <link href="http://yorzi.github.com/2009/11/17/jquery-for-rails-developer/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/17/jquery-for-rails-developer/"/>
     <updated>2009-11-17T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/17/jquery-for-rails-developer</id>
+    <id>http://tech.wangyaodi.com/2009/11/17/jquery-for-rails-developer</id>
     <content type="html"><![CDATA[<div style="width:425px;text-align:left" id="__ss_110063"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063" title="jQuery Presentation to Rails Developers">jQuery Presentation to Rails Developers</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jquery-presentation-to-rails-developers3264&stripped_title=jquery-presentation-to-rails-developers-110063" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jquery-presentation-to-rails-developers3264&stripped_title=jquery-presentation-to-rails-developers-110063" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">documents</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/wycats">Yehuda Katz</a>.</div></div>
 
 ]]></content>

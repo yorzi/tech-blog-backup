@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: it | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/it/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/it/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[2010 - Future Technologies]]></title>
-    <link href="http://yorzi.github.com/2009/12/18/2010-future-technologies/"/>
+    <link href="http://tech.wangyaodi.com/2009/12/18/2010-future-technologies/"/>
     <updated>2009-12-18T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/12/18/2010-future-technologies</id>
+    <id>http://tech.wangyaodi.com/2009/12/18/2010-future-technologies</id>
     <content type="html"><![CDATA[<p style="padding: 0px; margin: 0px;">技术总是向前发展，那么，2010年CIO和IT管理人员应该重点关注那些技术呢？</p>
 
 

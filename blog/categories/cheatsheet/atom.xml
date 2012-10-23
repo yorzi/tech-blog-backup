@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: cheatsheet | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/cheatsheet/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/cheatsheet/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cheat sheet in terminal]]></title>
-    <link href="http://yorzi.github.com/2009/11/11/cheat-sheet-in-terminal/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/11/cheat-sheet-in-terminal/"/>
     <updated>2009-11-11T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/11/cheat-sheet-in-terminal</id>
+    <id>http://tech.wangyaodi.com/2009/11/11/cheat-sheet-in-terminal</id>
     <content type="html"><![CDATA[<p>I found a cool gem called "cheat", it's pretty handy and convenient when you wanna see a brief help/introduction of some "stuff" in command line, cheat out the website for more <a href="http://cheat.errtheblog.com/b">wiki-versioned cheat sheet</a>.</p>
 
 <blockquote>

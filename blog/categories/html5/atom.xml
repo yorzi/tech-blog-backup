@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: HTML5 | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/html5/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/html5/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[iPhone/Android application based on Titanium and HTML5]]></title>
-    <link href="http://yorzi.github.com/2010/06/30/iphone-android-application-based-on-titanium-and-html5/"/>
+    <link href="http://tech.wangyaodi.com/2010/06/30/iphone-android-application-based-on-titanium-and-html5/"/>
     <updated>2010-06-30T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/06/30/iphone-android-application-based-on-titanium-and-html5</id>
+    <id>http://tech.wangyaodi.com/2010/06/30/iphone-android-application-based-on-titanium-and-html5</id>
     <content type="html"><![CDATA[<p>After a two-day experiment on <a href="http://www.appcelerator.com/">Titanium framework</a> and HTML5 technology, I finally found, we can quickly move into iPhone/iPad application development if we have enough extra time to refactor our Rails core application into HTML5 version.</p>
 
 <p>I've made a Titanium based app demo to show how to structure the application according to our current system. Titanium framework includes plenty of powerful <a href="http://developer.appcelerator.com/doc/kitchensink">APIs</a> for us to generate cool "application container", then we embed our content/system into this container. I think the Titanium can be organized clearly if we have clearly structured Rails/HTML5 application.</p>

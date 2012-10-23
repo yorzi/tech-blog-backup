@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: css | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/css/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/css/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[UI Framework]]></title>
-    <link href="http://yorzi.github.com/2009/11/17/ui-framework/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/17/ui-framework/"/>
     <updated>2009-11-17T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/17/ui-framework</id>
+    <id>http://tech.wangyaodi.com/2009/11/17/ui-framework</id>
     <content type="html"><![CDATA[<p>最近发现了几个UI framework，接下来我要把他们和RoR优美的结合起来，这样以来，在做什么应用的时候，就不愁没有Style了。</p>
 
 <ol>

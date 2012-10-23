@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: favorite | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/favorite/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/favorite/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[acts_as_favable is handy]]></title>
-    <link href="http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy/"/>
     <updated>2010-12-01T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy</id>
+    <id>http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy</id>
     <content type="html"><![CDATA[<p>Yes, it's more than two months in which I didn't write up any post here. I know I'd like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I've got many technology things/thoughts and tips that I want to share out.</p>
 
 <p>Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that's very easy to do that with acts_as_favable.</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: routing | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/routing/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/routing/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[an A/B test solution in ROR]]></title>
-    <link href="http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror/"/>
+    <link href="http://tech.wangyaodi.com/2010/01/14/a-ab-test-solution-in-ror/"/>
     <updated>2010-01-14T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror</id>
+    <id>http://tech.wangyaodi.com/2010/01/14/a-ab-test-solution-in-ror</id>
     <content type="html"><![CDATA[<p>Last few days, I worked for a mission to add more flexible control to <a href="http://www.eqenglish.com">our website</a> landing pages. What I did is to add a "a/b" test feature for new landing pages, that means, if people have two designs and want to compare the results, they only release two versions of landing page, and then only get one url for the two versions of pages, after that the url will automatically redirect to different versions evenly, so that through Google analytics marketing people can easily decide which landing page is much better.</p>
 
 <p><strong>Landing pages A/B test solution:</strong>
@@ -84,9 +84,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[A note for building a simple Rails application]]></title>
-    <link href="http://yorzi.github.com/2010/01/06/cms-formtastic-routing-cache-in-rails/"/>
+    <link href="http://tech.wangyaodi.com/2010/01/06/cms-formtastic-routing-cache-in-rails/"/>
     <updated>2010-01-06T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/01/06/cms-formtastic-routing-cache-in-rails</id>
+    <id>http://tech.wangyaodi.com/2010/01/06/cms-formtastic-routing-cache-in-rails</id>
     <content type="html"><![CDATA[<p>最近花了一些时间改造公司的网站（<a href="http://www.eqenglish.com">EQV2</a>），这个网站是一个偏重内容和设计的信息类主站，并没有太多功能性的要求，所以在使用<a href="http://rubyonrails.org/">Ruby on Rails</a>开发这个网站的时候，尝试了一些之前涉及不多的技术。最初这个网站利用<a href="http://radiantcms.org/">Radiant</a>（RoR的开源CMS系统）搭建，考虑到没有专门的技术人员来管理和研究<a href="http://radiantcms.org/">Radiant</a>，而且和我们自己的系统平台的集成也会有些麻烦，最终决定放弃这把牛刀，仅仅做一个简单而且结构清晰的网站就OK。</p>
 
 <p>我简单列一下这次改造过程中的一些比较典型的处理方法和技术：</p>

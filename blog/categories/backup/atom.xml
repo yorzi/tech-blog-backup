@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: backup | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/backup/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/backup/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[perfect backup solution for developers]]></title>
-    <link href="http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers/"/>
+    <link href="http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers/"/>
     <updated>2010-09-10T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/09/10/perfect-backup-solution-for-developers</id>
+    <id>http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers</id>
     <content type="html"><![CDATA[<p>If you are system administrator, I know you are professional to write script doing flexible customized backup. But if you are like me as a Rails developer, and you just don't wanna spend too much time to struggle with tricky scripts for file or DB backup, you mush try my recommend backup solution on *nix system. Back to the topic : easy backup with "backup" and "whenever".</p>
 
 <p>Yes, <a href="http://github.com/meskyanichi/backup">Backup</a> and <a href="http://github.com/javan/whenever">Whenever</a> is the best and easiest solution to manage your backup. They are all Ruby gems which are open sourced on github. Most of all, they are all working well both with Rails and with pure *nix environment.</p>
@@ -30,9 +30,9 @@
   
   <entry>
     <title type="html"><![CDATA[Formtastic for Rails]]></title>
-    <link href="http://yorzi.github.com/2009/12/22/formtastic-for-rails/"/>
+    <link href="http://tech.wangyaodi.com/2009/12/22/formtastic-for-rails/"/>
     <updated>2009-12-22T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/12/22/formtastic-for-rails</id>
+    <id>http://tech.wangyaodi.com/2009/12/22/formtastic-for-rails</id>
     <content type="html"><![CDATA[<div>
 
 I've been working on EQ portal during these days, I wanna share a useful gem which I used, it is called <a href="http://github.com/justinfrench/formtastic/tree/0.9.7">Formtastic</a>. it's a nice way to create form via formtastic, so the finial form is something like:

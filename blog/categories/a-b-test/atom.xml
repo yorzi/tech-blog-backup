@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: a/b-test | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/a-b-test/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/a-b-test/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[an A/B test solution in ROR]]></title>
-    <link href="http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror/"/>
+    <link href="http://tech.wangyaodi.com/2010/01/14/a-ab-test-solution-in-ror/"/>
     <updated>2010-01-14T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/01/14/a-ab-test-solution-in-ror</id>
+    <id>http://tech.wangyaodi.com/2010/01/14/a-ab-test-solution-in-ror</id>
     <content type="html"><![CDATA[<p>Last few days, I worked for a mission to add more flexible control to <a href="http://www.eqenglish.com">our website</a> landing pages. What I did is to add a "a/b" test feature for new landing pages, that means, if people have two designs and want to compare the results, they only release two versions of landing page, and then only get one url for the two versions of pages, after that the url will automatically redirect to different versions evenly, so that through Google analytics marketing people can easily decide which landing page is much better.</p>
 
 <p><strong>Landing pages A/B test solution:</strong>

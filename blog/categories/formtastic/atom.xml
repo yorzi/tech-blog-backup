@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: formtastic | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/formtastic/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/formtastic/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Again about Formtastic]]></title>
-    <link href="http://yorzi.github.com/2010/01/07/formtastic/"/>
+    <link href="http://tech.wangyaodi.com/2010/01/07/formtastic/"/>
     <updated>2010-01-07T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/01/07/formtastic</id>
+    <id>http://tech.wangyaodi.com/2010/01/07/formtastic</id>
     <content type="html"><![CDATA[<p>Actually,
 I don't know how fantastic Formtastic is before this afternoon, I used it to refactor my form and it's pretty cool for me to wrap up all the massive code which I hate as always. Now every form is becoming nice.</p>
 
@@ -39,9 +39,9 @@ I don't know how fantastic Formtastic is before this afternoon, I used it to re
   
   <entry>
     <title type="html"><![CDATA[A note for building a simple Rails application]]></title>
-    <link href="http://yorzi.github.com/2010/01/06/cms-formtastic-routing-cache-in-rails/"/>
+    <link href="http://tech.wangyaodi.com/2010/01/06/cms-formtastic-routing-cache-in-rails/"/>
     <updated>2010-01-06T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/01/06/cms-formtastic-routing-cache-in-rails</id>
+    <id>http://tech.wangyaodi.com/2010/01/06/cms-formtastic-routing-cache-in-rails</id>
     <content type="html"><![CDATA[<p>最近花了一些时间改造公司的网站（<a href="http://www.eqenglish.com">EQV2</a>），这个网站是一个偏重内容和设计的信息类主站，并没有太多功能性的要求，所以在使用<a href="http://rubyonrails.org/">Ruby on Rails</a>开发这个网站的时候，尝试了一些之前涉及不多的技术。最初这个网站利用<a href="http://radiantcms.org/">Radiant</a>（RoR的开源CMS系统）搭建，考虑到没有专门的技术人员来管理和研究<a href="http://radiantcms.org/">Radiant</a>，而且和我们自己的系统平台的集成也会有些麻烦，最终决定放弃这把牛刀，仅仅做一个简单而且结构清晰的网站就OK。</p>
 
 <p>我简单列一下这次改造过程中的一些比较典型的处理方法和技术：</p>
@@ -71,9 +71,9 @@ feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可
   
   <entry>
     <title type="html"><![CDATA[Formtastic for Rails]]></title>
-    <link href="http://yorzi.github.com/2009/12/22/formtastic-for-rails/"/>
+    <link href="http://tech.wangyaodi.com/2009/12/22/formtastic-for-rails/"/>
     <updated>2009-12-22T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/12/22/formtastic-for-rails</id>
+    <id>http://tech.wangyaodi.com/2009/12/22/formtastic-for-rails</id>
     <content type="html"><![CDATA[<div>
 
 I've been working on EQ portal during these days, I wanna share a useful gem which I used, it is called <a href="http://github.com/justinfrench/formtastic/tree/0.9.7">Formtastic</a>. it's a nice way to create form via formtastic, so the finial form is something like:

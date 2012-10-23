@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: nowjs | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/nowjs/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/nowjs/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Weekly Updates : Javascript Rocks!]]></title>
-    <link href="http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks/"/>
+    <link href="http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks/"/>
     <updated>2011-03-21T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2011/03/21/weekly-updates-javascript-rocks</id>
+    <id>http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks</id>
     <content type="html"><![CDATA[<p>After quit from Idapted/Eleutian, I'd like to have a long term plan for writing blogs. However, as everything starts, it's always hard. I thought it around, and finally decided to open my mind, and just try to start with a strong belief : Sharing! Then an idea comes out.</p>
 
 <p>First of all, I think my weekly updates will help to share great things I came across or even I started to use, it has much fun to replay all these stuff, so I will do that in the weekend, that's also part of my study review.</p>

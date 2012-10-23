@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: demeter | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/demeter/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/demeter/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Law of Demeter]]></title>
-    <link href="http://yorzi.github.com/2009/11/26/law-of-demeter/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/26/law-of-demeter/"/>
     <updated>2009-11-26T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/26/law-of-demeter</id>
+    <id>http://tech.wangyaodi.com/2009/11/26/law-of-demeter</id>
     <content type="html"><![CDATA[<p>Rails Best Practice Snippet: Model refactor.
 Reference link to the PDF.<a href='http://tech.wangyaodi.com/?attachment_id=125' rel='attachment wp-att-125'>Rails-best-practices.</a></p>
 

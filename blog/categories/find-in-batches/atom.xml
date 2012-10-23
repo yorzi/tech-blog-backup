@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: find_in_batches | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/find-in-batches/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/find-in-batches/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[find_in_batches is not working]]></title>
-    <link href="http://yorzi.github.com/2010/03/17/find_in_batches-is-not-working/"/>
+    <link href="http://tech.wangyaodi.com/2010/03/17/find_in_batches-is-not-working/"/>
     <updated>2010-03-17T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/03/17/find_in_batches-is-not-working</id>
+    <id>http://tech.wangyaodi.com/2010/03/17/find_in_batches-is-not-working</id>
     <content type="html"><![CDATA[<p>Days ago, I came across a situation in which <a href="http://api.rubyonrails.org/classes/ActiveRecord/Batches/ClassMethods.html">find_in_batches</a> does not work correctly, the sample code is as below:
 <code lang="ruby"></p>
 

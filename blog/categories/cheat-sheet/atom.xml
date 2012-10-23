@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: cheat-sheet | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/cheat-sheet/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/cheat-sheet/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SEO Web Developer Cheat Sheet]]></title>
-    <link href="http://yorzi.github.com/2009/12/28/seo-web-developer-cheat-sheet/"/>
+    <link href="http://tech.wangyaodi.com/2009/12/28/seo-web-developer-cheat-sheet/"/>
     <updated>2009-12-28T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/12/28/seo-web-developer-cheat-sheet</id>
+    <id>http://tech.wangyaodi.com/2009/12/28/seo-web-developer-cheat-sheet</id>
     <content type="html"><![CDATA[<p>发现好东西不敢独享，拿出来分享一下：<a href='http://blog.wangyaodi.com/wp-content/uploads/2009/12/SEO_Web_Developer_Cheat_Sheet.pdf'>SEO Web Developer Cheat Sheet</a></p>
 
 <p>Cheat Sheet是一种流行的手册文化，如果能把常用的东西凑到一块，简明扼要的排版出来，用的时候方便不少。以前写过一个介绍<a href="http://blog.wangyaodi.com/2009/11/11/cheat-sheet-in-terminal/">Cheat命令</a>的帖子，如果你是搞技术的，不妨试试。</p>

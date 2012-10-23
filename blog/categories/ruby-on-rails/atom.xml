@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ruby On Rails | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/ruby-on-rails/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[acts_as_favable is handy]]></title>
-    <link href="http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy/"/>
+    <link href="http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy/"/>
     <updated>2010-12-01T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/12/01/acts_as_favable-is-handy</id>
+    <id>http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy</id>
     <content type="html"><![CDATA[<p>Yes, it's more than two months in which I didn't write up any post here. I know I'd like to, but time was so hard to me, heavy working load and many life issues made me tired, of course I am still happy with all challenges as well. Anyway, I've got many technology things/thoughts and tips that I want to share out.</p>
 
 <p>Today, I will announce a gem named acts_as_favable, the gem helps you adding notable favorites mark to multi-objects. For example, you want to add a favorite mark to a video or a discussion with your notes, now that's very easy to do that with acts_as_favable.</p>
@@ -33,9 +33,9 @@
   
   <entry>
     <title type="html"><![CDATA[Study Note : serialize object in ActiveRecord]]></title>
-    <link href="http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/04/serialize-object-in-activerecord/"/>
     <updated>2010-08-04T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/04/serialize-object-in-activerecord</id>
+    <id>http://tech.wangyaodi.com/2010/08/04/serialize-object-in-activerecord</id>
     <content type="html"><![CDATA[<h2><span style="color: #444444; line-height: 24px; font-size: 16px;">Copied from <a href="http://api.rubyonrails.org/classes/ActiveRecord/Base.html#M001799" target="_blank">Ruby on Rails API doc</a>. Store here as a study notes for myself.
 
 Active Record can <a href="Base.html#M001799">serialize</a> any object in text <a href="Base.html#M001809">columns</a> using YAML. To do so, you must specify this with a call to the class method <tt><a href="Base.html#M001799">serialize</a></tt>. This makes it possible to store arrays, hashes, and other non-mappable objects without doing any additional work. Example:</span></h2>
@@ -63,9 +63,9 @@ Active Record can <a href="Base.html#M001799">serialize</a> any object in text�
   
   <entry>
     <title type="html"><![CDATA[Study Notes: Passenger + Capistrano + Nginx + Rails 2.3.4 + Ubuntu 9.04 (10 steps)]]></title>
-    <link href="http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/"/>
     <updated>2010-07-30T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
+    <id>http://tech.wangyaodi.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps</id>
     <content type="html"><![CDATA[<p><strong><em>This post is just copied from </em></strong><a href="http://rustammamedov.wordpress.com/2009/12/27/capistrano-nginx-mongrel-deployment/"><strong><em>this page</em></strong></a><strong><em>. As a study notes, I re-share this manual here. Please check out original one if you wanna have a whole view of other involving topics. Thanks to the </em></strong><a href="http://rustammamedov.wordpress.com/"><strong><em>author</em></strong></a><strong><em> :)</em></strong></p>
 
 <div>
@@ -207,9 +207,9 @@ Links with detailed description:
   
   <entry>
     <title type="html"><![CDATA[A Great Survey Solution Based On Ruby on Rails]]></title>
-    <link href="http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
+    <link href="http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/"/>
     <updated>2010-07-27T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
+    <id>http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails</id>
     <content type="html"><![CDATA[<p>I've been always looking for a powerful and flexible survey solution for a while, now I find it : <a href="http://github.com/breakpointer/surveyor">Surveyor</a>.</p>
 
 <p><strong>What's a Survey? </strong>
@@ -447,9 +447,9 @@ end
   
   <entry>
     <title type="html"><![CDATA[valuable ruby on rails materials]]></title>
-    <link href="http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials/"/>
+    <link href="http://tech.wangyaodi.com/2010/03/26/valuable-ruby-on-rails-materials/"/>
     <updated>2010-03-26T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials</id>
+    <id>http://tech.wangyaodi.com/2010/03/26/valuable-ruby-on-rails-materials</id>
     <content type="html"><![CDATA[<p>一直关注<a href="http://blog.xdite.net/">XDite的blog</a>，他写的关于Rails的文章总是能让我从中受益。看见他写的Ruby on Rails的入门书单与练习作业，感觉非常的精炼，这个post很适合当作Rails新手的入门指导，鉴于此，我也把它推荐给Team，用来培训新入职的Rails developer. 在这里谢谢XDite老师 :)</p>
 
 <p>以下为全文转载，<a href="http://blog.xdite.net/?p=1754&amp;utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+xxddite+(Blog.XDite.net)">原文链接请点击此处</a>。</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: has_many | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/has-many/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/has-many/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[primary_key and foreign_key in Rails association]]></title>
-    <link href="http://yorzi.github.com/2009/11/12/primary_key-and-foreign_key-in-rails-association/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/12/primary_key-and-foreign_key-in-rails-association/"/>
     <updated>2009-11-12T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/12/primary_key-and-foreign_key-in-rails-association</id>
+    <id>http://tech.wangyaodi.com/2009/11/12/primary_key-and-foreign_key-in-rails-association</id>
     <content type="html"><![CDATA[<p>The has_many and belongs_to association in Rails are with many optional parameters, they are actually the parameters for DB relationship, see more details by <a href="http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html">clicking here</a>.</p>
 
 <p>As a reminder to myself, I misunderstood the primary_key an foreign_key conditions in association, it should be set in both sides in some case, for instance:</p>

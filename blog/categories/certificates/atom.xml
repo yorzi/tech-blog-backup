@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: certificates | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/certificates/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/certificates/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[iPhone App : Debug and Release through Titanium]]></title>
-    <link href="http://yorzi.github.com/2010/08/25/iphone-app-debug-and-release-via-titanium/"/>
+    <link href="http://tech.wangyaodi.com/2010/08/25/iphone-app-debug-and-release-via-titanium/"/>
     <updated>2010-08-25T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/08/25/iphone-app-debug-and-release-via-titanium</id>
+    <id>http://tech.wangyaodi.com/2010/08/25/iphone-app-debug-and-release-via-titanium</id>
     <content type="html"><![CDATA[<p>Once people develop an iPhone App using <a href="http://www.appcelerator.com/">Titanium1.4</a>, they must be very happy when the App is running on iPhone simulator. They feel great until they decide to debug their app on their devices or even release their app to AppleAppStore. This happens specially to these who firstly do this. Why? There are many reasons that you will hate Apple during the debug or release process. I bat you are like me then.</p>
 
 <p>Assume that: You've already finished coding an iPhone app in Titanium 1.4 framework. Now you want to install your app on your device. If you do this first time, guess what will happen to you? Let me tell you my story.</p>

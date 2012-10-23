@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: 'Static | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/-static/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/-static/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,10 +15,13 @@
   
   <entry>
     <title type="html"><![CDATA[Run static website on Heroku for Free]]></title>
-    <link href="http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free/"/>
+    <link href="http://tech.wangyaodi.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free/"/>
     <updated>2012-10-23T13:19:00+08:00</updated>
-    <id>http://yorzi.github.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free</id>
+    <id>http://tech.wangyaodi.com/2012/10/23/run-a-static-personal-website-on-heroku-for-free</id>
     <content type="html"><![CDATA[<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a></div>
+
+
+<br />
 
 
 <p>Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.</p>
@@ -73,7 +76,7 @@ web: bundle exec rackup -p $PORT
 
 <p>Ok, now it's ready to deploy the whole website to Heroku, <a href="https://devcenter.heroku.com/articles/git">here</a> is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, <a href="https://devcenter.heroku.com/articles/custom-domains">here</a> is also a docment for this purpose on heroku help center.</p>
 
-<p>Easy, right? I've run my awesome personal website on <a href="wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
+<p>Easy, right? I've run my awesome personal website on <a href="http://wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
 ]]></content>
   </entry>
   

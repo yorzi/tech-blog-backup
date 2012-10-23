@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: bz2 | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/bz2/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/bz2/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[mysql dump]]></title>
-    <link href="http://yorzi.github.com/2009/11/06/mysql-dump/"/>
+    <link href="http://tech.wangyaodi.com/2009/11/06/mysql-dump/"/>
     <updated>2009-11-06T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/11/06/mysql-dump</id>
+    <id>http://tech.wangyaodi.com/2009/11/06/mysql-dump</id>
     <content type="html"><![CDATA[<p>I'm a little shamed that I ask Sonic for a mysql dump command several times, I rarely dump db myself, that's why I forget the way dealing with it.. Ok, the commands are:</p>
 
 <pre name="code" class="mysql">

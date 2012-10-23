@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: xdite | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/xdite/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/xdite/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[valuable ruby on rails materials]]></title>
-    <link href="http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials/"/>
+    <link href="http://tech.wangyaodi.com/2010/03/26/valuable-ruby-on-rails-materials/"/>
     <updated>2010-03-26T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2010/03/26/valuable-ruby-on-rails-materials</id>
+    <id>http://tech.wangyaodi.com/2010/03/26/valuable-ruby-on-rails-materials</id>
     <content type="html"><![CDATA[<p>一直关注<a href="http://blog.xdite.net/">XDite的blog</a>，他写的关于Rails的文章总是能让我从中受益。看见他写的Ruby on Rails的入门书单与练习作业，感觉非常的精炼，这个post很适合当作Rails新手的入门指导，鉴于此，我也把它推荐给Team，用来培训新入职的Rails developer. 在这里谢谢XDite老师 :)</p>
 
 <p>以下为全文转载，<a href="http://blog.xdite.net/?p=1754&amp;utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+xxddite+(Blog.XDite.net)">原文链接请点击此处</a>。</p>

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: templates | @yorzi]]></title>
-  <link href="http://yorzi.github.com/blog/categories/templates/atom.xml" rel="self"/>
-  <link href="http://yorzi.github.com/"/>
-  <updated>2012-10-23T14:47:55+08:00</updated>
-  <id>http://yorzi.github.com/</id>
+  <link href="http://tech.wangyaodi.com/blog/categories/templates/atom.xml" rel="self"/>
+  <link href="http://tech.wangyaodi.com/"/>
+  <updated>2012-10-23T16:11:35+08:00</updated>
+  <id>http://tech.wangyaodi.com/</id>
   <author>
     <name><![CDATA[Andy Wang]]></name>
     <email><![CDATA[wangyaodi@gmail.com]]></email>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rails Application Templates]]></title>
-    <link href="http://yorzi.github.com/2009/12/11/rails-application-templates/"/>
+    <link href="http://tech.wangyaodi.com/2009/12/11/rails-application-templates/"/>
     <updated>2009-12-11T00:00:00+08:00</updated>
-    <id>http://yorzi.github.com/2009/12/11/rails-application-templates</id>
+    <id>http://tech.wangyaodi.com/2009/12/11/rails-application-templates</id>
     <content type="html"><![CDATA[<p>When talking about templates in Rails, usually people mean the templates which help to re-use views, but this templates is a <a href="http://github.com/rails/rails/commit/e8cc4b116c460c524961a07da92da3f323854c15">feature after Rails 2.3 for generating Rails application</a> easily, so give it a try if you haven't used it yet.</p>
 
 <p>It's helpful for me to create Rails application according to similar skeleton, a sample below was written about one year ago, but recently I want to create a new application with the same environment/configuration.</p>
