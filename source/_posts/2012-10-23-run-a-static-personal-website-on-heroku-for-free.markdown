@@ -6,7 +6,7 @@ comments: true
 categories: Heroku BootStrap Resume 'Static Website' Free
 ---
 
-<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a></div>
+<div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a></div><br />
 
 Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.
 
@@ -51,7 +51,7 @@ web: bundle exec rackup -p $PORT
 
 Ok, now it's ready to deploy the whole website to Heroku, [here](https://devcenter.heroku.com/articles/git) is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, [here](https://devcenter.heroku.com/articles/custom-domains) is also a docment for this purpose on heroku help center.
 
-Easy, right? I've run my awesome personal website on [wangyaodi.com](wangyaodi.com) according to above steps, give it a look if you are interested in it. You are also welcomed to fork its [source code](https://github.com/yorzi/cv-andywang) on github. Enjoy it!
+Easy, right? I've run my awesome personal website on [wangyaodi.com](http://wangyaodi.com) according to above steps, give it a look if you are interested in it. You are also welcomed to fork its [source code](https://github.com/yorzi/cv-andywang) on github. Enjoy it!
 
 
 [wrapbootstrap]: https://wrapbootstrap.com/
