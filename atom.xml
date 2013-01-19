@@ -4,7 +4,7 @@
   <title>@yorzi</title>
   <link href="http://tech.wangyaodi.com/atom.xml" rel="self"/>
   <link href="http://tech.wangyaodi.com/"/>
-  <updated>2012-10-22T19:43:59+08:00</updated>
+  <updated>2013-01-19T16:16:33+08:00</updated>
   <id>http://tech.wangyaodi.com/</id>
   <author>
     <name>Andy Wang</name>
@@ -13,6 +13,133 @@
     
   </author>
 
+  
+  <entry>
+    <title>Downloadable SVG in PNG Format</title>
+    <link href="http://tech.wangyaodi.com/2013/01/19/downloadable-svg-in-png-format/"/>
+    <updated>2013-01-19T16:08:00+08:00</updated>
+    <id>http://tech.wangyaodi.com/2013/01/19/downloadable-svg-in-png-format</id>
+    <content type="html">&lt;p&gt;Recently, I worked on some interesting features, we use &lt;a href=&quot;http://www.highcharts.com/&quot;&gt;Highcharts&lt;/a&gt; and/or &lt;a href=&quot;http://raphaeljs.com/&quot;&gt;Raphaeljs&lt;/a&gt; to build complex charts, including bar chart, scatter chart or heat map, etc. In an extreme sample, we build a complicated one-page charting engine by which user is able to compose a group of conditions and then render a meaningful chart according to what are selected. It's pretty cool.&lt;/p&gt;
+
+&lt;p&gt;Meanwhile, client is willing to download these generated charts on individual chart level. They also want to have an ability to share the individual chart as a link or even as a piece of HTML code. What's the best solution to add these functionalities? Well, we did try many solutions for the features, let me show you how we make it finally.&lt;/p&gt;
+
+&lt;h4&gt;Start from a HTML template&lt;/h4&gt;
+
+&lt;script src=&quot;https://gist.github.com/4443672.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Above HTML code is the generated content on my page, I will mainly explain the solution based on it. Here is also a sample SVG file: &lt;a href=&quot;https://gist.github.com/4443811&quot;&gt;sample.svg&lt;/a&gt;, you can use it to go through the whole senario if you want to experiment by yourself.&lt;/p&gt;
+
+&lt;h4&gt;Deal with SVG via HTML5 Canvas&lt;/h4&gt;
+
+&lt;p&gt;HighCharts and Rapheal are JS libaries by which you are able to generate complex &lt;a href=&quot;http://www.w3.org/TR/SVG11/&quot;&gt;SVG&lt;/a&gt; charts, normally, people can not download a svg file directly, and it's also not a popular image format for sharing around. We'd better convert it to a PNG or JPG image, as PNG and JPG format is downloadable from web page. I will take PNG format as a sample in this post.&lt;/p&gt;
+
+&lt;p&gt;How to convert a SVG image to a PNG image? Mainly, you can do the convertion job from server side. There is a SVG toolkit provided by Apache which is named as &lt;a href=&quot;http://xmlgraphics.apache.org/batik/#download&quot;&gt;Batik&lt;/a&gt;. But I don't like this solution, it's a bit comoplex to install Batik and make it work with Ruby on Rails. I'd like to work the convertion out via pure javascript. Yes, use &lt;a href=&quot;http://code.google.com/p/canvg/&quot;&gt;canvg&lt;/a&gt; to move all SVG information to a HTML5 Canvas object.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/4452589.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Using the HTML5 canvas element, you can create all sorts of cool graphics client-side on the fly using Javascript. There is a neat function on the the canvas object called toDataURL(). This functions encodes the image data as a base64 encoded PNG file and returns it as a &lt;a href=&quot;http://en.wikipedia.org/wiki/Data:_URI_scheme&quot;&gt;data: URI&lt;/a&gt;. By using the data:URI string, you can make it a downloadable PNG file.&lt;/p&gt;
+
+&lt;p&gt;There is also a libary to help you do so, it's &lt;a href=&quot;http://www.nihilogic.dk/labs/canvas2image/&quot;&gt;Canvas2Image&lt;/a&gt; that can convert canvas to image as BMP, PNG or JPEG format.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/4467012.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;h4&gt;Customize default filename while downloading&lt;/h4&gt;
+
+&lt;p&gt;Canvas2Image lib will implement a pop out window to allow you download the data:URI as a PNG image file with a default name &lt;code&gt;download&lt;/code&gt;, which is not acceptable by our client, I have to figure out a way to customize the downloadable filename.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/4467156.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;It might be easy if you just want to cover your Chrome or Firefox user, as there is a &lt;code&gt;download&lt;/code&gt; attribute for &lt;code&gt;&amp;lt;a&amp;gt;&lt;/code&gt; tag, when you set it as something like &lt;code&gt;&amp;lt;a src='the data:uri string' download='test.png'&amp;gt;&lt;/code&gt; then you will get the default filename in this the case when you click the download link.&lt;/p&gt;
+
+&lt;p&gt;I am not lucky, I have to cover IE9 at least. So I need to push the data:uri to server, then I can render the data with specific headers(see below code), that will make the downloadable file with a customized file name.&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/4467051.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;p&gt;Pay attention to above &lt;code&gt;html2canvas([$(&quot;.hidden_container&quot;)[0]],{ … })&lt;/code&gt; parts. It helps to convert whole HTML code to a canvas based on &lt;a href=&quot;http://html2canvas.hertzen.com/&quot;&gt;html2canvas&lt;/a&gt; lib, that's our case as we have to wrap up some HTML code out side the the charts.&lt;/p&gt;
+
+&lt;h4&gt;A trick to overcome IE9 issue&lt;/h4&gt;
+
+&lt;p&gt;When you work on IE9, the canvg fails to translate the SVG to Canvas, it seems IE9's &lt;code&gt;DOMParser()&lt;/code&gt; is not able to parse the SVG successfully. After some search from Google, we found only one line code will resove the SVG parser issue. Just replace some invalid string in SVG data as below:&lt;/p&gt;
+
+&lt;script src=&quot;https://gist.github.com/4467165.js&quot;&gt;&lt;/script&gt;
+
+
+&lt;h4&gt;Conclusion&lt;/h4&gt;
+
+&lt;p&gt;To summarize this post, you are suggested to use several JS libs above to convert &lt;code&gt;SVG&lt;/code&gt; to &lt;code&gt;Canvas&lt;/code&gt;, then convert &lt;code&gt;Canvas&lt;/code&gt; to &lt;code&gt;PNG&lt;/code&gt; file, if you also want to customize a piece of HTML code out side the SVG chart, then you are able to convert &lt;code&gt;HTML&lt;/code&gt; to &lt;code&gt;Canvas&lt;/code&gt;, then again from &lt;code&gt;Canvas&lt;/code&gt; to &lt;code&gt;PNG&lt;/code&gt;, when you want to set a customized filename for the generated PNG file, you have to send the data:uri string onto server side, then rewrite the response headers, all these handling will implement a downloading feature for you.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Run a Static Website on Heroku for Free</title>
+    <link href="http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free/"/>
+    <updated>2012-10-22T20:00:00+08:00</updated>
+    <id>http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free</id>
+    <content type="html">&lt;div class=&quot;thumbnail&quot;&gt;&lt;a href=&quot;http://wangyaodi.com&quot;&gt;&lt;img src=&quot;https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg&quot; alt=&quot;Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer.&quot; /&gt;&lt;/a&gt;&lt;br /&gt;&lt;span&gt;Uploaded with &lt;a href=&quot;http://skitch.com&quot;&gt;Skitch&lt;/a&gt;!&lt;/span&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.&lt;/p&gt;
+
+&lt;p&gt;Well, first of all, I bought an awesome template on &lt;a href=&quot;https://wrapbootstrap.com/&quot;&gt;wrapbootstrap&lt;/a&gt;, where all pretty templates are built on &lt;a href=&quot;http://twitter.github.com/bootstrap/&quot;&gt;Twitter's BootStrap&lt;/a&gt;, I guess everyone loves BootStrap, who doesn't?&lt;/p&gt;
+
+&lt;p&gt;Once I get the simple static HTML template for website, I am going to deploy it to Heroku for free. We know &lt;a href=&quot;http://heroku.com&quot;&gt;Heroku&lt;/a&gt; deliveries their popular cloud hosting for &lt;a href=&quot;http://rubyonrails.org/&quot;&gt;Ruby on Rails&lt;/a&gt;, &lt;a href=&quot;http://nodejs.org/&quot;&gt;Node.js&lt;/a&gt; and other framework. How does it work for static HTML website hosting?&lt;/p&gt;
+
+&lt;p&gt;I found that, we actually can build s simple Rack application to &lt;code&gt;run&lt;/code&gt; the static website on heroku. But how? See below:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;Gemfile&lt;/code&gt; to require the &lt;code&gt;rack&lt;/code&gt; gem for the website.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;code&gt;
+source 'http://rubygems.org'
+gem 'rack'
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Add &lt;code&gt;config.ru&lt;/code&gt; file in root folder of the website, this will enable the Rack handlings.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;```
+$stdout.sync = true&lt;/p&gt;
+
+&lt;p&gt;use Rack::Static,
+  :urls =&gt; [&quot;/font-awesome&quot;, &quot;/js&quot;, &quot;/img&quot;, &quot;/style&quot;],
+  :root =&gt; &quot;.&quot;&lt;/p&gt;
+
+&lt;p&gt;run lambda { |env|
+  [&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;200,
+{
+  'Content-Type'  =&amp;gt; 'text/html',
+  'Cache-Control' =&amp;gt; 'public, max-age=86400'
+},
+File.open('index.html', File::RDONLY)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;  ]
+}
+&lt;code&gt;``
+- Add&lt;/code&gt;Procfile` in root folder to config the heroku web server and worker(if there is any).&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+web: bundle exec rackup -p $PORT
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Ok, now it's ready to deploy the whole website to Heroku, &lt;a href=&quot;https://devcenter.heroku.com/articles/git&quot;&gt;here&lt;/a&gt; is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, &lt;a href=&quot;https://devcenter.heroku.com/articles/custom-domains&quot;&gt;here&lt;/a&gt; is also a docment for this purpose on heroku help center.&lt;/p&gt;
+
+&lt;p&gt;Easy, right? I've run my awesome personal website on &lt;a href=&quot;wangyaodi.com&quot;&gt;wangyaodi.com&lt;/a&gt; according to above steps, give it a look if you are interested in it. You are also welcomed to fork its &lt;a href=&quot;https://github.com/yorzi/cv-andywang&quot;&gt;source code&lt;/a&gt; on github. Enjoy it!&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Now My Blog Is Running on Octopress</title>
@@ -1281,70 +1408,6 @@ In last two month, I worked with our designer(&lt;a href=&quot;http://www.lijiap
 &lt;p&gt;We open sourced this app on our &lt;a href=&quot;http://github.com/idapted/eq31formulas&quot;&gt;github repos&lt;/a&gt;. We also built a website for this app at &lt;a href=&quot;http://www.31formulas.com&quot;&gt;http://www.31formulas.com&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;Enjoy it and let us know if you have any feedback on it.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>where optimization happens</title>
-    <link href="http://tech.wangyaodi.com/2010/08/27/where-optimization-happens/"/>
-    <updated>2010-08-27T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/2010/08/27/where-optimization-happens</id>
-    <content type="html">&lt;p&gt;Jonathan just mentioned &lt;a href=&quot;http://www.idapted.com/blog/2010/08/16/small-details-big-gains/&quot; target=&quot;_blank&quot;&gt;small details and big gains&lt;/a&gt; in his post days ago, I totally agree with him from technology perspective, meanwhile, I found more samples to support his points. Yeah, technology is born for changing people's life, I call this kind of changes as Optimization.Optimization is happening everyday to Idapted Platform, as it's one of most important way to become perfect.&lt;/p&gt;
-
-&lt;p&gt;In last week, our StudyCenter, the front end user interface system, was optimized in its registration flow. Previously, we have many registration channels for different partners. Our marketing department is mainly responsible for these registration channels, and update them frequently. Accordingly, technology team and sales team also need to cooperate. Here problem is, demands change more quickly than tech guys and sales system can follow up.&lt;/p&gt;
-
-&lt;p&gt;Now we refactor the control of registration flow, to re-think every departments' needs, we split the conditions for each department, after this improvement, people in different departments will not affect others, specially to tech guys, this is more flexible and maintainable. They will not messy all the situations up.&lt;/p&gt;
-
-&lt;p&gt;Another sample of optimization is that, we iterated many rounds of development to build a CRM system internally before, however, we integrated too many features inside the CRM, which were used by different departments. Because Idapted customers' accounts are increasing rapidly, the speed of whole system is getting slower and slower. Obviously, the CRM system needs optimization.&lt;/p&gt;
-
-&lt;p&gt;We finally split the CRM system in three parts which are used by different people, The independent and small system is well designed for certain users, that's the key of this Optimization. It gains us faster system response and clearer business devision.&lt;/p&gt;
-
-&lt;p&gt;All in all, to serve learners better user experience, to improve internal working process or to increase system efficiency, all of these optimizations are about making things perfect. This is the belief of &lt;a href=&quot;http://www.idapted.com&quot;&gt;Idapted&lt;/a&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>install sqlite3-ruby on CentOS</title>
-    <link href="http://tech.wangyaodi.com/2010/08/26/install-sqlite3-ruby-on-centos/"/>
-    <updated>2010-08-26T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/2010/08/26/install-sqlite3-ruby-on-centos</id>
-    <content type="html">&lt;p&gt;Normally you would get an error if you try to install or to update your sqlite3-ruby gems. But you need this gem when there is other dependence. Here’s the solution to get it running:&lt;/p&gt;
-
-&lt;p&gt;Go to sqlite.org and get the amalgamation package or wget directly (below is my way):&lt;/p&gt;
-
-&lt;pre&gt;
-# cd into my source tarball folder
-cd /usr/src
-# get the amalgation package
-wget http://sqlite.org/sqlite-amalgamation-3.6.23.1.tar.gz
-# unpack it
-tar xvzf sqlite-amalgamation-3.6.23.1.tar.gz
-# cd into the created folder
-cd sqlite-amalgamation-3.6.23.1
-# run configuration
-./configure
-# make and intall the package
-make &amp;&amp; sudo make install
-&lt;/pre&gt;
-
-
-&lt;p&gt;After successfully install the installer will tell where the library files have been stored in. In my case this was “/usr/local/lib”.&lt;/p&gt;
-
-&lt;p&gt;So I can install the gem now with:&lt;/p&gt;
-
-&lt;pre&gt;
-gem install sqlite3-ruby — –with-sqlite3-include=/usr/local/include \
-–with-sqlite3-lib=/usr/local/lib
-&lt;/pre&gt;
-
-
-&lt;h1&gt;getting this as a result&lt;/h1&gt;
-
-&lt;p&gt;Building native extensions. This could take a while…
-Successfully installed sqlite3-ruby-1.3.1
-1 gem installed&lt;/p&gt;
-
-&lt;p&gt;Ok, done.&lt;/p&gt;
 </content>
   </entry>
   

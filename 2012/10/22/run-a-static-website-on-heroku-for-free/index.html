@@ -1,0 +1,325 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>@yorzi: Run a Static Website on Heroku for Free</title>
+  <meta name="author" content="Andy Wang">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  
+  <link href="/atom.xml" rel="alternate" title="@yorzi" type="application/atom+xml"/>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-17239385-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/" style="color:red">@yorzi</a></h1>
+  
+    <h2>great people share knowledge</h2>
+  
+  <a href="https://github.com/yorzi/site_engine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/images/forkme.png" alt="Fork me on GitHub"></a>
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss email">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+    <li><a href="wangyaodi@gmail.com" rel="subscribe-email" title="subscribe via email">Email</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:tech.wangyaodi.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="http://about.me/wangyaodi">About Me</a></li>
+  <li><a href="https://plus.google.com/108320517625960982177/about?hl=en" style="color:red">@yorzi</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Run a Static Website on Heroku for Free</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Mon Oct 22 20:00:00 +0800 2012" pubdate  updated >Oct 22<span>nd</span>, 2012</time>
+
+
+</p>
+    
+  </header>
+
+
+<div class="entry-content"><div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a><br /><span>Uploaded with <a href="http://skitch.com">Skitch</a>!</span></div>
+
+
+<p>Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.</p>
+
+<p>Well, first of all, I bought an awesome template on <a href="https://wrapbootstrap.com/">wrapbootstrap</a>, where all pretty templates are built on <a href="http://twitter.github.com/bootstrap/">Twitter&#8217;s BootStrap</a>, I guess everyone loves BootStrap, who doesn&#8217;t?</p>
+
+<p>Once I get the simple static HTML template for website, I am going to deploy it to Heroku for free. We know <a href="http://heroku.com">Heroku</a> deliveries their popular cloud hosting for <a href="http://rubyonrails.org/">Ruby on Rails</a>, <a href="http://nodejs.org/">Node.js</a> and other framework. How does it work for static HTML website hosting?</p>
+
+<p>I found that, we actually can build s simple Rack application to <code>run</code> the static website on heroku. But how? See below:</p>
+
+<ul>
+<li>Add <code>Gemfile</code> to require the <code>rack</code> gem for the website.</li>
+</ul>
+
+
+<p><code>
+source 'http://rubygems.org'
+gem 'rack'
+</code></p>
+
+<ul>
+<li>Add <code>config.ru</code> file in root folder of the website, this will enable the Rack handlings.</li>
+</ul>
+
+
+<p>&#8220;`
+$stdout.sync = true</p>
+
+<p>use Rack::Static,
+  :urls => [&#8220;/font-awesome&#8221;, &#8220;/js&#8221;, &#8220;/img&#8221;, &#8220;/style&#8221;],
+  :root => &#8220;.&#8221;</p>
+
+<p>run lambda { |env|
+  [</p>
+
+<pre><code>200,
+{
+  'Content-Type'  =&gt; 'text/html',
+  'Cache-Control' =&gt; 'public, max-age=86400'
+},
+File.open('index.html', File::RDONLY)
+</code></pre>
+
+<p>  ]
+}
+<code>``
+- Add</code>Procfile` in root folder to config the heroku web server and worker(if there is any).</p>
+
+<p><code>
+web: bundle exec rackup -p $PORT
+</code></p>
+
+<p>Ok, now it&#8217;s ready to deploy the whole website to Heroku, <a href="https://devcenter.heroku.com/articles/git">here</a> is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, <a href="https://devcenter.heroku.com/articles/custom-domains">here</a> is also a docment for this purpose on heroku help center.</p>
+
+<p>Easy, right? I&#8217;ve run my awesome personal website on <a href="wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Andy Wang</span></span>
+
+      
+
+
+
+
+<time datetime="Mon Oct 22 20:00:00 +0800 2012" pubdate  updated >Oct 22<span>nd</span>, 2012</time>
+
+
+
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/heroku/'>heroku</a>, <a class='category' href='/blog/categories/rack/'>rack</a>, <a class='category' href='/blog/categories/ruby/'>ruby</a>, <a class='category' href='/blog/categories/wrapbootstrap/'>wrapbootstrap</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free/" data-via="yorzi" data-counturl="http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free/" >Tweet</a>
+  
+  
+  <g:plusone size="medium"></g:plusone>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'andywangshome';
+  var disqus_identifier = 'http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free/';
+  var disqus_url = 'http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <img src="https://img.skitch.com/20110814-rrw7uufrh7wc6eugk6yf4163qb.jpg"></img>
+  <p>Hi, I&#8217;m <b style="color:red">Andy Wang</b>.<br />
+     I live in <b style="color:red">Beijing</b>, China. <br />
+     I&#8217;m a <b style="color:red">Sr. Ruby/Rails Engineer</b> at <a href="http://intridea.com">Intridea</a>.</p>
+</section>
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2013/01/19/downloadable-svg-in-png-format/">Downloadable SVG in PNG Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
+      </li>
+    
+  </ul>
+  <p>>>>>>>>>  <a style="color:red" href="/blog/archives">More Posts in Archives</a></p>
+</section>
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("yorzi", 4, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/yorzi" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @yorzi</a>
+  
+</section>
+
+
+<section>
+  <h1>On Delicious</h1>
+  <script type="text/javascript" src="http://feeds.delicious.com/v2/js/yorzi?title=&count=3&sort=date&extended"></script>
+  <p><a href="http://delicious.com/yorzi">My Delicious Bookmarks &raquo;</a></p>
+</section>
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2013 - Andy Wang -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+</body>
+</html>

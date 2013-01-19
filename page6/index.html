@@ -105,6 +105,76 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2009/12/28/seo-web-developer-cheat-sheet/">SEO Web Developer Cheat Sheet</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Mon Dec 28 00:00:00 +0800 2009" pubdate  updated >Dec 28<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>发现好东西不敢独享，拿出来分享一下：<a href='http://blog.wangyaodi.com/wp-content/uploads/2009/12/SEO_Web_Developer_Cheat_Sheet.pdf'>SEO Web Developer Cheat Sheet</a></p>
+
+<p>Cheat Sheet是一种流行的手册文化，如果能把常用的东西凑到一块，简明扼要的排版出来，用的时候方便不少。以前写过一个介绍<a href="http://blog.wangyaodi.com/2009/11/11/cheat-sheet-in-terminal/">Cheat命令</a>的帖子，如果你是搞技术的，不妨试试。</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/12/28/seo-web-developer-cheat-sheet/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/12/28/funny-pictures/">Funny Pictures</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Mon Dec 28 00:00:00 +0800 2009" pubdate  updated >Dec 28<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近看见两张图，很有意思，废话少说，直接上图：</p>
+
+<p>关于编程语言
+<a href="http://blog.wangyaodi.com/wp-content/uploads/2009/12/lang.jpg"><img src="http://blog.wangyaodi.com/wp-content/uploads/2009/12/lang-300x196.jpg" alt="language fighting" title="language fighting" width="300" height="196" class="aligncenter size-medium wp-image-270" /></a></p>
+
+<p>关于操作系统
+<a href="http://blog.wangyaodi.com/wp-content/uploads/2009/12/os.jpg"><img src="http://blog.wangyaodi.com/wp-content/uploads/2009/12/os-300x219.jpg" alt="OS fighting" title="OS fighting" width="300" height="219" class="aligncenter size-medium wp-image-271" /></a></p>
+
+<p>haha, I am playing with <a href="http://www.ruby-lang.org/en/">Ruby</a> on <a href="http://www.ubuntu.com/">Linux</a>!</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/12/28/funny-pictures/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/12/22/sessions-and-cookies-in-ruby-on-rails/">Sessions and Cookies in Ruby on Rails</a></h1>
     
     
@@ -581,168 +651,6 @@ run "svn commit -m 'set svn ignore'"
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby/">Comparing Equality (==, Eql?, Equal?) and Case Equality (===) in Ruby</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="Wed Dec 09 00:00:00 +0800 2009" pubdate  updated >Dec 9<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>In weekly code review, GL mentioned a weird issues :
-<code lang="ruby">
-def self.test(obj)</p>
-
-<pre><code>case obj.class
-when Student, TrialPlan
-  puts "1"
-when Call
-  puts "2"
-else
-  puts "3"
-end
-</code></pre>
-
-<p>end
-</code>
-This doesn&#8217;t behave as expected. When we run test(Student.first), it prints out &#8220;3&#8221;!</p>
-
-<p>but this works fine.
-<code lang="ruby">
-def self.test(obj)</p>
-
-<pre><code>case obj.class.to_s
-when "Student", "TrialPlan"
-  puts "1"
-when "Call"
-  puts "2"
-else
-  puts "3"
-end
-</code></pre>
-
-<p>end
-</code></p>
-
-<p>Then I searched around for explaining this, I found the <em>case statement</em> in Ruby is very different with what in other languages. Ruby implements the Case statement according to its special operator &#8220;===&#8221;, which is not the same as &#8220;==&#8221;.</p>
-
-<p>what&#8217;s difference? See below explainations:
-<a href="http://www.skorks.com/2009/08/how-a-ruby-case-statement-works-and-what-you-can-do-with-it/">how-a-ruby-case-statement-works-and-what-you-can-do-with-it/</a>
-<a href="http://blog.mustmodify.com/2008/11/ruby-case-statement-comparison-feature.html">ruby-case-statement-comparison-feature.html</a></p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/12/07/love-named_scope/">Love Named_scope</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="Mon Dec 07 00:00:00 +0800 2009" pubdate  updated >Dec 7<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Rails Best Practice Snippet: About named_scope.
-Reference link to the PDF. <a rel="attachment wp-att-125" href="http://tech.wangyaodi.com/?attachment_id=125">Rails-best-practices.</a></p>
-
-<p>named_scope is a Rails 2.x feature which can simplify your rails code, move your finders into their own Model, and compact the code logically and gracefully. Below code refactoring is a named_scope sample to show the tricky.</p>
-
-<p><strong>BEFORE</strong>
-<code lang="ruby">
-class PostController &lt; ApplicationController
-  def search</p>
-
-<pre><code>conditions = { :title =&gt; "%#{params[:title]}%" } if params[:title]
-conditions.merge!{ :content =&gt; "%#{params[:content]}%" } if params[:content]
-case params[:order]
-  when "title" : order = "title desc"
-  when "created_at" : order = "created_at"
-end
-if params[:is_published]
-  conditions.merge!{ :is_published =&gt; true }
-end
-@posts = Post.find(:all, :conditions =&gt; conditions, :order =&gt; order,
-                         :limit =&gt; params[:limit])
-</code></pre>
-
-<p>  end
-end
-</code></p>
-
-<p><strong>AFTER</strong>
-<code lang="ruby">
-class Post &lt; ActiveRecord::Base
-  named_scope :matching, lambda { |column, value|</p>
-
-<pre><code>return {} if value.blank?
-{ :conditions =&gt; ["#{column} like ?", "%#{value}%"] }
-</code></pre>
-
-<p>  }
-  named_scope :order, lambda { |order|
-  { :order => case order</p>
-
-<pre><code>  when "title" : "title desc"
-  when "created_at" : "created_at"
-end }
-</code></pre>
-
-<p>  }
-end
-</code>
-<code lang="ruby">
-class PostController &lt; ApplicationController
-  def search</p>
-
-<pre><code>@posts = Post.matching(:title, params[:title])
-             .matching(:content, params[:content])
-             .order(params[:order])
-</code></pre>
-
-<p>  end
-end
-</code></p>
-
-<p>More references :
-<a href="http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality">http://ryandaigle.com/articles/2008/3/24/what-s-new-in-edge-rails-has-finder-functionality</a>
-<a href="http://railscasts.com/episodes/108-named-scope">http://railscasts.com/episodes/108-named-scope</a></p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/12/07/love-named_scope/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -779,6 +687,14 @@ end
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/01/19/downloadable-svg-in-png-format/">Downloadable SVG in PNG Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
         <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
       </li>
     
@@ -800,14 +716,6 @@ end
     
       <li class="post">
         <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/01/22/dalli-on-rails3/">Dalli on Rails3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/01/21/love-git-love-coding/">Love Git, Love Coding</a>
       </li>
     
   </ul>
@@ -844,7 +752,7 @@ end
     </div>
   </div>
   <footer><p>
-  Copyright &copy; 2012 - Andy Wang -
+  Copyright &copy; 2013 - Andy Wang -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

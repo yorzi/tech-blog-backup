@@ -105,6 +105,105 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2009/11/11/set-static-ip-on-ubuntu/">Set Static IP on Ubuntu</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Wed Nov 11 00:00:00 +0800 2009" pubdate  updated >Nov 11<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Edit:
+<code>sudo vim /etc/network/interfaces</code></p>
+
+<p>Then change the content, assuming you want to set your IP as &#8220;192.168.1.66&#8221;
+<code># The primary network interface
+auto eth0
+iface eth0 inet static</p>
+
+<pre><code>    address 192.168.1.66
+    netmask 255.255.255.0
+    network 192.168.1.0
+    broadcast 192.168.1.255
+    gateway 192.168.1.1
+</code></pre>
+
+<p></code></p>
+
+<p>Then to restart your network.
+<code>sudo /etc/init.d/networking restart</code></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/11/11/set-static-ip-on-ubuntu/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/11/11/cheat-sheet-in-terminal/">Cheat Sheet in Terminal</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Wed Nov 11 00:00:00 +0800 2009" pubdate  updated >Nov 11<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I found a cool gem called &#8220;cheat&#8221;, it&#8217;s pretty handy and convenient when you wanna see a brief help/introduction of some &#8220;stuff&#8221; in command line, cheat out the website for more <a href="http://cheat.errtheblog.com/b">wiki-versioned cheat sheet</a>.</p>
+
+<blockquote>
+Get started:
+<i style="color:yellow">$ sudo gem install cheat
+$ cheat strftime</i>
+
+A magnificent cheat sheet for Ruby&#8217;s strftime method will be printed to your terminal.
+
+To get some help on cheat itself:
+<i style="color:yellow">$ cheat cheat</i>
+
+How meta.
+
+Cheat sheets are basically wiki pages accessible from the command line. You can browse, add, or edit cheat sheets. Try to keep them concise. For a style guide, check out the cheat cheat sheet.
+
+To access a cheat sheet, simply pass the program the desired sheet&#8217;s name:
+<i style="color:yellow">$ cheat <sheet name></i>
+</blockquote>
+
+
+<p>Reference : <a href="http://cheat.errtheblog.com/">CLICK HERE</a>!</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/11/11/cheat-sheet-in-terminal/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/11/09/rails-best-practices/">Rails Best Practices</a></h1>
     
     
@@ -517,6 +616,14 @@ The right way to do so:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/01/19/downloadable-svg-in-png-format/">Downloadable SVG in PNG Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
         <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
       </li>
     
@@ -538,14 +645,6 @@ The right way to do so:</p>
     
       <li class="post">
         <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/01/22/dalli-on-rails3/">Dalli on Rails3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/01/21/love-git-love-coding/">Love Git, Love Coding</a>
       </li>
     
   </ul>
@@ -582,7 +681,7 @@ The right way to do so:</p>
     </div>
   </div>
   <footer><p>
-  Copyright &copy; 2012 - Andy Wang -
+  Copyright &copy; 2013 - Andy Wang -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 

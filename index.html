@@ -105,6 +105,175 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2013/01/19/downloadable-svg-in-png-format/">Downloadable SVG in PNG Format</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Sat Jan 19 16:08:00 +0800 2013" pubdate  updated >Jan 19<span>th</span>, 2013</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Recently, I worked on some interesting features, we use <a href="http://www.highcharts.com/">Highcharts</a> and/or <a href="http://raphaeljs.com/">Raphaeljs</a> to build complex charts, including bar chart, scatter chart or heat map, etc. In an extreme sample, we build a complicated one-page charting engine by which user is able to compose a group of conditions and then render a meaningful chart according to what are selected. It&#8217;s pretty cool.</p>
+
+<p>Meanwhile, client is willing to download these generated charts on individual chart level. They also want to have an ability to share the individual chart as a link or even as a piece of HTML code. What&#8217;s the best solution to add these functionalities? Well, we did try many solutions for the features, let me show you how we make it finally.</p>
+
+<h4>Start from a HTML template</h4>
+
+<script src="https://gist.github.com/4443672.js"></script>
+
+
+<p>Above HTML code is the generated content on my page, I will mainly explain the solution based on it. Here is also a sample SVG file: <a href="https://gist.github.com/4443811">sample.svg</a>, you can use it to go through the whole senario if you want to experiment by yourself.</p>
+
+<h4>Deal with SVG via HTML5 Canvas</h4>
+
+<p>HighCharts and Rapheal are JS libaries by which you are able to generate complex <a href="http://www.w3.org/TR/SVG11/">SVG</a> charts, normally, people can not download a svg file directly, and it&#8217;s also not a popular image format for sharing around. We&#8217;d better convert it to a PNG or JPG image, as PNG and JPG format is downloadable from web page. I will take PNG format as a sample in this post.</p>
+
+<p>How to convert a SVG image to a PNG image? Mainly, you can do the convertion job from server side. There is a SVG toolkit provided by Apache which is named as <a href="http://xmlgraphics.apache.org/batik/#download">Batik</a>. But I don&#8217;t like this solution, it&#8217;s a bit comoplex to install Batik and make it work with Ruby on Rails. I&#8217;d like to work the convertion out via pure javascript. Yes, use <a href="http://code.google.com/p/canvg/">canvg</a> to move all SVG information to a HTML5 Canvas object.</p>
+
+<script src="https://gist.github.com/4452589.js"></script>
+
+
+<p>Using the HTML5 canvas element, you can create all sorts of cool graphics client-side on the fly using Javascript. There is a neat function on the the canvas object called toDataURL(). This functions encodes the image data as a base64 encoded PNG file and returns it as a <a href="http://en.wikipedia.org/wiki/Data:_URI_scheme">data: URI</a>. By using the data:URI string, you can make it a downloadable PNG file.</p>
+
+<p>There is also a libary to help you do so, it&#8217;s <a href="http://www.nihilogic.dk/labs/canvas2image/">Canvas2Image</a> that can convert canvas to image as BMP, PNG or JPEG format.</p>
+
+<script src="https://gist.github.com/4467012.js"></script>
+
+
+<p></p>
+
+<h4>Customize default filename while downloading</h4>
+
+<p>Canvas2Image lib will implement a pop out window to allow you download the data:URI as a PNG image file with a default name <code>download</code>, which is not acceptable by our client, I have to figure out a way to customize the downloadable filename.</p>
+
+<script src="https://gist.github.com/4467156.js"></script>
+
+
+<p>It might be easy if you just want to cover your Chrome or Firefox user, as there is a <code>download</code> attribute for <code>&lt;a&gt;</code> tag, when you set it as something like <code>&lt;a src='the data:uri string' download='test.png'&gt;</code> then you will get the default filename in this the case when you click the download link.</p>
+
+<p>I am not lucky, I have to cover IE9 at least. So I need to push the data:uri to server, then I can render the data with specific headers(see below code), that will make the downloadable file with a customized file name.</p>
+
+<script src="https://gist.github.com/4467051.js"></script>
+
+
+<p>Pay attention to above <code>html2canvas([$(".hidden_container")[0]],{ … })</code> parts. It helps to convert whole HTML code to a canvas based on <a href="http://html2canvas.hertzen.com/">html2canvas</a> lib, that&#8217;s our case as we have to wrap up some HTML code out side the the charts.</p>
+
+<h4>A trick to overcome IE9 issue</h4>
+
+<p>When you work on IE9, the canvg fails to translate the SVG to Canvas, it seems IE9&#8217;s <code>DOMParser()</code> is not able to parse the SVG successfully. After some search from Google, we found only one line code will resove the SVG parser issue. Just replace some invalid string in SVG data as below:</p>
+
+<script src="https://gist.github.com/4467165.js"></script>
+
+
+<h4>Conclusion</h4>
+
+<p>To summarize this post, you are suggested to use several JS libs above to convert <code>SVG</code> to <code>Canvas</code>, then convert <code>Canvas</code> to <code>PNG</code> file, if you also want to customize a piece of HTML code out side the SVG chart, then you are able to convert <code>HTML</code> to <code>Canvas</code>, then again from <code>Canvas</code> to <code>PNG</code>, when you want to set a customized filename for the generated PNG file, you have to send the data:uri string onto server side, then rewrite the response headers, all these handling will implement a downloading feature for you.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2013/01/19/downloadable-svg-in-png-format/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Mon Oct 22 20:00:00 +0800 2012" pubdate  updated >Oct 22<span>nd</span>, 2012</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><div class="thumbnail"><a href="http://wangyaodi.com"><img src="https://img.skitch.com/20121023-fxqkstawwd56ehbpecxq6ifkq8.preview.jpg" alt="Andy Wang - Professional Ruby on Rails Engineer, Senior Web Application Developer." /></a><br /><span>Uploaded with <a href="http://skitch.com">Skitch</a>!</span></div>
+
+
+<p>Recently, I plan to update my personal information on internet, I also plan to have a professional personal website on which I can show my introduction, skills and working experiences. I guess it will introduce me to the world in a cool way.</p>
+
+<p>Well, first of all, I bought an awesome template on <a href="https://wrapbootstrap.com/">wrapbootstrap</a>, where all pretty templates are built on <a href="http://twitter.github.com/bootstrap/">Twitter&#8217;s BootStrap</a>, I guess everyone loves BootStrap, who doesn&#8217;t?</p>
+
+<p>Once I get the simple static HTML template for website, I am going to deploy it to Heroku for free. We know <a href="http://heroku.com">Heroku</a> deliveries their popular cloud hosting for <a href="http://rubyonrails.org/">Ruby on Rails</a>, <a href="http://nodejs.org/">Node.js</a> and other framework. How does it work for static HTML website hosting?</p>
+
+<p>I found that, we actually can build s simple Rack application to <code>run</code> the static website on heroku. But how? See below:</p>
+
+<ul>
+<li>Add <code>Gemfile</code> to require the <code>rack</code> gem for the website.</li>
+</ul>
+
+
+<p><code>
+source 'http://rubygems.org'
+gem 'rack'
+</code></p>
+
+<ul>
+<li>Add <code>config.ru</code> file in root folder of the website, this will enable the Rack handlings.</li>
+</ul>
+
+
+<p>&#8220;`
+$stdout.sync = true</p>
+
+<p>use Rack::Static,
+  :urls => [&#8220;/font-awesome&#8221;, &#8220;/js&#8221;, &#8220;/img&#8221;, &#8220;/style&#8221;],
+  :root => &#8220;.&#8221;</p>
+
+<p>run lambda { |env|
+  [</p>
+
+<pre><code>200,
+{
+  'Content-Type'  =&gt; 'text/html',
+  'Cache-Control' =&gt; 'public, max-age=86400'
+},
+File.open('index.html', File::RDONLY)
+</code></pre>
+
+<p>  ]
+}
+<code>``
+- Add</code>Procfile` in root folder to config the heroku web server and worker(if there is any).</p>
+
+<p><code>
+web: bundle exec rackup -p $PORT
+</code></p>
+
+<p>Ok, now it&#8217;s ready to deploy the whole website to Heroku, <a href="https://devcenter.heroku.com/articles/git">here</a> is a detailed document that can help you to deploy a codebase to Heroku. Meanwhile, you are allow to customize your domain for any app running on Heroku, <a href="https://devcenter.heroku.com/articles/custom-domains">here</a> is also a docment for this purpose on heroku help center.</p>
+
+<p>Easy, right? I&#8217;ve run my awesome personal website on <a href="wangyaodi.com">wangyaodi.com</a> according to above steps, give it a look if you are interested in it. You are also welcomed to fork its <a href="https://github.com/yorzi/cv-andywang">source code</a> on github. Enjoy it!</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a></h1>
     
     
@@ -878,176 +1047,6 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/01/20/deploy-rails3-app-in-sub-directory/">Deploy Rails3 App in Sub-directory</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="Thu Jan 20 00:00:00 +0800 2011" pubdate  updated >Jan 20<span>th</span>, 2011</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Last weekend, <a href="http://www.dujinfang.com">seven</a> and <a href="http://blog.sonitech.org/">sonic</a> did a great job to move all Idapted servers to a new datacenter, that&#8217;s really a fabulous movement. Seven just wrote it out on <a href="http://www.dujinfang.com/past/2011/1/18/rails-fu-wu-qi-qian-yi-dian-di/">his blog</a>, if you want to know more about this migration, please go through his post. Anyway, in this post I wanna share a simple but valuable tip about deploying Rails3 app in sub directory.</p>
-
-<script src="https://gist.github.com/787610.js"></script>
-
-
-<p>More resources:
-1. Rails 3, Unicorn and RAILS_RELATIVE_URL_ROOT: <br /><a href="http://summit360.co.uk/2010/09/rails_3_unicorn.html">http://summit360.co.uk/2010/09/rails_3_unicorn.html</a>
-2. Enabling Rails 3 for your application: <br /><a href="http://www.nirvaat.com/ruby-on-rails/enabling-rails-3-for-your-application/">http://www.nirvaat.com/ruby-on-rails/enabling-rails-3-for-your-application/</a>
-3. Rails 3 routes in subdirectory: <br /><a href="http://community.webfaction.com/questions/1364/rails-3-routes-in-subdirectory">http://community.webfaction.com/questions/1364/rails-3-routes-in-subdirectory</a></p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2011/01/20/deploy-rails3-app-in-sub-directory/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2010/12/05/when-generating-a-public-website/">When Generating a Public Website</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="Sun Dec 05 00:00:00 +0800 2010" pubdate  updated >Dec 5<span>th</span>, 2010</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>To backup a great topic, I pasted the following content to reminder me the public website concerns, it&#8217;s not a summary by myself, I picked them up from <a href="http://www.stackoverflow.com" target="_blank">stackoverflow.com</a>.</p>
-
-<p><strong>Interface and User Experience</strong></p>
-
-<ul>
-    <li>Be aware that browsers implement standards inconsistently and make sure your site works reasonably well across all major browsers. At a minimum test against a recent <a rel="nofollow" href="http://en.wikipedia.org/wiki/Gecko_%28layout_engine%29">Gecko</a> engine (<a rel="nofollow" href="http://firefox.com/">Firefox</a>), a Webkit engine (<a rel="nofollow" href="http://www.apple.com/safari/">Safari</a>, <a rel="nofollow" href="http://www.google.com/chrome">Chrome</a>, and some mobile browsers), your supported IE browsers (take advantage of the<a rel="nofollow" href="http://www.microsoft.com/Downloads/details.aspx?FamilyID=21eabb90-958f-4b64-b5f1-73d0a413c8ef&amp;displaylang=en">Application Compatibility VPC Images</a>), and <a rel="nofollow" href="http://www.opera.com/">Opera</a>. Also consider how <a rel="nofollow" href="http://www.browsershots.org/">browsers render your site</a> in different operating systems.</li>
-    <li>Consider how people might use the site other than from the major browsers: cell phones, screen readers and search engines, for example. — Some accessibility info: <a rel="nofollow" href="http://www.w3.org/WAI/">WAI</a> and <a rel="nofollow" href="http://www.section508.gov/">Section508</a>, Mobile development:<a rel="nofollow" href="http://mobiforge.com/">MobiForge</a></li>
-    <li>Staging: How to deploy updates without affecting your users. <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas&#8217;s answer</a> has some comments on this.</li>
-    <li>Don&#8217;t display unfriendly errors directly to the user</li>
-    <li>Don&#8217;t put users&#8217; email addresses in plain text as they will get spammed to death</li>
-    <li><a rel="nofollow" href="http://www.codinghorror.com/blog/archives/001228.html">Build well-considered limits into your site</a> - This also belongs under Security.</li>
-    <li>Learn how to do <a rel="nofollow" href="http://en.wikipedia.org/wiki/Progressive_enhancement">progressive enhancement</a></li>
-    <li>Always <a rel="nofollow" href="http://en.wikipedia.org/wiki/Post/Redirect/Get">redirect after a POST</a>.</li>
-    <li>Don&#8217;t forget to take accessibility into account. It&#8217;s always a good idea and in certain circumstances it&#8217;s a <a rel="nofollow" href="http://www.section508.gov/">legal requirement</a>. <a rel="nofollow" href="http://www.w3.org/WAI/intro/aria">WAI-ARIA</a> is a good resource in this area.</li>
-</ul>
-
-
-<p><strong>Security</strong></p>
-
-<ul>
-    <li>It&#8217;s a lot to digest but the <a rel="nofollow" href="http://www.owasp.org/index.php/Category%3aOWASP_Guide_Project">OWASP development guide</a> covers Web Site security from top to bottom</li>
-    <li>Know about <a rel="nofollow" href="http://en.wikipedia.org/wiki/SQL_injection">SQL injection</a> and how to prevent it</li>
-    <li>Never trust user input (cookies are user input too!)</li>
-    <li><span style="text-decoration: line-through;">Encrypt</span> Hash and salt passwords rather than storing them plain-text.</li>
-    <li>Don&#8217;t try to come up with your own fancy authentication system: it&#8217;s such an easy thing to get wrong in subtle and untestable ways and you wouldn&#8217;t even know it until <em>after</em> you&#8217;re hacked.</li>
-    <li>Know the <a rel="nofollow" href="https://www.pcisecuritystandards.org/">rules for processing credit cards</a>. (<a href="http://stackoverflow.com/questions/51094/payment-processors-what-do-i-need-to-know-if-i-want-to-accept-credit-cards-on-m">See this question as well</a>)</li>
-    <li>Use <a rel="nofollow" href="http://www.mozilla.org/projects/security/pki/nss/ssl/draft302.txt">SSL</a>/<a rel="nofollow" href="http://en.wikipedia.org/wiki/Https">HTTPS</a> for login and any pages where sensitive data is entered (like credit card info)</li>
-    <li>How to resist session hijacking</li>
-    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_scripting">cross site scripting</a> (XSS)</li>
-    <li>Avoid <a rel="nofollow" href="http://en.wikipedia.org/wiki/Cross-site_request_forgery">cross site request forgeries</a> (XSRF)</li>
-    <li>Keep your system(s) up to date with the latest patches</li>
-    <li>Make sure your database connection information is secured.</li>
-    <li>Keep yourself informed about the latest attack techniques and vulnerabilities affecting your platform.</li>
-    <li>Read <a rel="nofollow" href="http://code.google.com/p/browsersec/wiki/Main">The Google Browser Security Handbook</a></li>
-    <li>Read <a rel="nofollow" href="http://amzn.com/0470170778">The Web Application Hackers Handbook</a></li>
-</ul>
-
-
-<p><strong>Performance</strong></p>
-
-<ul>
-    <li>Implement caching if necessary, understand and use <a rel="nofollow" href="http://www.mnot.net/cache_docs/">HTTP caching</a> properly as well as <a rel="nofollow" href="http://www.w3.org/TR/html5/offline.html">HTML5 Manifest</a></li>
-    <li>Optimize images - don&#8217;t use a 20 KB image for a repeating background</li>
-    <li>Learn how to <a title="gzip content" rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#gzip">gzip/deflate content</a> (<a href="http://stackoverflow.com/questions/1574168/gzip-vs-deflate-zlib-revisited">deflate is better</a>)</li>
-    <li>Combine/concatenate multiple stylesheets or multiple script files to reduce number of browser connections and improve gzip ability to compress duplications between files</li>
-    <li>Take a look at the <a rel="nofollow" href="http://developer.yahoo.com/performance/">Yahoo Exceptional Performance</a> site, lots of great guidelines including improving front-end performance and their <a rel="nofollow" href="http://developer.yahoo.com/yslow/">YSlow</a> tool. <a rel="nofollow" href="http://code.google.com/speed/page-speed/docs/rules_intro.html">Google page speed</a> is another tool for performance profiling. Both require<a rel="nofollow" href="http://getfirebug.com/">Firebug</a> installed.</li>
-    <li>Use <a rel="nofollow" href="http://alistapart.com/articles/sprites">CSS Image Sprites</a> for small related images like toolbars (see the &#8220;minimize http requests&#8221; point)</li>
-    <li>Busy web sites should consider <a rel="nofollow" href="http://developer.yahoo.com/performance/rules.html#split">splitting components across domains</a>. Specifically&#8230;</li>
-    <li>Static content (ie, images, CSS, JavaScript, and generally content that doesn&#8217;t need access to cookies) should go in a separate domain <em><a rel="nofollow" href="http://blog.stackoverflow.com/2009/08/a-few-speed-improvements/">that does not use cookies</a></em>, because all cookies for a domain and it&#8217;s subdomains are sent with every request to the domain and its subdomains. One good option here is to use a Content Delivery Network (CDN).</li>
-    <li>Minimize the total number of HTTP requests required for a browser to render the page.</li>
-    <li>Utilize <a rel="nofollow" href="http://code.google.com/closure/compiler/">Google Closure Compiler</a> for JavaScript and <a rel="nofollow" href="http://developer.yahoo.com/yui/compressor/">other minification tools</a></li>
-    <li>Make sure there’s a <code>favicon.ico</code> file in the root of the site, i.e. <code>/favicon.ico</code>. <a rel="nofollow" href="http://mathiasbynens.be/notes/rel-shortcut-icon">Browsers will automatically request it</a>, even if the icon isn’t mentioned in the HTML at all. If you don’t have a <code>/favicon.ico</code>, this will result in a lot of 404s, draining your server’s bandwidth.</li>
-</ul>
-
-
-<p><strong>SEO (Search Engine Optimization)</strong></p>
-
-<ul>
-    <li>Use &#8220;search engine friendly&#8221; URL&#8217;s, i.e. use <code>example.com/pages/45-article-title</code> instead of<code>example.com/index.php?page=45</code></li>
-    <li>Don&#8217;t use links that say &#8220;click here&#8221;. You&#8217;re wasting an SEO opportunity and it makes things harder for people with screen readers.</li>
-    <li>Have an <a rel="nofollow" href="http://www.sitemaps.org/">XML sitemap</a>, preferably in the default location <code>/sitemap.xml</code>.</li>
-    <li>Use <a rel="nofollow" href="http://googlewebmastercentral.blogspot.com/2009/02/specify-your-canonical.html"><code>&lt;link rel="canonical" ... /&gt;</code></a> when you have multiple URLs that point to the same content</li>
-    <li>Use <a rel="nofollow" href="http://www.google.com/webmasters/">Google Webmaster Tools</a> and <a rel="nofollow" href="http://siteexplorer.search.yahoo.com/">Yahoo Site Explorer</a></li>
-    <li>Install <a rel="nofollow" href="http://www.google.com/analytics/">Google Analytics</a> right at the start (or an open source analysis tool like <a rel="nofollow" href="http://piwik.org/">Piwik</a>)</li>
-    <li>Know how <a rel="nofollow" href="http://en.wikipedia.org/wiki/Robots_exclusion_standard">robots.txt</a> and search engine spiders work</li>
-    <li>Redirect requests (using <code>301 Moved Permanently</code>) asking for <code>www.example.com</code> to <code>example.com</code> (or the other way round) to prevent splitting the google ranking between both sites</li>
-    <li>Know that there can be bad behaving spiders out there</li>
-    <li>If you have non-text content look into Google&#8217;s sitemap extensions for video, etc. There is some good information about this in <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#167608">Tim Farley&#8217;s answer</a>.</li>
-</ul>
-
-
-<p><strong>Technology</strong></p>
-
-<ul>
-    <li>Understand <a rel="nofollow" href="http://www.ietf.org/rfc/rfc2616.txt">HTTP</a> and things like GET, POST, sessions, cookies, and what it means to be &#8220;stateless&#8221;.</li>
-    <li>Write your <a rel="nofollow" href="http://www.w3.org/TR/xhtml1/">XHTML</a>/<a rel="nofollow" href="http://www.w3.org/TR/REC-html40/">HTML</a> and <a rel="nofollow" href="http://www.w3.org/TR/CSS2/">CSS</a> according to the <a rel="nofollow" href="http://www.w3.org/TR/">W3C specifications</a> and make sure they <a rel="nofollow" href="http://validator.w3.org/">validate</a>. The goal here is to avoid browser quirks modes and as a bonus make it much easier to work with non-standard browsers like screen readers and mobile devices.</li>
-    <li>Understand how JavaScript is processed in the browser.</li>
-    <li>Understand how JavaScript, style sheets, and other resources used by your page are loaded and consider their impact on <em>perceived</em> performance. It may be appropriate in some cases to <a rel="nofollow" href="http://developer.yahoo.net/blog/archives/2007/07/high_performanc_5.html">move scripts to the bottom</a>of your pages.</li>
-    <li>Understand how the JavaScript sandbox works, especially if you intend to use iframes.</li>
-    <li>Be aware that JavaScript can and will be disabled, and that Ajax is therefore an extension not a baseline. Even if most normal users leave it on now, remember that NoScript is becoming more popular, mobile devices may not work as expected, and Google won&#8217;t run most of your JavaScript when indexing the site.</li>
-    <li>Learn the <a rel="nofollow" href="http://www.bigoakinc.com/blog/when-to-use-a-301-vs-302-redirect/">difference between 301 and 302 redirects</a> (this is also an SEO issue).</li>
-    <li>Learn as much as you possibly can about your deployment platform</li>
-    <li>Consider using a <a href="http://stackoverflow.com/questions/167531/is-it-ok-to-use-a-css-reset-stylesheet">Reset Style Sheet</a></li>
-    <li>Consider JavaScript frameworks (such as <a rel="nofollow" href="http://jquery.com/">jQuery</a>, <a rel="nofollow" href="http://mootools.net/">MooTools</a>, or <a rel="nofollow" href="http://www.prototypejs.org/">Prototype</a>), which will hide a lot of the browser differences when using JavaScript for DOM manipulation</li>
-</ul>
-
-
-<p><strong>Bug fixing</strong></p>
-
-<ul>
-    <li>Understand you&#8217;ll spend 20% of the time coding and 80% of it maintaining, so code accordingly</li>
-    <li>Set up a good error reporting solution</li>
-    <li>Have some system for people to contact you with suggestions and criticism.</li>
-    <li>Document how the application works for future support staff and people performing maintenance</li>
-    <li>Make frequent backups! (And make sure those backups are functional) <a href="http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site#73970">Ed Lucas&#8217;s answer</a> has some advice. Have a Restore strategy, not just a Backup strategy.</li>
-    <li>Use a version control system to store your files, such as <a rel="nofollow" href="http://subversion.apache.org/">Subversion</a> or <a rel="nofollow" href="http://git-scm.org/">Git</a></li>
-    <li>Don&#8217;t forget to do your Unit Testing. Frameworks like <a rel="nofollow" href="http://seleniumhq.org/">Selenium</a> can help.</li>
-</ul>
-
-
-<p>Lots of stuff omitted not necessarily because they&#8217;re not useful answers, but because they&#8217;re either too detailed, out of scope, or go a bit too far for someone looking to get an overview of the things they should know. If you&#8217;re one of those people you can read the rest of the answers to get more detailed information about the things mentioned in this list. If I get the time I&#8217;ll add links to the various answers that contain the things mentioned in this list if the answers go into detail about these things. Please feel free to edit this as well, I probably missed some stuff or made some mistakes.</p>
-
-<p>Check out its original post thread at <a href="http://stackoverflow.com/questions/72394" target="_blank">http://stackoverflow.com/questions/72394</a></p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2010/12/05/when-generating-a-public-website/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -1082,6 +1081,14 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/01/19/downloadable-svg-in-png-format/">Downloadable SVG in PNG Format</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/10/22/run-a-static-website-on-heroku-for-free/">Run a Static Website on Heroku for Free</a>
+      </li>
+    
+      <li class="post">
         <a href="/2011/08/14/now-my-blog-is-running-on-octopress/">Now My Blog Is Running on Octopress</a>
       </li>
     
@@ -1103,14 +1110,6 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
     
       <li class="post">
         <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/01/22/dalli-on-rails3/">Dalli on Rails3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/01/21/love-git-love-coding/">Love Git, Love Coding</a>
       </li>
     
   </ul>
@@ -1147,7 +1146,7 @@ Why you shoud switch from Subversion to Git：<a href="http://thinkvitamin.com/c
     </div>
   </div>
   <footer><p>
-  Copyright &copy; 2012 - Andy Wang -
+  Copyright &copy; 2013 - Andy Wang -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
