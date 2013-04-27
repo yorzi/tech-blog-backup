@@ -105,6 +105,112 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2009/12/11/rails-application-templates/">Rails Application Templates</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Fri Dec 11 00:00:00 +0800 2009" pubdate  updated >Dec 11<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>When talking about templates in Rails, usually people mean the templates which help to re-use views, but this templates is a <a href="http://github.com/rails/rails/commit/e8cc4b116c460c524961a07da92da3f323854c15">feature after Rails 2.3 for generating Rails application</a> easily, so give it a try if you haven&#8217;t used it yet.</p>
+
+<p>It&#8217;s helpful for me to create Rails application according to similar skeleton, a sample below was written about one year ago, but recently I want to create a new application with the same environment/configuration.</p>
+
+<p><code lang="ruby"></p>
+
+<h1>idapted_template.rb</h1>
+
+<p>generate :rspec</p>
+
+<p>environment 'config.time_zone = "Beijing"'
+environment 'config.i18n.default_locale = :zh'</p>
+
+<p>name = ask("What's app's name?")
+file 'config/site_config.yml', &lt;&lt;-CODE
+app: #{name}
+domain: mydomain
+CODE</p>
+
+<p>user = ask("What's db user name?")
+pwd = ask("What's db user password?")
+file 'config/database.yml', &lt;&lt;-CODE
+development:
+  adapter: mysql
+  encoding: utf8
+  database: #{name}_development
+  user: #{user}
+  password: #{pwd}
+  pool: 5
+  timeout: 5000</p>
+
+<p>test:
+  adapter: mysql
+  encoding: utf8
+  database: #{name}_test
+  user: #{user}
+  password: #{pwd}
+  pool: 5
+  timeout: 5000</p>
+
+<p>production:
+  adapter: mysql
+  encoding: utf8
+  database: #{name}_production
+  user: #{user}
+  password: #{pwd}
+  pool: 5
+  timeout: 5000
+CODE</p>
+
+<p>rake 'db:create:all'
+rake 'db:sessions:create'
+rake 'db:migrate'</p>
+
+<p>gem 'idp_helpers'
+gem 'idp_core'</p>
+
+<p>run "rm public/index.html"</p>
+
+<p>run "rm -rf tmp log"
+run "svn import . http://mydomain.com/svn/projects/applications/#{name} -m 'add new app'"
+run "rm -rf *"
+run "svn checkout http://mydomain.com/svn/projects/applications/#{name} ."</p>
+
+<p>file 'ignore_list', &lt;<-CODE
+log
+tmp
+nbproject
+CODE
+run "svn propset svn:ignore -F ignore_list ."
+run "rm ignore_list"
+run "svn commit -m 'set svn ignore'"
+</code></p>
+
+<p>There are several useful commands which help you write powerful templates, you can learn more good examples <a href="http://m.onkey.org/2008/12/4/rails-templates">here</a>. or watch Ryan&#8217;s Railscasts about <a href="http://railscasts.com/episodes/148-app-templates-in-rails-2-3">App Templates in Rails 2.3</a>.</p>
+
+<p>Enjoy it.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/12/11/rails-application-templates/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby/">Comparing Equality (==, Eql?, Equal?) and Case Equality (===) in Ruby</a></h1>
     
     
@@ -785,57 +891,6 @@ end
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/11/12/primary_key-and-foreign_key-in-rails-association/">Primary_key and Foreign_key in Rails Association</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="Thu Nov 12 00:00:00 +0800 2009" pubdate  updated >Nov 12<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The has_many and belongs_to association in Rails are with many optional parameters, they are actually the parameters for DB relationship, see more details by <a href="http://api.rubyonrails.org/classes/ActiveRecord/Associations/ClassMethods.html">clicking here</a>.</p>
-
-<p>As a reminder to myself, I misunderstood the primary_key an foreign_key conditions in association, it should be set in both sides in some case, for instance:</p>
-
-<pre name="code" class="ruby">
-class Student < ActiveRecord::Base
-  has_many :trial_lessons, :foreign_key => :user_id, :primary_key => :profile_id
-end
-</pre>
-
-
-<p>Above code will let you invoke the student.trial_lessons, but if you want to use trial_lesson.student, you have to define the association as below:</p>
-
-<pre name="code" class="ruby">
-class TrialLesson < ActiveRecord::Base
-  belongs_to :student, :primary_key => :profile_id, :foreign_key => :user_id
-end
-</pre>
-
-
-<blockquote><strong>Notice that</strong>: you actually set the same :primary_key and :foreign_key in both sides, it&#8217;s because the DB relationship between these two Model can be described the same way..(it&#8217;s only a way for me to remember the rule)</blockquote>
-
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/11/12/primary_key-and-foreign_key-in-rails-association/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -872,6 +927,10 @@ end
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/01/19/downloadable-svg-in-png-format/">Downloadable SVG in PNG Format</a>
       </li>
     
@@ -897,10 +956,6 @@ end
     
       <li class="post">
         <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
       </li>
     
   </ul>

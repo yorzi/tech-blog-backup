@@ -4,7 +4,7 @@
   <title>@yorzi</title>
   <link href="http://tech.wangyaodi.com/atom.xml" rel="self"/>
   <link href="http://tech.wangyaodi.com/"/>
-  <updated>2013-01-19T16:21:00+08:00</updated>
+  <updated>2013-04-27T21:46:40+08:00</updated>
   <id>http://tech.wangyaodi.com/</id>
   <author>
     <name>Andy Wang</name>
@@ -13,6 +13,20 @@
     
   </author>
 
+  
+  <entry>
+    <title>Map basics for noob</title>
+    <link href="http://tech.wangyaodi.com/2013/04/27/map_basics_for_noob/"/>
+    <updated>2013-04-27T21:40:00+08:00</updated>
+    <id>http://tech.wangyaodi.com/2013/04/27/map_basics_for_noob</id>
+    <content type="html">&lt;p&gt;A slider that I shared when Intrdea TeaHour.&lt;/p&gt;
+
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/19540019&quot; width=&quot;427&quot; height=&quot;356&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+
+
+&lt;p&gt; &lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;http://www.slideshare.net/yorzi/map-basics-for-noob&quot; title=&quot;Map Basics For Noob&quot; target=&quot;_blank&quot;&gt;Map Basics For Noob&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;http://www.slideshare.net/yorzi&quot; target=&quot;_blank&quot;&gt;Andy Wang&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Downloadable SVG in PNG Format</title>
@@ -1394,20 +1408,6 @@ $ sudo /sbin/ldconfig
 
 
 &lt;p&gt;Done, try git --version, it's successfully installed.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>First iPhone app : IELTS 31 Formulas</title>
-    <link href="http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas/"/>
-    <updated>2010-08-28T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas</id>
-    <content type="html">&lt;p&gt;&lt;a href=&quot;http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg&quot;&gt;&lt;img alt=&quot;&quot; src=&quot;http://img.skitch.com/20100828-873u9f5mr8gmxt5r3jn8t4m7as.jpg&quot; title=&quot;31 Formulas&quot; class=&quot;aligncenter&quot; width=&quot;688&quot; height=&quot;514&quot; /&gt;&lt;/a&gt;
-In last two month, I worked with our designer(&lt;a href=&quot;http://www.lijiapeng.com&quot;&gt;buzz&lt;/a&gt;) for Idapted first iPhone App. We spent a lot time on releasing this app as Apple's process is really awful to a first user. Well, everything was done in the last. Now our first iPhone App is available in Apple Store. It's free in current version. you can install it from here: &lt;a href=&quot;http://goo.gl/ht4p&quot;&gt;http://goo.gl/ht4p&lt;/a&gt;. It's based on &lt;a href=&quot;http://www.appcelerator.com/products/&quot;&gt;Titanium 1.4&lt;/a&gt;. so a big thanks to the brilliant &lt;a href=&quot;http://www.appcelerator.com/company/leadership-team/&quot;&gt;Appcelerator Team&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;We open sourced this app on our &lt;a href=&quot;http://github.com/idapted/eq31formulas&quot;&gt;github repos&lt;/a&gt;. We also built a website for this app at &lt;a href=&quot;http://www.31formulas.com&quot;&gt;http://www.31formulas.com&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Enjoy it and let us know if you have any feedback on it.&lt;/p&gt;
 </content>
   </entry>
   

@@ -105,6 +105,65 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2009/12/29/session-in-ruby-on-rails/">Session in Ruby on Rails</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="Tue Dec 29 00:00:00 +0800 2009" pubdate  updated >Dec 29<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><strong>session</strong>: a way to store information across pages.</p>
+
+<p><strong>set value as:</strong></p>
+
+<pre><code>    session[:person] = ＠user
+</code></pre>
+
+<p><strong>read values as:</strong></p>
+
+<pre><code>    Hello #{session[:person]}
+</code></pre>
+
+<p><strong>set as nil:</strong></p>
+
+<pre><code>    session[:person] = nil
+</code></pre>
+
+<p><strong>reset all sessions</strong></p>
+
+<pre><code>    reset_session
+</code></pre>
+
+<p>There are many solutions to store session in ruby on rails, including
+<strong>PStore</strong> [it&#8217;s the default way in rails]
+<strong>ActiveRecordStore</strong> [to use ActiveRecord, better to share information across apps in this way]
+<strong>DRbStore</strong>
+<strong>FileStore</strong>
+<strong>MemoryStore</strong></p>
+
+<p>Much more compares on above solutions : check out <a href="http://scott.elitists.net/sessions.html">Ruby on Rails Session Container Performance</a> see the details.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/12/29/session-in-ruby-on-rails/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/12/28/seo-web-developer-cheat-sheet/">SEO Web Developer Cheat Sheet</a></h1>
     
     
@@ -545,112 +604,6 @@ But, first version should be structured well and make sure it&#8217;s been done 
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/12/11/rails-application-templates/">Rails Application Templates</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="Fri Dec 11 00:00:00 +0800 2009" pubdate  updated >Dec 11<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>When talking about templates in Rails, usually people mean the templates which help to re-use views, but this templates is a <a href="http://github.com/rails/rails/commit/e8cc4b116c460c524961a07da92da3f323854c15">feature after Rails 2.3 for generating Rails application</a> easily, so give it a try if you haven&#8217;t used it yet.</p>
-
-<p>It&#8217;s helpful for me to create Rails application according to similar skeleton, a sample below was written about one year ago, but recently I want to create a new application with the same environment/configuration.</p>
-
-<p><code lang="ruby"></p>
-
-<h1>idapted_template.rb</h1>
-
-<p>generate :rspec</p>
-
-<p>environment 'config.time_zone = "Beijing"'
-environment 'config.i18n.default_locale = :zh'</p>
-
-<p>name = ask("What's app's name?")
-file 'config/site_config.yml', &lt;&lt;-CODE
-app: #{name}
-domain: mydomain
-CODE</p>
-
-<p>user = ask("What's db user name?")
-pwd = ask("What's db user password?")
-file 'config/database.yml', &lt;&lt;-CODE
-development:
-  adapter: mysql
-  encoding: utf8
-  database: #{name}_development
-  user: #{user}
-  password: #{pwd}
-  pool: 5
-  timeout: 5000</p>
-
-<p>test:
-  adapter: mysql
-  encoding: utf8
-  database: #{name}_test
-  user: #{user}
-  password: #{pwd}
-  pool: 5
-  timeout: 5000</p>
-
-<p>production:
-  adapter: mysql
-  encoding: utf8
-  database: #{name}_production
-  user: #{user}
-  password: #{pwd}
-  pool: 5
-  timeout: 5000
-CODE</p>
-
-<p>rake 'db:create:all'
-rake 'db:sessions:create'
-rake 'db:migrate'</p>
-
-<p>gem 'idp_helpers'
-gem 'idp_core'</p>
-
-<p>run "rm public/index.html"</p>
-
-<p>run "rm -rf tmp log"
-run "svn import . http://mydomain.com/svn/projects/applications/#{name} -m 'add new app'"
-run "rm -rf *"
-run "svn checkout http://mydomain.com/svn/projects/applications/#{name} ."</p>
-
-<p>file 'ignore_list', &lt;<-CODE
-log
-tmp
-nbproject
-CODE
-run "svn propset svn:ignore -F ignore_list ."
-run "rm ignore_list"
-run "svn commit -m 'set svn ignore'"
-</code></p>
-
-<p>There are several useful commands which help you write powerful templates, you can learn more good examples <a href="http://m.onkey.org/2008/12/4/rails-templates">here</a>. or watch Ryan&#8217;s Railscasts about <a href="http://railscasts.com/episodes/148-app-templates-in-rails-2-3">App Templates in Rails 2.3</a>.</p>
-
-<p>Enjoy it.</p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/12/11/rails-application-templates/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -687,6 +640,10 @@ run "svn commit -m 'set svn ignore'"
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/01/19/downloadable-svg-in-png-format/">Downloadable SVG in PNG Format</a>
       </li>
     
@@ -712,10 +669,6 @@ run "svn commit -m 'set svn ignore'"
     
       <li class="post">
         <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a>
       </li>
     
   </ul>

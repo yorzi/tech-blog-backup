@@ -2,332 +2,336 @@
 <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/03/polymorphic-association-in-factory_girl/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/03/ssh-turnl-script/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/04/a-discussion-on-testing/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/06/mysql-dump/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/09/rails-best-practices/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/11/cheat-sheet-in-terminal/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/11/set-static-ip-on-ubuntu/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.wangyaodi.com/2009/11/12/primary_key-and-foreign_key-in-rails-association/
         </loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/13/feed-parser-in-ruby/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/13/run-corn-job-in-ruby-way/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/17/jquery-for-rails-developer/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/17/ui-framework/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/19/erlang/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/26/ajax-support-in-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/11/26/law-of-demeter/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/07/love-named_scope/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.wangyaodi.com/2009/12/09/comparing-equality-eql-equal-and-case-equality-in-ruby/
         </loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/11/rails-application-templates/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/15/seo-on-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/15/yorzi-in-search/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/16/seo-tools/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/17/chrome-on-ubuntu9-04/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/18/2010-future-technologies/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/22/formtastic-for-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/22/sessions-and-cookies-in-ruby-on-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/28/funny-pictures/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/28/seo-web-developer-cheat-sheet/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2009/12/29/session-in-ruby-on-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/01/06/cms-formtastic-routing-cache-in-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/01/07/formtastic/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/01/14/a-ab-test-solution-in-ror/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/01/19/jrails-means-jquery-on-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/03/14/performance-practice-on-rails/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/03/17/find_in_batches-is-not-working/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/03/26/valuable-ruby-on-rails-materials/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.wangyaodi.com/2010/04/12/js-select-all-checkbox-and-submit-form-via-js/
         </loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/04/12/update-iphone-to-3.1.2/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/04/19/why-you-should-use-dropbox/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/04/28/overview-of-renren-connect-application/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/05/19/learn-from-renren-api/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/06/16/experiment-bowline/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/06/20/renren-integration-into-eqenglish/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.wangyaodi.com/2010/06/30/iphone-android-application-based-on-titanium-and-html5/
         </loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/07/14/titanium-db-synchronization/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/07/16/searchbar-in-titanium/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/07/17/install-mysql-on-centos5-5/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/07/18/create-new-user-on-centos/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.wangyaodi.com/2010/07/27/a-great-survey-solution-based-on-ruby-on-rails/
         </loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/07/27/beta-salon-rails-developer-meetup/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/07/28/rails3-app-gem-stack/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/07/30/start-working-on-titanium/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.wangyaodi.com/2010/07/30/study-notes-passenger-capistrano-nginx-rails-2-3-4-ubuntu-9-04-10-steps/
         </loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/08/04/calculate-results-vs-store-result-sets/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/08/04/serialize-object-in-activerecord/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/08/25/iphone-app-debug-and-release-via-titanium/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/08/26/install-sqlite3-ruby-on-centos/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/08/27/where-optimization-happens/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/08/28/first-iphone-app-ielts-31-formulas/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>
             http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/
         </loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/09/01/macports-is-a-monster/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/09/01/script-fetch-parameter-value-from-url/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/09/02/studynote-convert-string-to-datetime/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/09/10/perfect-backup-solution-for-developers/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/12/01/acts_as_favable-is-handy/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2010/12/05/when-generating-a-public-website/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/01/20/deploy-rails3-app-in-sub-directory/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/01/21/love-git-love-coding/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/01/22/dalli-on-rails3/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/02/12/zen-coding-for-textmate/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/02/18/real-time-application-with-rails3/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/03/09/settimeout-and-setinterval/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/03/21/weekly-updates-javascript-rocks/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/06/14/riding-on-rails3-with-full-stack-of-gems/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2011/08/14/now-my-blog-is-running-on-octopress/</loc>
-        <lastmod>2012-10-22T22:20:25+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2012/10/22/run-a-static-website-on-heroku-for-free/</loc>
-        <lastmod>2013-01-19T16:13:17+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/2013/01/19/downloadable-svg-in-png-format/</loc>
-        <lastmod>2013-01-19T16:10:42+08:00</lastmod>
+        <lastmod>2013-04-27T21:11:44+08:00</lastmod>
+    </url>
+    <url>
+        <loc>http://tech.wangyaodi.com/2013/04/27/map_basics_for_noob/</loc>
+        <lastmod>2013-04-27T21:46:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/blog/archives/</loc>
-        <lastmod>2013-01-19T16:13:17+08:00</lastmod>
+        <lastmod>2013-04-27T21:46:33+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/</loc>
-        <lastmod>2013-01-19T16:13:17+08:00</lastmod>
+        <lastmod>2013-04-27T21:46:33+08:00</lastmod>
     </url>
 </urlset>
