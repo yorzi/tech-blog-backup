@@ -105,6 +105,61 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2010/04/28/overview-of-renren-connect-application/">Overview of RenRen Connect Application</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-04-28 00:00:00 +0800" pubdate  updated >Apr 28<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I’ve read <a href="http://wiki.dev.renren.com/wiki/%E9%A6%96%E9%A1%B5">RenRen development Doc</a> and tried some simple feature for a while, its platform is interesting and exciting, but much of its document is out of date(I guess it’s not been maintained for a time). so there are pains to test most of its APIs, here I will roughly introduce what we can do based on RenRen open platform.</p>
+
+<p>First of all, RenRen platform supports <a href="http://wiki.dev.renren.com/wiki/%E5%90%8D%E8%AF%8D%E8%A7%A3%E9%87%8A">five types of APPLICATION</a>, which are:
+– RenRen Canvas. It means application/content is embedded in RenRen’s web container via XNML/IFrame/OpenSocial-Gadget etc.
+– Mobile Wap application.
+– RenRen Connect. It means an external website is connected to RenRen, the two sites can share many different infos according to the channel/bridge API.
+– Desktop Application.
+– Mobile Client Application.</p>
+
+<p>Obviously, RenRen Connect is what developer need upon first step. So the question is how does it work? Follow me, I will go through the imagined application to show what feature developer can build according to RenRen connect API, now go:</p>
+
+<ol>
+<li><p>Tom is a RenRen user, he just find an “application” which tells him he can improve his oral English, that’s interesting, he clicks it in order to add the application to his list.</p></li>
+<li><p>Then he find EQenglish.com, he uses his RenRen account to login EQenglish, He find he can order an speaking evaluation for free on the website, and what’s more, he even can push this message and/or the study status to his RenRen friends.</p></li>
+<li><p>Tom goes through EQenglish website to check EQ learning methods, He can easily share the web page to his RenRen friends.</p></li>
+<li><p>Andy is an EQenglish user, he bundles his EQ account and RenRen account on EQenglish website, so he can push his study status to his RenRen friends.</p></li>
+<li><p>Andy finally buy a course, then all EQ learners who have RenRen accounts can receive an email/notification, in which it broadcasts “Andy buy a course ***” something like that.</p></li>
+<li><p>Once Andy discussed an EQ lesson, his comments is synced to his RenRen status, all of his Friends there can see his status.</p></li>
+<li><p>Tom finds Andy’s EQ profile via the discussion thread, the surprise is Andy’s is his School mate, they have the same IELTS exam time. They connect with each other on RenRen.</p></li>
+<li><p>What’s more, Tom finds a section in EQ website, He can pick up all his Friends list, and suggest them to use EQ service. Also aside the lesson discussion thread, there is a live stream box connecting to RenRen page. so He can easily comment with friend..</p></li>
+</ol>
+
+
+<p>Etc..</p>
+
+<p>Above is a rough introduction of RenRen connect feature developer can build(it is based on RenRen connect’s API, not just my imagination).<a href="http://wiki.dev.renren.com/wiki/%E4%BA%A7%E5%93%81%E5%8A%9F%E8%83%BD%E8%AF%A6%E8%A7%A3">Click here to review RenRen Conncet Production Description.</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2010/04/28/overview-of-renren-connect-application/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2010/04/19/why-you-should-use-dropbox/">Why You Should Use Dropbox</a></h1>
     
     
@@ -1071,59 +1126,6 @@ I don&#8217;t know how fantastic Formtastic is before this afternoon, I used it
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2010/01/06/cms-formtastic-routing-cache-in-rails/">A Note for Building a Simple Rails Application</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2010-01-06 00:00:00 +0800" pubdate  updated >Jan 6<span>th</span>, 2010</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>最近花了一些时间改造公司的网站（<a href="http://www.eqenglish.com">EQV2</a>），这个网站是一个偏重内容和设计的信息类主站，并没有太多功能性的要求，所以在使用<a href="http://rubyonrails.org/">Ruby on Rails</a>开发这个网站的时候，尝试了一些之前涉及不多的技术。最初这个网站利用<a href="http://radiantcms.org/">Radiant</a>（RoR的开源CMS系统）搭建，考虑到没有专门的技术人员来管理和研究<a href="http://radiantcms.org/">Radiant</a>，而且和我们自己的系统平台的集成也会有些麻烦，最终决定放弃这把牛刀，仅仅做一个简单而且结构清晰的网站就OK。</p>
-
-<p>我简单列一下这次改造过程中的一些比较典型的处理方法和技术：</p>
-
-<ul>
-<li><p><a href="http://blog.wangyaodi.com/2009/12/22/formtastic-for-rails/">Formtastic</a> + nifty_scaffold
- 用这两招可以方便的产生后台的CRUD管理部分，不知道为什么我第一反应没有使用<a href="http://activescaffold.com/">ActiveScaffold</a>，可能是从Rails2.3+以后Denny老说使用起来有问题有冲突，我就本能的绕开它了。
- 参考： <a href="http://asciicasts.com/episodes/184-formtastic-part-1">http://asciicasts.com/episodes/184-formtastic-part-1</a></p></li>
-<li><p><a href="http://blog.wangyaodi.com/2009/11/13/feed-parser-in-ruby/">feedzirra</a> + <a href="http://blog.wangyaodi.com/2009/11/13/%E5%9C%A8ror%E4%B8%AD%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">whenever</a>
-feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可以自动更新源RSS，在我们的系统中我用它们更新Blog中的内容到网站上面来。
- 参考： <a href="http://github.com/pauldix/feedzirra">http://github.com/pauldix/feedzirra</a></p>
-
-<pre><code>        &lt;a href="http://github.com/javan/whenever/"&gt;http://github.com/javan/whenever/&lt;/a&gt;
-</code></pre></li>
-<li><p><a href="http://code.google.com/p/rubycas-server/">cas</a>
- <a href="http://www.dujinfang.com">7哥</a>搭建了一个idp_cas的server，我就结合这个做了一个单点登录的控制，用来对后台内容管理做权限控制。这个方案很轻量级，避免了直接集成复杂的idp用户验证系统。</p></li>
-<li><p>Routing
- 此次最想突出介绍的是ROR的<a href="http://api.rubyonrails.org/classes/ActionController/Routing.html">Routing</a>机制，强大的Routing可以将URL改写成任何形式，以适应SEO的需要，同时也可以做坏链的容错处理。很好很强大，就是不知道效率如何，这个有待进一步熟悉。</p></li>
-<li><p>caches_page
- 由于本次改造过程中主要涉及内容性质的View，所以我只进行了Page Cache，Rails的Cache方法也很简单易用，我稍后会做一个较为详细的总结，讨论一下各种Cache的问题。</p></li>
-</ul>
-
-
-<p>此次改造的重点是网站结构和UI/UE的设计，Noah和Buzz主要负责这方面的工作，正因为他们出色的工作成果才使得EQV2顺利按期交付。</p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2010/01/06/cms-formtastic-routing-cache-in-rails/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -1160,6 +1162,10 @@ feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
       </li>
     
@@ -1185,10 +1191,6 @@ feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>

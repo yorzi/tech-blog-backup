@@ -327,11 +327,17 @@
         <lastmod>2013-04-27T21:51:42+08:00</lastmod>
     </url>
     <url>
+        <loc>
+            http://tech.wangyaodi.com/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/
+        </loc>
+        <lastmod>2013-05-23T14:38:19+08:00</lastmod>
+    </url>
+    <url>
         <loc>http://tech.wangyaodi.com/blog/archives/</loc>
-        <lastmod>2013-04-27T21:51:42+08:00</lastmod>
+        <lastmod>2013-05-23T14:38:19+08:00</lastmod>
     </url>
     <url>
         <loc>http://tech.wangyaodi.com/</loc>
-        <lastmod>2013-04-27T21:51:42+08:00</lastmod>
+        <lastmod>2013-05-23T14:38:19+08:00</lastmod>
     </url>
 </urlset>

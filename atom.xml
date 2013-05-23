@@ -4,7 +4,7 @@
   <title>@yorzi</title>
   <link href="http://tech.wangyaodi.com/atom.xml" rel="self"/>
   <link href="http://tech.wangyaodi.com/"/>
-  <updated>2013-04-28T15:02:01+08:00</updated>
+  <updated>2013-05-23T14:40:09+08:00</updated>
   <id>http://tech.wangyaodi.com/</id>
   <author>
     <name>Andy Wang</name>
@@ -13,6 +13,162 @@
     
   </author>
 
+  
+  <entry>
+    <title>Install Jenkins and Set Up Jenkins CI for Rails Projects</title>
+    <link href="http://tech.wangyaodi.com/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/"/>
+    <updated>2013-05-23T14:33:00+08:00</updated>
+    <id>http://tech.wangyaodi.com/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects</id>
+    <content type="html">&lt;p&gt;&lt;a href=&quot;https://travis-ci.org/&quot;&gt;Travis CI&lt;/a&gt; is a great solution for OpenSource project, however, what if you want to setup an internal CI server for private projects? Believe or not, &lt;a href=&quot;http://jenkins-ci.org/&quot;&gt;Jenkins CI&lt;/a&gt; is the choice. This post will guide you through the Jenkins installation and configuration on VPS (e.g. EC2 instance in this post)&lt;/p&gt;
+
+&lt;h3&gt;OS Assumption&lt;/h3&gt;
+
+&lt;p&gt;Assume that you are running an EC2 instance with a Ubuntu system as below:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+Ubuntu 12.04.2 LTS (GNU/Linux 3.2.0-40-virtual x86_64)
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;BTW, there is an Amazon &lt;a href=&quot;http://aws.amazon.com/ec2/pricing/&quot;&gt;free tier&lt;/a&gt; that is recommended if you don't have any VPS to use yet.&lt;/p&gt;
+
+&lt;h3&gt;Install Rails Environment&lt;/h3&gt;
+
+&lt;p&gt;As we mainly use this Jenkins CI server for Rails projects, so necessary Ruby/Rails libs and tools are needed as following:&lt;/p&gt;
+
+&lt;h5&gt;- Install RVM and Ruby&lt;/h5&gt;
+
+&lt;p&gt;We need to have git core and curl for &lt;a href=&quot;https://rvm.io/&quot;&gt;RVM&lt;/a&gt; installation, so install them like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo apt-get install build-essential git-core
+sudo apt-get install curl
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;And install &lt;a href=&quot;https://rvm.io/&quot;&gt;RVM&lt;/a&gt; with ruby as user &lt;code&gt;jenkins&lt;/code&gt;:&lt;/p&gt;
+
+&lt;p&gt;```&lt;/p&gt;
+
+&lt;h1&gt;remember to switch to user &lt;code&gt;jenkins&lt;/code&gt; first&lt;/h1&gt;
+
+&lt;p&gt;sudo su jenkins&lt;/p&gt;
+
+&lt;p&gt;curl -L https://get.rvm.io | bash -s stable --ruby
+sudo apt-get install libmysqlclient-dev ruby-dev
+```&lt;/p&gt;
+
+&lt;h5&gt;- Install Possible Databases&lt;/h5&gt;
+
+&lt;h6&gt;&lt;strong&gt;MySQL&lt;/strong&gt;&lt;/h6&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo apt-get install mysql-client mysql-server libmysql-ruby libmysqlclient-dev
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h6&gt;Postgres&lt;/h6&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo aptitude install libpq-dev
+sudo apt-get install postgresql
+sudo apt-get install postgresql-client
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;If you had a problem with UTF-8 take a look at &lt;a href=&quot;http://wiki.gentoo.org/wiki/PostgreSQL&quot;&gt;http://wiki.gentoo.org/wiki/PostgreSQL&lt;/a&gt;&lt;/p&gt;
+
+&lt;h6&gt;MongoDB&lt;/h6&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv 7F0CEB10
+echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/10gen.list
+sudo apt-get update
+sudo apt-get install mongodb-10gen
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3&gt;Install Jenkins&lt;/h3&gt;
+
+&lt;p&gt;Installation:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ &amp;gt; /etc/apt/sources.list.d/jenkins.list'
+sudo aptitude update
+sudo aptitude install jenkins
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;Uninstall Jenkins is easy too, just:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo apt-get remove jenkins
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;There is also detailed &lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/Installing+Jenkins+on+Ubuntu&quot;&gt;guide&lt;/a&gt; for installing Jenkins on Ubuntu. FYI.&lt;/p&gt;
+
+&lt;h3&gt;Run Jenkins on Port 80&lt;/h3&gt;
+
+&lt;p&gt;Default Jenkins runs on port 8080, you need to reverse proxy port 80 to port 8080 for Jenkins, it makes the CI server public to the world. To install nginx, open terminal and type in:&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo apt-get install nginx
+sudo /etc/init.d/nginx start
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In order to Open up the config file in vim, and update it.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;
+sudo vim /etc/nginx/nginx.conf
+&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;```
+http {&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    # ...Omitted Parts…
+
+    include /etc/nginx/conf.d/*.conf;    # This line not modified.
+    include /etc/nginx/sites-enabled/*;  # This line not modified.
+
+    ##
+    # Reverse proxy port 80 to port 8080 for Jenkins
+    ##
+    server {
+            listen 80 default;
+            server_name your.domain.com;
+            location /{
+                    proxy_pass http://127.0.0.1:8080;
+            }
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;}
+```&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Notice:&lt;/strong&gt; Jenkins shows build histories and other information, to keep the whole CI server private, you'd better use &lt;a href=&quot;https://gist.github.com/yorzi/5590462&quot;&gt;this guide&lt;/a&gt; to add basic auth for your Jenkins CI, it is strongly recommended.&lt;/p&gt;
+
+&lt;h3&gt;Install valuable plugins for Jenkins&lt;/h3&gt;
+
+&lt;p&gt;Well, after above installations are done, you are able to visit your Jenkins CI server with your domain. Now it's time to install below plugins from &lt;code&gt;JenkinsPlugin &amp;gt; Manager&lt;/code&gt; section:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.jenkins-ci.org/display/JENKINS/Github+OAuth+Plugin&quot;&gt;Github Authentication plugin&lt;/a&gt; is used for github OAuth. (This plugin has a bug that you can not logout some times.)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/GitHub+Plugin&quot;&gt;GitHub Plugin&lt;/a&gt; integrates Jenkins with Github projects.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://wiki.jenkins-ci.org/display/JENKINS/Gravatar+Plugin]&quot;&gt;Jenkins Gravatar plugin&lt;/a&gt; is used for showing Gravatar avatar images for Jenkins users.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/RVM+Plugin&quot;&gt;RVM Plugin&lt;/a&gt; runs your jobs in the RVM managed ruby+gemset of your choice.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/Rake+Plugin&quot;&gt;Rake plugin&lt;/a&gt; allows Jenkins to invoke Rake tasks as build steps.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/All+Changes+Plugin&quot;&gt;All Changes Plugin&lt;/a&gt; shows all changes which influenced the builds of a project.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;For more plugins, you should check out the &lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/Plugins&quot;&gt;Jenkins Plugins Document&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;References &amp;amp; Resources&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://wiki.jenkins-ci.org/display/JENKINS/Configuring+a+Rails+build&quot;&gt;https://wiki.jenkins-ci.org/display/JENKINS/Configuring+a+Rails+build&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://aptobits.com/2012/09/setting-up-jenkins-ci-on-an-amazon-ec2-linux-instance/&quot;&gt;http://aptobits.com/2012/09/setting-up-jenkins-ci-on-an-amazon-ec2-linux-instance/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://watirmelon.com/2011/08/29/running-your-watir-webdriver-tests-in-the-cloud-for-free/&quot;&gt;http://watirmelon.com/2011/08/29/running-your-watir-webdriver-tests-in-the-cloud-for-free/&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://gistflow.com/posts/492-jenkins-ci-setup-for-rails-application-from-scratch&quot;&gt;http://gistflow.com/posts/492-jenkins-ci-setup-for-rails-application-from-scratch&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;http://blogs.burnsidedigital.com/2013/01/setting-jenkins-ci-server-for-rails-project-on-a-vagrant-box/&quot;&gt;http://blogs.burnsidedigital.com/2013/01/setting-jenkins-ci-server-for-rails-project-on-a-vagrant-box/&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;NOTICE:&lt;/strong&gt; This is a blog I wrote for Intridea, I also post it here for my own reference. You are able to check out the &lt;a href=&quot;http://www.intridea.com/blog/2013/5/21/howto-install-setup-jenkins-ci-for-rails-projects&quot;&gt;original post&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   
   <entry>
     <title>Map basics for noob</title>
@@ -1358,56 +1514,6 @@ Change that to ExampleName.app and save the file.
 PS: Also you might want to remove the previously generated .ipa file with the space. just delete the file, a new one will be created after the above steps automatically&lt;/p&gt;
 
 &lt;p&gt;Now you are just submitting an app named &quot;ExampleName.app&quot;, and its display name will remain &quot;Example Name.app&quot;.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>Study Note: Install Git1.7.1 on CentOS5.5</title>
-    <link href="http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5/"/>
-    <updated>2010-08-29T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/2010/08/29/study-note-install-git1-7-1-on-centos5-5</id>
-    <content type="html">&lt;p&gt;Step 1. Install the dependencies&lt;/p&gt;
-
-&lt;pre&gt;
-$ sudo yum -y install curl-devel expat-devel \
-gettext-devel openssl-devel zlib-devel  
-$ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz  
-$ tar zxf libiconv-1.13.1.tar.gz  
-$ cd libiconv-1.13.1  
-$ ./configure prefix=/usr/local  
-$ make  
-$ sudo make install
-&lt;/pre&gt;
-
-
-&lt;p&gt;Step 2. Install Git1.7.1&lt;/p&gt;
-
-&lt;pre&gt;
-$ wget http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz  
-$ tar zxf git-1.7.1.tar.gz  
-$ cd  git-1.7.1  
-$ ./configure prefix=/usr/local
-$ make
-$ sudo make install 
-&lt;/pre&gt;
-
-
-&lt;p&gt;Step 3. You might get errors as:&lt;/p&gt;
-
-&lt;pre&gt;error while loading shared libraries: libiconv.so.2:\
-cannot open shared object file: No such file or directory&lt;/pre&gt;
-
-
-&lt;p&gt;Then, you should do the following:&lt;/p&gt;
-
-&lt;pre&gt;
-$ sudo vim /etc/ld.so.conf
-# you should add online as &quot;/usr/local/lib&quot;
-$ sudo /sbin/ldconfig
-&lt;/pre&gt;
-
-
-&lt;p&gt;Done, try git --version, it's successfully installed.&lt;/p&gt;
 </content>
   </entry>
   

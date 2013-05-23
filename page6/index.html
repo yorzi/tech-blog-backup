@@ -105,6 +105,59 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2010/01/06/cms-formtastic-routing-cache-in-rails/">A Note for Building a Simple Rails Application</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-01-06 00:00:00 +0800" pubdate  updated >Jan 6<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>最近花了一些时间改造公司的网站（<a href="http://www.eqenglish.com">EQV2</a>），这个网站是一个偏重内容和设计的信息类主站，并没有太多功能性的要求，所以在使用<a href="http://rubyonrails.org/">Ruby on Rails</a>开发这个网站的时候，尝试了一些之前涉及不多的技术。最初这个网站利用<a href="http://radiantcms.org/">Radiant</a>（RoR的开源CMS系统）搭建，考虑到没有专门的技术人员来管理和研究<a href="http://radiantcms.org/">Radiant</a>，而且和我们自己的系统平台的集成也会有些麻烦，最终决定放弃这把牛刀，仅仅做一个简单而且结构清晰的网站就OK。</p>
+
+<p>我简单列一下这次改造过程中的一些比较典型的处理方法和技术：</p>
+
+<ul>
+<li><p><a href="http://blog.wangyaodi.com/2009/12/22/formtastic-for-rails/">Formtastic</a> + nifty_scaffold
+ 用这两招可以方便的产生后台的CRUD管理部分，不知道为什么我第一反应没有使用<a href="http://activescaffold.com/">ActiveScaffold</a>，可能是从Rails2.3+以后Denny老说使用起来有问题有冲突，我就本能的绕开它了。
+ 参考： <a href="http://asciicasts.com/episodes/184-formtastic-part-1">http://asciicasts.com/episodes/184-formtastic-part-1</a></p></li>
+<li><p><a href="http://blog.wangyaodi.com/2009/11/13/feed-parser-in-ruby/">feedzirra</a> + <a href="http://blog.wangyaodi.com/2009/11/13/%E5%9C%A8ror%E4%B8%AD%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">whenever</a>
+feedzirra是一个方便易用的RSS分析器，很不错，结合whenever就可以自动更新源RSS，在我们的系统中我用它们更新Blog中的内容到网站上面来。
+ 参考： <a href="http://github.com/pauldix/feedzirra">http://github.com/pauldix/feedzirra</a></p>
+
+<pre><code>        &lt;a href="http://github.com/javan/whenever/"&gt;http://github.com/javan/whenever/&lt;/a&gt;
+</code></pre></li>
+<li><p><a href="http://code.google.com/p/rubycas-server/">cas</a>
+ <a href="http://www.dujinfang.com">7哥</a>搭建了一个idp_cas的server，我就结合这个做了一个单点登录的控制，用来对后台内容管理做权限控制。这个方案很轻量级，避免了直接集成复杂的idp用户验证系统。</p></li>
+<li><p>Routing
+ 此次最想突出介绍的是ROR的<a href="http://api.rubyonrails.org/classes/ActionController/Routing.html">Routing</a>机制，强大的Routing可以将URL改写成任何形式，以适应SEO的需要，同时也可以做坏链的容错处理。很好很强大，就是不知道效率如何，这个有待进一步熟悉。</p></li>
+<li><p>caches_page
+ 由于本次改造过程中主要涉及内容性质的View，所以我只进行了Page Cache，Rails的Cache方法也很简单易用，我稍后会做一个较为详细的总结，讨论一下各种Cache的问题。</p></li>
+</ul>
+
+
+<p>此次改造的重点是网站结构和UI/UE的设计，Noah和Buzz主要负责这方面的工作，正因为他们出色的工作成果才使得EQV2顺利按期交付。</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2010/01/06/cms-formtastic-routing-cache-in-rails/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/12/29/session-in-ruby-on-rails/">Session in Ruby on Rails</a></h1>
     
     
@@ -552,58 +605,6 @@ Baidu.com : <a href="http://www.baidu.com/s?bs=yorzi&f=8&wd=yorzi">256条记录<
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/12/15/seo-on-rails/">SEO on Rails</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2009-12-15 00:00:00 +0800" pubdate  updated >Dec 15<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><div>This post is a copy of my work stuff, but I want to archive all the links below, they are all about SEO on Rails application, as well as a useful post about jQuery on Rails.
-<div>
-
-Finally, we decided to create a Rails App for the EQV2 New Website, so I did several homework for this mission. They are:
-
-1. SEO on Rails.
-Several rules/good points for seo according to the following websites:
-1&gt; <a href="http://www.elctech.com/articles/rails-seo-starter-guide">http://www.elctech.com/articles/rails-seo-starter-guide</a>
-2&gt; <a href="http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/">http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/</a>
-3&gt; <a href="http://www.seoonrails.com/">http://www.seoonrails.com/</a>
-4&gt; <a href="http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx">http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx</a>
-
-2. Maybe use JQuery more in EQV2.
-1&gt; <a href="http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/">http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/</a>
-2&gt; <a href="http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063">http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063</a>
-
-3. Cache Views.
-
-MORE IDEAS?
-
-But, first version should be structured well and make sure it&#8217;s been done before the &#8220;deadline&#8221;, so this app will be according to the recommendation but not totally implemented in the best way, in all, it still needs your suggestion.</div>
-</div>
-
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/12/15/seo-on-rails/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -640,6 +641,10 @@ But, first version should be structured well and make sure it&#8217;s been done 
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
       </li>
     
@@ -665,10 +670,6 @@ But, first version should be structured well and make sure it&#8217;s been done 
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>

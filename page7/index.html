@@ -105,6 +105,58 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2009/12/15/seo-on-rails/">SEO on Rails</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-12-15 00:00:00 +0800" pubdate  updated >Dec 15<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><div>This post is a copy of my work stuff, but I want to archive all the links below, they are all about SEO on Rails application, as well as a useful post about jQuery on Rails.
+<div>
+
+Finally, we decided to create a Rails App for the EQV2 New Website, so I did several homework for this mission. They are:
+
+1. SEO on Rails.
+Several rules/good points for seo according to the following websites:
+1&gt; <a href="http://www.elctech.com/articles/rails-seo-starter-guide">http://www.elctech.com/articles/rails-seo-starter-guide</a>
+2&gt; <a href="http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/">http://www.tonyspencer.com/2007/01/26/seo-for-ruby-on-rails/</a>
+3&gt; <a href="http://www.seoonrails.com/">http://www.seoonrails.com/</a>
+4&gt; <a href="http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx">http://blog.csdn.net/diehuan2008/archive/2009/02/23/3925204.aspx</a>
+
+2. Maybe use JQuery more in EQV2.
+1&gt; <a href="http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/">http://yehudakatz.com/2007/01/31/using-jquery-in-rails-part-i/</a>
+2&gt; <a href="http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063">http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063</a>
+
+3. Cache Views.
+
+MORE IDEAS?
+
+But, first version should be structured well and make sure it&#8217;s been done before the &#8220;deadline&#8221;, so this app will be according to the recommendation but not totally implemented in the best way, in all, it still needs your suggestion.</div>
+</div>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/12/15/seo-on-rails/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/12/11/rails-application-templates/">Rails Application Templates</a></h1>
     
     
@@ -812,85 +864,6 @@ Response:write_chunk(io_lib:format(&#8220;The time is: ~p~n&#8221;,
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/11/13/feed-parser-in-ruby/">Feed Parser in Ruby</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2009-11-13 00:00:00 +0800" pubdate  updated >Nov 13<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><blockquote>There are a number of ways of parsing an RSS feed in Ruby, but one of the best is a gem called <a href="http://github.com/pauldix/feedzirra/tree/master">Feedzirra</a>. The main advantage of Feedzirra is its speed; it parses feeds very quickly, but it is also useful as it can parse many different types of feed.
-</blockquote>
-
-
-<p>To install Feedzirra we first need to make sure that <code>http://gems.github.com</code> is in our list of gem sources. If not we’ll need to add it.</p>
-
-<pre>gem sources -a http://gems.github.com</pre>
-
-
-<p>Now we can install the gem:</p>
-
-<pre>sudo gem install pauldix-feedzirra</pre>
-
-
-<p><strong><em>Notice:</em></strong> When I was installing the gem, there are several libs needed, including <em>libcurl4-gnutls-dev libcurl3-gnutls libxslt1-dev</em>, you may not meet this issue, it&#8217;s not a big deal, just install what it rely on. Several dependencies will also be installed alongside the gem. Once everything’s installed we’ll need to add a reference to the gem in our application’s <em>/config/environment.rb</em> file.</p>
-
-<pre>config.gem "pauldix-feedzirra", :lib =&gt; "feedzirra", :source =&gt; "http://gems.github.com"</pre>
-
-
-<p>That’s it. We’re ready to start parsing RSS feeds in our application.</p>
-
-<p>Getting start:
-Assume that, you&#8217;ve got a model to store the feed content which is fetched by the parser, so the model should be like :</p>
-
-<pre name="code" class="ruby">
-class FeedEntry < ActiveRecord::Base
-  def self.update_from_feed(feed_url)
-    feed = Feedzirra::Feed.fetch_and_parse(feed_url)
-    add_entries(feed.entries)
-  end
-
-  private
-  def self.add_entries(entries)
-    entries.each do |entry|
-      unless exists? :guid => entry.id
-        create!(
-          :name         => entry.title,
-          :summary      => entry.summary,
-          :url          => entry.url,
-          :published_at => entry.published,
-          :guid         => entry.id
-        )
-      end
-    end
-  end
-end
-</pre>
-
-
-<p>A more detailed manual is <a href="http://asciicasts.com/episodes/168-feed-parsing">here!</a></p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/11/13/feed-parser-in-ruby/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -927,6 +900,10 @@ end
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
       </li>
     
@@ -952,10 +929,6 @@ end
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>

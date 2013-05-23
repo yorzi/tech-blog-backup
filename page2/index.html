@@ -105,6 +105,87 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2011/01/22/dalli-on-rails3/">Dalli on Rails3</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2011-01-22 00:00:00 +0800" pubdate  updated >Jan 22<span>nd</span>, 2011</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Today I tried a new pure Ruby <a href="http://memcached.org/" target="_blank">memcahed</a> client in one of my Rails3 projects, it&#8217;s named as &#8221;<a href="https://github.com/mperham/dalli" target="_blank">Dalli</a>&#8221;. It&#8217;s an excellent memcached client as <a href="http://www.mikeperham.com/">Mike Perham</a> announced in August last year. You can detect more details about it on its code. Dalli is just faster performance than memcache-client and easy to use in Rails3 or on <a href="http://heroku.com" target="_blank">Heroku</a>.</p>
+
+<p>Make sure you&#8217;ve installed 1.4+ memcached on your machine, then you can configure Dalli as what you did with memcache-client before:
+1. add gem in Gemfile
+<code lang="ruby">
+gem 'dalli'
+</code>
+2. Config the underlying cache store as dalli_store in production.rb
+<code lang="ruby"></p>
+
+<h1>Memcached is delaulted on port 11211.</h1>
+
+<p>config.cache_store = :dalli_store, 'localhost:11211'
+</code>
+3. Now you will find the Rails.cache class is changed to Rails.cache.class:
+<code lang="ruby"></p>
+
+<blockquote><blockquote><p>Rails.cache.class
+== ActiveSupport::Cache::DalliStore
+</code>
+4. You can use it easily in you Rails3 application
+<code lang="ruby">
+class Food &lt; ActiveRecord::Base
+   after_save :expire_food_caches</p></blockquote></blockquote>
+
+<p>   def self.all_view_types</p>
+
+<pre><code>  Rails.cache.fetch("food_types") do
+      Food.all.map{|s| s.view_type}.uniq
+  end
+</code></pre>
+
+<p>   end</p>
+
+<p>   protected
+   def expire_food_caches</p>
+
+<pre><code>   unless Food.all_view_types.include?(self.view_type)
+       Rails.cache.delete("food_types")
+   end
+</code></pre>
+
+<p>   end
+end
+</code>
+<em><strong>Note</strong>: Rails.cache.fetch() with a block will return the cached value if it exists, otherwise it will return the value and write cache with the value at the same time.</em></p>
+
+<p>Resource about Cache:
+Scaling Rails : <br /><a href="http://railslab.newrelic.com/scaling-rails">http://railslab.newrelic.com/scaling-rails</a>
+Caching with Rails : <br /><a href="http://guides.rubyonrails.org/caching_with_rails.html">http://guides.rubyonrails.org/caching_with_rails.html</a>
+ActiveSupport::Cache::Store : <br /><a href="http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear">http://api.rubyonrails.org/classes/ActiveSupport/Cache/Store.html#method-i-clear</a>
+ActiveSupport::Memoizable : <br /><a href="http://ilstar.blogbus.com/logs/84754288.html#cmt">http://ilstar.blogbus.com/logs/84754288.html#cmt</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2011/01/22/dalli-on-rails3/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2011/01/21/love-git-love-coding/">Love Git, Love Coding</a></h1>
     
     
@@ -911,77 +992,6 @@ PS: Also you might want to remove the previously generated .ipa file with the sp
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2010/08/29/study-note-install-git1-7-1-on-centos5-5/">Study Note: Install Git1.7.1 on CentOS5.5</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2010-08-29 00:00:00 +0800" pubdate  updated >Aug 29<span>th</span>, 2010</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Step 1. Install the dependencies</p>
-
-<pre>
-$ sudo yum -y install curl-devel expat-devel \
-gettext-devel openssl-devel zlib-devel  
-$ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz  
-$ tar zxf libiconv-1.13.1.tar.gz  
-$ cd libiconv-1.13.1  
-$ ./configure prefix=/usr/local  
-$ make  
-$ sudo make install
-</pre>
-
-
-<p>Step 2. Install Git1.7.1</p>
-
-<pre>
-$ wget http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz  
-$ tar zxf git-1.7.1.tar.gz  
-$ cd  git-1.7.1  
-$ ./configure prefix=/usr/local
-$ make
-$ sudo make install 
-</pre>
-
-
-<p>Step 3. You might get errors as:</p>
-
-<pre>error while loading shared libraries: libiconv.so.2:\
-cannot open shared object file: No such file or directory</pre>
-
-
-<p>Then, you should do the following:</p>
-
-<pre>
-$ sudo vim /etc/ld.so.conf
-# you should add online as "/usr/local/lib"
-$ sudo /sbin/ldconfig
-</pre>
-
-
-<p>Done, try git &#8211;version, it&#8217;s successfully installed.</p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2010/08/29/study-note-install-git1-7-1-on-centos5-5/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -1018,6 +1028,10 @@ $ sudo /sbin/ldconfig
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
       </li>
     
@@ -1043,10 +1057,6 @@ $ sudo /sbin/ldconfig
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>

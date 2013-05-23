@@ -105,6 +105,85 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2009/11/13/feed-parser-in-ruby/">Feed Parser in Ruby</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-11-13 00:00:00 +0800" pubdate  updated >Nov 13<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><blockquote>There are a number of ways of parsing an RSS feed in Ruby, but one of the best is a gem called <a href="http://github.com/pauldix/feedzirra/tree/master">Feedzirra</a>. The main advantage of Feedzirra is its speed; it parses feeds very quickly, but it is also useful as it can parse many different types of feed.
+</blockquote>
+
+
+<p>To install Feedzirra we first need to make sure that <code>http://gems.github.com</code> is in our list of gem sources. If not we’ll need to add it.</p>
+
+<pre>gem sources -a http://gems.github.com</pre>
+
+
+<p>Now we can install the gem:</p>
+
+<pre>sudo gem install pauldix-feedzirra</pre>
+
+
+<p><strong><em>Notice:</em></strong> When I was installing the gem, there are several libs needed, including <em>libcurl4-gnutls-dev libcurl3-gnutls libxslt1-dev</em>, you may not meet this issue, it&#8217;s not a big deal, just install what it rely on. Several dependencies will also be installed alongside the gem. Once everything’s installed we’ll need to add a reference to the gem in our application’s <em>/config/environment.rb</em> file.</p>
+
+<pre>config.gem "pauldix-feedzirra", :lib =&gt; "feedzirra", :source =&gt; "http://gems.github.com"</pre>
+
+
+<p>That’s it. We’re ready to start parsing RSS feeds in our application.</p>
+
+<p>Getting start:
+Assume that, you&#8217;ve got a model to store the feed content which is fetched by the parser, so the model should be like :</p>
+
+<pre name="code" class="ruby">
+class FeedEntry < ActiveRecord::Base
+  def self.update_from_feed(feed_url)
+    feed = Feedzirra::Feed.fetch_and_parse(feed_url)
+    add_entries(feed.entries)
+  end
+
+  private
+  def self.add_entries(entries)
+    entries.each do |entry|
+      unless exists? :guid => entry.id
+        create!(
+          :name         => entry.title,
+          :summary      => entry.summary,
+          :url          => entry.url,
+          :published_at => entry.published,
+          :guid         => entry.id
+        )
+      end
+    end
+  end
+end
+</pre>
+
+
+<p>A more detailed manual is <a href="http://asciicasts.com/episodes/168-feed-parsing">here!</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/11/13/feed-parser-in-ruby/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/11/12/primary_key-and-foreign_key-in-rails-association/">Primary_key and Foreign_key in Rails Association</a></h1>
     
     
@@ -667,6 +746,10 @@ The right way to do so:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
       </li>
     
@@ -692,10 +775,6 @@ The right way to do so:</p>
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>

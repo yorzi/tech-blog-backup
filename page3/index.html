@@ -105,6 +105,77 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2010/08/29/study-note-install-git1-7-1-on-centos5-5/">Study Note: Install Git1.7.1 on CentOS5.5</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-08-29 00:00:00 +0800" pubdate  updated >Aug 29<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Step 1. Install the dependencies</p>
+
+<pre>
+$ sudo yum -y install curl-devel expat-devel \
+gettext-devel openssl-devel zlib-devel  
+$ wget http://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.13.1.tar.gz  
+$ tar zxf libiconv-1.13.1.tar.gz  
+$ cd libiconv-1.13.1  
+$ ./configure prefix=/usr/local  
+$ make  
+$ sudo make install
+</pre>
+
+
+<p>Step 2. Install Git1.7.1</p>
+
+<pre>
+$ wget http://kernel.org/pub/software/scm/git/git-1.7.1.tar.gz  
+$ tar zxf git-1.7.1.tar.gz  
+$ cd  git-1.7.1  
+$ ./configure prefix=/usr/local
+$ make
+$ sudo make install 
+</pre>
+
+
+<p>Step 3. You might get errors as:</p>
+
+<pre>error while loading shared libraries: libiconv.so.2:\
+cannot open shared object file: No such file or directory</pre>
+
+
+<p>Then, you should do the following:</p>
+
+<pre>
+$ sudo vim /etc/ld.so.conf
+# you should add online as "/usr/local/lib"
+$ sudo /sbin/ldconfig
+</pre>
+
+
+<p>Done, try git &#8211;version, it&#8217;s successfully installed.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2010/08/29/study-note-install-git1-7-1-on-centos5-5/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2010/08/28/first-iphone-app-ielts-31-formulas/">First iPhone App : IELTS 31 Formulas</a></h1>
     
     
@@ -736,54 +807,6 @@ end
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2010/07/27/beta-salon-rails-developer-meetup/">Beta Salon - Rails Developer Meetup</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2010-07-27 00:00:00 +0800" pubdate  updated >Jul 27<span>th</span>, 2010</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><div>
-
-<a href="http://developer.idapted.com/about/">Engineers at Idapted</a> are famous and cool. They are eager to join the technical activities. At the very beginning of this June, <a href="http://jonathonpalley.com">Jonathon Palley</a> and Guolei went to US to attend the <a href="http://en.oreilly.com/rails2010">Railsconf2010</a>, which is the top level and the largest official Ruby on Rails conference, where the most successful Rails experts and companies share their experience and skill.
-
-Yeah, Jonathon and Guolei did a great job to present Idapted technology to the Rails community and gained a big success to introduce Idapted platform to the world. Since they came back to Beijing, they&#8217;ve been preparing for a similar local presentation for Chinese Rails community. Finally, with <a href="http://club.blogbeta.com/" target="_blank">Beta Salon</a>&#8217;s help, in last Saturday evening, Idapted technology team organized a Ruby on Rails activity in <a href="http://storygarden.me/" target="_blank">Story Garden</a>, which is a famous Cafe House where different people in different community open different salons.
-
-<a href="http://github.com/idapted/"><img class="alignright" title="Idapted Open Source" src="http://www.idapted.com/blog/wp-content/uploads/2010/07/Screen-shot-2010-07-27-at-11.32.07-AM.png" alt="" width="324" height="113" /></a>
-
-Rails community in Beijing is not very active, however there are many Rails developers in this city, they are always willing to share knowledge and skills with other engineers. Thus, Idapted salon activity gathered more than 50 engineers, and most of them are senior, experienced Rails engineers. Idapted team talked to people about Idapted platform and its involving technology. Specially, A mobile project which we start recently got people&#8217;s attention after the Rails presentation. People in this salon asked for more shares then, well, Idapted team now is working on <a href="http://github.com/idapted/" target="_blank">open sourcing more code</a> with the community, including Rails/Mobile/VoIP stuff.
-
-Engineers in salon lived an interesting two-hours. &#8220;We will organize more technology involved activities like this, we have best engineers and best experience on using new technologies, we&#8217;d love to share more with people.&#8221; Jonathan said. Yes, we Idapted technology team will interact more with whole tech community in China in future, obviously, salon activity is good way to do so.
-
-Related articles:
-<a href="http://club.blogbeta.com/2010/07/14-rails/" target="_blank">http://club.blogbeta.com/2010/07/14-rails/</a>
-<a href="http://www.slideshare.net/fiyuer/how-to-disassemble-one-monster-app-into-an-ecosystem-of-30-4836729" target="_blank">http://www.slideshare.net/fiyuer/how-to-disassemble-one-monster-app-into-an-ecosystem-of-30-4836729
-</a><a href="http://yanhua.javaeye.com/blog/720802" target="_blank">http://yanhua.javaeye.com/blog/720802</a>
-
-</div>
-
-</div>
-  <footer>
-    <a rel="full-article" href="/2010/07/27/beta-salon-rails-developer-meetup/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -820,6 +843,10 @@ Related articles:
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/04/27/map_basics_for_noob/">Map basics for noob</a>
       </li>
     
@@ -845,10 +872,6 @@ Related articles:
     
       <li class="post">
         <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application with Rails3</a>
       </li>
     
   </ul>
