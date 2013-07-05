@@ -4,7 +4,7 @@
   <title>@yorzi</title>
   <link href="http://tech.wangyaodi.com/atom.xml" rel="self"/>
   <link href="http://tech.wangyaodi.com/"/>
-  <updated>2013-05-23T14:40:09+08:00</updated>
+  <updated>2013-07-05T16:10:09+08:00</updated>
   <id>http://tech.wangyaodi.com/</id>
   <author>
     <name>Andy Wang</name>
@@ -13,6 +13,49 @@
     
   </author>
 
+  
+  <entry>
+    <title>Build A Widget</title>
+    <link href="http://tech.wangyaodi.com/2013/07/05/build-a-widget/"/>
+    <updated>2013-07-05T16:08:00+08:00</updated>
+    <id>http://tech.wangyaodi.com/2013/07/05/build-a-widget</id>
+    <content type="html">&lt;p&gt;Some thoughts and resources on building a widget for a specific web page or web page section.&lt;/p&gt;
+
+&lt;h4&gt;#1&lt;/h4&gt;
+
+&lt;p&gt;Use Iframe directly, it's able to pass in some params to get needed charts.&lt;/p&gt;
+
+&lt;h4&gt;#2&lt;/h4&gt;
+
+&lt;p&gt;Wrap the iframe via a JS widget(interface), then embed a JS file with params.&lt;/p&gt;
+
+&lt;h4&gt;#3&lt;/h4&gt;
+
+&lt;p&gt;window.postMessage on modern browsers &lt;br /&gt;
+&lt;a href=&quot;http://stackoverflow.com/questions/3457391/how-do-you-use-window-postmessage-across-domains&quot;&gt;http://stackoverflow.com/questions/3457391/how-do-you-use-window-postmessage-across-domains&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Related SlideShare:&lt;/p&gt;
+
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/13789187&quot; width=&quot;427&quot; height=&quot;356&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+
+
+&lt;p&gt; &lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;http://www.slideshare.net/linkibol/external-javascript-widget-development-best-practices&quot; title=&quot;External JavaScript Widget Development Best Practices&quot; target=&quot;_blank&quot;&gt;External JavaScript Widget Development Best Practices&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;http://www.slideshare.net/linkibol&quot; target=&quot;_blank&quot;&gt;linkibol LLC&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
+
+&lt;iframe src=&quot;http://www.slideshare.net/slideshow/embed_code/5466665&quot; width=&quot;427&quot; height=&quot;356&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px&quot; allowfullscreen webkitallowfullscreen mozallowfullscreen&gt; &lt;/iframe&gt;
+
+
+&lt;p&gt; &lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;http://www.slideshare.net/benvinegar/building-distributed-java-script-widgets-sat&quot; title=&quot;Building Distributed JavaScript Widgets with jQuery&quot; target=&quot;_blank&quot;&gt;Building Distributed JavaScript Widgets with jQuery&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;http://www.slideshare.net/benvinegar&quot; target=&quot;_blank&quot;&gt;benvinegar&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Tricks and Tips of Deploying Rails4 App to Heroku</title>
+    <link href="http://tech.wangyaodi.com/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku/"/>
+    <updated>2013-06-07T23:01:00+08:00</updated>
+    <id>http://tech.wangyaodi.com/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku</id>
+    <content type="html">
+</content>
+  </entry>
   
   <entry>
     <title>Install Jenkins and Set Up Jenkins CI for Rails Projects</title>
@@ -1153,367 +1196,6 @@ Say, http://sample.com?author=andy, how to get author value which can be lately 
 
 
 &lt;p&gt;Then you should use this function as fetch_value(&quot;author&quot;), it will return the &quot;andy&quot;.&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>MacPorts is a monster</title>
-    <link href="http://tech.wangyaodi.com/2010/09/01/macports-is-a-monster/"/>
-    <updated>2010-09-01T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/2010/09/01/macports-is-a-monster</id>
-    <content type="html">&lt;h1&gt;MacPorts is a monster.. see the log I installed ImageMagick. Anyway, it works for me. but the &lt;a href=&quot;http://weblogs.manas.com.ar/mverzilli/2010/05/19/install-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in-the-painless-way-with-homebrewinstall-the-rmagick-gem-in/&quot;&gt;brew solution&lt;/a&gt; is not working for me.&lt;/h1&gt;
-
-&lt;p&gt;andy@Wang-Andys-MacBook-Pro~/proj.workspace:sudo port install ImageMagick
----&gt;  Computing dependencies for ImageMagick
----&gt;  Fetching p5-locale-gettext
----&gt;  Attempting to fetch gettext-1.05.tar.gz from http://distfiles.macports.org/perl5
----&gt;  Verifying checksum(s) for p5-locale-gettext
----&gt;  Extracting p5-locale-gettext
----&gt;  Applying patches to p5-locale-gettext
----&gt;  Configuring p5-locale-gettext
----&gt;  Building p5-locale-gettext
----&gt;  Staging p5-locale-gettext into destroot
----&gt;  Installing p5-locale-gettext @1.05_2
----&gt;  Activating p5-locale-gettext @1.05_2
----&gt;  Cleaning p5-locale-gettext
----&gt;  Fetching help2man
----&gt;  Attempting to fetch help2man-1.37.1.tar.gz from http://distfiles.macports.org/help2man
----&gt;  Verifying checksum(s) for help2man
----&gt;  Extracting help2man
----&gt;  Configuring help2man
----&gt;  Building help2man
----&gt;  Staging help2man into destroot
----&gt;  Installing help2man @1.37.1_1
----&gt;  Activating help2man @1.37.1_1
----&gt;  Cleaning help2man
----&gt;  Fetching m4
----&gt;  Attempting to fetch m4-1.4.14.tar.bz2 from http://distfiles.macports.org/m4
----&gt;  Verifying checksum(s) for m4
----&gt;  Extracting m4
----&gt;  Configuring m4
----&gt;  Building m4
----&gt;  Staging m4 into destroot
----&gt;  Installing m4 @1.4.14_0
----&gt;  Activating m4 @1.4.14_0
----&gt;  Cleaning m4
----&gt;  Fetching autoconf
----&gt;  Attempting to fetch autoconf-2.65.tar.bz2 from http://distfiles.macports.org/autoconf
----&gt;  Verifying checksum(s) for autoconf
----&gt;  Extracting autoconf
----&gt;  Applying patches to autoconf
----&gt;  Configuring autoconf
----&gt;  Building autoconf
----&gt;  Staging autoconf into destroot
----&gt;  Installing autoconf @2.65_1
----&gt;  Activating autoconf @2.65_1
----&gt;  Cleaning autoconf
----&gt;  Fetching automake
----&gt;  Attempting to fetch automake-1.11.1.tar.bz2 from http://distfiles.macports.org/automake
----&gt;  Verifying checksum(s) for automake
----&gt;  Extracting automake
----&gt;  Configuring automake
----&gt;  Building automake
----&gt;  Staging automake into destroot
----&gt;  Installing automake @1.11.1_0
----&gt;  Activating automake @1.11.1_0
----&gt;  Cleaning automake
----&gt;  Fetching bzip2
----&gt;  Attempting to fetch bzip2-1.0.5.tar.gz from http://distfiles.macports.org/bzip2
----&gt;  Verifying checksum(s) for bzip2
----&gt;  Extracting bzip2
----&gt;  Applying patches to bzip2
----&gt;  Configuring bzip2
----&gt;  Building bzip2
----&gt;  Staging bzip2 into destroot
----&gt;  Installing bzip2 @1.0.5_3+darwin
----&gt;  Activating bzip2 @1.0.5_3+darwin
----&gt;  Cleaning bzip2
----&gt;  Fetching freetype
----&gt;  Attempting to fetch freetype-2.3.12.tar.bz2 from http://voxel.dl.sourceforge.net/freetype
----&gt;  Attempting to fetch freetype-doc-2.3.12.tar.bz2 from http://voxel.dl.sourceforge.net/freetype
----&gt;  Verifying checksum(s) for freetype
----&gt;  Extracting freetype
----&gt;  Applying patches to freetype
----&gt;  Configuring freetype
----&gt;  Building freetype
----&gt;  Staging freetype into destroot
----&gt;  Installing freetype @2.3.12_0+macosx
----&gt;  Activating freetype @2.3.12_0+macosx
----&gt;  Cleaning freetype
----&gt;  Fetching fontconfig
----&gt;  Attempting to fetch fontconfig-2.8.0.tar.gz from http://distfiles.macports.org/fontconfig
----&gt;  Verifying checksum(s) for fontconfig
----&gt;  Extracting fontconfig
----&gt;  Applying patches to fontconfig
----&gt;  Configuring fontconfig
----&gt;  Building fontconfig
----&gt;  Staging fontconfig into destroot
----&gt;  Installing fontconfig @2.8.0_0+macosx
----&gt;  Activating fontconfig @2.8.0_0+macosx
----&gt;  Cleaning fontconfig
----&gt;  Fetching jpeg
----&gt;  Attempting to fetch jpegsrc.v8a.tar.gz from http://distfiles.macports.org/jpeg
----&gt;  Verifying checksum(s) for jpeg
----&gt;  Extracting jpeg
----&gt;  Configuring jpeg
----&gt;  Building jpeg
----&gt;  Staging jpeg into destroot
----&gt;  Installing jpeg @8a_0
----&gt;  Activating jpeg @8a_0
----&gt;  Cleaning jpeg
----&gt;  Fetching tiff
----&gt;  Attempting to fetch tiff-3.9.2.tar.gz from ftp://ftp.tw.FreeBSD.org/pub/FreeBSD/ports/distfiles/
----&gt;  Verifying checksum(s) for tiff
----&gt;  Extracting tiff
----&gt;  Applying patches to tiff
----&gt;  Configuring tiff
----&gt;  Building tiff
----&gt;  Staging tiff into destroot
----&gt;  Installing tiff @3.9.2_3+macosx
----&gt;  Activating tiff @3.9.2_3+macosx
----&gt;  Cleaning tiff
----&gt;  Fetching lcms
----&gt;  Attempting to fetch lcms-1.19.tar.gz from http://voxel.dl.sourceforge.net/lcms
----&gt;  Verifying checksum(s) for lcms
----&gt;  Extracting lcms
----&gt;  Configuring lcms
----&gt;  Building lcms
----&gt;  Staging lcms into destroot
----&gt;  Installing lcms @1.19_2
----&gt;  Activating lcms @1.19_2
----&gt;  Cleaning lcms
----&gt;  Fetching libpng
----&gt;  Attempting to fetch libpng-1.2.43.tar.bz2 from http://voxel.dl.sourceforge.net/libpng
----&gt;  Verifying checksum(s) for libpng
----&gt;  Extracting libpng
----&gt;  Configuring libpng
----&gt;  Building libpng
----&gt;  Staging libpng into destroot
----&gt;  Installing libpng @1.2.43_0
----&gt;  Activating libpng @1.2.43_0
----&gt;  Cleaning libpng
----&gt;  Fetching libtool
----&gt;  Attempting to fetch libtool-2.2.6b.tar.gz from http://distfiles.macports.org/libtool
----&gt;  Verifying checksum(s) for libtool
----&gt;  Extracting libtool
----&gt;  Configuring libtool
----&gt;  Building libtool
----&gt;  Staging libtool into destroot
----&gt;  Installing libtool @2.2.6b_1+darwin
----&gt;  Activating libtool @2.2.6b_1+darwin
----&gt;  Cleaning libtool
----&gt;  Fetching libxml2
----&gt;  Attempting to fetch libxml2-2.7.7.tar.gz from http://distfiles.macports.org/libxml2
----&gt;  Verifying checksum(s) for libxml2
----&gt;  Extracting libxml2
----&gt;  Configuring libxml2
----&gt;  Building libxml2
----&gt;  Staging libxml2 into destroot
----&gt;  Installing libxml2 @2.7.7_0
----&gt;  Activating libxml2 @2.7.7_0
----&gt;  Cleaning libxml2
----&gt;  Fetching p7zip
----&gt;  Attempting to fetch p7zip_9.04_src_all.tar.bz2 from http://voxel.dl.sourceforge.net/p7zip
----&gt;  Verifying checksum(s) for p7zip
----&gt;  Extracting p7zip
----&gt;  Applying patches to p7zip
----&gt;  Configuring p7zip
----&gt;  Building p7zip
----&gt;  Staging p7zip into destroot
----&gt;  Installing p7zip @9.04_0
----&gt;  Activating p7zip @9.04_0
----&gt;  Cleaning p7zip
----&gt;  Fetching xorg-bigreqsproto
----&gt;  Attempting to fetch bigreqsproto-1.1.0.tar.bz2 from http://distfiles.macports.org/xorg-bigreqsproto
----&gt;  Verifying checksum(s) for xorg-bigreqsproto
----&gt;  Extracting xorg-bigreqsproto
----&gt;  Configuring xorg-bigreqsproto
----&gt;  Building xorg-bigreqsproto
----&gt;  Staging xorg-bigreqsproto into destroot
----&gt;  Installing xorg-bigreqsproto @1.1.0_0
----&gt;  Activating xorg-bigreqsproto @1.1.0_0
----&gt;  Cleaning xorg-bigreqsproto
----&gt;  Fetching xorg-inputproto
----&gt;  Attempting to fetch inputproto-2.0.tar.bz2 from http://distfiles.macports.org/xorg-inputproto
----&gt;  Verifying checksum(s) for xorg-inputproto
----&gt;  Extracting xorg-inputproto
----&gt;  Configuring xorg-inputproto
----&gt;  Building xorg-inputproto
----&gt;  Staging xorg-inputproto into destroot
----&gt;  Installing xorg-inputproto @2.0_0
----&gt;  Activating xorg-inputproto @2.0_0
----&gt;  Cleaning xorg-inputproto
----&gt;  Fetching xorg-kbproto
----&gt;  Attempting to fetch kbproto-1.0.4.tar.bz2 from http://distfiles.macports.org/xorg-kbproto
----&gt;  Verifying checksum(s) for xorg-kbproto
----&gt;  Extracting xorg-kbproto
----&gt;  Configuring xorg-kbproto
----&gt;  Building xorg-kbproto
----&gt;  Staging xorg-kbproto into destroot
----&gt;  Installing xorg-kbproto @1.0.4_0
----&gt;  Activating xorg-kbproto @1.0.4_0
----&gt;  Cleaning xorg-kbproto
----&gt;  Fetching xorg-xproto
----&gt;  Attempting to fetch xproto-7.0.16.tar.bz2 from http://distfiles.macports.org/xorg-xproto
----&gt;  Verifying checksum(s) for xorg-xproto
----&gt;  Extracting xorg-xproto
----&gt;  Configuring xorg-xproto
----&gt;  Building xorg-xproto
----&gt;  Staging xorg-xproto into destroot
----&gt;  Installing xorg-xproto @7.0.16_0
----&gt;  Activating xorg-xproto @7.0.16_0
----&gt;  Cleaning xorg-xproto
----&gt;  Fetching xorg-libXau
----&gt;  Attempting to fetch libXau-1.0.5.tar.bz2 from http://distfiles.macports.org/xorg-libXau
----&gt;  Verifying checksum(s) for xorg-libXau
----&gt;  Extracting xorg-libXau
----&gt;  Configuring xorg-libXau
----&gt;  Building xorg-libXau
----&gt;  Staging xorg-libXau into destroot
----&gt;  Installing xorg-libXau @1.0.5_0
----&gt;  Activating xorg-libXau @1.0.5_0
----&gt;  Cleaning xorg-libXau
----&gt;  Fetching xorg-libXdmcp
----&gt;  Attempting to fetch libXdmcp-1.0.3.tar.bz2 from http://distfiles.macports.org/xorg-libXdmcp
----&gt;  Verifying checksum(s) for xorg-libXdmcp
----&gt;  Extracting xorg-libXdmcp
----&gt;  Configuring xorg-libXdmcp
----&gt;  Building xorg-libXdmcp
----&gt;  Staging xorg-libXdmcp into destroot
----&gt;  Installing xorg-libXdmcp @1.0.3_0
----&gt;  Activating xorg-libXdmcp @1.0.3_0
----&gt;  Cleaning xorg-libXdmcp
----&gt;  Fetching xorg-util-macros
----&gt;  Attempting to fetch util-macros-1.7.0.tar.bz2 from http://distfiles.macports.org/xorg-util-macros
----&gt;  Verifying checksum(s) for xorg-util-macros
----&gt;  Extracting xorg-util-macros
----&gt;  Configuring xorg-util-macros
----&gt;  Building xorg-util-macros
----&gt;  Staging xorg-util-macros into destroot
----&gt;  Installing xorg-util-macros @1.7.0_0
----&gt;  Activating xorg-util-macros @1.7.0_0
----&gt;  Cleaning xorg-util-macros
----&gt;  Fetching xorg-xcmiscproto
----&gt;  Attempting to fetch xcmiscproto-1.2.0.tar.bz2 from http://distfiles.macports.org/xorg-xcmiscproto
----&gt;  Verifying checksum(s) for xorg-xcmiscproto
----&gt;  Extracting xorg-xcmiscproto
----&gt;  Configuring xorg-xcmiscproto
----&gt;  Building xorg-xcmiscproto
----&gt;  Staging xorg-xcmiscproto into destroot
----&gt;  Installing xorg-xcmiscproto @1.2.0_0
----&gt;  Activating xorg-xcmiscproto @1.2.0_0
----&gt;  Cleaning xorg-xcmiscproto
----&gt;  Fetching xorg-xextproto
----&gt;  Attempting to fetch xextproto-7.1.1.tar.bz2 from http://distfiles.macports.org/xorg-xextproto
----&gt;  Verifying checksum(s) for xorg-xextproto
----&gt;  Extracting xorg-xextproto
----&gt;  Configuring xorg-xextproto
----&gt;  Building xorg-xextproto
----&gt;  Staging xorg-xextproto into destroot
----&gt;  Installing xorg-xextproto @7.1.1_0
----&gt;  Activating xorg-xextproto @7.1.1_0
----&gt;  Cleaning xorg-xextproto
----&gt;  Fetching xorg-xf86bigfontproto
----&gt;  Attempting to fetch xf86bigfontproto-1.2.0.tar.bz2 from http://distfiles.macports.org/xorg-xf86bigfontproto
----&gt;  Verifying checksum(s) for xorg-xf86bigfontproto
----&gt;  Extracting xorg-xf86bigfontproto
----&gt;  Configuring xorg-xf86bigfontproto
----&gt;  Building xorg-xf86bigfontproto
----&gt;  Staging xorg-xf86bigfontproto into destroot
----&gt;  Installing xorg-xf86bigfontproto @1.2.0_0
----&gt;  Activating xorg-xf86bigfontproto @1.2.0_0
----&gt;  Cleaning xorg-xf86bigfontproto
----&gt;  Fetching xorg-xtrans
----&gt;  Attempting to fetch xtrans-1.2.5.tar.bz2 from http://distfiles.macports.org/xorg-xtrans
----&gt;  Verifying checksum(s) for xorg-xtrans
----&gt;  Extracting xorg-xtrans
----&gt;  Configuring xorg-xtrans
----&gt;  Building xorg-xtrans
----&gt;  Staging xorg-xtrans into destroot
----&gt;  Installing xorg-xtrans @1.2.5_0
----&gt;  Activating xorg-xtrans @1.2.5_0
----&gt;  Cleaning xorg-xtrans
----&gt;  Fetching xorg-libX11
----&gt;  Attempting to fetch libX11-1.3.3.tar.bz2 from http://distfiles.macports.org/xorg-libX11
----&gt;  Verifying checksum(s) for xorg-libX11
----&gt;  Extracting xorg-libX11
----&gt;  Configuring xorg-libX11
----&gt;  Building xorg-libX11
----&gt;  Staging xorg-libX11 into destroot
----&gt;  Installing xorg-libX11 @1.3.3_0
----&gt;  Activating xorg-libX11 @1.3.3_0
----&gt;  Cleaning xorg-libX11
----&gt;  Fetching xorg-libXext
----&gt;  Attempting to fetch libXext-1.1.1.tar.bz2 from http://distfiles.macports.org/xorg-libXext
----&gt;  Verifying checksum(s) for xorg-libXext
----&gt;  Extracting xorg-libXext
----&gt;  Configuring xorg-libXext
----&gt;  Building xorg-libXext
----&gt;  Staging xorg-libXext into destroot
----&gt;  Installing xorg-libXext @1.1.1_0
----&gt;  Activating xorg-libXext @1.1.1_0
----&gt;  Cleaning xorg-libXext
----&gt;  Fetching xorg-libice
----&gt;  Attempting to fetch libICE-1.0.6.tar.bz2 from http://distfiles.macports.org/xorg-libice
----&gt;  Verifying checksum(s) for xorg-libice
----&gt;  Extracting xorg-libice
----&gt;  Configuring xorg-libice
----&gt;  Building xorg-libice
----&gt;  Staging xorg-libice into destroot
----&gt;  Installing xorg-libice @1.0.6_0
----&gt;  Activating xorg-libice @1.0.6_0
----&gt;  Cleaning xorg-libice
----&gt;  Fetching xorg-libsm
----&gt;  Attempting to fetch libSM-1.1.1.tar.bz2 from http://distfiles.macports.org/xorg-libsm
----&gt;  Verifying checksum(s) for xorg-libsm
----&gt;  Extracting xorg-libsm
----&gt;  Configuring xorg-libsm
----&gt;  Building xorg-libsm
----&gt;  Staging xorg-libsm into destroot
----&gt;  Installing xorg-libsm @1.1.1_0
----&gt;  Activating xorg-libsm @1.1.1_0
----&gt;  Cleaning xorg-libsm
----&gt;  Fetching xorg-libXt
----&gt;  Attempting to fetch libXt-1.0.8.tar.bz2 from http://distfiles.macports.org/xorg-libXt
----&gt;  Verifying checksum(s) for xorg-libXt
----&gt;  Extracting xorg-libXt
----&gt;  Configuring xorg-libXt
----&gt;  Building xorg-libXt
----&gt;  Staging xorg-libXt into destroot
----&gt;  Installing xorg-libXt @1.0.8_0
----&gt;  Activating xorg-libXt @1.0.8_0
----&gt;  Cleaning xorg-libXt
----&gt;  Fetching ImageMagick
----&gt;  Attempting to fetch ImageMagick-6.6.1-5.7z from http://distfiles.macports.org/ImageMagick
----&gt;  Verifying checksum(s) for ImageMagick
----&gt;  Extracting ImageMagick
----&gt;  Applying patches to ImageMagick
----&gt;  Configuring ImageMagick
----&gt;  Building ImageMagick
----&gt;  Staging ImageMagick into destroot
----&gt;  Installing ImageMagick @6.6.1-5_0+q16
----&gt;  Activating ImageMagick @6.6.1-5_0+q16
----&gt;  Cleaning ImageMagick&lt;/p&gt;
-</content>
-  </entry>
-  
-  <entry>
-    <title>How to keep a space in your iPhone App name?</title>
-    <link href="http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name/"/>
-    <updated>2010-08-31T00:00:00+08:00</updated>
-    <id>http://tech.wangyaodi.com/2010/08/31/how-to-keep-a-space-in-your-iphone-app-name</id>
-    <content type="html">&lt;p&gt;The answer is, &lt;strong&gt;you can't submit your iPhone App with &lt;em&gt;whitespace&lt;/em&gt; in its name&lt;/strong&gt;. But you do &lt;strong&gt;be able to add space in your App display name&lt;/strong&gt; under icon. I guess your purpose is the second one, you only want to display the space under app icon on device, don't you?&lt;/p&gt;
-
-&lt;p&gt;OK, just name your app as whatever name with space before you setup the distribution package, e.g. &quot;Example Name.app&quot;. Then,&lt;/p&gt;
-
-&lt;p&gt;1) In Xcode Organizer right click on the build date of the app and select &quot;Reveal Archived App in Finder&quot;
-2) Open ArchiveInfo.plist in a text editor, edit the attribute &quot;&lt;strong&gt;&lt;em&gt;&lt;string&gt;Example Name.app&lt;/string&gt;&lt;/em&gt;&lt;/strong&gt;&quot;
-Change that to ExampleName.app and save the file.
-4) In Finder remove the space in the file names on both the .app and the .app.dSYM files
-5) Once you get back to Xcode Organizer, you should be able to submitting app to itunesconnect successfully.
-PS: Also you might want to remove the previously generated .ipa file with the space. just delete the file, a new one will be created after the above steps automatically&lt;/p&gt;
-
-&lt;p&gt;Now you are just submitting an app named &quot;ExampleName.app&quot;, and its display name will remain &quot;Example Name.app&quot;.&lt;/p&gt;
 </content>
   </entry>
   

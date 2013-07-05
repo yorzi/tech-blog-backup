@@ -105,6 +105,91 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2013/07/05/build-a-widget/">Build a Widget</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2013-07-05 16:08:00 +0800" pubdate  updated >Jul 5<span>th</span>, 2013</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Some thoughts and resources on building a widget for a specific web page or web page section.</p>
+
+<h4>#1</h4>
+
+<p>Use Iframe directly, it&#8217;s able to pass in some params to get needed charts.</p>
+
+<h4>#2</h4>
+
+<p>Wrap the iframe via a JS widget(interface), then embed a JS file with params.</p>
+
+<h4>#3</h4>
+
+<p>window.postMessage on modern browsers <br />
+<a href="http://stackoverflow.com/questions/3457391/how-do-you-use-window-postmessage-across-domains">http://stackoverflow.com/questions/3457391/how-do-you-use-window-postmessage-across-domains</a></p>
+
+<p>Related SlideShare:</p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/13789187" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/linkibol/external-javascript-widget-development-best-practices" title="External JavaScript Widget Development Best Practices" target="_blank">External JavaScript Widget Development Best Practices</a> </strong> from <strong><a href="http://www.slideshare.net/linkibol" target="_blank">linkibol LLC</a></strong> </div></p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/5466665" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/benvinegar/building-distributed-java-script-widgets-sat" title="Building Distributed JavaScript Widgets with jQuery" target="_blank">Building Distributed JavaScript Widgets with jQuery</a> </strong> from <strong><a href="http://www.slideshare.net/benvinegar" target="_blank">benvinegar</a></strong> </div></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2013/07/05/build-a-widget/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku/">Tricks and Tips of Deploying Rails4 App to Heroku</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2013-06-07 23:01:00 +0800" pubdate  updated >Jun 7<span>th</span>, 2013</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content">
+</div>
+  <footer>
+    <a rel="full-article" href="/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a></h1>
     
     
@@ -1019,118 +1104,6 @@ Actually, you can figure out this effect with <strong><a href="https://developer
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/02/18/real-time-application-with-rails3/">Real-Time Application With Rails3</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2011-02-18 00:00:00 +0800" pubdate  updated >Feb 18<span>th</span>, 2011</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I researched a little bit these two days about Real-Time Application(RTA), I found many useful solution to build real-time application.</p>
-
-<p>First, a RTA is an application program that functions within a time frame that the user senses as immediate or current. The latency must be less than a defined value, usually measured in seconds. The use of RTAs is called <a href="http://en.wikipedia.org/wiki/Real-time_computing">real-time computing</a> (RTC).</p>
-
-<p>There are some example use cases of RTAs, including:</p>
-
-<pre>
-   * Videoconference applications
-   * VoIP (voice over Internet Protocol)
-   * Online gaming
-   * Community storage solutions
-   * Chatting
-   * IM (instant messaging)
-</pre>
-
-
-<p>Mainly, I am interested in two solutions, which are <a href="https://github.com/lifo/cramp">Cramp</a> based RTA and a NR2J(<a href="http://nodejs.org/">Node.js</a>+<a href="https://github.com/antirez/redis">Redis</a>+<a href="https://github.com/maccman/juggernaut">Juggernaut</a>+Jquery) solution, both of these two solutions have existing samples, I suggest you should go through all of them to understand RTA well.</p>
-
-<p><strong>Cramp based RTA</strong>
-Cramp is a ruby web framework with asynchronous feature, which is always running inside EventMachine reactor loop, there is a <a href="http://m.onkey.org/introducing-cramp">detailed introduction</a> for it. A sample code is <a href="https://github.com/akitaonrails/cramp_chat_demo">available here</a>.</p>
-
-<p><strong>NR2J solution</strong>
-Introduction is <a href="http://www.golygon.com/2010/12/private-chat-room-in-ruby-on-rails-3-0/">here</a> and sample code is <a href="https://github.com/prabgupt/chatclient">here</a>. I tried Node.js before, it&#8217;s getting popular recently, but I still don&#8217;t be used to implementing server side code with JS. I love Ruby and Rails anyway.</p>
-
-<p><strong>Other RTA resources:</strong>
-Real-Time/WebSocket/Rails3: <a href="http://laktek.com/tag/realie/">http://laktek.com/tag/realie/</a>
-JSChat.org: <a href="http://jschat.org/">http://jschat.org/</a></p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2011/02/18/real-time-application-with-rails3/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2011/02/12/zen-coding-for-textmate/">Zen Coding for TextMate</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2011-02-12 00:00:00 +0800" pubdate  updated >Feb 12<span>th</span>, 2011</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Bundles make <a href="http://macromates.com/">TextMate</a> as a super Editor, so if you love TextMate, you must love colorful bundles based on it.</p>
-
-<p>I just find an interesting bundle to speed up your HTML/CSS coding, which is named as <a href="https://github.com/sergeche/zen-coding">Zen Coding</a>.</p>
-
-<p>The core of this plugin is a powerful abbreviation engine which allows you to expand expressions—similar to CSS selectors—into HTML code. For example:
-<code lang="html">
-div#page>div.logo+ul#navigation>li*5>a
-</code>
-&#8230;can be expanded into:
-<code lang="html"></p>
-
-<div id="page">
-        <div class="logo"></div>
-        <ul id="navigation">
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-                <li><a href=""></a></li>
-        </ul>
-</div>
-
-
-<p></code>
-The sytax is simple to understand, there is a sytax list <a href="http://code.google.com/p/zen-coding/wiki/ZenHTMLSelectorsEn">here</a>. You can also get more details about this bundle on <a href="http://code.google.com/p/zen-coding/">its official site.</a></p>
-
-<p>Enjoy it.</p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2011/02/12/zen-coding-for-textmate/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -1165,6 +1138,14 @@ The sytax is simple to understand, there is a sytax list <a href="http://code.go
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/07/05/build-a-widget/">Build A Widget</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku/">Tricks and Tips of Deploying Rails4 App to Heroku</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
       </li>
     
@@ -1186,14 +1167,6 @@ The sytax is simple to understand, there is a sytax list <a href="http://code.go
     
       <li class="post">
         <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
       </li>
     
   </ul>

@@ -105,6 +105,141 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2010/01/14/a-ab-test-solution-in-ror/">An A/B Test Solution in ROR</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-01-14 00:00:00 +0800" pubdate  updated >Jan 14<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Last few days, I worked for a mission to add more flexible control to <a href="http://www.eqenglish.com">our website</a> landing pages. What I did is to add a &#8220;a/b&#8221; test feature for new landing pages, that means, if people have two designs and want to compare the results, they only release two versions of landing page, and then only get one url for the two versions of pages, after that the url will automatically redirect to different versions evenly, so that through Google analytics marketing people can easily decide which landing page is much better.</p>
+
+<p><strong>Landing pages A/B test solution:</strong>
+<code lang="ruby">
+class LandingsController &lt; ApplicationController
+  layout "layouts/blank"
+  caches_page "ielts","ab_test"</p>
+
+<p>  def ielts</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first
+if @landing_page.ab_test?
+  if not params[:channel].blank?
+    redirect_to landing_ab_test_with_channel_path(["a","b"].rand,params[:url_slug],params[:channel])
+  else
+    redirect_to landing_ab_test_path(["a","b"].rand,params[:url_slug])
+  end
+else
+  render :layout =&gt; "layouts/landing_page"
+end
+</code></pre>
+
+<p>  end</p>
+
+<p>  def ab_test</p>
+
+<pre><code>@landing_page = Landing.find_by_url_slug(params[:type].to_s + "/" + params[:url_slug].to_s)
+(@landing_page = Landing.find_by_url_slug(params[:url_slug]) || Landing.valid_landings.first) if @landing_page.nil?
+render :layout =&gt; "layouts/landing_page"
+</code></pre>
+
+<p>  end
+end
+</code>
+<strong>Routing:</strong>
+<code lang="ruby">
+   map.landing_trunk "ielts/:url_slug", :controller => "landings", :action => "ielts"
+   map.landing_trunk_with_channel "ielts/:url_slug/:channel", :controller => "landings", :action => "ielts"
+   map.landing_ab_test "ielts/sub/:type/:url_slug/", :controller => "landings", :action => "ab_test"
+   map.landing_ab_test_with_channel "ielts/sub/:type/:url_slug/:channel", :controller => "landings", :action => "ab_test"
+</code></p>
+
+<p><strong>A/B test Sample:</strong>
+<em>Suppose</em>:</p>
+
+<pre><code>          We release a type of landing page called : university
+          And we have two kinds of different designs : called "a/university" and "b/university"
+          Then we may release the landing page to many universities, such as "beida", "renda", "qinghua" etc.. they are different channels.
+</code></pre>
+
+<p><em>Then we can</em>:</p>
+
+<pre><code>         Only release the url as "http://www.eqenglish.com/ielts/university" to any universities by following "/beida", "/renda", "/qinghua" etc...
+         It should be like this "http://www.eqenglish.com/ielts/university/beida",  "http://www.eqenglish.com/ielts/university/renda"... etc.. (For client use)
+         But in google analytics, you will see : "http://www.eqenglish.com/ielts/sub/a/university/beida"
+                                                              and : "http://www.eqenglish.com/ielts/sub/b/university/beida"  (For our analysis)
+</code></pre>
+
+<p> It means, different landing page and different channel and (&#8220;a&#8221; or &#8220;b&#8221;) will be in a unique URL for certain purpose. but for our client, they don&#8217;t need to care about &#8220;a/b&#8221; test, system will redirect pages automatically.</p>
+
+<p>Any involving comments are welcomed.</p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2010/01/14/a-ab-test-solution-in-ror/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2010/01/07/formtastic/">Again About Formtastic</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2010-01-07 00:00:00 +0800" pubdate  updated >Jan 7<span>th</span>, 2010</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Actually,
+I don&#8217;t know how fantastic Formtastic is before this afternoon, I used it to refactor my form and it&#8217;s pretty cool for me to wrap up all the massive code which I hate as always. Now every form is becoming nice.</p>
+
+<p>Some relevant and useful additions about Formtastic:</p>
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong><span style="line-height: 1.4em; padding: 0px; margin: 0px;">SASS</span>-stylesheets</strong> – for even more pretty styled forms in all browsers (mixins for different form layouts, etc.)<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/activestylus/formtastic-sass">http://github.com/activestylus/formtastic-sass</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>TextMate-bundle</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/formtastic_tmbundle">http://github.com/grimen/formtastic_tmbundle</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>In-place editor</strong> for Formtastic:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/rubymood/jintastic">http://github.com/rubymood/jintastic</a></p>
+
+
+<p style="margin-top: 1em !important; margin-right: 0px !important; margin-bottom: 1em !important; margin-left: 0px !important; line-height: 1.5em !important; padding: 0px;"><strong>Client-side validations</strong> that is compatible with Formtastic markup:<br style="line-height: 1.4em; padding: 0px; margin: 0px;" /><a style="line-height: 1.4em; color: #4183c4; text-decoration: none; outline-style: none; outline-width: initial; outline-color: initial; padding: 0px; margin: 0px;" href="http://github.com/grimen/validatious-on-rails">http://github.com/grimen/validatious-on-rails</a></p>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/2010/01/07/formtastic/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2010/01/06/cms-formtastic-routing-cache-in-rails/">A Note for Building a Simple Rails Application</a></h1>
     
     
@@ -523,88 +658,6 @@ Enjoy it.</div>
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/12/16/seo-tools/">SEO Tools</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2009-12-16 00:00:00 +0800" pubdate  updated >Dec 16<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>友情链接检测工具：<a href="http://link.chinaz.com/">http://link.chinaz.com/</a></p>
-
-<p>关键词排名查询工具：<a href="http://tool.chinaz.com/KeyWords/">http://tool.chinaz.com/KeyWords/</a></p>
-
-<p>关键词密度查询：<a href="http://tool.chinaz.com/Tools/Density.aspx">http://tool.chinaz.com/Tools/Density.aspx</a></p>
-
-<p>模拟搜索引擎抓取工具：<a href="http://tool.chinaz.com/Tools/Robot.aspx">http://tool.chinaz.com/Tools/Robot.aspx</a></p>
-
-<p>网页MATA信息检测：<a href="http://tool.chinaz.com/Tools/MetaCheck.aspx">http://tool.chinaz.com/Tools/MetaCheck.aspx</a></p>
-
-<p>百度近日收录查询：<a href="http://tool.chinaz.com/baidu/">http://tool.chinaz.com/baidu/</a></p>
-
-<p>Google网站管理员工具：<a href="http://www.google.com/webmasters/tools/?hl=zh_CN">http://www.google.com/webmasters/tools/?hl=zh_CN</a></p>
-
-<p>雅虎站长工具：<a href="http://sitemap.cn.yahoo.com/">http://sitemap.cn.yahoo.com/</a></p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/12/16/seo-tools/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/12/15/yorzi-in-search/">&#8216;Yorzi&#8217; in Search</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2009-12-15 00:00:00 +0800" pubdate  updated >Dec 15<span>th</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>今天无意间search了一下“yorzi”，结果令我大吃一惊&#8230;.</p>
-
-<p>Google.cn : <a href="http://www.google.cn/search?hl=zh-CN&newwindow=1&q=yorzi&btnG=Google+%E6%90%9C%E7%B4%A2&aq=f&oq=">5030条记录</a>
-Google.com : <a href="http://www.google.com/search?hl=en&source=hp&q=yorzi&aq=f&oq=&aqi=g10">5010条记录</a>
-cn.bing.com : <a href="http://cn.bing.com/search?q=yorzi&form=QBLH&filt=all&qs=n">108条记录</a>
-Bing.com : <a href="http://www.bing.com/search?q=yorzi&form=QBLH&scope=web&qs=n">146条记录</a>
-Baidu.com : <a href="http://www.baidu.com/s?bs=yorzi&f=8&wd=yorzi">256条记录</a></p>
-
-<p>而我相信，此篇发布以后，Google的数量会上升，而其他估计没反应。。</p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/12/15/yorzi-in-search/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
     
@@ -641,6 +694,14 @@ Baidu.com : <a href="http://www.baidu.com/s?bs=yorzi&f=8&wd=yorzi">256条记录<
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/07/05/build-a-widget/">Build A Widget</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku/">Tricks and Tips of Deploying Rails4 App to Heroku</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
       </li>
     
@@ -662,14 +723,6 @@ Baidu.com : <a href="http://www.baidu.com/s?bs=yorzi&f=8&wd=yorzi">256条记录<
     
       <li class="post">
         <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
       </li>
     
   </ul>

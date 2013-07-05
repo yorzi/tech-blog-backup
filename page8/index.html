@@ -105,6 +105,82 @@
     
   <header>
     
+      <h1 class="entry-title"><a href="/2009/11/17/jquery-for-rails-developer/">JQuery for Rails Developer</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-11-17 00:00:00 +0800" pubdate  updated >Nov 17<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><div style="width:425px;text-align:left" id="__ss_110063"><a style="font:14px Helvetica,Arial,Sans-serif;display:block;margin:12px 0 3px 0;text-decoration:underline;" href="http://www.slideshare.net/wycats/jquery-presentation-to-rails-developers-110063" title="jQuery Presentation to Rails Developers">jQuery Presentation to Rails Developers</a><object style="margin:0px" width="425" height="355"><param name="movie" value="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jquery-presentation-to-rails-developers3264&stripped_title=jquery-presentation-to-rails-developers-110063" /><param name="allowFullScreen" value="true"/><param name="allowScriptAccess" value="always"/><embed src="http://static.slidesharecdn.com/swf/ssplayer2.swf?doc=jquery-presentation-to-rails-developers3264&stripped_title=jquery-presentation-to-rails-developers-110063" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="425" height="355"></embed></object><div style="font-size:11px;font-family:tahoma,arial;height:26px;padding-top:2px;">View more <a style="text-decoration:underline;" href="http://www.slideshare.net/">documents</a> from <a style="text-decoration:underline;" href="http://www.slideshare.net/wycats">Yehuda Katz</a>.</div></div>
+
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/11/17/jquery-for-rails-developer/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2009/11/13/run-corn-job-in-ruby-way/">Run Cron Job in Ruby Way</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+<time datetime="2009-11-13 00:00:00 +0800" pubdate  updated >Nov 13<span>th</span>, 2009</time>
+
+
+</p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>目前最常用的方法是利用Unix自身的<a href="http://en.wikipedia.org/wiki/Cron">cron</a>功能来实现定时任务，但是cron的语法比较麻烦(个人感觉)，今天为了执行一个定时任务发现了一个很好的RubyGem可以让你用Ruby的方式定义定时任务，这就是<a href="http://github.com/javan/whenever/tree/master">Whenever</a>。</p>
+
+<p>Whenever可以让你写出类似下面的定时任务：</p>
+
+<pre name="code" class="ruby">
+ set :cron_log, "/path/to/my/cron_log.log"
+
+ every 2.hours do
+   command "/usr/bin/some_great_command"
+   runner "MyModel.some_method"
+   rake "some:great:rake:task"
+ end
+</pre>
+
+
+<p>赶快去Github看看文档和代码吧<a href="http://github.com/javan/whenever">http://github.com/javan/whenever</a></p>
+</div>
+  <footer>
+    <a rel="full-article" href="/2009/11/13/run-corn-job-in-ruby-way/">Read on &rarr;</a>
+  </footer>
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
       <h1 class="entry-title"><a href="/2009/11/13/feed-parser-in-ruby/">Feed Parser in Ruby</a></h1>
     
     
@@ -642,78 +718,10 @@ In addition on a slow line you can gain performance by enabling compression with
 
   </article>
 
-
-  <article>
-    
-  <header>
-    
-      <h1 class="entry-title"><a href="/2009/11/03/polymorphic-association-in-factory_girl/">Polymorphic Association in Factory_girl</a></h1>
-    
-    
-      <p class="meta">
-
-
-
-
-<time datetime="2009-11-03 00:00:00 +0800" pubdate  updated >Nov 3<span>rd</span>, 2009</time>
-
-
-</p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I tried factroy_girl yesterday to work with rspec framework, It&#8217;s excellent way to support testing, however, the polymorphic association in factroy_girl almost defeated me.
-The factory definition in my code is as:</p>
-
-<pre name='code' class='ruby'>
-Factory.define :item do |i|
-    i.status 0
-    i.related_with_id 1
-    i.association :unit
-end
-
-Factory.define :study_record do |sr|
-    sr.association :content, :factory => :item
-    sr.add_attribute :interaction_id
-    sr.add_attribute :finished_at
-end
-</pre>
-
-
-<p>Then I did this:</p>
-
-<pre name="code" class="ruby">
-
-    @item = Factory(:item)
-    @study_record = Factory(:study_record)
-    @item.study_records << @study_record
-
-</pre>
-
-
-<p>But actually, this does not work to associate @study_record with @item, the problem is that @study_record.content is totally a new instance of Item rather than @item. It seems that &#8220;&lt;&lt;&#8221; doesn&#8217;t work in this case.
-The right way to do so:</p>
-
-<pre name="code" class="ruby">
-
-     @item = Factory(:item)
-    @study_record = Factory(:study_record, :content => @item)
-
-</pre>
-
-
-<p>Polymorphic association works, and it&#8217;s better than the fixtures solution indeed.</p>
-</div>
-  <footer>
-    <a rel="full-article" href="/2009/11/03/polymorphic-association-in-factory_girl/">Read on &rarr;</a>
-  </footer>
-
-
-  </article>
-
 <nav role="pagination">
   <div>
+    
+      <a class="prev" href="/page9/">&larr; Older</a>
     
     <a href="/blog/archives">Blog Archives</a>
     
@@ -746,6 +754,14 @@ The right way to do so:</p>
   <ul id="recent_posts">
     
       <li class="post">
+        <a href="/2013/07/05/build-a-widget/">Build A Widget</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku/">Tricks and Tips of Deploying Rails4 App to Heroku</a>
+      </li>
+    
+      <li class="post">
         <a href="/2013/05/23/install-jenkins-and-set-up-jenkins-ci-for-rails-projects/">Install Jenkins and Set Up Jenkins CI for Rails Projects</a>
       </li>
     
@@ -767,14 +783,6 @@ The right way to do so:</p>
     
       <li class="post">
         <a href="/2011/06/14/riding-on-rails3-with-full-stack-of-gems/">Riding on Rails3 with full stack of Gems</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/21/weekly-updates-javascript-rocks/">Weekly Updates : Javascript Rocks!</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2011/03/09/settimeout-and-setinterval/">JS note: setTimeout and setInterval</a>
       </li>
     
   </ul>
