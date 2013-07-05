@@ -176,7 +176,106 @@
   </header>
 
 
-  <div class="entry-content">
+  <div class="entry-content"><p>Recently, I deployed a client project to Heroku and made the Heroku instance as an internal demo server. The project is based on Ruby2.0 and Rails4, unexpectedly, the deployment to Heroku is not as smooth as before. Below I&#8217;d like to share some tricks and tips that I came across.</p>
+
+<h5>Rails4 Specific Tricks</h5>
+
+<ul>
+<li>Heroku forces you to specify your ruby version in Gemfile, it&#8217;s supported by bundler from <a href="http://gembundler.com/v1.2/whats_new.html">1.2 version</a>, so just add below line into your Gemfile:</li>
+</ul>
+
+
+<p>&#8220;`</p>
+
+<h1>specify ruby version to enable the deploy to Heroku instance.</h1>
+
+<p>ruby &#8216;2.0.0&#8217;
+&#8220;`</p>
+
+<ul>
+<li>Rails4 gets rid of plugin system. In order to use features such as static asset serving and logging on Heroku, you should add the following gems to your Gemfile:</li>
+</ul>
+
+
+<p><code>
+gem 'rails_log_stdout',           github: 'Heroku/rails_log_stdout'
+gem 'rails3_serve_static_assets', github: 'Heroku/rails3_serve_static_assets'
+</code></p>
+
+<ul>
+<li>Use <a href="http://puma.io/">puma</a> as the web server, you want to add a <code>Procfile</code> file and add below line in it:</li>
+</ul>
+
+
+<p><code>
+web: bundle exec puma -p $PORT
+</code></p>
+
+<ul>
+<li>Below http basic auth doesn&#8217;t work as what I did before for non-rails4 app on Heroku.</li>
+</ul>
+
+
+<p><code>
+config.middleware.insert_after(::Rack::Lock, "::Rack::Auth::Basic", "Production") do |u, p|
+  [u, p] == [USER, PASSWORD]
+end
+</code>
+&#8220;`</p>
+
+<h1>Error message when pushing to Heroku&#8230;</h1>
+
+<p>&#8212;&#8211;> Preparing app for Rails asset pipeline</p>
+
+<pre><code>   Running: rake assets:precompile
+   rake aborted!
+   No such middleware to insert after: Rack::Lock
+</code></pre>
+
+<p>&#8220;`</p>
+
+<ul>
+<li>Actually, Rails4 is thread safe by default, you do not have the overhead of including the <code>Rack::Lock</code> middleware in each request. So just use <code>Rack::Auth::Basic</code> directly as there is no Rack::Lock middleware any more when you using a web server such as <code>puma</code>:</li>
+</ul>
+
+
+<p><code>
+config.middleware.use '::Rack::Auth::Basic' do |u, p|
+  [u, p] == [USER, PASSWORD]
+end
+</code></p>
+
+<h5>Heroku Related Tips</h5>
+
+<p>In my case, I need to transfer PG database between local and Heroku. Firstly, I need to find the URL to my db on Heroku:</p>
+
+<p><code>
+$ heroku config:get DATABASE_URL
+postgres://bla:sth@ec2-17-21-12-11.compute-1.amazonaws.com:5432/123
+</code></p>
+
+<p>Then transfer from the Heroku db to your local db (switch -t <code>to</code> and -f <code>from</code> versus):</p>
+
+<p><code>
+$ heroku plugins:install https://github.com/ddollar/heroku-pg-transfer
+$ heroku pg:transfer -t postgres://localhost/dbname -f postgres://bla:sth@ec2-17-21-12-11.compute-1.amazonaws.com:5432/123
+</code></p>
+
+<p>Since the <a href="https://github.com/ddollar/heroku-pg-transfer">heroku-pg-transfer</a> tool utilizes postgres&#8217;s native pg_dump facility it is a much more predictable and resilient tool. Check out a related blog <a href="http://www.ryandaigle.com/a/pgtransfer-is-the-new-taps">for more details</a>.</p>
+
+<p>There is another needs in my case, I have to deploy <code>development</code> branch to Heroku, but Heroku default is to deploy master branch to their instance, use below command to specify a branch for deployment.</p>
+
+<p>&#8220;`</p>
+
+<h1>deploy a specific branch to Heroku</h1>
+
+<p>git push heroku other-barnch:master
+&#8220;`</p>
+
+<h4>Resources</h4>
+
+<p><a href="https://devcenter.heroku.com/articles/rails4">https://devcenter.heroku.com/articles/rails4</a><br />
+<a href="http://blog.remarkablelabs.com/2012/12/rails-4-is-thread-safe-by-default-rails-4-countdown-to-2013">http://blog.remarkablelabs.com/2012/12/rails-4-is-thread-safe-by-default-rails-4-countdown-to-2013</a><br /></p>
 </div>
   <footer>
     <a rel="full-article" href="/2013/06/07/tricks-and-tips-of-deploying-rails4-app-to-heroku/">Read on &rarr;</a>
